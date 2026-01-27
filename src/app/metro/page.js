@@ -13,6 +13,7 @@ export default function MetroPage() {
 
   const sendMessage = async (prompt) => {
     setIsLoading(true);
+    console.log("Sending to AI:", prompt);
 
     try {
       const response = await fetch("/api/chat", {
@@ -81,7 +82,7 @@ export default function MetroPage() {
 Here are my 50 most recent songs from Spotify:
 ${trackList}
 
-Based on the trip duration between these two stations, please recommend which songs from this list I should listen to during my journey. Make sure that the same song isn't recommended twice, and search on the web for how long does the destination take between the selected stations to recommend based on the duration of the trip and song durations.`;
+Based on the trip duration between these two stations, please recommend which songs from this list I should listen to during my journey. CONSIDER THAT THE PERSON HAS ALREADY SAT IN THE METRO AND IS GOING TO LISTEN TO MUSIC WHEN THE TRAIN IS MOVING AND NOT WHILE WAITING AT THE STATION UNLESS IT'S A LINE CHANGE. Make sure that the same song isn't recommended twice, and search on the web for how long does the destination take between the selected stations to recommend based on the duration of the trip and song durations.`;
 
     sendMessage(prompt);
   };
