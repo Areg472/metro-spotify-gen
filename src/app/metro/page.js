@@ -4,6 +4,10 @@ import { useState } from "react";
 import { Select } from "@/components/Select";
 import stations from "@/app/metro/stations";
 
+const RECENT_TRACKS = [];
+
+console.log(RECENT_TRACKS);
+
 export default function MetroPage() {
   const [startStation, setStartStation] = useState(null);
   const [endStation, setEndStation] = useState(null);
@@ -20,7 +24,8 @@ export default function MetroPage() {
             yerevanStations.find((s) => s.name === e.target.value),
           )
         }
-        className="text-white"
+        optionClassName="text-black"
+        className="text-white bg-black"
       />
       <p>End Station</p>
       <Select
@@ -28,7 +33,8 @@ export default function MetroPage() {
         onChange={(e) =>
           setEndStation(yerevanStations.find((s) => s.name === e.target.value))
         }
-        className="text-white"
+        optionClassName="text-black"
+        className="text-white bg-black"
       />
       {startStation && <p>Selected Start Station: {startStation.name}</p>}
       {endStation && <p>Selected End Station: {endStation.name}</p>}

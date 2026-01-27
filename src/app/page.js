@@ -11,8 +11,8 @@ export default function Home() {
         fontFamily: "sans-serif",
       }}
     >
-      <h1>Spotify Track Logger</h1>
-      <p>Log your 50 recent tracks to browser console</p>
+      <h1>Metro Spotify Generator</h1>
+      <p>Connect your Spotify to generate tracks based on your metro route</p>
       <a
         href="/api/auth/login"
         style={{
@@ -24,7 +24,7 @@ export default function Home() {
           fontWeight: "bold",
         }}
       >
-        🎵 Login & Log Tracks
+        🎵 Login with Spotify
       </a>
     </div>
   );
