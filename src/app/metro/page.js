@@ -11,8 +11,13 @@ export default function MetroPage() {
   const [endStation, setEndStation] = useState(null);
   const [chatInput, setChatInput] = useState("");
 
-  const { messages, append: sendMessage } = useChat({
+  const {
+    messages,
+    append: sendMessage,
+    isLoading,
+  } = useChat({
     api: "/api/chat",
+    maxSteps: 5,
   });
 
   useEffect(() => {
@@ -65,20 +70,10 @@ export default function MetroPage() {
           {messages.map((m) => (
             <div key={m.id} className="whitespace-pre-wrap">
               <strong>{m.role === "user" ? "User: " : "AI: "}</strong>
-              {m.parts ? (
-                m.parts.map((part, i) => {
-                  switch (part.type) {
-                    case "text":
-                      return <span key={`${m.id}-${i}`}>{part.text}</span>;
-                    default:
-                      return null;
-                  }
-                })
-              ) : (
-                <span>{m.content}</span>
-              )}
+              {m.content}
             </div>
           ))}
+          {isLoading && <div>AI is thinking...</div>}
         </div>
 
         <form
