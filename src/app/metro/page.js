@@ -81,7 +81,7 @@ export default function MetroPage() {
 Here are my 50 most recent songs from Spotify:
 ${trackList}
 
-Based on the trip duration between these two stations, please recommend which songs from this list I should listen to during my journey. Make sure that the same song isn't recommended twice, and search for how long does the destination take between the selected stations.`;
+Based on the trip duration between these two stations, please recommend which songs from this list I should listen to during my journey. Make sure that the same song isn't recommended twice, and search on the web for how long does the destination take between the selected stations to recommend based on the duration of the trip and song durations.`;
 
     sendMessage(prompt);
   };
