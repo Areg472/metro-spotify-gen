@@ -8,39 +8,48 @@ export default function MetroPage() {
   const [recentTracks, setRecentTracks] = useState([]);
   const [startStation, setStartStation] = useState(null);
   const [endStation, setEndStation] = useState(null);
-  const [chatInput, setChatInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const sendMessage = async (message) => {
-    const newUserMessage = {
-      id: Date.now().toString(),
-      role: "user",
-      content: message.content,
-    };
-    setMessages((prev) => [...prev, newUserMessage]);
+  const sendMessage = async (prompt) => {
     setIsLoading(true);
 
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
-        body: JSON.stringify({ prompt: message.content }),
+        body: JSON.stringify({ prompt }),
       });
 
       if (response.ok) {
         const data = await response.json();
         console.log("AI Response:", data);
+
+        let content = data.text || "No response from AI.";
+        if (content.trim().startsWith("[")) {
+          try {
+            const jsonMatch = content.match(/\[[\s\S]*\]/);
+            if (jsonMatch) {
+              const parsed = JSON.parse(jsonMatch[0]);
+              content = parsed
+                .map((s, i) => `${i + 1}. ${s.title} - ${s.artist}`)
+                .join("\n");
+            }
+          } catch (e) {
+            console.error("Failed to parse AI JSON response", e);
+          }
+        }
+
         const newAssistantMessage = {
-          id: (Date.now() + 1).toString(),
+          id: Date.now().toString(),
           role: "assistant",
-          content: data.text || "No response from AI.",
+          content: content,
         };
         setMessages((prev) => [...prev, newAssistantMessage]);
       } else {
         const errorData = await response.json().catch(() => ({}));
         console.error("API error:", errorData);
         const errorMessage = {
-          id: (Date.now() + 1).toString(),
+          id: Date.now().toString(),
           role: "assistant",
           content: `Error: ${errorData.details || response.statusText}`,
         };
@@ -51,6 +60,30 @@ export default function MetroPage() {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleRecommend = () => {
+    if (!startStation || !endStation) {
+      alert("Please select both start and end stations.");
+      return;
+    }
+
+    const trackList = recentTracks
+      .map((item) => {
+        const track = item.track;
+        const artists = track.artists.map((a) => a.name).join(", ");
+        const duration = Math.floor(track.duration_ms / 1000);
+        return `- ${track.name} by ${artists} (${duration} seconds)`;
+      })
+      .join("\n");
+
+    const prompt = `I am taking a metro trip in Yerevan from ${startStation.name} to ${endStation.name}. 
+Here are my 50 most recent songs from Spotify:
+${trackList}
+
+Based on the trip duration between these two stations, please recommend which songs from this list I should listen to during my journey.`;
+
+    sendMessage(prompt);
   };
 
   useEffect(() => {
@@ -98,6 +131,14 @@ export default function MetroPage() {
       {startStation && <p>Selected Start Station: {startStation.name}</p>}
       {endStation && <p>Selected End Station: {endStation.name}</p>}
 
+      <button
+        onClick={handleRecommend}
+        disabled={isLoading || !startStation || !endStation}
+        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-500"
+      >
+        {isLoading ? "Thinking..." : "Recommend Songs"}
+      </button>
+
       <div className="mt-8 flex flex-col space-y-4">
         <div className="flex flex-col space-y-2 border-t border-gray-700 pt-4">
           {messages.map((m) => (
@@ -108,28 +149,6 @@ export default function MetroPage() {
           ))}
           {isLoading && <div>AI is thinking...</div>}
         </div>
-
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            sendMessage({ role: "user", content: chatInput });
-            setChatInput("");
-          }}
-          className="flex flex-row space-x-2"
-        >
-          <input
-            className="flex-1 p-2 text-white bg-black border border-gray-700 rounded"
-            value={chatInput}
-            placeholder="Ask something..."
-            onChange={(e) => setChatInput(e.target.value)}
-          />
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-          >
-            Send
-          </button>
-        </form>
       </div>
     </div>
   );
