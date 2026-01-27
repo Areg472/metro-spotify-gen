@@ -32,9 +32,18 @@ export default function MetroPage() {
         const newAssistantMessage = {
           id: (Date.now() + 1).toString(),
           role: "assistant",
-          content: data.text,
+          content: data.text || "No response from AI.",
         };
         setMessages((prev) => [...prev, newAssistantMessage]);
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error("API error:", errorData);
+        const errorMessage = {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          content: `Error: ${errorData.details || response.statusText}`,
+        };
+        setMessages((prev) => [...prev, errorMessage]);
       }
     } catch (error) {
       console.error("Error sending message:", error);
