@@ -107,34 +107,38 @@ Based on the trip duration between these two stations, please recommend which so
   const yerevanStations = Object.values(stations.yerevan.stations);
 
   return (
-    <div className="flex flex-row space-x-4">
-      <p>Start Station</p>
-      <Select
-        options={yerevanStations}
-        onChange={(e) =>
-          setStartStation(
-            yerevanStations.find((s) => s.name === e.target.value),
-          )
-        }
-        optionClassName="text-black"
-        className="text-white bg-black"
-      />
-      <p>End Station</p>
-      <Select
-        options={yerevanStations}
-        onChange={(e) =>
-          setEndStation(yerevanStations.find((s) => s.name === e.target.value))
-        }
-        optionClassName="text-black"
-        className="text-white bg-black"
-      />
+    <div className="flex flex-col space-y-4">
+      <div className="flex flex-row space-x-4">
+        <p>Start Station</p>
+        <Select
+          options={yerevanStations}
+          onChange={(e) =>
+            setStartStation(
+              yerevanStations.find((s) => s.name === e.target.value),
+            )
+          }
+          optionClassName="text-black"
+          className="text-white bg-black"
+        />
+        <p>End Station</p>
+        <Select
+          options={yerevanStations}
+          onChange={(e) =>
+            setEndStation(
+              yerevanStations.find((s) => s.name === e.target.value),
+            )
+          }
+          optionClassName="text-black"
+          className="text-white bg-black"
+        />
+      </div>
       {startStation && <p>Selected Start Station: {startStation.name}</p>}
       {endStation && <p>Selected End Station: {endStation.name}</p>}
 
       <button
         onClick={handleRecommend}
         disabled={isLoading || !startStation || !endStation}
-        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-500"
+        className="px-4 py-2 bg-blue-600 cursor-pointer text-white rounded hover:bg-blue-700 disabled:bg-gray-500"
       >
         {isLoading ? "Thinking..." : "Recommend Songs"}
       </button>
