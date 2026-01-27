@@ -1,7 +1,13 @@
+export const metadata = {
+  title: "SpotiMetro",
+  description:
+    "This is my metro tracklist generator. Has to be one of my greatest web projects :D",
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-5 font-sans">
-      <h1>Metro Spotify song list generator</h1>
+      <h1 className="text-3xl">Metro Spotify song list generator</h1>
       <p>
         Connect your Spotify to generate a track list based on your metro route,
         and 50 recent tracks :P
@@ -12,6 +18,12 @@ export default function Home() {
       >
         Link ur spotify
       </a>
+      <p className="text-white">
+        Written by{" "}
+        <a href="https://aregus.me" target="_blank">
+          <u>Areg</u>
+        </a>
+      </p>
     </div>
   );
 }
