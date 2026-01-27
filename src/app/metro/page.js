@@ -9,8 +9,9 @@ export default function MetroPage() {
   const [recentTracks, setRecentTracks] = useState([]);
   const [startStation, setStartStation] = useState(null);
   const [endStation, setEndStation] = useState(null);
+  const [chatInput, setChatInput] = useState("");
 
-  const { messages, input, handleInputChange, handleSubmit } = useChat({
+  const { messages, append: sendMessage } = useChat({
     api: "/api/chat",
   });
 
@@ -64,17 +65,35 @@ export default function MetroPage() {
           {messages.map((m) => (
             <div key={m.id} className="whitespace-pre-wrap">
               <strong>{m.role === "user" ? "User: " : "AI: "}</strong>
-              {m.content}
+              {m.parts ? (
+                m.parts.map((part, i) => {
+                  switch (part.type) {
+                    case "text":
+                      return <span key={`${m.id}-${i}`}>{part.text}</span>;
+                    default:
+                      return null;
+                  }
+                })
+              ) : (
+                <span>{m.content}</span>
+              )}
             </div>
           ))}
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-row space-x-2">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendMessage({ role: "user", content: chatInput });
+            setChatInput("");
+          }}
+          className="flex flex-row space-x-2"
+        >
           <input
             className="flex-1 p-2 text-white bg-black border border-gray-700 rounded"
-            value={input}
+            value={chatInput}
             placeholder="Ask something..."
-            onChange={handleInputChange}
+            onChange={(e) => setChatInput(e.target.value)}
           />
           <button
             type="submit"
