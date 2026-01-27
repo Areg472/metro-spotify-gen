@@ -1,17 +1,17 @@
-import { streamText } from "ai";
+import { generateText } from "ai";
 import { gateway } from "@ai-sdk/gateway";
 
 export async function POST(req) {
-  const { messages } = await req.json();
+  const { prompt } = await req.json();
 
-  const result = streamText({
-    model: "openai/gpt-5.1",
-    messages,
-    maxSteps: 5,
+  const { text } = await generateText({
+    model: "openai/gpt-5.2", // Works with any model, not just Perplexity
+    prompt,
     tools: {
       perplexity_search: gateway.tools.perplexitySearch(),
     },
+    maxSteps: 5,
   });
 
-  return result.toDataStreamResponse();
+  return Response.json({ text });
 }

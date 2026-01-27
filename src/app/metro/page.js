@@ -3,22 +3,45 @@
 import { useState, useEffect } from "react";
 import { Select } from "@/components/Select";
 import stations from "@/app/metro/stations";
-import { useChat } from "@ai-sdk/react";
 
 export default function MetroPage() {
   const [recentTracks, setRecentTracks] = useState([]);
   const [startStation, setStartStation] = useState(null);
   const [endStation, setEndStation] = useState(null);
   const [chatInput, setChatInput] = useState("");
+  const [messages, setMessages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const {
-    messages,
-    append: sendMessage,
-    isLoading,
-  } = useChat({
-    api: "/api/chat",
-    maxSteps: 5,
-  });
+  const sendMessage = async (message) => {
+    const newUserMessage = {
+      id: Date.now().toString(),
+      role: "user",
+      content: message.content,
+    };
+    setMessages((prev) => [...prev, newUserMessage]);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        body: JSON.stringify({ prompt: message.content }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const newAssistantMessage = {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          content: data.text,
+        };
+        setMessages((prev) => [...prev, newAssistantMessage]);
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
     async function fetchTracks() {
