@@ -10,43 +10,26 @@ export async function GET() {
   }
 
   try {
-    const allTracks = [];
-    let nextUrl =
-      "https://api.spotify.com/v1/me/player/recently-played?limit=50";
-    let pageCount = 0;
-
-    while (allTracks.length < 200 && nextUrl) {
-      pageCount++;
-      console.log(`📥 Fetching page ${pageCount}...`);
-
-      const response = await fetch(nextUrl, {
+    const response = await fetch(
+      "https://api.spotify.com/v1/me/player/recently-played?limit=50",
+      {
         headers: { Authorization: `Bearer ${accessToken}` },
-      });
+      },
+    );
 
-      if (!response.ok) {
-        console.error(`❌ Spotify API error: ${response.status}`);
-        const errorData = await response.json();
-        console.error("Error details:", errorData);
-        break;
-      }
-
-      const data = await response.json();
-
-      console.log(`   Got ${data.items.length} tracks`);
-      console.log(`   Total so far: ${allTracks.length + data.items.length}`);
-      console.log(`   Next URL exists: ${data.next ? "YES" : "NO"}`);
-
-      allTracks.push(...data.items);
-      nextUrl = data.next;
-
-      if (!nextUrl) {
-        console.log("⚠️ No more pages available from Spotify");
-      }
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Spotify API error:", errorData);
+      return NextResponse.json(
+        { error: "Spotify API error" },
+        { status: response.status },
+      );
     }
 
-    console.log(`✅ Final count: ${allTracks.length} tracks`);
+    const data = await response.json();
+    console.log(`✅ Fetched ${data.items.length} tracks`);
 
-    return NextResponse.json(allTracks.slice(0, 200));
+    return NextResponse.json(data.items);
   } catch (error) {
     console.error("❌ Error:", error.message);
     return NextResponse.json({ error: error.message }, { status: 500 });

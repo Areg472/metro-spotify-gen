@@ -12,7 +12,7 @@ export default function Home() {
       }}
     >
       <h1>Spotify Track Logger</h1>
-      <p>Log your 200 recent tracks to browser console</p>
+      <p>Log your 50 recent tracks to browser console</p>
       <a
         href="/api/auth/login"
         style={{
