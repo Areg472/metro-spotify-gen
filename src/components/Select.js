@@ -1,8 +1,16 @@
-export function Select({ className, options, onChange, optionClassName }) {
+export function Select({
+  className,
+  options,
+  onChange,
+  optionClassName,
+  placeholder,
+}) {
   return (
     <>
       <select onChange={onChange} className={className}>
-        <option value="">Select a station</option>
+        <option value="" disabled>
+          {placeholder || "Select a station"}
+        </option>
         {options.map((option, index) => (
           <option key={index} value={option.name} className={optionClassName}>
             {option.name}

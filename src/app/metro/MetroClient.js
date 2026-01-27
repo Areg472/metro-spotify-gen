@@ -127,11 +127,12 @@ Based on the trip duration between these two stations, please recommend which so
   );
 
   return (
-    <div className="flex flex-col space-y-4">
-      <div className="flex flex-row space-x-4 items-center">
+    <div className="flex flex-col mt-4 space-y-4 items-center">
+      <div className="flex flex-col md:flex-row space-y-2 md:space-x-4 items-center">
         <p>City</p>
         <Select
           options={cities}
+          placeholder="Select a City"
           onChange={(e) => {
             const city = cities.find((c) => c.name === e.target.value);
             setSelectedCity(city || null);
@@ -144,10 +145,11 @@ Based on the trip duration between these two stations, please recommend which so
       </div>
 
       {selectedCity && (
-        <div className="flex flex-row space-x-4">
+        <div className="flex flex-col space-y-4 md:flex-row md:space-x-4">
           <p>Start Station</p>
           <Select
             options={startOptions}
+            placeholder="Select a start Station"
             onChange={(e) =>
               setStartStation(
                 currentStations.find((s) => s.name === e.target.value),
@@ -159,6 +161,7 @@ Based on the trip duration between these two stations, please recommend which so
           <p>End Station</p>
           <Select
             options={endOptions}
+            placeholder="Select an end Station"
             onChange={(e) =>
               setEndStation(
                 currentStations.find((s) => s.name === e.target.value),
@@ -185,7 +188,7 @@ Based on the trip duration between these two stations, please recommend which so
         {isLoading ? "Generating..." : "Recommend Songs"}
       </button>
 
-      <div className="mt-8 flex flex-col space-y-4">
+      <div className="mt-4 flex flex-col space-y-4">
         <div className="flex flex-col space-y-2 border-t border-gray-700 pt-4">
           {messages.map((m) => (
             <div key={m.id} className="whitespace-pre-wrap">
