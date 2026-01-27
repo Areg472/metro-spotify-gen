@@ -5,7 +5,7 @@ export async function POST(request) {
   const { prompt } = await request.json();
 
   const result = await generateText({
-    model: "openai/gpt4.1",
+    model: "openai/gpt-4.1",
     prompt,
     tools: {
       perplexity_search: gateway.tools.perplexitySearch(),
