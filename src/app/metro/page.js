@@ -29,6 +29,7 @@ export default function MetroPage() {
 
       if (response.ok) {
         const data = await response.json();
+        console.log("AI Response:", data);
         const newAssistantMessage = {
           id: (Date.now() + 1).toString(),
           role: "assistant",

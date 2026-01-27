@@ -14,9 +14,7 @@ export async function POST(req) {
       maxSteps: 5,
     });
 
-    console.log("AI Response:", JSON.stringify(result, null, 2));
-
-    return Response.json({ text: result.text });
+    return Response.json(result);
   } catch (error) {
     console.error("AI Chat Error:", error);
     return Response.json(
