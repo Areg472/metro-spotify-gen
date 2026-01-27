@@ -5,8 +5,8 @@ export async function POST(req) {
   const { prompt } = await req.json();
 
   try {
-    const { text } = await generateText({
-      model: "openai/gpt-5.1",
+    const result = await generateText({
+      model: gateway.model("gpt-4o"),
       prompt,
       tools: {
         perplexity_search: gateway.tools.perplexitySearch(),
@@ -14,7 +14,9 @@ export async function POST(req) {
       maxSteps: 5,
     });
 
-    return Response.json({ text });
+    console.log("AI Response:", JSON.stringify(result, null, 2));
+
+    return Response.json({ text: result.text });
   } catch (error) {
     console.error("AI Chat Error:", error);
     return Response.json(
