@@ -1,30 +1,16 @@
 export default function Home() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        gap: "20px",
-        fontFamily: "sans-serif",
-      }}
-    >
-      <h1>Metro Spotify Generator</h1>
-      <p>Connect your Spotify to generate tracks based on your metro route</p>
+    <div className="min-h-screen flex flex-col items-center justify-center gap-5 font-sans">
+      <h1>Metro Spotify song list generator</h1>
+      <p>
+        Connect your Spotify to generate a track list based on your metro route,
+        and 50 recent tracks :P
+      </p>
       <a
         href="/api/auth/login"
-        style={{
-          padding: "15px 30px",
-          backgroundColor: "#1DB954",
-          color: "white",
-          textDecoration: "none",
-          borderRadius: "25px",
-          fontWeight: "bold",
-        }}
+        className="px-7.5 py-3.75 bg-blue-700 text-white no-underline rounded-[25px] font-bold"
       >
-        🎵 Login with Spotify
+        Link ur spotify
       </a>
     </div>
   );

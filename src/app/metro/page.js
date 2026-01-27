@@ -6,6 +6,7 @@ import stations from "@/app/metro/stations";
 
 export default function MetroPage() {
   const [recentTracks, setRecentTracks] = useState([]);
+  const [selectedCity, setSelectedCity] = useState(null);
   const [startStation, setStartStation] = useState(null);
   const [endStation, setEndStation] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -70,6 +71,11 @@ export default function MetroPage() {
       return;
     }
 
+    if (startStation.name === endStation.name) {
+      alert("Start and end stations must be different.");
+      return;
+    }
+
     const trackList = recentTracks
       .map((item) => {
         const track = item.track;
@@ -81,7 +87,7 @@ export default function MetroPage() {
       })
       .join("\n");
 
-    const prompt = `I am taking a metro trip in Yerevan from ${startStation.name} to ${endStation.name}. 
+    const prompt = `I am taking a metro trip in ${selectedCity?.name || "Yerevan"} from ${startStation.name} to ${endStation.name}. 
 Here are my 50 most recent songs from Spotify:
 ${trackList}
 
@@ -108,40 +114,72 @@ Based on the trip duration between these two stations, please recommend which so
     fetchTracks();
   }, []);
 
-  const yerevanStations = Object.values(stations.yerevan.stations);
+  const cities = Object.values(stations);
+  const currentStations = selectedCity
+    ? Object.values(selectedCity.stations)
+    : [];
+
+  const startOptions = currentStations.filter(
+    (s) => !endStation || s.name !== endStation.name,
+  );
+  const endOptions = currentStations.filter(
+    (s) => !startStation || s.name !== startStation.name,
+  );
 
   return (
     <div className="flex flex-col space-y-4">
-      <div className="flex flex-row space-x-4">
-        <p>Start Station</p>
+      <div className="flex flex-row space-x-4 items-center">
+        <p>City</p>
         <Select
-          options={yerevanStations}
-          onChange={(e) =>
-            setStartStation(
-              yerevanStations.find((s) => s.name === e.target.value),
-            )
-          }
-          optionClassName="text-black"
-          className="text-white bg-black"
-        />
-        <p>End Station</p>
-        <Select
-          options={yerevanStations}
-          onChange={(e) =>
-            setEndStation(
-              yerevanStations.find((s) => s.name === e.target.value),
-            )
-          }
+          options={cities}
+          onChange={(e) => {
+            const city = cities.find((c) => c.name === e.target.value);
+            setSelectedCity(city || null);
+            setStartStation(null);
+            setEndStation(null);
+          }}
           optionClassName="text-black"
           className="text-white bg-black"
         />
       </div>
+
+      {selectedCity && (
+        <div className="flex flex-row space-x-4">
+          <p>Start Station</p>
+          <Select
+            options={startOptions}
+            onChange={(e) =>
+              setStartStation(
+                currentStations.find((s) => s.name === e.target.value),
+              )
+            }
+            optionClassName="text-black"
+            className="text-white bg-black"
+          />
+          <p>End Station</p>
+          <Select
+            options={endOptions}
+            onChange={(e) =>
+              setEndStation(
+                currentStations.find((s) => s.name === e.target.value),
+              )
+            }
+            optionClassName="text-black"
+            className="text-white bg-black"
+          />
+        </div>
+      )}
       {startStation && <p>Selected Start Station: {startStation.name}</p>}
       {endStation && <p>Selected End Station: {endStation.name}</p>}
 
       <button
         onClick={handleRecommend}
-        disabled={isLoading || !startStation || !endStation}
+        disabled={
+          isLoading ||
+          !startStation ||
+          !endStation ||
+          startStation.name === endStation.name
+        }
         className="h-16 w-32 bg-blue-600 cursor-pointer text-white rounded hover:bg-blue-700 disabled:bg-gray-500"
       >
         {isLoading ? "Generating..." : "Recommend Songs"}
