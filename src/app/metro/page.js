@@ -140,18 +140,17 @@ Based on the trip duration between these two stations, please recommend which so
         disabled={isLoading || !startStation || !endStation}
         className="h-16 w-32 bg-blue-600 cursor-pointer text-white rounded hover:bg-blue-700 disabled:bg-gray-500"
       >
-        {isLoading ? "Thinking..." : "Recommend Songs"}
+        {isLoading ? "Generating..." : "Recommend Songs"}
       </button>
 
       <div className="mt-8 flex flex-col space-y-4">
         <div className="flex flex-col space-y-2 border-t border-gray-700 pt-4">
           {messages.map((m) => (
             <div key={m.id} className="whitespace-pre-wrap">
-              <strong>{m.role === "user" ? "User: " : "AI: "}</strong>
               {m.content}
             </div>
           ))}
-          {isLoading && <div>AI is thinking...</div>}
+          {isLoading && <div>AI is generating..</div>}
         </div>
       </div>
     </div>
