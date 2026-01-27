@@ -73,8 +73,10 @@ export default function MetroPage() {
       .map((item) => {
         const track = item.track;
         const artists = track.artists.map((a) => a.name).join(", ");
-        const duration = Math.floor(track.duration_ms / 1000);
-        return `- ${track.name} by ${artists} (${duration} seconds)`;
+        const totalSeconds = Math.floor(track.duration_ms / 1000);
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        return `- ${track.name} by ${artists} (${minutes} minutes and ${seconds} seconds)`;
       })
       .join("\n");
 
