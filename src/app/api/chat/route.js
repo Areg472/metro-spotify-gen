@@ -6,8 +6,15 @@ export async function POST(request) {
 
   const result = await generateText({
     model: "openai/gpt-5.1",
-    system:
-      "You are a metro trip music assistant. You must answer in a JSON array containing a list of songs to listen to in order. Each object in the array should have 'title', and 'artist' fields.",
+    system: `You are a metro trip music assistant. 
+
+CRITICAL RULES:
+- First use web search to find the EXACT metro travel time between the stations.
+- The total duration of selected tracks MUST be ≤ trip duration. NEVER exceed it.
+- For short trips (under 3 minutes), recommend only 1 track.
+- For trips 3-6 minutes, recommend 1-2 tracks max.
+
+Output ONLY a JSON array: [{"title": "...", "artist": "..."}]`,
     prompt,
     tools: {
       web_search: openai.tools.webSearch({}),

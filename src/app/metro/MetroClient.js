@@ -87,13 +87,20 @@ export default function MetroClient() {
       })
       .join("\n");
 
-    const prompt = `I am taking a metro trip in ${selectedCity?.name || "Yerevan"} from ${startStation.name} to ${endStation.name}. 
-Here are my 50 most recent tracks from Spotify:
+    const prompt = `Metro trip: ${selectedCity?.name || "Yerevan"}, from "${startStation.name}" to "${endStation.name}".
+
+INSTRUCTIONS:
+1. First, search the web for the exact travel time between these two metro stations (riding time only, exclude waiting).
+2. Select tracks from my list below whose TOTAL duration is ≤ the trip duration.
+3. Prefer 2-3 shorter tracks over 1 long track when possible.
+4. Pick from anywhere in the list, not just the top.
+5. If trip is very short (under 3 min), a single track is fine.
+6. NEVER exceed the trip duration, even by a few seconds.
+
+My recent Spotify tracks:
 ${trackList}
 
-Based on the trip duration between these two stations, please recommend which tracks from this list I should listen to during my journey. YOU CAN EVEN RECOMMEND A SINGLE TRACK IF THE TRIP DURATION IS TOO SHORT FOR MULTIPLE, BUT PREFER SELECTING MULTIPLE SHORT TRACKS OVER A SINGLE. ALSO TRY TO RECOMMEND UNIQUE SONGS FROM THE LIST, THE LIST ISNT ORDERED REMEMBER THAT SO THAT IF THE FIRST SONG MEETS THE CRITERIA ITS NOT A MUST TO SELECT THAT INSTEAD OF 2 OR 3 FOR EXAMPLE.
- BE EXTREMELY ACCURATE WITH THE METRO TRIP DURATION AND THE TRACK CHOICES AND THEIR DURATIONS, EVEN IF THE TRACK LIST DURATION IS LONGER THAN THE METRO TRIP DURATION BY A FEW SECONDS YOU SHOULD NOT PICK THOSE TRACKS AND CHOOSE SOMETHING ELSE, IT CAN BE A SINGLE TRACK TOO.
- CONSIDER THAT THE PERSON HAS ALREADY SAT IN THE METRO AND IS GOING TO LISTEN TO MUSIC WHEN THE TRAIN IS MOVING AND NOT WHILE WAITING AT THE STATION UNLESS IT'S A LINE CHANGE. Make sure that the same track isn't recommended twice, and search on the web for how long does the destination take between the selected stations to recommend based on the duration of the trip and track durations.`;
+Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
 
     sendMessage(prompt);
   };
