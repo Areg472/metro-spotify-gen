@@ -81,7 +81,7 @@ export default function MetroPage() {
 Here are my 50 most recent songs from Spotify:
 ${trackList}
 
-Based on the trip duration between these two stations, please recommend which songs from this list I should listen to during my journey.`;
+Based on the trip duration between these two stations, please recommend which songs from this list I should listen to during my journey. Make sure that the same song isn't recommended twice, and search for how long does the destination take between the selected stations.`;
 
     sendMessage(prompt);
   };
@@ -138,7 +138,7 @@ Based on the trip duration between these two stations, please recommend which so
       <button
         onClick={handleRecommend}
         disabled={isLoading || !startStation || !endStation}
-        className="px-4 py-2 bg-blue-600 cursor-pointer text-white rounded hover:bg-blue-700 disabled:bg-gray-500"
+        className="h-16 w-32 bg-blue-600 cursor-pointer text-white rounded hover:bg-blue-700 disabled:bg-gray-500"
       >
         {isLoading ? "Thinking..." : "Recommend Songs"}
       </button>
