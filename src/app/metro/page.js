@@ -11,7 +11,7 @@ export default function MetroPage() {
   const yerevanStations = Object.values(stations.yerevan.stations);
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row space-x-4">
       <p>Start Station</p>
       <Select
         options={yerevanStations}
@@ -20,6 +20,7 @@ export default function MetroPage() {
             yerevanStations.find((s) => s.name === e.target.value),
           )
         }
+        className="text-black"
       />
       <p>End Station</p>
       <Select
@@ -27,6 +28,7 @@ export default function MetroPage() {
         onChange={(e) =>
           setEndStation(yerevanStations.find((s) => s.name === e.target.value))
         }
+        className="text-black"
       />
       {startStation && <p>Selected Start Station: {startStation.name}</p>}
       {endStation && <p>Selected End Station: {endStation.name}</p>}
