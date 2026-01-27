@@ -20,7 +20,7 @@ export default function MetroPage() {
             yerevanStations.find((s) => s.name === e.target.value),
           )
         }
-        className="text-black"
+        className="text-white"
       />
       <p>End Station</p>
       <Select
@@ -28,7 +28,7 @@ export default function MetroPage() {
         onChange={(e) =>
           setEndStation(yerevanStations.find((s) => s.name === e.target.value))
         }
-        className="text-black"
+        className="text-white"
       />
       {startStation && <p>Selected Start Station: {startStation.name}</p>}
       {endStation && <p>Selected End Station: {endStation.name}</p>}
