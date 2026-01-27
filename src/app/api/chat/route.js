@@ -1,16 +1,16 @@
 import { generateText } from "ai";
-import { gateway } from "@ai-sdk/gateway";
+import { openai } from "@ai-sdk/openai";
 
 export async function POST(request) {
   const { prompt } = await request.json();
 
   const result = await generateText({
-    model: "perplexity/sonar",
+    model: "openai/gpt-5.1",
     system:
       "You are a metro trip music assistant. You must answer in a JSON array containing a list of songs to listen to in order. Each object in the array should have 'title', and 'artist' fields.",
     prompt,
     tools: {
-      perplexity_search: gateway.tools.perplexitySearch(),
+      web_search: openai.tools.webSearch({}),
     },
   });
 
