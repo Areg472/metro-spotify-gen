@@ -53,19 +53,6 @@ export default function MetroPage() {
       />
       {startStation && <p>Selected Start Station: {startStation.name}</p>}
       {endStation && <p>Selected End Station: {endStation.name}</p>}
-      <div className="mt-8">
-        <h3>Recent Tracks ({recentTracks.length})</h3>
-        <ul className="list-disc pl-5">
-          {recentTracks.slice(0, 10).map((item, index) => (
-            <li key={index}>
-              {item.track.name} - {item.track.artists[0].name}
-            </li>
-          ))}
-          {recentTracks.length > 10 && (
-            <li>... and {recentTracks.length - 10} more</li>
-          )}
-        </ul>
-      </div>
     </div>
   );
 }
