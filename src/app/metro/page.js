@@ -3,11 +3,16 @@
 import { useState, useEffect } from "react";
 import { Select } from "@/components/Select";
 import stations from "@/app/metro/stations";
+import { useChat } from "@ai-sdk/react";
 
 export default function MetroPage() {
   const [recentTracks, setRecentTracks] = useState([]);
   const [startStation, setStartStation] = useState(null);
   const [endStation, setEndStation] = useState(null);
+
+  const { messages, input, handleInputChange, handleSubmit } = useChat({
+    api: "/api/chat",
+  });
 
   useEffect(() => {
     async function fetchTracks() {
@@ -53,6 +58,32 @@ export default function MetroPage() {
       />
       {startStation && <p>Selected Start Station: {startStation.name}</p>}
       {endStation && <p>Selected End Station: {endStation.name}</p>}
+
+      <div className="mt-8 flex flex-col space-y-4">
+        <div className="flex flex-col space-y-2 border-t border-gray-700 pt-4">
+          {messages.map((m) => (
+            <div key={m.id} className="whitespace-pre-wrap">
+              <strong>{m.role === "user" ? "User: " : "AI: "}</strong>
+              {m.content}
+            </div>
+          ))}
+        </div>
+
+        <form onSubmit={handleSubmit} className="flex flex-row space-x-2">
+          <input
+            className="flex-1 p-2 text-white bg-black border border-gray-700 rounded"
+            value={input}
+            placeholder="Ask something..."
+            onChange={handleInputChange}
+          />
+          <button
+            type="submit"
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Send
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
