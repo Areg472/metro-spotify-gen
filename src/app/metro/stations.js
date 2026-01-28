@@ -361,6 +361,361 @@ const stations = {
       },
     },
   },
+  minsk: {
+    name: "Minsk",
+    country: "Belarus",
+    defaultConnectorSize: 75,
+    stations: {
+      // Maskoŭskaja line (Blue)
+      malinauka: {
+        name: "Malinaŭka",
+        name_be: "Малінаўка",
+        connector: {
+          color: "blue",
+          right: true,
+          station: true,
+          x: 0,
+          y: 0,
+        },
+      },
+      piatroŭščyna: {
+        name: "Piatroŭščyna",
+        name_be: "Пятроўшчына",
+        connector: {
+          color: "blue",
+          horizontal: true,
+          station: true,
+          x: 75,
+          y: 0,
+        },
+      },
+      mihalova: {
+        name: "Michałova",
+        name_be: "Міхалова",
+        connector: {
+          color: "blue",
+          horizontal: true,
+          station: true,
+          x: 150,
+          y: 0,
+        },
+      },
+      hrušaŭka: {
+        name: "Hrušaŭka",
+        name_be: "Грушаўка",
+        connector: {
+          color: "blue",
+          horizontal: true,
+          station: true,
+          x: 225,
+          y: 0,
+        },
+      },
+      instytut_kultury: {
+        name: "Instytut Kultury",
+        name_be: "Інстытут Культуры",
+        connector: {
+          color: "blue",
+          horizontal: true,
+          station: true,
+          x: 300,
+          y: 0,
+        },
+      },
+      plosca_lenina: {
+        name: "Plošča Lenina",
+        name_be: "Плошча Леніна",
+        connector: {
+          color: "blue",
+          horizontal: true,
+          station: true,
+          bottom: true,
+          x: 375,
+          y: 0,
+        },
+      },
+      kastrycnickaja: {
+        name: "Kastryčnickaja",
+        name_be: "Кастрычніцкая",
+        connector: {
+          color: "blue",
+          horizontal: true,
+          station: true,
+          bottom: true,
+          x: 450,
+          y: 0,
+        },
+      },
+      plosca_pieramohi: {
+        name: "Plošča Pieramohi",
+        name_be: "Плошча Перамогі",
+        connector: {
+          color: "blue",
+          horizontal: true,
+          station: true,
+          x: 525,
+          y: 0,
+        },
+      },
+      akademija_navuk: {
+        name: "Akademija Navuk",
+        name_be: "Акадэмія Навук",
+        connector: {
+          color: "blue",
+          horizontal: true,
+          station: true,
+          x: 600,
+          y: 0,
+        },
+      },
+      park_caliuskincau: {
+        name: "Park Čaliuskincaŭ",
+        name_be: "Парк Чалюскінцаў",
+        connector: {
+          color: "blue",
+          horizontal: true,
+          station: true,
+          x: 675,
+          y: 0,
+        },
+      },
+      maskoŭskaja: {
+        name: "Maskoŭskaja",
+        name_be: "Маскоўская",
+        connector: {
+          color: "blue",
+          horizontal: true,
+          station: true,
+          x: 750,
+          y: 0,
+        },
+      },
+      uschod: {
+        name: "Uchod",
+        name_be: "Усход",
+        connector: {
+          color: "blue",
+          left: true,
+          station: true,
+          x: 825,
+          y: 0,
+        },
+      },
+
+      // Aŭtazavodskaja line (Red)
+      mahilioŭskaja: {
+        name: "Mahilioŭskaja",
+        name_be: "Магілёўская",
+        connector: {
+          color: "red",
+          right: true,
+          station: true,
+          x: 0,
+          y: 75,
+        },
+      },
+      aŭtazavodskaja: {
+        name: "Aŭtazavodskaja",
+        name_be: "Аўтазаводская",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          x: 75,
+          y: 75,
+        },
+      },
+      partyzanskaja: {
+        name: "Partyzanskaja",
+        name_be: "Партызанская",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          x: 150,
+          y: 75,
+        },
+      },
+      traktarny_zavod: {
+        name: "Traktarny Zavod",
+        name_be: "Трактарны Завод",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          x: 225,
+          y: 75,
+        },
+      },
+      praletarskaja: {
+        name: "Praletarskaja",
+        name_be: "Пралетарская",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          x: 300,
+          y: 75,
+        },
+      },
+      pieršamajskaja: {
+        name: "Pieršamajskaja",
+        name_be: "Першамайская",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          x: 375,
+          y: 75,
+        },
+      },
+      kupalaŭskaja: {
+        name: "Kupalaŭskaja",
+        name_be: "Купалаўская",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          top: true,
+          x: 450,
+          y: 75,
+        },
+      },
+      niamiga: {
+        name: "Niamiga",
+        name_be: "Няміга",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          x: 525,
+          y: 75,
+        },
+      },
+      frunzienskaja: {
+        name: "Frunzienskaja",
+        name_be: "Фрунзенская",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          bottom: true,
+          x: 600,
+          y: 75,
+        },
+      },
+      maladziožnaja: {
+        name: "Maladziožnaja",
+        name_be: "Маладзёжная",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          x: 675,
+          y: 75,
+        },
+      },
+      puškinskaja: {
+        name: "Puškinskaja",
+        name_be: "Пушкінская",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          x: 750,
+          y: 75,
+        },
+      },
+      spartyŭnaja: {
+        name: "Spartyŭnaja",
+        name_be: "Спартыўная",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          x: 825,
+          y: 75,
+        },
+      },
+      kunčaŭščyna: {
+        name: "Kunčaŭščyna",
+        name_be: "Кунцаўшчына",
+        connector: {
+          color: "red",
+          horizontal: true,
+          station: true,
+          x: 900,
+          y: 75,
+        },
+      },
+      kamiennaja_horka: {
+        name: "Kamiennaja Horka",
+        name_be: "Каменная Горка",
+        connector: {
+          color: "red",
+          left: true,
+          station: true,
+          x: 975,
+          y: 75,
+        },
+      },
+
+      /// Zelenalužskaja line (Green)
+      jubilejnaja_plosca: {
+        name: "Jubilejnaja Plošča",
+        name_be: "Юбілейная Плошча",
+        connector: {
+          color: "green",
+          left: true,
+          top: true,
+          station: true,
+          x: 600,
+          y: 150,
+          labelPlacement: "bottom-right",
+        },
+      },
+      plosca_franciška_bahuševiča: {
+        name: "Plošča Franciška Bahuševiča",
+        name_be: "Плошча Францішка Багушэвіча",
+        connector: {
+          color: "green",
+          horizontal: true,
+          station: true,
+          x: 525,
+          y: 150,
+          labelPlacement: "bottom-right",
+        },
+      },
+      vakzalnaja: {
+        name: "Vakzalnaja",
+        name_be: "Вакзальная",
+        connector: {
+          color: "green",
+          horizontal: true,
+          station: true,
+          x: 450,
+          y: 150,
+          labelPlacement: "bottom-right",
+        },
+      },
+      kavalskaja_slobada: {
+        name: "Kavaĺskaja Slobada",
+        name_be: "Кавальская Слабада",
+        connector: {
+          color: "green",
+          right: true,
+          station: true,
+          x: 375,
+          y: 150,
+          labelPlacement: "bottom-right",
+        },
+      },
+    },
+    extraConnectors: [
+      { color: "green", horizontal: true, x: 450, y: 150, diagonalNW: true },
+      { color: "green", x: 375, y: 75, top: true, diagonalSE: true },
+    ],
+  },
 };
 
 export default stations;
