@@ -203,7 +203,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
           </h2>
 
           <div
-            className="relative overflow-x-auto w-full pb-20"
+            className="relative overflow-x-auto w-full pb-20 mt-16"
             style={{ height: "400px" }}
           >
             <div
@@ -219,6 +219,8 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                   key={s.name}
                   size={selectedCity.defaultConnectorSize}
                   {...s.connector}
+                  label={s.name}
+                  labelBg={null}
                   onClick={() => handleStationClick(s)}
                   isSelected={startStation?.name === s.name}
                   isEndStation={endStation?.name === s.name}

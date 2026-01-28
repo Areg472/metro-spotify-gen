@@ -25,6 +25,14 @@ export function Connector({
   station = false,
   stationColor,
   stationInnerColor,
+  // Label props
+  label,
+  labelColor = "white",
+  labelBg = "transparent",
+  labelFontSize = 11,
+  labelOffset = 4,
+  labelPlacement, // optional: "right" | "left" | "top" | "bottom" | "top-right" | "top-left" | "bottom-right" | "bottom-left"
+  labelRotation = -45, // common for metro maps to avoid horizontal collisions
   onClick,
   isSelected = false,
   isEndStation = false,
@@ -41,6 +49,77 @@ export function Connector({
     sInnerColor !== "none" && sInnerColor !== sColor
       ? outerRadius - thickness / 2
       : 0;
+
+  // Determine best label placement to avoid overlapping the station icon
+  // Priority: explicit prop -> infer from connected directions -> default to right
+  let placement = labelPlacement;
+  if (!placement) {
+    // If it's a horizontal line segment, we want labels to be above it (top-left or top-right)
+    // to avoid overlapping with the line itself.
+    if (horizontal || right || left) {
+      placement = "top-right";
+    } else if (vertical || top || bottom) {
+      placement = "top-right";
+    } else {
+      placement = "top-right";
+    }
+  }
+
+  // Compute label position relative to the station center
+  const labelRadius = outerRadius + 2;
+  const offsetBase = labelRadius + labelOffset;
+
+  let translateX = 0;
+  let translateY = 0;
+  let originX = "0%";
+  let originY = "50%";
+
+  switch (placement) {
+    case "left":
+      translateX = -offsetBase;
+      originX = "100%";
+      break;
+    case "right":
+      translateX = offsetBase;
+      originX = "0%";
+      break;
+    case "top":
+      translateY = -offsetBase;
+      originX = "50%";
+      originY = "100%";
+      break;
+    case "bottom":
+      translateY = offsetBase;
+      originX = "50%";
+      originY = "0%";
+      break;
+    case "top-right":
+      translateX = outerRadius * 0.7;
+      translateY = -outerRadius * 0.7;
+      originX = "0%";
+      originY = "100%";
+      break;
+    case "top-left":
+      translateX = -outerRadius * 0.5;
+      translateY = -outerRadius * 0.5;
+      originX = "100%";
+      originY = "100%";
+      break;
+    case "bottom-right":
+      translateX = outerRadius * 0.5;
+      translateY = outerRadius * 0.5;
+      originX = "0%";
+      originY = "0%";
+      break;
+    case "bottom-left":
+      translateX = -outerRadius * 0.5;
+      translateY = outerRadius * 0.5;
+      originX = "100%";
+      originY = "0%";
+      break;
+    default:
+      translateX = offsetBase;
+  }
 
   for (let i = 0; i < axisCount; i++) {
     const offset = (i - (axisCount - 1) / 2) * offsetStep;
@@ -236,6 +315,39 @@ export function Connector({
           </>
         )}
       </svg>
+      {label && (
+        <div
+          style={{
+            position: "absolute",
+            left: center,
+            top: center,
+            transform: `translate(${translateX}px, ${translateY}px) rotate(${labelRotation}deg)`,
+            transformOrigin: `${originX} ${originY}`,
+            display: "inline-flex",
+            pointerEvents: "none",
+            whiteSpace: "nowrap",
+            zIndex: 10,
+          }}
+        >
+          <span
+            style={{
+              background: labelBg,
+              color: labelColor,
+              fontSize: labelFontSize,
+              fontWeight: 500,
+              lineHeight: 1,
+              padding: `2px 4px`,
+              borderRadius: 2,
+              textShadow:
+                labelBg === "transparent" || !labelBg
+                  ? "1px 1px 2px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.8), 1px -1px 2px rgba(0,0,0,0.8), -1px 1px 2px rgba(0,0,0,0.8)"
+                  : "none",
+            }}
+          >
+            {label}
+          </span>
+        </div>
+      )}
       {children}
     </div>
   );

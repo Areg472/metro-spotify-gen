@@ -195,6 +195,7 @@ const stations = {
           bottom: true,
           x: 350,
           y: 0,
+          labelPlacement: "top-right",
         },
       },
       marjanishvili: {
@@ -279,7 +280,7 @@ const stations = {
         name_ka: "ვარკეთილი",
         connector: {
           color: "red",
-          horizontal: true,
+          left: true,
           station: true,
           x: 750,
           y: 0,
@@ -295,6 +296,7 @@ const stations = {
           station: true,
           x: 350,
           y: 50,
+          labelPlacement: "bottom-right",
         },
       },
       technical_university: {
@@ -306,6 +308,7 @@ const stations = {
           station: true,
           x: 300,
           y: 50,
+          labelPlacement: "bottom-right",
         },
       },
       medical_university: {
@@ -317,6 +320,7 @@ const stations = {
           station: true,
           x: 250,
           y: 50,
+          labelPlacement: "bottom-right",
         },
       },
       delisi: {
@@ -328,6 +332,7 @@ const stations = {
           station: true,
           x: 200,
           y: 50,
+          labelPlacement: "bottom-right",
         },
       },
       vazha_pshavela: {
@@ -339,6 +344,7 @@ const stations = {
           station: true,
           x: 150,
           y: 50,
+          labelPlacement: "bottom-right",
         },
       },
       state_university: {
@@ -350,6 +356,7 @@ const stations = {
           station: true,
           x: 100,
           y: 50,
+          labelPlacement: "bottom-right",
         },
       },
     },

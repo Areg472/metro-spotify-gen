@@ -12,9 +12,9 @@ export default async function MetroPage() {
   const cookieStore = await cookies();
   const accessToken = cookieStore.get("spotify_token")?.value;
 
-  if (!accessToken) {
+  /*if (!accessToken) {
     redirect("/");
-  }
+  }*/
 
   return <MetroClient />;
 }
