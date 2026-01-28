@@ -197,7 +197,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
       </div>
 
       {selectedCity && (
-        <div className="flex flex-col items-center p-10 bg-[#1a1a1a] rounded-xl shadow-2xl mt-12 w-full max-w-5xl">
+        <div className="flex flex-col items-center p-10 bg-[#1a1a1a] rounded-xl shadow-2xl mt-4 w-full max-w-5xl">
           <h2 className="text-white text-2xl font-bold mb-8">
             {selectedCity.name} Metro Map
           </h2>
