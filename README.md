@@ -12,7 +12,7 @@ So I created this cool project called metro uhh spotify thing, which generates a
 
 To use this locally you have to download the project and stuff but I recommend just going to https://spotify-metro.aregus.me/
 
-IF YOU STILL WANT TO USE IT LOCALLY U NEED TO DOWNLOAD THIS WHOLE THING DO NPM INSTALL THEN PUT 3 ENVS
+IF YOU STILL WANT TO USE IT LOCALLY U NEED TO DOWNLOAD THIS WHOLE THING DO NPM INSTALL THEN PUT 4 ENVS
 
 ```
 SPOTIFY_CLIENT_ID=
