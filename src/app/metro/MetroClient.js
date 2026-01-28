@@ -203,7 +203,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
           </h2>
 
           <div
-            className="relative overflow-x-auto w-full pb-20 mt-16"
+            className="relative overflow-x-auto w-full pb-20"
             style={{ height: "400px" }}
           >
             <div
@@ -211,7 +211,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                 minWidth: "1000px",
                 height: "100%",
                 position: "relative",
-                margin: "0 auto",
+                margin: "64px auto",
               }}
             >
               {Object.values(selectedCity.stations).map((s) => (
