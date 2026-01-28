@@ -1,11 +1,13 @@
 import { yerevan } from "./yerevan";
 import { tbilisi } from "./tbilisi";
 import { minsk } from "./minsk";
+import { london } from "./london";
 
 export const stations = {
   yerevan,
   tbilisi,
   minsk,
+  london,
 };
 
 export default stations;
