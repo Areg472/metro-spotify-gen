@@ -4,10 +4,11 @@ export function Select({
   onChange,
   optionClassName,
   placeholder,
+  value,
 }) {
   return (
     <>
-      <select onChange={onChange} className={className}>
+      <select onChange={onChange} className={className} value={value}>
         <option value="" disabled>
           {placeholder || "Select a station"}
         </option>

@@ -1,13 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Select } from "@/components/Select";
-import stations from "@/app/metro/stations";
+import { stations } from "@/data/stations";
 import { Connector } from "@/metroui/Connector";
 
-export default function MetroClient() {
+export default function MetroClient({ initialCityId, initialCityData }) {
+  const router = useRouter();
   const [recentTracks, setRecentTracks] = useState([]);
-  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedCity, setSelectedCity] = useState(
+    initialCityData || (initialCityId ? stations[initialCityId] : null),
+  );
   const [startStation, setStartStation] = useState(null);
   const [endStation, setEndStation] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -158,11 +162,17 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
         <Select
           options={cities}
           placeholder="Select a City"
+          value={selectedCity?.name || ""}
           onChange={(e) => {
-            const city = cities.find((c) => c.name === e.target.value);
-            setSelectedCity(city || null);
-            setStartStation(null);
-            setEndStation(null);
+            const cityEntry = Object.entries(stations).find(
+              ([_, c]) => c.name === e.target.value,
+            );
+            if (cityEntry) {
+              const [cityId] = cityEntry;
+              router.push(`/metro/${cityId}`);
+            } else {
+              router.push("/metro");
+            }
           }}
           optionClassName="text-black"
           className="text-white bg-black"
