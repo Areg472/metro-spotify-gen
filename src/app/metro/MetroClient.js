@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Select } from "@/components/Select";
 import stations from "@/app/metro/stations";
+import { Connector } from "@/metroui/Connector";
 
 export default function MetroClient() {
   const [recentTracks, setRecentTracks] = useState([]);
@@ -123,6 +124,28 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
     fetchTracks();
   }, []);
 
+  const handleStationClick = (station) => {
+    if (startStation && endStation) {
+      return;
+    }
+
+    if (!startStation) {
+      setStartStation(station);
+      setEndStation(null);
+    } else if (startStation && !endStation) {
+      if (station.name !== startStation.name) {
+        setEndStation(station);
+      } else {
+        setStartStation(null);
+      }
+    }
+  };
+
+  const handleReset = () => {
+    setStartStation(null);
+    setEndStation(null);
+  };
+
   const cities = Object.values(stations);
   const currentStations = selectedCity
     ? Object.values(selectedCity.stations)
@@ -134,6 +157,8 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
   const endOptions = currentStations.filter(
     (s) => !startStation || s.name !== startStation.name,
   );
+
+  const isYerevan = selectedCity?.name === "Yerevan";
 
   return (
     <div className="flex flex-col mt-4 space-y-4 items-center">
@@ -153,7 +178,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
         />
       </div>
 
-      {selectedCity && (
+      {selectedCity && !isYerevan && (
         <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
           <p>Start Station</p>
           <Select
@@ -184,29 +209,90 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
       {startStation && <p>Selected Start Station: {startStation.name}</p>}
       {endStation && <p>Selected End Station: {endStation.name}</p>}
 
-      <button
-        onClick={handleRecommend}
-        disabled={
-          isLoading ||
-          !startStation ||
-          !endStation ||
-          startStation.name === endStation.name
-        }
-        className="h-16 w-32 bg-blue-600 cursor-pointer text-white rounded hover:bg-blue-700 disabled:bg-gray-500"
-      >
-        {isLoading ? "Generating..." : "Recommend Songs"}
-      </button>
+      <div className="flex space-x-4">
+        <button
+          onClick={handleRecommend}
+          disabled={
+            isLoading ||
+            !startStation ||
+            !endStation ||
+            startStation.name === endStation.name
+          }
+          className="h-16 w-32 bg-blue-600 cursor-pointer text-white rounded hover:bg-blue-700 disabled:bg-gray-500"
+        >
+          {isLoading ? "Generating..." : "Recommend Songs"}
+        </button>
 
-      <div className="mt-4 flex flex-col space-y-4">
-        <div className="flex flex-col space-y-2 border-t border-gray-700 pt-4">
-          {messages.map((m) => (
-            <div key={m.id} className="whitespace-pre-wrap">
-              {m.content}
-            </div>
-          ))}
-          {isLoading && <div>AI is generating..</div>}
-        </div>
+        {(startStation || endStation) && (
+          <button
+            onClick={handleReset}
+            className="h-16 w-32 bg-red-600 cursor-pointer text-white rounded hover:bg-red-700"
+          >
+            Reset Selection
+          </button>
+        )}
       </div>
+
+      {isYerevan && (
+        <div className="flex flex-col items-center p-10 bg-[#1a1a1a] rounded-xl shadow-2xl mt-12 w-full max-w-5xl">
+          <h2 className="text-white text-2xl font-bold mb-8">
+            Yerevan Metro Map
+          </h2>
+
+          <div
+            className="relative overflow-x-auto w-full pb-20"
+            style={{ height: "400px" }}
+          >
+            <div
+              style={{
+                minWidth: "1000px",
+                height: "100%",
+                position: "relative",
+                margin: "0 auto",
+              }}
+            >
+              {Object.values(stations.yerevan.stations).map((s) => (
+                <Connector
+                  key={s.name}
+                  {...s.connector}
+                  onClick={() => handleStationClick(s)}
+                  isSelected={startStation?.name === s.name}
+                  isEndStation={endStation?.name === s.name}
+                />
+              ))}
+              {stations.yerevan.extraConnectors.map((c, i) => (
+                <Connector key={`extra-${i}`} {...c} />
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 w-full border-t border-gray-700 pt-6">
+            <div className="flex flex-col space-y-2">
+              {messages.map((m) => (
+                <div key={m.id} className="whitespace-pre-wrap text-white">
+                  {m.content}
+                </div>
+              ))}
+              {isLoading && (
+                <div className="text-gray-400">AI is generating..</div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {!isYerevan && (
+        <div className="mt-4 flex flex-col space-y-4 w-full max-w-5xl">
+          <div className="flex flex-col space-y-2 border-t border-gray-700 pt-4">
+            {messages.map((m) => (
+              <div key={m.id} className="whitespace-pre-wrap">
+                {m.content}
+              </div>
+            ))}
+            {isLoading && <div>AI is generating..</div>}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
