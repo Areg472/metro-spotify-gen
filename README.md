@@ -8,7 +8,7 @@ So I created this cool project called metro uhh spotify thing, which generates a
 - Minsk
 - Yerevan(my hometown)
 - Tbilisi
-- London(coming soon)
+- London
 
 To use this locally you have to download the project and stuff but I recommend just going to https://spotify-metro.aregus.me/
 
