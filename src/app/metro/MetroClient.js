@@ -151,15 +151,6 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
     ? Object.values(selectedCity.stations)
     : [];
 
-  const startOptions = currentStations.filter(
-    (s) => !endStation || s.name !== endStation.name,
-  );
-  const endOptions = currentStations.filter(
-    (s) => !startStation || s.name !== startStation.name,
-  );
-
-  const isYerevan = selectedCity?.name === "Yerevan";
-
   return (
     <div className="flex flex-col mt-4 space-y-4 items-center">
       <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 items-center">
@@ -178,34 +169,6 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
         />
       </div>
 
-      {selectedCity && !isYerevan && (
-        <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
-          <p>Start Station</p>
-          <Select
-            options={startOptions}
-            placeholder="Select a start Station"
-            onChange={(e) =>
-              setStartStation(
-                currentStations.find((s) => s.name === e.target.value),
-              )
-            }
-            optionClassName="text-black"
-            className="text-white bg-black"
-          />
-          <p>End Station</p>
-          <Select
-            options={endOptions}
-            placeholder="Select an end Station"
-            onChange={(e) =>
-              setEndStation(
-                currentStations.find((s) => s.name === e.target.value),
-              )
-            }
-            optionClassName="text-black"
-            className="text-white bg-black"
-          />
-        </div>
-      )}
       {startStation && <p>Selected Start Station: {startStation.name}</p>}
       {endStation && <p>Selected End Station: {endStation.name}</p>}
 
@@ -233,10 +196,10 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
         )}
       </div>
 
-      {isYerevan && (
+      {selectedCity && (
         <div className="flex flex-col items-center p-10 bg-[#1a1a1a] rounded-xl shadow-2xl mt-12 w-full max-w-5xl">
           <h2 className="text-white text-2xl font-bold mb-8">
-            Yerevan Metro Map
+            {selectedCity.name} Metro Map
           </h2>
 
           <div
@@ -251,17 +214,22 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                 margin: "0 auto",
               }}
             >
-              {Object.values(stations.yerevan.stations).map((s) => (
+              {Object.values(selectedCity.stations).map((s) => (
                 <Connector
                   key={s.name}
+                  size={selectedCity.defaultConnectorSize}
                   {...s.connector}
                   onClick={() => handleStationClick(s)}
                   isSelected={startStation?.name === s.name}
                   isEndStation={endStation?.name === s.name}
                 />
               ))}
-              {stations.yerevan.extraConnectors.map((c, i) => (
-                <Connector key={`extra-${i}`} {...c} />
+              {selectedCity.extraConnectors?.map((c, i) => (
+                <Connector
+                  key={`extra-${i}`}
+                  size={selectedCity.defaultConnectorSize}
+                  {...c}
+                />
               ))}
             </div>
           </div>
@@ -277,19 +245,6 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                 <div className="text-gray-400">AI is generating..</div>
               )}
             </div>
-          </div>
-        </div>
-      )}
-
-      {!isYerevan && (
-        <div className="mt-4 flex flex-col space-y-4 w-full max-w-5xl">
-          <div className="flex flex-col space-y-2 border-t border-gray-700 pt-4">
-            {messages.map((m) => (
-              <div key={m.id} className="whitespace-pre-wrap">
-                {m.content}
-              </div>
-            ))}
-            {isLoading && <div>AI is generating..</div>}
           </div>
         </div>
       )}
