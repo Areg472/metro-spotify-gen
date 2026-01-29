@@ -101,8 +101,8 @@ export function Connector({
       originY = "100%";
       break;
     case "top-left":
-      translateX = -outerRadius * 0.5;
-      translateY = -outerRadius * 0.5;
+      translateX = -outerRadius * 0.7;
+      translateY = -outerRadius * 0.7;
       originX = "100%";
       originY = "100%";
       break;
