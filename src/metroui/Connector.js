@@ -36,6 +36,7 @@ export function Connector({
   onClick,
   isSelected = false,
   isEndStation = false,
+  zIndex,
   children,
 }) {
   const lines = [];
@@ -100,8 +101,8 @@ export function Connector({
       originY = "100%";
       break;
     case "top-left":
-      translateX = -outerRadius * 0.5;
-      translateY = -outerRadius * 0.5;
+      translateX = -outerRadius * 0.7;
+      translateY = -outerRadius * 0.7;
       originX = "100%";
       originY = "100%";
       break;
@@ -275,58 +276,72 @@ export function Connector({
   }
 
   return (
-    <div
-      onClick={onClick}
-      style={{
-        position: "absolute",
-        left: typeof x === "number" ? `${x}px` : x,
-        top: typeof y === "number" ? `${y}px` : y,
-        cursor: onClick ? "pointer" : "default",
-      }}
-    >
-      <svg
-        width={size}
-        height={size}
-        viewBox={`0 0 ${size} ${size}`}
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ overflow: "visible" }}
+    <>
+      <div
+        onClick={onClick}
+        style={{
+          position: "absolute",
+          left: typeof x === "number" ? `${x}px` : x,
+          top: typeof y === "number" ? `${y}px` : y,
+          cursor: onClick ? "pointer" : "default",
+          zIndex: zIndex !== undefined ? zIndex : station ? 10 : 1,
+        }}
       >
-        {lines}
-        {station && (
-          <>
-            <circle
-              cx={center}
-              cy={center}
-              r={outerRadius + (isSelected || isEndStation ? 4 : 0)}
-              fill={
-                isSelected ? "white" : isEndStation ? "#93c5fd" : "transparent"
-              }
-            />
-            <circle cx={center} cy={center} r={outerRadius} fill={sColor} />
-            {innerRadius > 0 && (
+        <svg
+          width={size}
+          height={size}
+          viewBox={`0 0 ${size} ${size}`}
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ overflow: "visible" }}
+        >
+          {lines}
+          {station && (
+            <>
               <circle
                 cx={center}
                 cy={center}
-                r={innerRadius}
-                fill={sInnerColor}
+                r={outerRadius + (isSelected || isEndStation ? 4 : 0)}
+                fill={
+                  isSelected
+                    ? "white"
+                    : isEndStation
+                      ? "#93c5fd"
+                      : "transparent"
+                }
               />
-            )}
-          </>
-        )}
-      </svg>
+              <circle cx={center} cy={center} r={outerRadius} fill={sColor} />
+              {innerRadius > 0 && (
+                <circle
+                  cx={center}
+                  cy={center}
+                  r={innerRadius}
+                  fill={sInnerColor}
+                />
+              )}
+            </>
+          )}
+        </svg>
+        {children}
+      </div>
       {label && (
         <div
           style={{
             position: "absolute",
-            left: center,
-            top: center,
+            left:
+              typeof x === "number"
+                ? `${x + center}px`
+                : `calc(${x} + ${center}px)`,
+            top:
+              typeof y === "number"
+                ? `${y + center}px`
+                : `calc(${y} + ${center}px)`,
             transform: `translate(${translateX}px, ${translateY}px) rotate(${labelRotation}deg)`,
             transformOrigin: `${originX} ${originY}`,
             display: "inline-flex",
             pointerEvents: "none",
             whiteSpace: "nowrap",
-            zIndex: 10,
+            zIndex: 100,
           }}
         >
           <span
@@ -348,7 +363,6 @@ export function Connector({
           </span>
         </div>
       )}
-      {children}
-    </div>
+    </>
   );
 }

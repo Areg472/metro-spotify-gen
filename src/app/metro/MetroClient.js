@@ -174,7 +174,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
               router.push("/metro");
             }
           }}
-          optionClassName="text-black"
+          optionClassName="text-white bg-black"
           className="text-white bg-black"
         />
       </div>
@@ -224,9 +224,9 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                 margin: "64px auto",
               }}
             >
-              {Object.values(selectedCity.stations).map((s) => (
+              {Object.entries(selectedCity.stations).map(([stationId, s]) => (
                 <Connector
-                  key={s.name}
+                  key={stationId}
                   size={selectedCity.defaultConnectorSize}
                   {...s.connector}
                   label={s.name}
