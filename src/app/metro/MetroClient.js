@@ -115,10 +115,10 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
     if (selectedContentStr) {
       try {
         const selectedContent = JSON.parse(selectedContentStr);
-        console.log(
+        /*console.log(
           "Loaded selected content from sessionStorage:",
           selectedContent,
-        );
+        );*/
         setRecentTracks(selectedContent.tracks || []);
       } catch (error) {
         console.error("Error parsing selected content:", error);
@@ -129,7 +129,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
           const response = await fetch("/api/tracks");
           if (response.ok) {
             const data = await response.json();
-            console.log("Fetched tracks:", data);
+            /* console.log("Fetched tracks:", data);*/
             setRecentTracks(data);
           } else {
             console.error("Failed to fetch tracks:", response.statusText);

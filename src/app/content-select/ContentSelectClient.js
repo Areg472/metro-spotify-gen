@@ -18,16 +18,16 @@ export default function ContentSelectClient() {
         const tracksResponse = await fetch("/api/tracks");
         if (tracksResponse.ok) {
           const tracksData = await tracksResponse.json();
-          console.log("Fetched recent tracks:", tracksData);
+          /* console.log("Fetched recent tracks:", tracksData);*/
           setRecentTracks(tracksData);
         } else {
-          console.error("Failed to fetch tracks:", tracksResponse.statusText);
+          /*console.error("Failed to fetch tracks:", tracksResponse.statusText);*/
         }
 
         const playlistsResponse = await fetch("/api/playlists");
         if (playlistsResponse.ok) {
           const playlistsData = await playlistsResponse.json();
-          console.log("Fetched playlists:", playlistsData);
+          /*    console.log("Fetched playlists:", playlistsData);*/
           setPlaylists(playlistsData);
         } else {
           console.error(
@@ -72,9 +72,9 @@ export default function ContentSelectClient() {
         if (response.ok) {
           const tracks = await response.json();
           allPlaylistTracks = [...allPlaylistTracks, ...tracks];
-          console.log(
+          /* console.log(
             `Fetched ${tracks.length} tracks from playlist: ${playlist.name}`,
-          );
+          );*/
         } else {
           console.error(
             `Failed to fetch tracks for playlist: ${playlist.name}`,
@@ -89,7 +89,7 @@ export default function ContentSelectClient() {
         playlists: selectedPlaylistsData,
       };
 
-      console.log("Selected data JSON:", JSON.stringify(dataToSend, null, 2));
+      /* console.log("Selected data JSON:", JSON.stringify(dataToSend, null, 2));*/
 
       sessionStorage.setItem("selectedContent", JSON.stringify(dataToSend));
 
