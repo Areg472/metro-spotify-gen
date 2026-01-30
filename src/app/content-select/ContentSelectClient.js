@@ -52,22 +52,52 @@ export default function ContentSelectClient() {
     );
   };
 
-  const handleNext = () => {
-    const selectedTracksData = selectAllTracks ? recentTracks : [];
-    const selectedPlaylistsData = playlists.filter((playlist) =>
-      selectedPlaylists.includes(playlist.id),
-    );
+  const handleNext = async () => {
+    setIsLoading(true);
 
-    const dataToSend = {
-      tracks: selectedTracksData,
-      playlists: selectedPlaylistsData,
-    };
+    try {
+      const selectedTracksData = selectAllTracks ? recentTracks : [];
+      const selectedPlaylistsData = playlists.filter((playlist) =>
+        selectedPlaylists.includes(playlist.id),
+      );
 
-    console.log("Selected data JSON:", JSON.stringify(dataToSend, null, 2));
+      let allPlaylistTracks = [];
+      for (const playlist of selectedPlaylistsData) {
+        const response = await fetch("/api/playlist-tracks", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ playlistId: playlist.id }),
+        });
 
-    sessionStorage.setItem("selectedContent", JSON.stringify(dataToSend));
+        if (response.ok) {
+          const tracks = await response.json();
+          allPlaylistTracks = [...allPlaylistTracks, ...tracks];
+          console.log(
+            `Fetched ${tracks.length} tracks from playlist: ${playlist.name}`,
+          );
+        } else {
+          console.error(
+            `Failed to fetch tracks for playlist: ${playlist.name}`,
+          );
+        }
+      }
 
-    router.push("/metro");
+      const combinedTracks = [...selectedTracksData, ...allPlaylistTracks];
+
+      const dataToSend = {
+        tracks: combinedTracks,
+        playlists: selectedPlaylistsData,
+      };
+
+      console.log("Selected data JSON:", JSON.stringify(dataToSend, null, 2));
+
+      sessionStorage.setItem("selectedContent", JSON.stringify(dataToSend));
+
+      router.push("/metro");
+    } catch (error) {
+      console.error("Error fetching playlist tracks:", error);
+      setIsLoading(false);
+    }
   };
 
   if (isLoading) {
