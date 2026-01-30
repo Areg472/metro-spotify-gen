@@ -152,7 +152,7 @@ export default function ContentSelectClient() {
 
       <button
         onClick={handleNext}
-        className="px-7.5 py-3.75 bg-blue-700 text-white rounded-[25px] font-bold hover:bg-blue-800 mt-4"
+        className="px-7.5 py-3.75 bg-blue-700 text-white rounded-[25px] font-bold cursor-pointer hover:bg-blue-800 mt-4"
       >
         Next
       </button>
