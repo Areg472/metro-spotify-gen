@@ -65,6 +65,8 @@ export default function ContentSelectClient() {
 
     console.log("Selected data JSON:", JSON.stringify(dataToSend, null, 2));
 
+    sessionStorage.setItem("selectedContent", JSON.stringify(dataToSend));
+
     router.push("/metro");
   };
 

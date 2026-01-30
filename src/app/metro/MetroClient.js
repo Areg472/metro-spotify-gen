@@ -112,21 +112,35 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
   };
 
   useEffect(() => {
-    async function fetchTracks() {
+    const selectedContentStr = sessionStorage.getItem("selectedContent");
+    if (selectedContentStr) {
       try {
-        const response = await fetch("/api/tracks");
-        if (response.ok) {
-          const data = await response.json();
-          console.log("Fetched tracks:", data);
-          setRecentTracks(data);
-        } else {
-          console.error("Failed to fetch tracks:", response.statusText);
-        }
+        const selectedContent = JSON.parse(selectedContentStr);
+        console.log(
+          "Loaded selected content from sessionStorage:",
+          selectedContent,
+        );
+        setRecentTracks(selectedContent.tracks || []);
       } catch (error) {
-        console.error("Error fetching tracks:", error);
+        console.error("Error parsing selected content:", error);
       }
+    } else {
+      async function fetchTracks() {
+        try {
+          const response = await fetch("/api/tracks");
+          if (response.ok) {
+            const data = await response.json();
+            console.log("Fetched tracks:", data);
+            setRecentTracks(data);
+          } else {
+            console.error("Failed to fetch tracks:", response.statusText);
+          }
+        } catch (error) {
+          console.error("Error fetching tracks:", error);
+        }
+      }
+      fetchTracks();
     }
-    fetchTracks();
   }, []);
 
   const handleStationClick = (station) => {
