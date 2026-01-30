@@ -7,7 +7,7 @@ export default function ContentSelectClient() {
   const router = useRouter();
   const [recentTracks, setRecentTracks] = useState([]);
   const [playlists, setPlaylists] = useState([]);
-  const [selectedTracks, setSelectedTracks] = useState([]);
+  const [selectAllTracks, setSelectAllTracks] = useState(false);
   const [selectedPlaylists, setSelectedPlaylists] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -44,14 +44,6 @@ export default function ContentSelectClient() {
     fetchData();
   }, []);
 
-  const handleTrackToggle = (trackId) => {
-    setSelectedTracks((prev) =>
-      prev.includes(trackId)
-        ? prev.filter((id) => id !== trackId)
-        : [...prev, trackId],
-    );
-  };
-
   const handlePlaylistToggle = (playlistId) => {
     setSelectedPlaylists((prev) =>
       prev.includes(playlistId)
@@ -61,9 +53,7 @@ export default function ContentSelectClient() {
   };
 
   const handleNext = () => {
-    const selectedTracksData = recentTracks.filter((track) =>
-      selectedTracks.includes(track.track.id),
-    );
+    const selectedTracksData = selectAllTracks ? recentTracks : [];
     const selectedPlaylistsData = playlists.filter((playlist) =>
       selectedPlaylists.includes(playlist.id),
     );
@@ -94,27 +84,15 @@ export default function ContentSelectClient() {
       <div className="w-full max-w-4xl space-y-8">
         <div className="bg-[#1a1a1a] p-6 rounded-xl">
           <h2 className="text-2xl mb-4">Recent 50 Tracks</h2>
-          <div className="space-y-2 max-h-96 overflow-y-auto">
-            {recentTracks.map((item) => {
-              const track = item.track;
-              return (
-                <label
-                  key={track.id}
-                  className="flex items-center gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer"
-                >
-                  <input
-                    type="checkbox"
-                    checked={selectedTracks.includes(track.id)}
-                    onChange={() => handleTrackToggle(track.id)}
-                    className="w-4 h-4 cursor-pointer"
-                  />
-                  <span>
-                    {track.name} - {track.artists.map((a) => a.name).join(", ")}
-                  </span>
-                </label>
-              );
-            })}
-          </div>
+          <label className="flex items-center gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer">
+            <input
+              type="checkbox"
+              checked={selectAllTracks}
+              onChange={(e) => setSelectAllTracks(e.target.checked)}
+              className="w-4 h-4 cursor-pointer"
+            />
+            <span>Select all 50 recent tracks</span>
+          </label>
         </div>
 
         <div className="bg-[#1a1a1a] p-6 rounded-xl">
