@@ -5,8 +5,8 @@ export const istanbul = {
   stations: {
     // M1a (Yenikapı - Atatürk Havalimanı (Airport))
     yenikapi_m1: {
-      name: "Yenikapı",
-      name_en: "Yenikapi",
+      name: "Yenikapi",
+      name_tr: "Yenikapı",
       connector: {
         color: "red",
         right: true,
@@ -18,7 +18,7 @@ export const istanbul = {
     },
     aksaray_m1: {
       name: "Aksaray",
-      name_en: "Aksaray",
+      name_tr: "Aksaray",
       connector: {
         color: "red",
         horizontal: true,
@@ -29,7 +29,7 @@ export const istanbul = {
     },
     emniyetFatih_m1: {
       name: "Emniyet-Fatih",
-      name_en: "Emniyet-Fatih",
+      name_tr: "Emniyet-Fatih",
       connector: {
         color: "red",
         horizontal: true,
@@ -39,8 +39,8 @@ export const istanbul = {
       },
     },
     topkapiUlubatli_m1: {
-      name: "Topkapı-Ulubatlı",
-      name_en: "Topkapi-Ulubatli",
+      name: "Topkapi-Ulubatli",
+      name_tr: "Topkapı-Ulubatlı",
       connector: {
         color: "red",
         horizontal: true,
@@ -50,8 +50,8 @@ export const istanbul = {
       },
     },
     bayrampasaMaltepe_m1: {
-      name: "Bayrampaşa-Maltepe",
-      name_en: "Bayrampasa-Maltepe",
+      name: "Bayrampasa-Maltepe",
+      name_tr: "Bayrampaşa-Maltepe",
       connector: {
         color: "red",
         horizontal: true,
@@ -61,8 +61,8 @@ export const istanbul = {
       },
     },
     sagmalcilar_m1: {
-      name: "Sağmalcılar",
-      name_en: "Sagmalcilar",
+      name: "Sagmalcilar",
+      name_tr: "Sağmalcılar",
       connector: {
         color: "red",
         horizontal: true,
@@ -73,7 +73,7 @@ export const istanbul = {
     },
     kocatepe_m1: {
       name: "Kocatepe",
-      name_en: "Kocatepe",
+      name_tr: "Kocatepe",
       connector: {
         color: "red",
         horizontal: true,
@@ -85,7 +85,7 @@ export const istanbul = {
     // DIVIDER
     otogar_m1: {
       name: "Otogar",
-      name_en: "Otogar",
+      name_tr: "Otogar",
       connector: {
         color: "red",
         horizontal: true,
@@ -97,7 +97,7 @@ export const istanbul = {
     },
     terazidere: {
       name: "Terazidere",
-      name_en: "Terazidere",
+      name_tr: "Terazidere",
       connector: {
         color: "red",
         horizontal: true,
@@ -107,8 +107,8 @@ export const istanbul = {
       },
     },
     davutpasaYtu: {
-      name: "Davutpaşa-YTÜ",
-      name_en: "Davutpasa-YTU",
+      name: "Davutpasa-YTU",
+      name_tr: "Davutpaşa-YTÜ",
       connector: {
         color: "red",
         horizontal: true,
@@ -119,7 +119,7 @@ export const istanbul = {
     },
     merter: {
       name: "Merter",
-      name_en: "Merter",
+      name_tr: "Merter",
       connector: {
         color: "red",
         horizontal: true,
@@ -130,7 +130,7 @@ export const istanbul = {
     },
     zeytinburnu: {
       name: "Zeytinburnu",
-      name_en: "Zeytinburnu",
+      name_tr: "Zeytinburnu",
       connector: {
         color: "red",
         horizontal: true,
@@ -140,8 +140,8 @@ export const istanbul = {
       },
     },
     bakirkoyIncirli: {
-      name: "Bakırköy-İncirli",
-      name_en: "Bakirkoy-Incirli",
+      name: "Bakirkoy-Incirli",
+      name_tr: "Bakırköy-İncirli",
       connector: {
         color: "red",
         horizontal: true,
@@ -151,8 +151,8 @@ export const istanbul = {
       },
     },
     bahcelievler: {
-      name: "Bahçelievler",
-      name_en: "Bahcelievler",
+      name: "Bahcelievler",
+      name_tr: "Bahçelievler",
       connector: {
         color: "red",
         horizontal: true,
@@ -162,8 +162,8 @@ export const istanbul = {
       },
     },
     atakoySirinevler: {
-      name: "Ataköy-Şirinevler",
-      name_en: "Atakoy-Sirinevler",
+      name: "Atakoy-Sirinevler",
+      name_tr: "Ataköy-Şirinevler",
       connector: {
         color: "red",
         horizontal: true,
@@ -174,7 +174,7 @@ export const istanbul = {
     },
     yenibosna: {
       name: "Yenibosna",
-      name_en: "Yenibosna",
+      name_tr: "Yenibosna",
       connector: {
         color: "red",
         horizontal: true,
@@ -184,8 +184,8 @@ export const istanbul = {
       },
     },
     dtmIstanbulFuarMerkezi: {
-      name: "DTM-İstanbul Fuar Merkezi",
-      name_en: "DTM-Istanbul Fuar Merkezi",
+      name: "DTM-Istanbul Fuar Merkezi",
+      name_tr: "DTM-İstanbul Fuar Merkezi",
       connector: {
         color: "red",
         horizontal: true,
@@ -195,8 +195,8 @@ export const istanbul = {
       },
     },
     ataturkHavalimani: {
-      name: "Atatürk Havalimanı (Airport)",
-      name_en: "Ataturk Havalimani (Airport)",
+      name: "Ataturk Havalimani (Airport)",
+      name_tr: "Atatürk Havalimanı (Airport)",
       connector: {
         color: "red",
         left: true,
@@ -209,7 +209,7 @@ export const istanbul = {
     // M1b (Yenikapı - Kirazlı-Bağcılar) - only unique stations
     esenler: {
       name: "Esenler",
-      name_en: "Esenler",
+      name_tr: "Esenler",
       connector: {
         color: "red",
         horizontal: true,
@@ -221,7 +221,7 @@ export const istanbul = {
     },
     menderes: {
       name: "Menderes",
-      name_en: "Menderes",
+      name_tr: "Menderes",
       connector: {
         color: "red",
         horizontal: true,
@@ -232,8 +232,8 @@ export const istanbul = {
       },
     },
     ucyuzlu: {
-      name: "Üçyüzlü",
-      name_en: "Ucyuzlu",
+      name: "Ucyuzlu",
+      name_tr: "Üçyüzlü",
       connector: {
         color: "red",
         horizontal: true,
@@ -244,8 +244,8 @@ export const istanbul = {
       },
     },
     bagcilarMeydan: {
-      name: "Bağcılar-Meydan",
-      name_en: "Bagcilar-Meydan",
+      name: "Bagcilar-Meydan",
+      name_tr: "Bağcılar-Meydan",
       connector: {
         color: "red",
         horizontal: true,
@@ -256,8 +256,8 @@ export const istanbul = {
       },
     },
     kirazliBagcilar_m1: {
-      name: "Kirazlı-Bağcılar",
-      name_en: "Kirazli-Bagcilar",
+      name: "Kirazli-Bagcilar",
+      name_tr: "Kirazlı-Bağcılar",
       connector: {
         color: "red",
         left: true,
@@ -270,8 +270,8 @@ export const istanbul = {
 
     // M2 (Yenikapı - Hacıosman)
     yenikapi_m2: {
-      name: "Yenikapı",
-      name_en: "Yenikapi",
+      name: "Yenikapi",
+      name_tr: "Yenikapı",
       connector: {
         color: "green",
         top: true,
@@ -283,7 +283,7 @@ export const istanbul = {
     },
     vezneciler: {
       name: "Vezneciler",
-      name_en: "Vezneciler",
+      name_tr: "Vezneciler",
       connector: {
         color: "green",
         horizontal: true,
@@ -293,8 +293,8 @@ export const istanbul = {
       },
     },
     halic: {
-      name: "Haliç",
-      name_en: "Halic",
+      name: "Halic",
+      name_tr: "Haliç",
       connector: {
         color: "green",
         horizontal: true,
@@ -304,8 +304,8 @@ export const istanbul = {
       },
     },
     sishane: {
-      name: "Şişhane",
-      name_en: "Sishane",
+      name: "Sishane",
+      name_tr: "Şişhane",
       connector: {
         color: "green",
         horizontal: true,
@@ -316,7 +316,7 @@ export const istanbul = {
     },
     taksim: {
       name: "Taksim",
-      name_en: "Taksim",
+      name_tr: "Taksim",
       connector: {
         color: "green",
         horizontal: true,
@@ -327,7 +327,7 @@ export const istanbul = {
     },
     osmanbey: {
       name: "Osmanbey",
-      name_en: "Osmanbey",
+      name_tr: "Osmanbey",
       connector: {
         color: "green",
         horizontal: true,
@@ -337,8 +337,8 @@ export const istanbul = {
       },
     },
     sisliMecidiyekoy: {
-      name: "Şişli-Mecidiyeköy",
-      name_en: "Sisli-Mecidiyekoy",
+      name: "Sisli-Mecidiyekoy",
+      name_tr: "Şişli-Mecidiyeköy",
       connector: {
         color: "green",
         horizontal: true,
@@ -349,7 +349,7 @@ export const istanbul = {
     },
     gayrettepe: {
       name: "Gayrettepe",
-      name_en: "Gayrettepe",
+      name_tr: "Gayrettepe",
       connector: {
         color: "green",
         horizontal: true,
@@ -360,7 +360,7 @@ export const istanbul = {
     },
     levent_m2: {
       name: "Levent",
-      name_en: "Levent",
+      name_tr: "Levent",
       connector: {
         color: "green",
         horizontal: true,
@@ -371,7 +371,7 @@ export const istanbul = {
     },
     levent4: {
       name: "4. Levent",
-      name_en: "4. Levent",
+      name_tr: "4. Levent",
       connector: {
         color: "green",
         horizontal: true,
@@ -383,7 +383,7 @@ export const istanbul = {
     // DIVIDER
     sanayiMahallesi_m2: {
       name: "Sanayi Mahallesi",
-      name_en: "Sanayi Mahallesi",
+      name_tr: "Sanayi Mahallesi",
       connector: {
         color: "green",
         horizontal: true,
@@ -394,8 +394,8 @@ export const istanbul = {
       },
     },
     ituAyazaga: {
-      name: "İTÜ-Ayazağa",
-      name_en: "ITU-Ayazaga",
+      name: "ITU-Ayazaga",
+      name_tr: "İTÜ-Ayazağa",
       connector: {
         color: "green",
         horizontal: true,
@@ -405,8 +405,8 @@ export const istanbul = {
       },
     },
     ataturkOtoSanayi: {
-      name: "Atatürk Oto Sanayi",
-      name_en: "Ataturk Oto Sanayi",
+      name: "Ataturk Oto Sanayi",
+      name_tr: "Atatürk Oto Sanayi",
       connector: {
         color: "green",
         horizontal: true,
@@ -416,8 +416,8 @@ export const istanbul = {
       },
     },
     darussafaka: {
-      name: "Darüşşafaka",
-      name_en: "Darussafaka",
+      name: "Darussafaka",
+      name_tr: "Darüşşafaka",
       connector: {
         color: "green",
         horizontal: true,
@@ -427,8 +427,8 @@ export const istanbul = {
       },
     },
     haciosman: {
-      name: "Hacıosman",
-      name_en: "Haciosman",
+      name: "Haciosman",
+      name_tr: "Hacıosman",
       connector: {
         color: "green",
         left: true,
@@ -441,7 +441,7 @@ export const istanbul = {
     // M2 (Sanayi Mahallesi - Seyrantepe) - branch
     seyrantepe: {
       name: "Seyrantepe",
-      name_en: "Seyrantepe",
+      name_tr: "Seyrantepe",
       connector: {
         color: "green",
         left: true,
@@ -453,8 +453,8 @@ export const istanbul = {
 
     // M3 (Kirazlı-Bağcılar - Olimpiyat)
     kirazliBagcilar_m3: {
-      name: "Kirazlı-Bağcılar",
-      name_en: "Kirazli-Bagcilar",
+      name: "Kirazli-Bagcilar",
+      name_tr: "Kirazlı-Bağcılar",
       connector: {
         color: "lightBlue",
         right: true,
@@ -466,7 +466,7 @@ export const istanbul = {
     },
     yenimahalle_m3: {
       name: "Yenimahalle",
-      name_en: "Yenimahalle",
+      name_tr: "Yenimahalle",
       connector: {
         color: "lightBlue",
         horizontal: true,
@@ -478,7 +478,7 @@ export const istanbul = {
     },
     mahmutbey_m3: {
       name: "Mahmutbey",
-      name_en: "Mahmutbey",
+      name_tr: "Mahmutbey",
       connector: {
         color: "lightBlue",
         horizontal: true,
@@ -489,8 +489,8 @@ export const istanbul = {
       },
     },
     istoc_m3: {
-      name: "İSTOÇ",
-      name_en: "ISTOC",
+      name: "ISTOC",
+      name_tr: "İSTOÇ",
       connector: {
         color: "lightBlue",
         horizontal: true,
@@ -502,8 +502,8 @@ export const istanbul = {
     },
     // DIVIDER
     ikitelliSanayi_m3: {
-      name: "İkitelli Sanayi",
-      name_en: "Ikitelli Sanayi",
+      name: "Ikitelli Sanayi",
+      name_tr: "İkitelli Sanayi",
       connector: {
         color: "lightBlue",
         horizontal: true,
@@ -515,8 +515,8 @@ export const istanbul = {
       },
     },
     ziyaGokalpMahallesi: {
-      name: "Ziya Gökalp Mahallesi",
-      name_en: "Ziya Gokalp Mahallesi",
+      name: "Ziya Gokalp Mahallesi",
+      name_tr: "Ziya Gökalp Mahallesi",
       connector: {
         color: "lightBlue",
         horizontal: true,
@@ -528,7 +528,7 @@ export const istanbul = {
     },
     olimpiyat: {
       name: "Olimpiyat",
-      name_en: "Olimpiyat",
+      name_tr: "Olimpiyat",
       connector: {
         color: "lightBlue",
         left: true,
@@ -541,8 +541,8 @@ export const istanbul = {
 
     // M3 (Kirazlı-Bağcılar - MetroKent) - only unique stations beyond İkitelli Sanayi
     turgutOzal: {
-      name: "Turgut Özal",
-      name_en: "Turgut Ozal",
+      name: "Turgut Ozal",
+      name_tr: "Turgut Özal",
       connector: {
         color: "lightBlue",
         horizontal: true,
@@ -553,7 +553,7 @@ export const istanbul = {
     },
     siteler: {
       name: "Siteler",
-      name_en: "Siteler",
+      name_tr: "Siteler",
       connector: {
         color: "lightBlue",
         horizontal: true,
@@ -563,8 +563,8 @@ export const istanbul = {
       },
     },
     basakKonutlari: {
-      name: "Başak Konutları",
-      name_en: "Basak Konutlari",
+      name: "Basak Konutlari",
+      name_tr: "Başak Konutları",
       connector: {
         color: "lightBlue",
         horizontal: true,
@@ -575,7 +575,7 @@ export const istanbul = {
     },
     metrokent: {
       name: "MetroKent",
-      name_en: "MetroKent",
+      name_tr: "MetroKent",
       connector: {
         color: "lightBlue",
         left: true,
@@ -587,8 +587,8 @@ export const istanbul = {
 
     // M4 (Kadıköy - Tavşantepe)
     kadikoy: {
-      name: "Kadıköy",
-      name_en: "Kadikoy",
+      name: "Kadikoy",
+      name_tr: "Kadıköy",
       connector: {
         color: "#BD313B",
         right: true,
@@ -598,8 +598,8 @@ export const istanbul = {
       },
     },
     ayrilikCesmesi: {
-      name: "Ayrılık Çeşmesi",
-      name_en: "Ayrilik Cesmesi",
+      name: "Ayrilik Cesmesi",
+      name_tr: "Ayrılık Çeşmesi",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -609,8 +609,8 @@ export const istanbul = {
       },
     },
     acibadem: {
-      name: "Acıbadem",
-      name_en: "Acibadem",
+      name: "Acibadem",
+      name_tr: "Acıbadem",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -620,8 +620,8 @@ export const istanbul = {
       },
     },
     unalan: {
-      name: "Ünalan",
-      name_en: "Unalan",
+      name: "Unalan",
+      name_tr: "Ünalan",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -631,8 +631,8 @@ export const istanbul = {
       },
     },
     goztepe: {
-      name: "Göztepe",
-      name_en: "Goztepe",
+      name: "Goztepe",
+      name_tr: "Göztepe",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -643,7 +643,7 @@ export const istanbul = {
     },
     yenisahra: {
       name: "Yenisahra",
-      name_en: "Yenisahra",
+      name_tr: "Yenisahra",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -653,8 +653,8 @@ export const istanbul = {
       },
     },
     kozyatagi: {
-      name: "Kozyatağı",
-      name_en: "Kozyatagi",
+      name: "Kozyatagi",
+      name_tr: "Kozyatağı",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -664,8 +664,8 @@ export const istanbul = {
       },
     },
     bostanci: {
-      name: "Bostancı",
-      name_en: "Bostanci",
+      name: "Bostanci",
+      name_tr: "Bostancı",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -675,8 +675,8 @@ export const istanbul = {
       },
     },
     kucukyali: {
-      name: "Küçükyalı",
-      name_en: "Kucukyali",
+      name: "Kucukyali",
+      name_tr: "Küçükyalı",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -687,7 +687,7 @@ export const istanbul = {
     },
     maltepe: {
       name: "Maltepe",
-      name_en: "Maltepe",
+      name_tr: "Maltepe",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -698,7 +698,7 @@ export const istanbul = {
     },
     huzurevi: {
       name: "Huzurevi",
-      name_en: "Huzurevi",
+      name_tr: "Huzurevi",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -708,8 +708,8 @@ export const istanbul = {
       },
     },
     gulsuyu: {
-      name: "Gülsuyu",
-      name_en: "Gulsuyu",
+      name: "Gulsuyu",
+      name_tr: "Gülsuyu",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -720,7 +720,7 @@ export const istanbul = {
     },
     esenkent: {
       name: "Esenkent",
-      name_en: "Esenkent",
+      name_tr: "Esenkent",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -731,7 +731,7 @@ export const istanbul = {
     },
     hastaneAdliye: {
       name: "Hastane-Adliye",
-      name_en: "Hastane-Adliye",
+      name_tr: "Hastane-Adliye",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -741,8 +741,8 @@ export const istanbul = {
       },
     },
     soganlik: {
-      name: "Soğanlık",
-      name_en: "Soganlik",
+      name: "Soganlik",
+      name_tr: "Soğanlık",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -753,7 +753,7 @@ export const istanbul = {
     },
     kartal: {
       name: "Kartal",
-      name_en: "Kartal",
+      name_tr: "Kartal",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -763,8 +763,8 @@ export const istanbul = {
       },
     },
     yakacik: {
-      name: "Yakacık",
-      name_en: "Yakacik",
+      name: "Yakacik",
+      name_tr: "Yakacık",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -775,7 +775,7 @@ export const istanbul = {
     },
     pendik: {
       name: "Pendik",
-      name_en: "Pendik",
+      name_tr: "Pendik",
       connector: {
         color: "#BD313B",
         horizontal: true,
@@ -785,8 +785,8 @@ export const istanbul = {
       },
     },
     tavsantepe: {
-      name: "Tavşantepe",
-      name_en: "Tavsantepe",
+      name: "Tavsantepe",
+      name_tr: "Tavşantepe",
       connector: {
         color: "#BD313B",
         left: true,
@@ -798,8 +798,8 @@ export const istanbul = {
 
     // M5 (Üsküdar - Çekmeköy)
     uskudar: {
-      name: "Üsküdar",
-      name_en: "Uskudar",
+      name: "Uskudar",
+      name_tr: "Üsküdar",
       connector: {
         color: "purple",
         right: true,
@@ -810,8 +810,8 @@ export const istanbul = {
       },
     },
     fistikagaci: {
-      name: "Fıstıkağacı",
-      name_en: "Fistikagaci",
+      name: "Fistikagaci",
+      name_tr: "Fıstıkağacı",
       connector: {
         color: "purple",
         horizontal: true,
@@ -822,8 +822,8 @@ export const istanbul = {
       },
     },
     baglarbasi: {
-      name: "Bağlarbaşı",
-      name_en: "Baglarbasi",
+      name: "Baglarbasi",
+      name_tr: "Bağlarbaşı",
       connector: {
         color: "purple",
         horizontal: true,
@@ -835,7 +835,7 @@ export const istanbul = {
     },
     altunizade: {
       name: "Altunizade",
-      name_en: "Altunizade",
+      name_tr: "Altunizade",
       connector: {
         color: "purple",
         horizontal: true,
@@ -846,8 +846,8 @@ export const istanbul = {
       },
     },
     kisikli: {
-      name: "Kısıklı",
-      name_en: "Kisikli",
+      name: "Kisikli",
+      name_tr: "Kısıklı",
       connector: {
         color: "purple",
         horizontal: true,
@@ -858,8 +858,8 @@ export const istanbul = {
       },
     },
     bulgurluLibadiye: {
-      name: "Bulgurlu—Libadiye",
-      name_en: "Bulgurlu-Libadiye",
+      name: "Bulgurlu-Libadiye",
+      name_tr: "Bulgurlu—Libadiye",
       connector: {
         color: "purple",
         horizontal: true,
@@ -870,8 +870,8 @@ export const istanbul = {
       },
     },
     umraniye: {
-      name: "Ümraniye",
-      name_en: "Umraniye",
+      name: "Umraniye",
+      name_tr: "Ümraniye",
       connector: {
         color: "purple",
         horizontal: true,
@@ -882,8 +882,8 @@ export const istanbul = {
       },
     },
     carsi: {
-      name: "Çarşı",
-      name_en: "Carsi",
+      name: "Carsi",
+      name_tr: "Çarşı",
       connector: {
         color: "purple",
         horizontal: true,
@@ -895,7 +895,7 @@ export const istanbul = {
     },
     yamanevler: {
       name: "Yamanevler",
-      name_en: "Yamanevler",
+      name_tr: "Yamanevler",
       connector: {
         color: "purple",
         horizontal: true,
@@ -906,8 +906,8 @@ export const istanbul = {
       },
     },
     cakmak: {
-      name: "Çakmak",
-      name_en: "Cakmak",
+      name: "Cakmak",
+      name_tr: "Çakmak",
       connector: {
         color: "purple",
         horizontal: true,
@@ -919,7 +919,7 @@ export const istanbul = {
     },
     ihlamurkuyu: {
       name: "Ihlamurkuyu",
-      name_en: "Ihlamurkuyu",
+      name_tr: "Ihlamurkuyu",
       connector: {
         color: "purple",
         horizontal: true,
@@ -930,8 +930,8 @@ export const istanbul = {
       },
     },
     altinsehir: {
-      name: "Altınşehir",
-      name_en: "Altinsehir",
+      name: "Altinsehir",
+      name_tr: "Altınşehir",
       connector: {
         color: "purple",
         horizontal: true,
@@ -942,8 +942,8 @@ export const istanbul = {
       },
     },
     imamHatip: {
-      name: "İmam Hatip",
-      name_en: "Imam Hatip",
+      name: "Imam Hatip",
+      name_tr: "İmam Hatip",
       connector: {
         color: "purple",
         horizontal: true,
@@ -955,7 +955,7 @@ export const istanbul = {
     },
     dudullu: {
       name: "Dudullu",
-      name_en: "Dudullu",
+      name_tr: "Dudullu",
       connector: {
         color: "purple",
         horizontal: true,
@@ -966,8 +966,8 @@ export const istanbul = {
       },
     },
     necipFazil: {
-      name: "Necip Fazıl",
-      name_en: "Necip Fazil",
+      name: "Necip Fazil",
+      name_tr: "Necip Fazıl",
       connector: {
         color: "purple",
         horizontal: true,
@@ -978,8 +978,8 @@ export const istanbul = {
       },
     },
     cekmekoy: {
-      name: "Çekmeköy",
-      name_en: "Cekmekoy",
+      name: "Cekmekoy",
+      name_tr: "Çekmeköy",
       connector: {
         color: "purple",
         left: true,
@@ -993,7 +993,7 @@ export const istanbul = {
     // M6 (Levent - Boğaziçi Üniversitesi)
     levent_m6: {
       name: "Levent",
-      name_en: "Levent",
+      name_tr: "Levent",
       connector: {
         color: "#93845E",
         right: true,
@@ -1004,7 +1004,7 @@ export const istanbul = {
     },
     nispetiye: {
       name: "Nispetiye",
-      name_en: "Nispetiye",
+      name_tr: "Nispetiye",
       connector: {
         color: "#93845E",
         horizontal: true,
@@ -1015,7 +1015,7 @@ export const istanbul = {
     },
     etiler: {
       name: "Etiler",
-      name_en: "Etiler",
+      name_tr: "Etiler",
       connector: {
         color: "#93845E",
         horizontal: true,
@@ -1025,8 +1025,8 @@ export const istanbul = {
       },
     },
     bogaziciUniversitesi: {
-      name: "Boğaziçi Üniversitesi",
-      name_en: "Bogazici Universitesi",
+      name: "Bogazici Universitesi",
+      name_tr: "Boğaziçi Üniversitesi",
       connector: {
         color: "#93845E",
         left: true,
