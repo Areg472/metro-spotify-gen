@@ -20,7 +20,6 @@ export default function MetroClient({ initialCityId, initialCityData }) {
   const sendMessage = async (prompt) => {
     setIsLoading(true);
     setMessages([]);
-    console.log("Sending to AI:", prompt);
 
     try {
       const response = await fetch("/api/chat", {
