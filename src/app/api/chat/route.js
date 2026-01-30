@@ -10,6 +10,7 @@ export async function POST(request) {
 
 CRITICAL RULES:
 - First use web search to find the EXACT metro travel time between the stations.
+- CRITICAL: Use ONLY metro/subway travel time. DO NOT use bus, tram, walking, taxi, or any other transportation method. ONLY metro/subway.
 - The total duration of selected tracks MUST be ≤ trip duration. NEVER exceed it.
 - For short trips (under 3 minutes), recommend only 1 track.
 - For trips 3-6 minutes, recommend 1-2 tracks max.

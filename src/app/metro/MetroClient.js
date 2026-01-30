@@ -96,6 +96,7 @@ export default function MetroClient({ initialCityId, initialCityData }) {
 
 INSTRUCTIONS:
 1. First, search the web for the exact travel time between these two metro stations (riding time only, exclude waiting).
+   CRITICAL: Use ONLY metro/subway travel time. DO NOT use bus, tram, walking, taxi, or any other transportation method. ONLY metro/subway.
 2. Select tracks from my list below whose TOTAL duration is ≤ the trip duration.
 3. Prefer 2-3 shorter tracks over 1 long track when possible.
 4. Pick from anywhere in the list, not just the top.
