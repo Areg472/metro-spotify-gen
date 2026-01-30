@@ -16,8 +16,9 @@ export default function ContentSelectClient() {
       setIsLoading(true);
       try {
         const tracksResponse = await fetch("/api/tracks");
+        let tracksData = [];
         if (tracksResponse.ok) {
-          const tracksData = await tracksResponse.json();
+          tracksData = await tracksResponse.json();
           /* console.log("Fetched recent tracks:", tracksData);*/
           setRecentTracks(tracksData);
         } else {
@@ -25,8 +26,9 @@ export default function ContentSelectClient() {
         }
 
         const playlistsResponse = await fetch("/api/playlists");
+        let playlistsData = [];
         if (playlistsResponse.ok) {
-          const playlistsData = await playlistsResponse.json();
+          playlistsData = await playlistsResponse.json();
           /*    console.log("Fetched playlists:", playlistsData);*/
           setPlaylists(playlistsData);
         } else {
@@ -35,6 +37,12 @@ export default function ContentSelectClient() {
             playlistsResponse.statusText,
           );
         }
+
+        // Redirect to spotify-limit if both arrays are empty
+        if (tracksData.length === 0 && playlistsData.length === 0) {
+          router.push("/spotify-limit");
+          return;
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -42,7 +50,7 @@ export default function ContentSelectClient() {
       }
     }
     fetchData();
-  }, []);
+  }, [router]);
 
   const handlePlaylistToggle = (playlistId) => {
     setSelectedPlaylists((prev) =>
