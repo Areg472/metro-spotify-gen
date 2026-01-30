@@ -36,7 +36,9 @@ export async function GET(request) {
 
     const { access_token } = data;
 
-    const response2 = NextResponse.redirect(new URL("/metro", request.url));
+    const response2 = NextResponse.redirect(
+      new URL("/content-select", request.url),
+    );
 
     response2.cookies.set("spotify_token", access_token, {
       httpOnly: false,
@@ -45,7 +47,7 @@ export async function GET(request) {
       maxAge: 3600,
     });
 
-    console.log("Cookie set, redirecting to /metro");
+    console.log("Cookie set, redirecting to /content-select");
 
     return response2;
   } catch (error) {
