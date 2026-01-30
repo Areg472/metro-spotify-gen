@@ -10,7 +10,7 @@ export default function Home() {
       <h1 className="text-3xl">Metro Spotify song list generator</h1>
       <p>
         Connect your Spotify to generate a track list based on your metro route,
-        and 50 recent tracks :P
+        50 recent tracks and/or playlists :P
       </p>
       <a
         href="/api/auth/login"

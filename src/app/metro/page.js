@@ -5,7 +5,7 @@ import MetroClient from "./MetroClient";
 export const metadata = {
   title: "Metro Spotify Generator",
   description:
-    "Generate a Spotify track list based on your metro trip and 50 recent songs. Written by Areg :D",
+    "Generate a Spotify track list based on your metro trip, 50 recent songs and/or playlists. Written by Areg :D",
 };
 
 export default async function MetroPage() {
