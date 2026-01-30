@@ -1,0 +1,325 @@
+export const naples = {
+  name: "Naples",
+  country: "Italy",
+  defaultConnectorSize: 60,
+  stations: {
+    // Line 1 — Piscinola ↔ Garibaldi
+    piscinola_1: {
+      name: "Piscinola",
+      name_it: "Piscinola",
+      connector: {
+        color: "yellow",
+        right: true,
+        station: true,
+        x: 0,
+        y: 0,
+      },
+    },
+    chiaiano_1: {
+      name: "Chiaiano",
+      name_it: "Chiaiano",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 60,
+        y: 0,
+      },
+    },
+    frullone_1: {
+      name: "Frullone",
+      name_it: "Frullone",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 120,
+        y: 0,
+      },
+    },
+    colliAminei_1: {
+      name: "Colli Aminei",
+      name_it: "Colli Aminei",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 180,
+        y: 0,
+      },
+    },
+    policlinico_1: {
+      name: "Policlinico",
+      name_it: "Policlinico",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 240,
+        y: 0,
+      },
+    },
+    rioneAlto_1: {
+      name: "Rione Alto",
+      name_it: "Rione Alto",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 300,
+        y: 0,
+      },
+    },
+    montedonzelli_1: {
+      name: "Montedonzelli",
+      name_it: "Montedonzelli",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 360,
+        y: 0,
+      },
+    },
+    medaglieDOro_1: {
+      name: "Medaglie d’Oro",
+      name_it: "Medaglie d’Oro",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 420,
+        y: 0,
+      },
+    },
+    vanvitelli_1: {
+      name: "Vanvitelli",
+      name_it: "Vanvitelli",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 480,
+        y: 0,
+      },
+    },
+    quattroGiornate_1: {
+      name: "Quattro Giornate",
+      name_it: "Quattro Giornate",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 540,
+        y: 0,
+      },
+    },
+    salvatorRosa_1: {
+      name: "Salvator Rosa",
+      name_it: "Salvator Rosa",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 600,
+        y: 0,
+      },
+    },
+    materdei_1: {
+      name: "Materdei",
+      name_it: "Materdei",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 660,
+        y: 0,
+      },
+    },
+    museo_1: {
+      name: "Museum",
+      name_it: "Museo",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 720,
+        y: 0,
+      },
+    },
+    dante_1: {
+      name: "Dante",
+      name_it: "Dante",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 780,
+        y: 0,
+      },
+    },
+    toledo_1: {
+      name: "Toledo",
+      name_it: "Toledo",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 840,
+        y: 0,
+      },
+    },
+    municipio_1: {
+      name: "Town Hall",
+      name_it: "Municipio",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 900,
+        y: 0,
+      },
+    },
+    universita_1: {
+      name: "University",
+      name_it: "Università",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 960,
+        y: 0,
+      },
+    },
+    garibaldi_1: {
+      name: "Central Station",
+      name_it: "Garibaldi",
+      connector: {
+        color: "yellow",
+        horizontal: true,
+        station: true,
+        x: 1020,
+        y: 0,
+      },
+    },
+    centroDirezionale_1: {
+      name: "Business Center",
+      name_it: "Centro Direzionale",
+      connector: {
+        color: "yellow",
+        left: true,
+        station: true,
+        x: 1080,
+        y: 0,
+      },
+    },
+
+    // Line 6 — Mostra ↔ Mergellina
+    mostra_6: {
+      name: "Mostra",
+      name_it: "Mostra",
+      connector: {
+        color: "blue",
+        right: true,
+        station: true,
+        x: 0,
+        y: 60,
+        labelPlacement: "bottom-right",
+      },
+    },
+    augusto_6: {
+      name: "Augusto",
+      name_it: "Augusto",
+      connector: {
+        color: "blue",
+        horizontal: true,
+        station: true,
+        x: 60,
+        y: 60,
+        labelPlacement: "bottom-right",
+      },
+    },
+    lala_6: {
+      name: "Lala",
+      name_it: "Lala",
+      connector: {
+        color: "blue",
+        horizontal: true,
+        station: true,
+        x: 120,
+        y: 60,
+        labelPlacement: "bottom-right",
+      },
+    },
+    mergellina_6: {
+      name: "Mergellina",
+      name_it: "Mergellina",
+      connector: {
+        color: "blue",
+        left: true,
+        station: true,
+        x: 180,
+        y: 60,
+        labelPlacement: "bottom-right",
+      },
+    },
+
+    // Line 11 — Aversa Centro ↔ Aversa Ippodromo ↔ Giugliano ↔ Mugnano ↔ Piscinola
+    aversaCentro_11: {
+      name: "Aversa Centro",
+      name_it: "Aversa Centro",
+      connector: {
+        color: "red",
+        right: true,
+        station: true,
+        x: 0,
+        y: 120,
+      },
+    },
+    aversaIppodromo_11: {
+      name: "Aversa Ippodromo",
+      name_it: "Aversa Ippodromo",
+      connector: {
+        color: "red",
+        horizontal: true,
+        station: true,
+        x: 60,
+        y: 120,
+      },
+    },
+    giugliano_11: {
+      name: "Giugliano",
+      name_it: "Giugliano",
+      connector: {
+        color: "red",
+        horizontal: true,
+        station: true,
+        x: 120,
+        y: 120,
+      },
+    },
+    mugnano_11: {
+      name: "Mugnano",
+      name_it: "Mugnano",
+      connector: {
+        color: "red",
+        horizontal: true,
+        station: true,
+        x: 180,
+        y: 120,
+      },
+    },
+    piscinola_11: {
+      name: "Piscinola",
+      name_it: "Piscinola",
+      connector: {
+        color: "red",
+        left: true,
+        station: true,
+        x: 240,
+        y: 120,
+      },
+    },
+  },
+  extraConnectors: [],
+};

@@ -96,11 +96,14 @@ export default function MetroClient({ initialCityId, initialCityData }) {
 INSTRUCTIONS:
 1. First, search the web for the exact travel time between these two metro stations (riding time only, exclude waiting).
    CRITICAL: Use ONLY metro/subway travel time. DO NOT use bus, tram, walking, taxi, or any other transportation method. ONLY metro/subway.
-2. Select tracks from my list below whose TOTAL duration is ≤ the trip duration.
-3. Prefer 2-3 shorter tracks over 1 long track when possible.
-4. Pick from anywhere in the list, not just the top.
-5. If trip is very short (under 3 min), a single track is fine.
-6. NEVER exceed the trip duration, even by a few seconds.
+2. CRITICAL: If the stations are NOT connected via metro (no direct metro route exists), respond with ONLY this JSON array:
+   [{"title": "The stations aren't connected via metro", "artist": ""}]
+   DO NOT list any further tracks. Stop immediately after returning this response.
+3. If stations ARE connected, select tracks from my list below whose TOTAL duration is ≤ the trip duration.
+4. Prefer 2-3 shorter tracks over 1 long track when possible.
+5. Pick from anywhere in the list, not just the top.
+6. If trip is very short (under 3 min), a single track is fine.
+7. NEVER exceed the trip duration, even by a few seconds.
 
 My recent Spotify tracks:
 ${trackList}
