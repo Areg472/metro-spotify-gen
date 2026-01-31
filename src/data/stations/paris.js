@@ -854,6 +854,7 @@ export const paris = {
         color: "#748500",
         horizontal: true,
         station: true,
+        bottom: true,
         x: 1320,
         y: 150,
         labelPlacement: "bottom-right",
@@ -888,10 +889,48 @@ export const paris = {
     porteDesLilas_m3bis: {
       name: "Porte des Lilas",
       name_fr: "Porte des Lilas",
+      connector: {
+        color: "blue",
+        left: true,
+        station: true,
+        x: 1500,
+        y: 210,
+      },
     },
-    saintFargeau: { name: "Saint-Fargeau", name_fr: "Saint-Fargeau" },
-    pelleport: { name: "Pelleport", name_fr: "Pelleport" },
-    gambetta_m3bis: { name: "Gambetta", name_fr: "Gambetta" },
+    saintFargeau: {
+      name: "Saint-Fargeau",
+      name_fr: "Saint-Fargeau",
+      connector: {
+        color: "blue",
+        horizontal: true,
+        station: true,
+        x: 1440,
+        y: 210,
+      },
+    },
+    pelleport: {
+      name: "Pelleport",
+      name_fr: "Pelleport",
+      connector: {
+        color: "blue",
+        horizontal: true,
+        station: true,
+        x: 1380,
+        y: 210,
+      },
+    },
+    gambetta_m3bis: {
+      name: "Gambetta",
+      name_fr: "Gambetta",
+      connector: {
+        color: "blue",
+        right: true,
+        top: true,
+        station: true,
+        x: 1320,
+        y: 210,
+      },
+    },
 
     // M4 (Porte de Clignancourt - Mairie de Montrouge)
     porteDeClignancourt: {
