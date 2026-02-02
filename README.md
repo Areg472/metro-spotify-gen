@@ -12,6 +12,7 @@ So I created this cool project called metro uhh spotify thing, which generates a
 - Istanbul
 - Naples
 - Amsterdam
+- Paris
 
 To use this locally you have to download the project and stuff but I recommend just going to https://spotify-metro.aregus.me/ (form submission needed, 25 people can use it at a time)
 
