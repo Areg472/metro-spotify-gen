@@ -19,7 +19,7 @@ export default function ContentSelectClient() {
         let tracksData = [];
         if (tracksResponse.ok) {
           tracksData = await tracksResponse.json();
-          console.log("Fetched recent tracks:", tracksData);
+          // console.log("Fetched recent tracks:", tracksData);
           setRecentTracks(tracksData);
         } else {
           /*console.error("Failed to fetch tracks:", tracksResponse.statusText);*/
@@ -29,7 +29,7 @@ export default function ContentSelectClient() {
         let playlistsData = [];
         if (playlistsResponse.ok) {
           playlistsData = await playlistsResponse.json();
-          console.log("Fetched playlists:", playlistsData);
+          // console.log("Fetched playlists:", playlistsData);
           setPlaylists(playlistsData);
         } else {
           console.error(
