@@ -27,9 +27,9 @@ export default async function CityMetroPage({ params }) {
   const cookieStore = await cookies();
   const accessToken = cookieStore.get("spotify_token")?.value;
 
-  if (!accessToken) {
+  /*if (!accessToken) {
     redirect("/");
-  }
+  }*/
 
   const cityId = cityname.toLowerCase();
 
