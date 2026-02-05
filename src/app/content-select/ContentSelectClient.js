@@ -92,8 +92,39 @@ export default function ContentSelectClient() {
 
       const combinedTracks = [...selectedTracksData, ...allPlaylistTracks];
 
+      // Fetch audio features for all tracks
+      const trackIds = combinedTracks.map((item) => item.track.id);
+      let audioFeatures = [];
+
+      if (trackIds.length > 0) {
+        try {
+          const featuresResponse = await fetch("/api/audio-features", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ trackIds }),
+          });
+
+          if (featuresResponse.ok) {
+            audioFeatures = await featuresResponse.json();
+            console.log(
+              `✅ Fetched audio features for ${audioFeatures.length} tracks`,
+            );
+          } else {
+            console.error("Failed to fetch audio features");
+          }
+        } catch (error) {
+          console.error("Error fetching audio features:", error);
+        }
+      }
+
+      // Attach audio features to tracks
+      const tracksWithFeatures = combinedTracks.map((item, index) => ({
+        ...item,
+        audioFeatures: audioFeatures[index] || null,
+      }));
+
       const dataToSend = {
-        tracks: combinedTracks,
+        tracks: tracksWithFeatures,
         playlists: selectedPlaylistsData,
       };
 
