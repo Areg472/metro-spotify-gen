@@ -106,7 +106,7 @@ export default function MetroClient({ initialCityId, initialCityData }) {
 - Instrumentalness: ${(avgInstrumentalness * 100).toFixed(1)}% (0% = vocals, 100% = instrumental)
 - Average Tempo: ${avgTempo.toFixed(0)} BPM
 
-Use this analysis to understand my music preferences and select tracks that match my taste profile.`;
+Use this analysis to understand my music preferences and select tracks that match my taste profile or metro ride.`;
     }
 
     const trackList = recentTracks
