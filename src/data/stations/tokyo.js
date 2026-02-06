@@ -3355,7 +3355,7 @@ export const tokyo = {
         horizontal: true,
         station: true,
         x: 420,
-        y: 840,
+        y: 900,
         labelPlacement: "bottom-right",
       },
     },
