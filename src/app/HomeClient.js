@@ -25,7 +25,9 @@ export default function HomeClient() {
     }
     sessionStorage.setItem("musicService", "lastfm");
     sessionStorage.setItem("lastfmUsername", lastfmUsername.trim());
-    window.location.href = "/content-select";
+    setTimeout(() => {
+      window.location.href = "/content-select";
+    }, 100);
   };
 
   return (
