@@ -32,3 +32,5 @@ LASTFM_API_KEY=
 and do npm build + npm start
 
 [![My Skills](https://skillicons.dev/icons?i=vercel,nextjs,react&theme=dark)](https://skillicons.dev)
+
+AI has been used for effective spotify and last fm implementations
