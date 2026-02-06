@@ -229,7 +229,9 @@ export default function ContentSelectClient() {
 
         {musicService === "lastfm" ? (
           <div className="bg-[#1a1a1a] p-6 rounded-xl">
-            <h2 className="text-2xl mb-4 text-white">Your Top Albums</h2>
+            <h2 className="text-2xl mb-4 text-white">
+              Your Top Albums/EPs/Singles
+            </h2>
             <div className="space-y-2 max-h-96 overflow-y-auto">
               {albums.map((album) => (
                 <label
