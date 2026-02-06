@@ -215,7 +215,7 @@ export default function ContentSelectClient() {
 
       <div className="w-full max-w-4xl space-y-8">
         <div className="bg-[#1a1a1a] p-6 rounded-xl">
-          <h2 className="text-2xl mb-4">Recent 50 Tracks</h2>
+          <h2 className="text-2xl mb-4 text-white">Recent 50 Tracks</h2>
           <label className="flex items-center text-white gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer">
             <input
               type="checkbox"
@@ -229,12 +229,12 @@ export default function ContentSelectClient() {
 
         {musicService === "lastfm" ? (
           <div className="bg-[#1a1a1a] p-6 rounded-xl">
-            <h2 className="text-2xl mb-4">Your Top Albums</h2>
+            <h2 className="text-2xl mb-4 text-white">Your Top Albums</h2>
             <div className="space-y-2 max-h-96 overflow-y-auto">
               {albums.map((album) => (
                 <label
                   key={album.id}
-                  className="flex items-center gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer"
+                  className="flex items-center text-white gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer"
                 >
                   <input
                     type="checkbox"
