@@ -2,7 +2,7 @@
 
 I LOVE MUSIC. I always listen to music during my metro trips.
 
-So I created this cool project called metro uhh spotify thing, which generates a track list based on your last 50 songs or selected playlists and your metro trip :D
+So I created this cool project called metro uhh spotify thing, which generates a track list based on your last 50 songs or selected playlists/topalbums and your metro trip :D
 
 ### Currently supported cities:
 - Minsk
