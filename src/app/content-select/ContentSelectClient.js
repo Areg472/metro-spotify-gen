@@ -209,7 +209,18 @@ export default function ContentSelectClient() {
               `✅ Fetched audio features for ${audioFeatures.length} tracks`,
             );
           } else {
-            console.error("Failed to fetch audio features");
+            const errorData = await featuresResponse.json().catch(() => ({}));
+            console.error("Failed to fetch audio features", {
+              status: featuresResponse.status,
+              statusText: featuresResponse.statusText,
+              error: errorData,
+              endpoint: featuresEndpoint,
+              trackIdsCount: trackIds.length,
+              sampleTrackIds: trackIds.slice(0, 5),
+            });
+            alert(
+              `Failed to fetch audio features: ${errorData.error || featuresResponse.statusText}. Check console for details.`,
+            );
           }
         } catch (error) {
           console.error("Error fetching audio features:", error);
