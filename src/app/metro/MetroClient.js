@@ -100,10 +100,11 @@ INSTRUCTIONS:
    [{"title": "The stations aren't connected via metro", "artist": ""}]
    DO NOT list any further tracks. Stop immediately after returning this response.
 3. If stations ARE connected, select tracks from my list below whose TOTAL duration is ≤ the trip duration.
-4. Prefer 2-3 shorter tracks over 1 long track when possible.
-5. Pick from anywhere in the list, not just the top.
-6. If trip is very short (under 3 min), a single track is fine.
-7. NEVER exceed the trip duration, even by a few seconds.
+4. CRITICAL: For trips longer than 5 minutes, you MUST recommend at least 2 tracks. For trips longer than 10 minutes, you MUST recommend at least 3 tracks.
+5. Prefer multiple shorter tracks over a single long track when possible. Variety is important!
+6. Pick from anywhere in the list, not just the top. Mix different songs to create an interesting playlist.
+7. ONLY for trips under 3 minutes, a single track is acceptable.
+8. NEVER exceed the trip duration, even by a few seconds. Always leave a small buffer.
 
 My recent tracks:
 ${trackList}
