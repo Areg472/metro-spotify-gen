@@ -1,11 +1,11 @@
 import { generateText } from "ai";
-import { openai } from "@ai-sdk/openai";
+import { vertex } from "@ai-sdk/google-vertex";
 
 export async function POST(request) {
   const { prompt } = await request.json();
 
   const result = await generateText({
-    model: "openai/gpt-5.1",
+    model: "google/gemini-3-flash",
     system: `You are a metro trip music assistant. 
 
 CRITICAL RULES:
@@ -23,7 +23,7 @@ CRITICAL RULES:
 Output ONLY a JSON array: [{"title": "...", "artist": "..."}]`,
     prompt,
     tools: {
-      web_search: openai.tools.webSearch({}),
+      google_search: vertex.tools.googleSearch({}),
     },
   });
 
