@@ -58,9 +58,9 @@ export async function POST(request) {
       },
     }));
 
-    console.log(
-      `✅ Fetched ${formattedTracks.length} tracks from Last.fm album: ${album}`,
-    );
+    // console.log(
+    //   `✅ Fetched ${formattedTracks.length} tracks from Last.fm album: ${album}`,
+    // );
 
     return NextResponse.json(formattedTracks);
   } catch (error) {

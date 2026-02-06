@@ -51,7 +51,7 @@ export async function GET(request) {
       played_at: track.date ? track.date.uts * 1000 : Date.now(),
     }));
 
-    console.log(`✅ Fetched ${tracks.length} tracks from Last.fm`);
+    // console.log(`✅ Fetched ${tracks.length} tracks from Last.fm`);
 
     return NextResponse.json(tracks);
   } catch (error) {

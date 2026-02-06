@@ -46,7 +46,7 @@ export async function GET(request) {
       url: album.url,
     }));
 
-    console.log(`✅ Fetched ${albums.length} top albums from Last.fm`);
+    // console.log(`✅ Fetched ${albums.length} top albums from Last.fm`);
 
     return NextResponse.json(albums);
   } catch (error) {

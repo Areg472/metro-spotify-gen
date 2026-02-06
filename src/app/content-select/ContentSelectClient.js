@@ -119,9 +119,9 @@ export default function ContentSelectClient() {
           if (response.ok) {
             const tracks = await response.json();
             allAlbumTracks = [...allAlbumTracks, ...tracks];
-            console.log(
-              `Fetched ${tracks.length} tracks from Last.fm album: ${album.name}`,
-            );
+            // console.log(
+            //   `Fetched ${tracks.length} tracks from Last.fm album: ${album.name}`,
+            // );
           } else {
             console.error(
               `Failed to fetch tracks for Last.fm album: ${album.name}`,
@@ -150,87 +150,7 @@ export default function ContentSelectClient() {
 
       const combinedTracks = [...selectedTracksData, ...allAlbumTracks];
 
-      let trackIds = combinedTracks.map((item) => item.track.id);
-
-      if (musicService === "lastfm" && combinedTracks.length > 0) {
-        try {
-          const tracksToSearch = combinedTracks.map((item) => ({
-            id: item.track.id,
-            name: item.track.name,
-            artist: item.track.artists[0].name,
-          }));
-
-          const searchResponse = await fetch("/api/spotify/search-track", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ tracks: tracksToSearch }),
-          });
-
-          if (searchResponse.ok) {
-            const searchResults = await searchResponse.json();
-            const idMap = {};
-            searchResults.forEach((result) => {
-              if (result.found) {
-                idMap[result.originalId] = result.spotifyId;
-              }
-            });
-
-            trackIds = combinedTracks
-              .map((item) => idMap[item.track.id] || item.track.id)
-              .filter((id) => id && !id.includes("-"));
-
-            console.log(
-              `✅ Mapped ${Object.keys(idMap).length} Last.fm tracks to Spotify IDs`,
-            );
-          }
-        } catch (error) {
-          console.error("Error searching for Spotify tracks:", error);
-        }
-      }
-
-      let audioFeatures = [];
-
-      if (trackIds.length > 0) {
-        try {
-          const featuresEndpoint =
-            musicService === "lastfm"
-              ? "/api/spotify/audio-features-noauth"
-              : "/api/audio-features";
-
-          const featuresResponse = await fetch(featuresEndpoint, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ trackIds }),
-          });
-
-          if (featuresResponse.ok) {
-            audioFeatures = await featuresResponse.json();
-            console.log(
-              `✅ Fetched audio features for ${audioFeatures.length} tracks`,
-            );
-          } else {
-            const errorData = await featuresResponse.json().catch(() => ({}));
-            console.error("Failed to fetch audio features", {
-              status: featuresResponse.status,
-              statusText: featuresResponse.statusText,
-              error: errorData,
-              endpoint: featuresEndpoint,
-              trackIdsCount: trackIds.length,
-              sampleTrackIds: trackIds.slice(0, 5),
-            });
-            alert(
-              `Failed to fetch audio features: ${errorData.error || featuresResponse.statusText}. Check console for details.`,
-            );
-          }
-        } catch (error) {
-          console.error("Error fetching audio features:", error);
-        }
-      }
-
-      const tracksWithFeatures = combinedTracks.map((item, index) => ({
-        ...item,
-        audioFeatures: audioFeatures[index] || null,
-      }));
+      const tracksWithFeatures = combinedTracks;
 
       const dataToSend = {
         tracks: tracksWithFeatures,

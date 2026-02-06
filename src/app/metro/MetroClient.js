@@ -80,34 +80,6 @@ export default function MetroClient({ initialCityId, initialCityData }) {
       return;
     }
 
-    const tracksWithFeatures = recentTracks.filter(
-      (item) => item.audioFeatures,
-    );
-    let audioFeaturesStats = "";
-
-    if (tracksWithFeatures.length > 0) {
-      const features = tracksWithFeatures.map((item) => item.audioFeatures);
-
-      const avg = (arr) => arr.reduce((a, b) => a + b, 0) / arr.length;
-
-      const avgValence = avg(features.map((f) => f.valence));
-      const avgEnergy = avg(features.map((f) => f.energy));
-      const avgDanceability = avg(features.map((f) => f.danceability));
-      const avgAcousticness = avg(features.map((f) => f.acousticness));
-      const avgInstrumentalness = avg(features.map((f) => f.instrumentalness));
-      const avgTempo = avg(features.map((f) => f.tempo));
-
-      audioFeaturesStats = `\n\nAUDIO FEATURES ANALYSIS OF MY MUSIC TASTE:
-- Valence (happiness/positivity): ${(avgValence * 100).toFixed(1)}% (0% = sad/negative, 100% = happy/positive)
-- Energy: ${(avgEnergy * 100).toFixed(1)}% (0% = calm, 100% = energetic)
-- Danceability: ${(avgDanceability * 100).toFixed(1)}% (0% = not danceable, 100% = very danceable)
-- Acousticness: ${(avgAcousticness * 100).toFixed(1)}% (0% = electronic, 100% = acoustic)
-- Instrumentalness: ${(avgInstrumentalness * 100).toFixed(1)}% (0% = vocals, 100% = instrumental)
-- Average Tempo: ${avgTempo.toFixed(0)} BPM
-
-Use this analysis to understand my music preferences and select tracks that match my taste profile or metro ride.`;
-    }
-
     const trackList = recentTracks
       .map((item) => {
         const track = item.track;
@@ -128,15 +100,12 @@ INSTRUCTIONS:
    [{"title": "The stations aren't connected via metro", "artist": ""}]
    DO NOT list any further tracks. Stop immediately after returning this response.
 3. If stations ARE connected, select tracks from my list below whose TOTAL duration is ≤ the trip duration.
-4. Consider my music taste profile based on the audio features analysis below when selecting tracks.
-5. Prefer tracks that align with my typical valence, energy, and danceability preferences.
-6. Prefer 2-3 shorter tracks over 1 long track when possible.
-7. Pick from anywhere in the list, not just the top.
-8. If trip is very short (under 3 min), a single track is fine.
-9. NEVER exceed the trip duration, even by a few seconds.
-${audioFeaturesStats}
+4. Prefer 2-3 shorter tracks over 1 long track when possible.
+5. Pick from anywhere in the list, not just the top.
+6. If trip is very short (under 3 min), a single track is fine.
+7. NEVER exceed the trip duration, even by a few seconds.
 
-My recent Spotify tracks:
+My recent tracks:
 ${trackList}
 
 Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
