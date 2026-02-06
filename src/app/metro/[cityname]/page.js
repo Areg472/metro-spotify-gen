@@ -1,5 +1,5 @@
+import { notFound, redirect } from "next/navigation";
 import { cookies } from "next/headers";
-import { redirect, notFound } from "next/navigation";
 import MetroClient from "../MetroClient";
 
 export async function generateMetadata({ params }) {
@@ -23,14 +23,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function CityMetroPage({ params }) {
-  const { cityname } = await params;
   const cookieStore = await cookies();
-  const accessToken = cookieStore.get("spotify_token")?.value;
+  const spotifyToken = cookieStore.get("spotify_token")?.value;
+  const lastfmUsername = cookieStore.get("lastfm_username")?.value;
 
-  if (!accessToken) {
+  if (!spotifyToken || !lastfmUsername) {
     redirect("/");
   }
 
+  const { cityname } = await params;
   const cityId = cityname.toLowerCase();
 
   try {

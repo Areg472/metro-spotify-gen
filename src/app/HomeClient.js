@@ -23,11 +23,9 @@ export default function HomeClient() {
       alert("Please enter your Last.fm username");
       return;
     }
-    sessionStorage.setItem("musicService", "lastfm");
-    sessionStorage.setItem("lastfmUsername", lastfmUsername.trim());
-    setTimeout(() => {
-      window.location.href = "/content-select";
-    }, 100);
+    document.cookie = `lastfm_username=${lastfmUsername.trim()}; path=/; max-age=3600`;
+    document.cookie = `music_service=lastfm; path=/; max-age=3600`;
+    window.location.href = "/content-select";
   };
 
   return (

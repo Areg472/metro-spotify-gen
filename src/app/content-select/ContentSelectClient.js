@@ -19,8 +19,15 @@ export default function ContentSelectClient() {
     async function fetchData() {
       setIsLoading(true);
 
-      const service = sessionStorage.getItem("musicService");
-      const username = sessionStorage.getItem("lastfmUsername");
+      const getCookie = (name) => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";").shift();
+        return null;
+      };
+
+      const service = getCookie("music_service");
+      const username = getCookie("lastfm_username");
       setMusicService(service);
       setLastfmUsername(username);
 

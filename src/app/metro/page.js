@@ -3,16 +3,17 @@ import { redirect } from "next/navigation";
 import MetroClient from "./MetroClient";
 
 export const metadata = {
-  title: "Metro Spotify Generator",
+  title: "Metro Route - Metro Spotify Generator",
   description:
-    "Generate a Spotify track list based on your metro trip, 50 recent songs and/or playlists. Written by Areg :D",
+    "Select your metro route and get AI-powered track recommendations",
 };
 
 export default async function MetroPage() {
   const cookieStore = await cookies();
-  const accessToken = cookieStore.get("spotify_token")?.value;
+  const spotifyToken = cookieStore.get("spotify_token")?.value;
+  const lastfmUsername = cookieStore.get("lastfm_username")?.value;
 
-  if (!accessToken) {
+  if (!spotifyToken || !lastfmUsername) {
     redirect("/");
   }
 
