@@ -1,6 +1,16 @@
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
+  const clientId = process.env.SPOTIFY_CLIENT_ID;
+  const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
+
+  if (!clientId || !clientSecret) {
+    return NextResponse.json(
+      { error: "Spotify credentials not configured" },
+      { status: 500 },
+    );
+  }
+
   try {
     const { tracks } = await request.json();
 
@@ -12,17 +22,28 @@ export async function POST(request) {
     }
 
     const tokenResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_REDIRECT_URL?.replace("/api/auth/callback", "") || "http://localhost:8888"}/api/spotify/client-token`,
+      "https://accounts.spotify.com/api/token",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString("base64")}`,
+        },
+        body: "grant_type=client_credentials",
+      },
     );
 
     if (!tokenResponse.ok) {
+      const errorData = await tokenResponse.json();
+      console.error("Spotify token error:", errorData);
       return NextResponse.json(
-        { error: "Failed to get Spotify token" },
-        { status: 500 },
+        { error: "Failed to get Spotify token", details: errorData },
+        { status: tokenResponse.status },
       );
     }
 
-    const { access_token } = await tokenResponse.json();
+    const tokenData = await tokenResponse.json();
+    const access_token = tokenData.access_token;
 
     const searchResults = [];
     for (const track of tracks) {

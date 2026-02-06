@@ -20,7 +20,7 @@ export async function GET(request) {
   }
 
   try {
-    const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${username}&api_key=${apiKey}&format=json&limit=50`;
+    const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${username}&api_key=${apiKey}&format=json&limit=50&period=1month`;
 
     const response = await fetch(url);
 
