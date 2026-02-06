@@ -252,12 +252,12 @@ export default function ContentSelectClient() {
           </div>
         ) : (
           <div className="bg-[#1a1a1a] p-6 rounded-xl">
-            <h2 className="text-2xl mb-4">Your Playlists</h2>
+            <h2 className="text-2xl mb-4 text-white">Your Playlists</h2>
             <div className="space-y-2 max-h-96 overflow-y-auto">
               {playlists.map((playlist) => (
                 <label
                   key={playlist.id}
-                  className="flex items-center gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer"
+                  className="flex text-white items-center gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer"
                 >
                   <input
                     type="checkbox"
