@@ -55,6 +55,7 @@ export async function POST(request) {
             : [],
         },
         uri: track.url,
+        duration_ms: track.duration ? parseInt(track.duration) : 0,
       },
     }));
 

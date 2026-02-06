@@ -47,6 +47,7 @@ export async function GET(request) {
             : [],
         },
         uri: track.url,
+        duration_ms: track.duration ? parseInt(track.duration) : 0,
       },
       played_at: track.date ? track.date.uts * 1000 : Date.now(),
     }));
