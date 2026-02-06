@@ -12,6 +12,8 @@ export default function HomeClient() {
   const handleServiceSelect = (service) => {
     setSelectedService(service);
     if (service === "spotify") {
+      document.cookie = `lastfm_username=; path=/; max-age=0`;
+      document.cookie = `music_service=; path=/; max-age=0`;
       window.location.href = "/api/auth/login";
     } else if (service === "lastfm") {
       setShowUsernameInput(true);
@@ -23,6 +25,7 @@ export default function HomeClient() {
       alert("Please enter your Last.fm username");
       return;
     }
+    document.cookie = `spotify_token=; path=/; max-age=0`;
     document.cookie = `lastfm_username=${lastfmUsername.trim()}; path=/; max-age=3600`;
     document.cookie = `music_service=lastfm; path=/; max-age=3600`;
     window.location.href = "/content-select";
