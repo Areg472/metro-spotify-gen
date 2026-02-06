@@ -7,7 +7,7 @@ export default async function ContentSelectPage() {
   const spotifyToken = cookieStore.get("spotify_token")?.value;
   const lastfmUsername = cookieStore.get("lastfm_username")?.value;
 
-  if (!spotifyToken || !lastfmUsername) {
+  if (!spotifyToken && !lastfmUsername) {
     redirect("/");
   }
 
