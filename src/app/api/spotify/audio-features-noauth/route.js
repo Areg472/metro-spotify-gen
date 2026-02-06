@@ -1,14 +1,6 @@
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
 
 export async function POST(request) {
-  const cookieStore = await cookies();
-  const accessToken = cookieStore.get("spotify_token")?.value;
-
-  if (!accessToken) {
-    return NextResponse.json({ error: "No token" }, { status: 401 });
-  }
-
   try {
     const { trackIds } = await request.json();
 
@@ -18,6 +10,19 @@ export async function POST(request) {
         { status: 400 },
       );
     }
+
+    const tokenResponse = await fetch(
+      `${process.env.NEXT_PUBLIC_REDIRECT_URL?.replace("/api/auth/callback", "") || "http://localhost:8888"}/api/spotify/client-token`,
+    );
+
+    if (!tokenResponse.ok) {
+      return NextResponse.json(
+        { error: "Failed to get Spotify token" },
+        { status: 500 },
+      );
+    }
+
+    const { access_token } = await tokenResponse.json();
 
     const chunks = [];
     for (let i = 0; i < trackIds.length; i += 100) {
@@ -29,7 +34,7 @@ export async function POST(request) {
       const response = await fetch(
         `https://api.spotify.com/v1/audio-features?ids=${chunk.join(",")}`,
         {
-          headers: { Authorization: `Bearer ${accessToken}` },
+          headers: { Authorization: `Bearer ${access_token}` },
         },
       );
 
@@ -46,7 +51,9 @@ export async function POST(request) {
       allFeatures.push(...data.audio_features);
     }
 
-    console.log(`✅ Fetched audio features for ${allFeatures.length} tracks`);
+    console.log(
+      `✅ Fetched audio features for ${allFeatures.length} tracks (no auth)`,
+    );
 
     return NextResponse.json(allFeatures);
   } catch (error) {
