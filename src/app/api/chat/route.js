@@ -14,9 +14,11 @@ CRITICAL RULES:
 - CRITICAL: If the stations are NOT connected via metro (no direct metro route exists), respond with ONLY this JSON array:
   [{"title": "The stations aren't connected via metro", "artist": ""}]
   DO NOT list any further tracks. Stop immediately after returning this response.
-- If stations ARE connected: The total duration of selected tracks MUST be ≤ trip duration. NEVER exceed it.
-- For short trips (under 3 minutes), recommend only 1 track.
-- For trips 3-6 minutes, recommend 1-2 tracks max.
+- If stations ARE connected: Select tracks whose TOTAL COMBINED duration is ≤ trip duration. NEVER exceed the trip time.
+- CRITICAL: Select a REASONABLE number of tracks. For a 13-minute trip, recommend 3-5 tracks, NOT 40 tracks.
+- Prefer multiple shorter tracks over one long track for variety.
+- The TOTAL duration of ALL selected tracks combined must NOT exceed the trip duration.
+- Always leave a small time buffer (don't use 100% of trip time).
 
 Output ONLY a JSON array: [{"title": "...", "artist": "..."}]`,
     prompt,
