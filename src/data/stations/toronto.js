@@ -736,7 +736,6 @@ export const toronto = {
         station: true,
         x: 0,
         y: 120,
-        labelPlacement: "bottom-right",
       },
     },
     bayview: {
@@ -747,7 +746,6 @@ export const toronto = {
         station: true,
         x: 60,
         y: 120,
-        labelPlacement: "bottom-right",
       },
     },
     bessarion: {
@@ -758,7 +756,6 @@ export const toronto = {
         station: true,
         x: 120,
         y: 120,
-        labelPlacement: "bottom-right",
       },
     },
     leslie: {
@@ -769,7 +766,6 @@ export const toronto = {
         station: true,
         x: 180,
         y: 120,
-        labelPlacement: "bottom-right",
       },
     },
     donMills: {
@@ -780,7 +776,6 @@ export const toronto = {
         station: true,
         x: 240,
         y: 120,
-        labelPlacement: "bottom-right",
       },
     },
   },

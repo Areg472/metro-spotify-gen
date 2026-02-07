@@ -10,6 +10,7 @@ import { paris } from "./paris";
 import { washington } from "@/data/stations/washington";
 import { tokyo } from "@/data/stations/tokyo";
 import { toronto } from "@/data/stations/toronto";
+import { tashkent } from "@/data/stations/tashkent";
 
 export const stations = {
   yerevan,
@@ -24,6 +25,7 @@ export const stations = {
   washington,
   tokyo,
   toronto,
+  tashkent,
 };
 
 export default stations;
