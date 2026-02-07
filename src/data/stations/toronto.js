@@ -727,69 +727,6 @@ export const toronto = {
         labelPlacement: "bottom-right",
       },
     },
-
-    // Line 3 - Scarborough (Kennedy - McCowan) - NOTE: Line closed in 2023
-    kennedy_line3: {
-      name: "Kennedy",
-      connector: {
-        color: "blue",
-        right: true,
-        station: true,
-        x: 0,
-        y: 120,
-      },
-    },
-    lawrenceEast: {
-      name: "Lawrence East",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 120,
-      },
-    },
-    ellesmere: {
-      name: "Ellesmere",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 120,
-      },
-    },
-    midland: {
-      name: "Midland",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 120,
-      },
-    },
-    scarboroughCentre: {
-      name: "Scarborough Centre",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 120,
-      },
-    },
-    mccowan: {
-      name: "McCowan",
-      connector: {
-        color: "blue",
-        left: true,
-        station: true,
-        x: 300,
-        y: 120,
-      },
-    },
-
     // Line 4 - Sheppard (Sheppard-Yonge - Don Mills)
     sheppardYonge_line4: {
       name: "Sheppard-Yonge",
@@ -798,7 +735,7 @@ export const toronto = {
         right: true,
         station: true,
         x: 0,
-        y: 180,
+        y: 120,
         labelPlacement: "bottom-right",
       },
     },
@@ -809,7 +746,7 @@ export const toronto = {
         horizontal: true,
         station: true,
         x: 60,
-        y: 180,
+        y: 120,
         labelPlacement: "bottom-right",
       },
     },
@@ -820,7 +757,7 @@ export const toronto = {
         horizontal: true,
         station: true,
         x: 120,
-        y: 180,
+        y: 120,
         labelPlacement: "bottom-right",
       },
     },
@@ -831,7 +768,7 @@ export const toronto = {
         horizontal: true,
         station: true,
         x: 180,
-        y: 180,
+        y: 120,
         labelPlacement: "bottom-right",
       },
     },
@@ -842,7 +779,7 @@ export const toronto = {
         left: true,
         station: true,
         x: 240,
-        y: 180,
+        y: 120,
         labelPlacement: "bottom-right",
       },
     },
