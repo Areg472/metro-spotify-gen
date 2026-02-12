@@ -13,23 +13,24 @@ import { toronto } from "@/data/stations/toronto";
 import { tashkent } from "@/data/stations/tashkent";
 import { moscow } from "@/data/stations/moscow";
 import { delhi } from "@/data/stations/delhi";
+import { processAutoStations } from "./utils";
 
 export const stations = {
-  yerevan,
-  tbilisi,
-  minsk,
-  london,
-  lyon,
-  istanbul,
-  paris,
-  moscow,
-  amsterdam,
-  naples,
-  washington,
-  tokyo,
-  toronto,
-  tashkent,
-  delhi,
+  yerevan: processAutoStations(yerevan),
+  tbilisi: processAutoStations(tbilisi),
+  minsk: processAutoStations(minsk),
+  london: processAutoStations(london),
+  lyon: processAutoStations(lyon),
+  istanbul: processAutoStations(istanbul),
+  paris: processAutoStations(paris),
+  moscow: processAutoStations(moscow),
+  amsterdam: processAutoStations(amsterdam),
+  naples: processAutoStations(naples),
+  washington: processAutoStations(washington),
+  tokyo: processAutoStations(tokyo),
+  toronto: processAutoStations(toronto),
+  tashkent: processAutoStations(tashkent),
+  delhi: processAutoStations(delhi),
 };
 
 export default stations;

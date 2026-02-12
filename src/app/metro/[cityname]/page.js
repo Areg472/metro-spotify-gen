@@ -1,6 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import MetroClient from "../MetroClient";
+import { processAutoStations } from "@/data/stations/utils";
 
 export async function generateMetadata({ params }) {
   const { cityname } = await params;
@@ -27,16 +28,16 @@ export default async function CityMetroPage({ params }) {
   const spotifyToken = cookieStore.get("spotify_token")?.value;
   const lastfmUsername = cookieStore.get("lastfm_username")?.value;
 
-  if (!spotifyToken && !lastfmUsername) {
+  /*if (!spotifyToken && !lastfmUsername) {
     redirect("/");
-  }
+  }*/
 
   const { cityname } = await params;
   const cityId = cityname.toLowerCase();
 
   try {
     const cityData = await import(`@/data/stations/${cityId}`);
-    const city = cityData[cityId];
+    const city = processAutoStations(cityData[cityId]);
 
     if (!city) {
       notFound();

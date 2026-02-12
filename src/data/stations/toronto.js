@@ -2,782 +2,317 @@ export const toronto = {
   name: "Toronto",
   country: "Canada",
   defaultConnectorSize: 60,
+  auto: true,
   stations: {
-    // Line 1 - Yonge-University (Vaughan Metropolitan Centre - Finch)
-    vaughanMetropolitanCentre: {
-      name: "Vaughan Metropolitan Centre",
-      connector: {
-        color: "yellow",
-        right: true,
-        station: true,
-        x: 0,
-        y: 0,
+    line1_yonge_university: {
+      color: "yellow",
+      vaughanMetropolitanCentre: {
+        name: "Vaughan Metropolitan Centre",
       },
-    },
-    highway407: {
-      name: "Highway 407",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 0,
+      highway407: {
+        name: "Highway 407",
       },
-    },
-    pioneerVillage: {
-      name: "Pioneer Village",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 0,
+      pioneerVillage: {
+        name: "Pioneer Village",
       },
-    },
-    yorkUniversity: {
-      name: "York University",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 0,
+      yorkUniversity: {
+        name: "York University",
       },
-    },
-    finchWest: {
-      name: "Finch West",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 0,
+      finchWest: {
+        name: "Finch West",
       },
-    },
-    downsviewPark: {
-      name: "Downsview Park",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 0,
+      downsviewPark: {
+        name: "Downsview Park",
       },
-    },
-    sheppardWest: {
-      name: "Sheppard West",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 0,
+      sheppardWest: {
+        name: "Sheppard West",
       },
-    },
-    wilson: {
-      name: "Wilson",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 0,
+      wilson: {
+        name: "Wilson",
       },
-    },
-    yorkdale: {
-      name: "Yorkdale",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 0,
+      yorkdale: {
+        name: "Yorkdale",
       },
-    },
-    lawrenceWest: {
-      name: "Lawrence West",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 0,
+      lawrenceWest: {
+        name: "Lawrence West",
       },
-    },
-    glencairn: {
-      name: "Glencairn",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 0,
+      glencairn: {
+        name: "Glencairn",
       },
-    },
-    eglintonWest: {
-      name: "Eglinton West",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 0,
+      eglintonWest: {
+        name: "Eglinton West",
       },
-    },
-    stClairWest: {
-      name: "St. Clair West",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 0,
+      stClairWest: {
+        name: "St. Clair West",
       },
-    },
-    dupont: {
-      name: "Dupont",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 0,
+      dupont: {
+        name: "Dupont",
       },
-    },
-    spadina_line1: {
-      name: "Spadina",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 0,
+      spadina_line1: {
+        name: "Spadina",
       },
-    },
-    stGeorge_line1: {
-      name: "St. George",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 0,
+      stGeorge_line1: {
+        name: "St. George",
       },
-    },
-    museum: {
-      name: "Museum",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 0,
+      museum: {
+        name: "Museum",
       },
-    },
-    queensPark: {
-      name: "Queen's Park",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 0,
+      queensPark: {
+        name: "Queen's Park",
       },
-    },
-    stPatrick: {
-      name: "St. Patrick",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 0,
+      stPatrick: {
+        name: "St. Patrick",
       },
-    },
-    osgoode: {
-      name: "Osgoode",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 0,
+      osgoode: {
+        name: "Osgoode",
       },
-    },
-    stAndrew: {
-      name: "St. Andrew",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 0,
+      stAndrew: {
+        name: "St. Andrew",
       },
-    },
-    union: {
-      name: "Union",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 0,
+      union: {
+        name: "Union",
       },
-    },
-    king: {
-      name: "King",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 0,
+      king: {
+        name: "King",
       },
-    },
-    queen: {
-      name: "Queen",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 0,
+      queen: {
+        name: "Queen",
       },
-    },
-    dundas: {
-      name: "Dundas",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 0,
+      dundas: {
+        name: "Dundas",
       },
-    },
-    college: {
-      name: "College",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 0,
+      college: {
+        name: "College",
       },
-    },
-    wellesley: {
-      name: "Wellesley",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1560,
-        y: 0,
+      wellesley: {
+        name: "Wellesley",
       },
-    },
-    bloorYonge_line1: {
-      name: "Bloor-Yonge",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1620,
-        y: 0,
+      bloorYonge_line1: {
+        name: "Bloor-Yonge",
       },
-    },
-    rosedale: {
-      name: "Rosedale",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1680,
-        y: 0,
+      rosedale: {
+        name: "Rosedale",
       },
-    },
-    summerhill: {
-      name: "Summerhill",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1740,
-        y: 0,
+      summerhill: {
+        name: "Summerhill",
       },
-    },
-    stClair: {
-      name: "St. Clair",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1800,
-        y: 0,
+      stClair: {
+        name: "St. Clair",
       },
-    },
-    davisville: {
-      name: "Davisville",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1860,
-        y: 0,
+      davisville: {
+        name: "Davisville",
       },
-    },
-    eglinton: {
-      name: "Eglinton",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1920,
-        y: 0,
+      eglinton: {
+        name: "Eglinton",
       },
-    },
-    lawrence: {
-      name: "Lawrence",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1980,
-        y: 0,
+      lawrence: {
+        name: "Lawrence",
       },
-    },
-    yorkMills: {
-      name: "York Mills",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 2040,
-        y: 0,
+      yorkMills: {
+        name: "York Mills",
       },
-    },
-    sheppardYonge_line1: {
-      name: "Sheppard-Yonge",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 2100,
-        y: 0,
+      sheppardYonge_line1: {
+        name: "Sheppard-Yonge",
       },
-    },
-    northYorkCentre: {
-      name: "North York Centre",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 2160,
-        y: 0,
+      northYorkCentre: {
+        name: "North York Centre",
       },
-    },
-    finch: {
-      name: "Finch",
-      connector: {
-        color: "yellow",
-        left: true,
-        station: true,
-        x: 2220,
-        y: 0,
+      finch: {
+        name: "Finch",
       },
     },
-
-    // Line 2 - Bloor-Danforth (Kipling - Kennedy)
-    kipling: {
-      name: "Kipling",
-      connector: {
-        color: "green",
-        right: true,
-        station: true,
-        x: 0,
-        y: 60,
-        labelPlacement: "bottom-right",
+    line2_bloor_danforth: {
+      color: "green",
+      labelPlacement: "bottom-right",
+      kipling: {
+        name: "Kipling",
       },
-    },
-    islington: {
-      name: "Islington",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 60,
-        labelPlacement: "bottom-right",
+      islington: {
+        name: "Islington",
       },
-    },
-    royalYork: {
-      name: "Royal York",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 60,
-        labelPlacement: "bottom-right",
+      royalYork: {
+        name: "Royal York",
       },
-    },
-    oldMill: {
-      name: "Old Mill",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 60,
-        labelPlacement: "bottom-right",
+      oldMill: {
+        name: "Old Mill",
       },
-    },
-    jane: {
-      name: "Jane",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 60,
-        labelPlacement: "bottom-right",
+      jane: {
+        name: "Jane",
       },
-    },
-    runnymede: {
-      name: "Runnymede",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 60,
-        labelPlacement: "bottom-right",
+      runnymede: {
+        name: "Runnymede",
       },
-    },
-    highPark: {
-      name: "High Park",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 60,
-        labelPlacement: "bottom-right",
+      highPark: {
+        name: "High Park",
       },
-    },
-    keele: {
-      name: "Keele",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 60,
-        labelPlacement: "bottom-right",
+      keele: {
+        name: "Keele",
       },
-    },
-    dundasWest: {
-      name: "Dundas West",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 60,
-        labelPlacement: "bottom-right",
+      dundasWest: {
+        name: "Dundas West",
       },
-    },
-    lansdowne: {
-      name: "Lansdowne",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 60,
-        labelPlacement: "bottom-right",
+      lansdowne: {
+        name: "Lansdowne",
       },
-    },
-    dufferin: {
-      name: "Dufferin",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 60,
-        labelPlacement: "bottom-right",
+      dufferin: {
+        name: "Dufferin",
       },
-    },
-    ossington: {
-      name: "Ossington",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 60,
-        labelPlacement: "bottom-right",
+      ossington: {
+        name: "Ossington",
       },
-    },
-    christie: {
-      name: "Christie",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 60,
-        labelPlacement: "bottom-right",
+      christie: {
+        name: "Christie",
       },
-    },
-    bathurst: {
-      name: "Bathurst",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 60,
-        labelPlacement: "bottom-right",
+      bathurst: {
+        name: "Bathurst",
       },
-    },
-    spadinaTtc: {
-      name: "Spadina TTC",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 60,
-        labelPlacement: "bottom-right",
+      spadinaTtc: {
+        name: "Spadina TTC",
       },
-    },
-    stGeorge_line2: {
-      name: "St. George",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 60,
-        labelPlacement: "bottom-right",
+      stGeorge_line2: {
+        name: "St. George",
       },
-    },
-    bay: {
-      name: "Bay",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 60,
-        labelPlacement: "bottom-right",
+      bay: {
+        name: "Bay",
       },
-    },
-    bloorYonge_line2: {
-      name: "Bloor-Yonge",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 60,
-        labelPlacement: "bottom-right",
+      bloorYonge_line2: {
+        name: "Bloor-Yonge",
       },
-    },
-    sherbourne: {
-      name: "Sherbourne",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 60,
-        labelPlacement: "bottom-right",
+      sherbourne: {
+        name: "Sherbourne",
       },
-    },
-    castleFrank: {
-      name: "Castle Frank",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 60,
-        labelPlacement: "bottom-right",
+      castleFrank: {
+        name: "Castle Frank",
       },
-    },
-    broadview: {
-      name: "Broadview",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 60,
-        labelPlacement: "bottom-right",
+      broadview: {
+        name: "Broadview",
       },
-    },
-    chester: {
-      name: "Chester",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 60,
-        labelPlacement: "bottom-right",
+      chester: {
+        name: "Chester",
       },
-    },
-    pape: {
-      name: "Pape",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 60,
-        labelPlacement: "bottom-right",
+      pape: {
+        name: "Pape",
       },
-    },
-    donlands: {
-      name: "Donlands",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 60,
-        labelPlacement: "bottom-right",
+      donlands: {
+        name: "Donlands",
       },
-    },
-    greenwood: {
-      name: "Greenwood",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 60,
-        labelPlacement: "bottom-right",
+      greenwood: {
+        name: "Greenwood",
       },
-    },
-    coxwell: {
-      name: "Coxwell",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 60,
-        labelPlacement: "bottom-right",
+      coxwell: {
+        name: "Coxwell",
       },
-    },
-    woodbine: {
-      name: "Woodbine",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1560,
-        y: 60,
-        labelPlacement: "bottom-right",
+      woodbine: {
+        name: "Woodbine",
       },
-    },
-    mainStreet: {
-      name: "Main Street",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1620,
-        y: 60,
-        labelPlacement: "bottom-right",
+      mainStreet: {
+        name: "Main Street",
       },
-    },
-    victoriaPark: {
-      name: "Victoria Park",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1680,
-        y: 60,
-        labelPlacement: "bottom-right",
+      victoriaPark: {
+        name: "Victoria Park",
       },
-    },
-    warden: {
-      name: "Warden",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1740,
-        y: 60,
-        labelPlacement: "bottom-right",
+      warden: {
+        name: "Warden",
       },
-    },
-    kennedy_line2: {
-      name: "Kennedy",
-      connector: {
-        color: "green",
-        left: true,
-        station: true,
-        x: 1800,
-        y: 60,
-        labelPlacement: "bottom-right",
+      kennedy_line2: {
+        name: "Kennedy",
       },
     },
-    // Line 4 - Sheppard (Sheppard-Yonge - Don Mills)
-    sheppardYonge_line4: {
-      name: "Sheppard-Yonge",
-      connector: {
-        color: "#b31f78",
-        right: true,
-        station: true,
-        x: 0,
-        y: 120,
+    line4_sheppard: {
+      color: "#b31f78",
+      sheppardYonge_line4: {
+        name: "Sheppard-Yonge",
       },
-    },
-    bayview: {
-      name: "Bayview",
-      connector: {
-        color: "#b31f78",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 120,
+      bayview: {
+        name: "Bayview",
       },
-    },
-    bessarion: {
-      name: "Bessarion",
-      connector: {
-        color: "#b31f78",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 120,
+      bessarion: {
+        name: "Bessarion",
       },
-    },
-    leslie: {
-      name: "Leslie",
-      connector: {
-        color: "#b31f78",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 120,
+      leslie: {
+        name: "Leslie",
+      },
+      donMills: {
+        name: "Don Mills",
       },
     },
-    donMills: {
-      name: "Don Mills",
-      connector: {
-        color: "#b31f78",
-        left: true,
-        station: true,
-        x: 240,
-        y: 120,
+    line5_eglinton: {
+      color: "#ffa500",
+      mountDennis: {
+        name: "Mount Dennis",
+      },
+      keelesdale: {
+        name: "Keelesdale",
+      },
+      caledonia: {
+        name: "Caledonia",
+      },
+      fairbank: {
+        name: "Fairbank",
+      },
+      oakwood: {
+        name: "Oakwood",
+      },
+      cedarvale_line5: {
+        name: "Cedarvale",
+      },
+      forestHill: {
+        name: "Forest Hill",
+      },
+      chaplin: {
+        name: "Chaplin",
+      },
+      avenue: {
+        name: "Avenue",
+      },
+      eglinton_line5: {
+        name: "Eglinton",
+      },
+      mountPleasant: {
+        name: "Mount Pleasant",
+      },
+      leaside: {
+        name: "Leaside",
+      },
+      laird: {
+        name: "Laird",
+      },
+      sunnybrookPark: {
+        name: "Sunnybrook Park",
+      },
+      donValley: {
+        name: "Don Valley",
+      },
+      agaKhanParkMuseum: {
+        name: "Aga Khan Park & Museum",
+      },
+      wynford: {
+        name: "Wynford",
+      },
+      sloane: {
+        name: "Sloane",
+      },
+      pharmacy: {
+        name: "Pharmacy",
+      },
+      goldenMile: {
+        name: "Golden Mile",
+      },
+      birchmount: {
+        name: "Birchmount",
+      },
+      ionview: {
+        name: "Ionview",
+      },
+      hakimiLebovic: {
+        name: "Hakimi Lebovic",
+      },
+      oconnor: {
+        name: "O'Connor",
+      },
+      kennedy_line5: {
+        name: "Kennedy",
       },
     },
   },
-  extraConnectors: [],
 };
