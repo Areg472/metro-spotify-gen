@@ -6,7 +6,6 @@ export const toronto = {
   stations: {
     line2_bloor_danforth: {
       color: "green",
-      labelPlacement: "bottom-right",
       kipling: {
         name: "Kipling",
       },
