@@ -4,6 +4,103 @@ export const toronto = {
   defaultConnectorSize: 60,
   auto: true,
   stations: {
+    line2_bloor_danforth: {
+      color: "green",
+      labelPlacement: "bottom-right",
+      kipling: {
+        name: "Kipling",
+      },
+      islington: {
+        name: "Islington",
+      },
+      royalYork: {
+        name: "Royal York",
+      },
+      oldMill: {
+        name: "Old Mill",
+      },
+      jane: {
+        name: "Jane",
+      },
+      runnymede: {
+        name: "Runnymede",
+      },
+      highPark: {
+        name: "High Park",
+      },
+      keele: {
+        name: "Keele",
+      },
+      dundasWest: {
+        name: "Dundas West",
+      },
+      lansdowne: {
+        name: "Lansdowne",
+      },
+      dufferin: {
+        name: "Dufferin",
+      },
+      ossington: {
+        name: "Ossington",
+      },
+      christie: {
+        name: "Christie",
+      },
+      bathurst: {
+        name: "Bathurst",
+      },
+      spadinaTtc: {
+        name: "Spadina TTC",
+      },
+      stGeorge_line2: {
+        name: "St. George",
+      },
+      bay: {
+        name: "Bay",
+      },
+      bloorYonge_line2: {
+        name: "Bloor-Yonge",
+      },
+      sherbourne: {
+        name: "Sherbourne",
+      },
+      castleFrank: {
+        name: "Castle Frank",
+      },
+      broadview: {
+        name: "Broadview",
+      },
+      chester: {
+        name: "Chester",
+      },
+      pape: {
+        name: "Pape",
+      },
+      donlands: {
+        name: "Donlands",
+      },
+      greenwood: {
+        name: "Greenwood",
+      },
+      coxwell: {
+        name: "Coxwell",
+      },
+      woodbine: {
+        name: "Woodbine",
+      },
+      mainStreet: {
+        name: "Main Street",
+      },
+      victoriaPark: {
+        name: "Victoria Park",
+      },
+      warden: {
+        name: "Warden",
+      },
+      kennedy_line2: {
+        name: "Kennedy",
+      },
+    },
     line1_yonge_university: {
       color: "yellow",
       vaughanMetropolitanCentre: {
@@ -119,103 +216,6 @@ export const toronto = {
       },
       finch: {
         name: "Finch",
-      },
-    },
-    line2_bloor_danforth: {
-      color: "green",
-      labelPlacement: "bottom-right",
-      kipling: {
-        name: "Kipling",
-      },
-      islington: {
-        name: "Islington",
-      },
-      royalYork: {
-        name: "Royal York",
-      },
-      oldMill: {
-        name: "Old Mill",
-      },
-      jane: {
-        name: "Jane",
-      },
-      runnymede: {
-        name: "Runnymede",
-      },
-      highPark: {
-        name: "High Park",
-      },
-      keele: {
-        name: "Keele",
-      },
-      dundasWest: {
-        name: "Dundas West",
-      },
-      lansdowne: {
-        name: "Lansdowne",
-      },
-      dufferin: {
-        name: "Dufferin",
-      },
-      ossington: {
-        name: "Ossington",
-      },
-      christie: {
-        name: "Christie",
-      },
-      bathurst: {
-        name: "Bathurst",
-      },
-      spadinaTtc: {
-        name: "Spadina TTC",
-      },
-      stGeorge_line2: {
-        name: "St. George",
-      },
-      bay: {
-        name: "Bay",
-      },
-      bloorYonge_line2: {
-        name: "Bloor-Yonge",
-      },
-      sherbourne: {
-        name: "Sherbourne",
-      },
-      castleFrank: {
-        name: "Castle Frank",
-      },
-      broadview: {
-        name: "Broadview",
-      },
-      chester: {
-        name: "Chester",
-      },
-      pape: {
-        name: "Pape",
-      },
-      donlands: {
-        name: "Donlands",
-      },
-      greenwood: {
-        name: "Greenwood",
-      },
-      coxwell: {
-        name: "Coxwell",
-      },
-      woodbine: {
-        name: "Woodbine",
-      },
-      mainStreet: {
-        name: "Main Street",
-      },
-      victoriaPark: {
-        name: "Victoria Park",
-      },
-      warden: {
-        name: "Warden",
-      },
-      kennedy_line2: {
-        name: "Kennedy",
       },
     },
     line4_sheppard: {
