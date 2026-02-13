@@ -47,7 +47,7 @@ export const boston = {
       },
       branches: [
         {
-          branchedStation: "JFK/UMass",
+          branched_station: "JFK/UMass",
           color: "#da291c",
           stations: {
             savinHill: {
@@ -65,7 +65,7 @@ export const boston = {
           },
         },
         {
-          branchedStation: "JFK/UMass",
+          branched_station: "JFK/UMass",
           color: "#da291c",
           stations: {
             northQuincy: {
