@@ -6,6 +6,8 @@ function processBranch(
   defaultConnectorSize,
   visualLineIndexRef,
   branchOffsetMap = {},
+  branchIndex = 0,
+  totalBranches = 1,
 ) {
   const branchedStationKey = Object.keys(processedStations).find(
     (key) => processedStations[key].name === branchData.branched_station,
@@ -29,9 +31,11 @@ function processBranch(
 
   branchedStation.connector.bottom = true;
 
+  const isLastBranch = branchIndex === totalBranches - 1;
+
   extraConnectors.push({
     color: parentLineColor || branchData.color,
-    top: true,
+    ...(isLastBranch ? { top: true } : { vertical: true }),
     right: true,
     x: extraConnectorX,
     y: branchY,
@@ -105,6 +109,8 @@ function processBranch(
         defaultConnectorSize,
         visualLineIndexRef,
         branchOffsetMap,
+        0,
+        1,
       );
       if (nestedResult) {
         maxBranchY = Math.max(maxBranchY, nestedResult);
@@ -193,7 +199,7 @@ export function processAutoStations(cityData) {
       }
 
       if (lineData.branches) {
-        lineData.branches.forEach((branchData) => {
+        lineData.branches.forEach((branchData, index) => {
           const branchResult = processBranch(
             branchData,
             lineColor,
@@ -202,6 +208,8 @@ export function processAutoStations(cityData) {
             defaultConnectorSize,
             visualLineIndexRef,
             branchOffsetMap,
+            index,
+            lineData.branches.length,
           );
           if (branchResult) {
             maxY = Math.max(maxY, branchResult);
