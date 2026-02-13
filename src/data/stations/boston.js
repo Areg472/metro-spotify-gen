@@ -47,7 +47,7 @@ export const boston = {
       },
       branches: [
         {
-          branchedStation: "jfkUmass",
+          branchedStation: "JFK/UMass",
           color: "#da291c",
           stations: {
             savinHill: {
@@ -65,7 +65,7 @@ export const boston = {
           },
         },
         {
-          branchedStation: "jfkUmass",
+          branchedStation: "JFK/UMass",
           color: "#da291c",
           stations: {
             northQuincy: {
@@ -293,7 +293,7 @@ export const boston = {
       deanRoad: {
         name: "Dean Road",
       },
-      tappan_Street: {
+      tappanStreet: {
         name: "Tappan Street",
       },
       washingtonSquare: {
@@ -446,10 +446,12 @@ export const boston = {
       missionPark: {
         name: "Mission Park",
       },
-      fenwood_Road: {
+      fenwoodRoad: {
         name: "Fenwood Road",
       },
-      bright_wood: { name: "Brigham Circle" },
+      brighamCircle: {
+        name: "Brigham Circle",
+      },
       longwoodMedicalAreaE: {
         name: "Longwood Medical Area",
       },
