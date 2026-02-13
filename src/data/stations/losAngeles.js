@@ -375,7 +375,7 @@ export const losAngeles = {
       mlkJr: {
         name: "MLK Jr",
       },
-      expoCrenshaK: {
+      expoCrenshaW: {
         name: "Expo/Crenshaw",
       },
     },
