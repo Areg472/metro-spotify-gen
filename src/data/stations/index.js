@@ -4,6 +4,7 @@ import { minsk } from "./minsk";
 import { london } from "./london";
 import { istanbul } from "./istanbul";
 import { lyon } from "./lyon";
+import { boston } from "@/data/stations/boston";
 import { amsterdam } from "./amsterdam";
 import { naples } from "./naples";
 import { paris } from "./paris";
@@ -22,6 +23,7 @@ export const stations = {
   tbilisi: processAutoStations(tbilisi),
   minsk: processAutoStations(minsk),
   london: processAutoStations(london),
+  boston: processAutoStations(boston),
   lyon: processAutoStations(lyon),
   istanbul: processAutoStations(istanbul),
   paris: processAutoStations(paris),
