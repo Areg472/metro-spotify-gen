@@ -13,6 +13,7 @@ import { toronto } from "@/data/stations/toronto";
 import { tashkent } from "@/data/stations/tashkent";
 import { moscow } from "@/data/stations/moscow";
 import { delhi } from "@/data/stations/delhi";
+import { losAngeles } from "@/data/stations/los_angeles";
 import { processAutoStations } from "./utils";
 
 export const stations = {
@@ -31,6 +32,7 @@ export const stations = {
   toronto: processAutoStations(toronto),
   tashkent: processAutoStations(tashkent),
   delhi: processAutoStations(delhi),
+  losAngeles: processAutoStations(losAngeles),
 };
 
 export default stations;

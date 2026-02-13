@@ -1,3 +1,110 @@
+function processBranch(
+  branchData,
+  parentLineColor,
+  processedStations,
+  extraConnectors,
+  defaultConnectorSize,
+  visualLineIndexRef,
+) {
+  const branchedStationKey = Object.keys(processedStations).find(
+    (key) => processedStations[key].name === branchData.branched_station,
+  );
+
+  if (!branchedStationKey) {
+    return null;
+  }
+
+  const branchedStation = processedStations[branchedStationKey];
+  const parentY = branchedStation.connector.y;
+  const branchY = parentY + defaultConnectorSize;
+  const extraConnectorX = branchedStation.connector.x;
+
+  branchedStation.connector.bottom = true;
+
+  extraConnectors.push({
+    color: parentLineColor || branchData.color,
+    top: true,
+    right: true,
+    x: extraConnectorX,
+    y: branchY,
+  });
+
+  const branchManualLabelPlacement = branchData.labelPlacement || null;
+  const branchShouldHaveLabelPlacement = visualLineIndexRef.value % 2 === 1;
+  let branchX = extraConnectorX + defaultConnectorSize;
+  const branchStations = [];
+
+  Object.entries(branchData.stations || {}).forEach(
+    ([stationKey, stationData]) => {
+      if (stationKey !== "branch" && stationKey !== "branches") {
+        branchStations.push({ key: stationKey, data: stationData });
+      }
+    },
+  );
+
+  branchStations.forEach((station, index) => {
+    const { key, data } = station;
+    const isFirst = index === 0;
+    const isLast = index === branchStations.length - 1;
+
+    processedStations[key] = {
+      ...data,
+      connector: {
+        color: parentLineColor || branchData.color || data.color,
+        station: true,
+        x: branchX,
+        y: branchY,
+        ...(isFirst ? { horizontal: true } : {}),
+        ...(isLast ? { left: true } : {}),
+        ...(!isFirst && !isLast ? { horizontal: true } : {}),
+        ...(branchManualLabelPlacement
+          ? { labelPlacement: branchManualLabelPlacement }
+          : branchShouldHaveLabelPlacement
+            ? { labelPlacement: "bottom-right" }
+            : {}),
+      },
+    };
+
+    branchX += defaultConnectorSize;
+  });
+
+  visualLineIndexRef.value++;
+
+  let maxBranchY = branchY;
+
+  if (branchData.branch) {
+    const nestedResult = processBranch(
+      branchData.branch,
+      parentLineColor || branchData.color,
+      processedStations,
+      extraConnectors,
+      defaultConnectorSize,
+      visualLineIndexRef,
+    );
+    if (nestedResult) {
+      maxBranchY = Math.max(maxBranchY, nestedResult);
+    }
+  }
+
+  if (branchData.branches) {
+    branchData.branches.forEach((nestedBranch) => {
+      const nestedResult = processBranch(
+        nestedBranch,
+        parentLineColor || branchData.color,
+        processedStations,
+        extraConnectors,
+        defaultConnectorSize,
+        visualLineIndexRef,
+      );
+      if (nestedResult) {
+        maxBranchY = Math.max(maxBranchY, nestedResult);
+      }
+    });
+  }
+
+  return maxBranchY;
+}
+
 export function processAutoStations(cityData) {
   if (!cityData.auto) {
     return cityData;
@@ -8,7 +115,7 @@ export function processAutoStations(cityData) {
   const extraConnectors = [];
 
   let currentY = 0;
-  let visualLineIndex = 0;
+  const visualLineIndexRef = { value: 0 };
 
   Object.entries(cityData.stations).forEach(
     ([lineName, lineData], lineIndex) => {
@@ -16,14 +123,14 @@ export function processAutoStations(cityData) {
       const stationsInLine = [];
       let lineColor = null;
       let manualLabelPlacement = null;
-      const shouldHaveLabelPlacement = visualLineIndex % 2 === 1;
+      const shouldHaveLabelPlacement = visualLineIndexRef.value % 2 === 1;
 
       Object.entries(lineData).forEach(([stationKey, stationData]) => {
         if (stationKey === "color") {
           lineColor = stationData;
         } else if (stationKey === "labelPlacement") {
           manualLabelPlacement = stationData;
-        } else if (stationKey !== "branch") {
+        } else if (stationKey !== "branch" && stationKey !== "branches") {
           stationsInLine.push({ key: stationKey, data: stationData });
         }
       });
@@ -54,65 +161,41 @@ export function processAutoStations(cityData) {
         currentX += defaultConnectorSize;
       });
 
-      visualLineIndex++;
+      visualLineIndexRef.value++;
+
+      let maxY = currentY;
 
       if (lineData.branch) {
-        const branchData = lineData.branch;
-        const branchedStationKey = Object.keys(processedStations).find(
-          (key) => processedStations[key].name === branchData.branched_station,
+        const branchResult = processBranch(
+          lineData.branch,
+          lineColor,
+          processedStations,
+          extraConnectors,
+          defaultConnectorSize,
+          visualLineIndexRef,
         );
-
-        if (branchedStationKey) {
-          const branchedStation = processedStations[branchedStationKey];
-          const branchY = currentY + defaultConnectorSize;
-          const extraConnectorX = branchedStation.connector.x;
-
-          branchedStation.connector.bottom = true;
-
-          extraConnectors.push({
-            color: lineColor || branchData.color,
-            top: true,
-            right: true,
-            x: extraConnectorX,
-            y: branchY,
-          });
-
-          const branchManualLabelPlacement = branchData.labelPlacement || null;
-          const branchShouldHaveLabelPlacement = visualLineIndex % 2 === 1;
-          let branchX = extraConnectorX + defaultConnectorSize;
-          const branchStations = Object.entries(branchData.stations);
-
-          branchStations.forEach(([stationKey, stationData], index) => {
-            const isFirst = index === 0;
-            const isLast = index === branchStations.length - 1;
-
-            processedStations[stationKey] = {
-              ...stationData,
-              connector: {
-                color: lineColor || branchData.color || stationData.color,
-                station: true,
-                x: branchX,
-                y: branchY,
-                ...(isFirst ? { horizontal: true } : {}),
-                ...(isLast ? { left: true } : {}),
-                ...(!isFirst && !isLast ? { horizontal: true } : {}),
-                ...(branchManualLabelPlacement
-                  ? { labelPlacement: branchManualLabelPlacement }
-                  : branchShouldHaveLabelPlacement
-                    ? { labelPlacement: "bottom-right" }
-                    : {}),
-              },
-            };
-
-            branchX += defaultConnectorSize;
-          });
-
-          visualLineIndex++;
-          currentY = branchY + defaultConnectorSize;
+        if (branchResult) {
+          maxY = Math.max(maxY, branchResult);
         }
-      } else {
-        currentY += defaultConnectorSize;
       }
+
+      if (lineData.branches) {
+        lineData.branches.forEach((branchData) => {
+          const branchResult = processBranch(
+            branchData,
+            lineColor,
+            processedStations,
+            extraConnectors,
+            defaultConnectorSize,
+            visualLineIndexRef,
+          );
+          if (branchResult) {
+            maxY = Math.max(maxY, branchResult);
+          }
+        });
+      }
+
+      currentY = maxY + defaultConnectorSize;
     },
   );
 
