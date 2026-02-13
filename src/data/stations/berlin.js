@@ -559,7 +559,7 @@ export const berlin = {
         name: "Blissestraße",
         nameDe: "Blissestraße",
       },
-      berlinerStrasse: {
+      berlinerStrasseUSeven: {
         name: "Berliner Straße",
         nameDe: "Berliner Straße",
       },
