@@ -1,4 +1,4 @@
-export const losAngeles = {
+export const losangeles = {
   name: "Los Angeles",
   country: "United States",
   defaultConnectorSize: 60,
@@ -375,7 +375,7 @@ export const losAngeles = {
       mlkJr: {
         name: "MLK Jr",
       },
-      expoCrenshaw: {
+      expoCrenshawK: {
         name: "Expo/Crenshaw",
       },
     },
