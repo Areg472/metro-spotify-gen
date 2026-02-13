@@ -5,6 +5,7 @@ function processBranch(
   extraConnectors,
   defaultConnectorSize,
   visualLineIndexRef,
+  branchOffsetMap = {},
 ) {
   const branchedStationKey = Object.keys(processedStations).find(
     (key) => processedStations[key].name === branchData.branched_station,
@@ -16,7 +17,14 @@ function processBranch(
 
   const branchedStation = processedStations[branchedStationKey];
   const parentY = branchedStation.connector.y;
-  const branchY = parentY + defaultConnectorSize;
+
+  if (!branchOffsetMap[branchedStationKey]) {
+    branchOffsetMap[branchedStationKey] = 0;
+  }
+  branchOffsetMap[branchedStationKey]++;
+
+  const branchY =
+    parentY + defaultConnectorSize * branchOffsetMap[branchedStationKey];
   const extraConnectorX = branchedStation.connector.x;
 
   branchedStation.connector.bottom = true;
@@ -80,6 +88,7 @@ function processBranch(
       extraConnectors,
       defaultConnectorSize,
       visualLineIndexRef,
+      branchOffsetMap,
     );
     if (nestedResult) {
       maxBranchY = Math.max(maxBranchY, nestedResult);
@@ -95,6 +104,7 @@ function processBranch(
         extraConnectors,
         defaultConnectorSize,
         visualLineIndexRef,
+        branchOffsetMap,
       );
       if (nestedResult) {
         maxBranchY = Math.max(maxBranchY, nestedResult);
@@ -165,6 +175,8 @@ export function processAutoStations(cityData) {
 
       let maxY = currentY;
 
+      const branchOffsetMap = {};
+
       if (lineData.branch) {
         const branchResult = processBranch(
           lineData.branch,
@@ -173,6 +185,7 @@ export function processAutoStations(cityData) {
           extraConnectors,
           defaultConnectorSize,
           visualLineIndexRef,
+          branchOffsetMap,
         );
         if (branchResult) {
           maxY = Math.max(maxY, branchResult);
@@ -188,6 +201,7 @@ export function processAutoStations(cityData) {
             extraConnectors,
             defaultConnectorSize,
             visualLineIndexRef,
+            branchOffsetMap,
           );
           if (branchResult) {
             maxY = Math.max(maxY, branchResult);
