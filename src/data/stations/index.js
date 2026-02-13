@@ -13,7 +13,7 @@ import { toronto } from "@/data/stations/toronto";
 import { tashkent } from "@/data/stations/tashkent";
 import { moscow } from "@/data/stations/moscow";
 import { delhi } from "@/data/stations/delhi";
-import { losAngeles } from "@/data/stations/los_angeles";
+import { losAngeles } from "@/data/stations/losAngeles";
 import { processAutoStations } from "./utils";
 
 export const stations = {
