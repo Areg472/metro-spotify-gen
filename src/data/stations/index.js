@@ -7,6 +7,7 @@ import { lyon } from "./lyon";
 import { boston } from "@/data/stations/boston";
 import { amsterdam } from "./amsterdam";
 import { naples } from "./naples";
+import { saintPetersburg } from "@/data/stations/saintpeterburg";
 import { paris } from "./paris";
 import { washington } from "@/data/stations/washington";
 import { tokyo } from "@/data/stations/tokyo";
@@ -30,6 +31,7 @@ export const stations = {
   istanbul: processAutoStations(istanbul),
   paris: processAutoStations(paris),
   moscow: processAutoStations(moscow),
+  saintPetersburg: processAutoStations(saintPetersburg),
   amsterdam: processAutoStations(amsterdam),
   naples: processAutoStations(naples),
   washington: processAutoStations(washington),
