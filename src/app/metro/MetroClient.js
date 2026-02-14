@@ -16,6 +16,7 @@ export default function MetroClient({ initialCityId, initialCityData }) {
   const [endStation, setEndStation] = useState(null);
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [weatherData, setWeatherData] = useState(null);
 
   const sendMessage = async (prompt) => {
     setIsLoading(true);
@@ -91,7 +92,17 @@ export default function MetroClient({ initialCityId, initialCityData }) {
       })
       .join("\n");
 
-    const prompt = `Metro trip: ${selectedCity?.name || "Yerevan"}, from "${startStation.name}" to "${endStation.name}".
+    let weatherInfo = "";
+    if (weatherData && weatherData.length > 0) {
+      const weather = weatherData[0];
+      if (weather.current) {
+        const { temperature, skytext, humidity, winddisplay } = weather.current;
+        const locationName = weather.location?.name || selectedCity?.name;
+        weatherInfo = `\n\nCurrent weather in ${locationName}: ${temperature}°C, ${skytext}, Humidity: ${humidity}%, Wind: ${winddisplay}`;
+      }
+    }
+
+    const prompt = `Metro trip: ${selectedCity?.name || "Yerevan"}, from "${startStation.name}" to "${endStation.name}".${weatherInfo}
 
 INSTRUCTIONS:
 1. First, search the web for the exact travel time between these two metro stations (riding time only, exclude waiting).
@@ -140,6 +151,30 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
       fetchTracks();
     }
   }, []);
+
+  useEffect(() => {
+    if (selectedCity?.name) {
+      const WEATHER_CITY = selectedCity.name;
+      fetch(
+        `https://api.popcat.xyz/v2/weather?q=${encodeURIComponent(WEATHER_CITY)}`,
+      )
+        .then((res) => res.json())
+        .then((json) => {
+          const { error, message } = json;
+          if (error) {
+            console.log(message.error);
+            setWeatherData(null);
+            return;
+          }
+          console.log(message);
+          setWeatherData(message);
+        })
+        .catch((err) => {
+          console.error("Weather fetch error:", err);
+          setWeatherData(null);
+        });
+    }
+  }, [selectedCity]);
 
   const handleStationClick = (station) => {
     if (startStation && endStation) {
