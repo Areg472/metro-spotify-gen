@@ -33,9 +33,12 @@ export default function MetroClient({ initialCityId, initialCityData }) {
         console.log("AI Response:", data);
 
         let content = data.text || "No response from AI.";
-        if (content.trim().startsWith("[")) {
+       if (content.trim().startsWith("[")) {
           try {
-            const jsonMatch = content.match(/\[[\s\S]*\]/);
+            let cleanedContent = content.trim();
+            cleanedContent = cleanedContent.replace(/^```json?\s*/i, '').replace(/```\s*$/, '');
+            
+            const jsonMatch = cleanedContent.match(/\[[\s\S]*\]/);
             if (jsonMatch) {
               const parsed = JSON.parse(jsonMatch[0]);
               content = parsed
@@ -44,6 +47,7 @@ export default function MetroClient({ initialCityId, initialCityData }) {
             }
           } catch (e) {
             console.error("Failed to parse AI JSON response", e);
+            console.error("Raw content:", content);
           }
         }
 
