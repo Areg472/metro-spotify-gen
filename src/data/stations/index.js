@@ -19,6 +19,8 @@ import { delhi } from "@/data/stations/delhi";
 import { losangeles } from "@/data/stations/losangeles";
 import { processAutoStations } from "./utils";
 import { berlin } from "@/data/stations/berlin";
+import { tehran } from "@/data/stations/tehran";
+import { chicago } from "@/data/stations/chicago";
 
 export const stations = {
   yerevan: processAutoStations(yerevan),
@@ -41,6 +43,8 @@ export const stations = {
   delhi: processAutoStations(delhi),
   losAngeles: processAutoStations(losangeles),
   berlin: processAutoStations(berlin),
-};
+  tehran: processAutoStations(tehran),
+  chicago: processAutoStations(chicago),
+}.sort((a, b) => a.name.localeCompare(b.name));
 
 export default stations;
