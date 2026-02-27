@@ -34,4 +34,4 @@ You could use this with spotify before, but they made bad changes to their API, 
 
 [![My Skills](https://skillicons.dev/icons?i=vercel,nextjs,react&theme=dark)](https://skillicons.dev)
 
-AI has been used for effective spotify and last fm implementations
+AI has been used for effective ~~spotify and~~ last fm implementation~~s~~
