@@ -7,12 +7,9 @@ export default function ContentSelectClient() {
   const router = useRouter();
   const [recentTracks, setRecentTracks] = useState([]);
   const [albums, setAlbums] = useState([]);
-  const [playlists, setPlaylists] = useState([]);
   const [selectAllTracks, setSelectAllTracks] = useState(false);
   const [selectedAlbums, setSelectedAlbums] = useState([]);
-  const [selectedPlaylists, setSelectedPlaylists] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [musicService, setMusicService] = useState(null);
   const [lastfmUsername, setLastfmUsername] = useState(null);
 
   useEffect(() => {
@@ -26,72 +23,41 @@ export default function ContentSelectClient() {
         return null;
       };
 
-      const service = getCookie("music_service");
       const username = getCookie("lastfm_username");
-      setMusicService(service);
       setLastfmUsername(username);
 
       try {
         let tracksData = [];
         let albumsData = [];
-        let playlistsData = [];
 
-        if (service === "lastfm") {
-          const tracksResponse = await fetch(
-            `/api/lastfm/recent-tracks?username=${username}`,
-          );
-          if (tracksResponse.ok) {
-            tracksData = await tracksResponse.json();
-            setRecentTracks(tracksData);
-          } else {
-            console.error(
-              "Failed to fetch Last.fm tracks:",
-              tracksResponse.statusText,
-            );
-          }
-
-          const albumsResponse = await fetch(
-            `/api/lastfm/top-albums?username=${username}`,
-          );
-          if (albumsResponse.ok) {
-            albumsData = await albumsResponse.json();
-            setAlbums(albumsData);
-          } else {
-            console.error(
-              "Failed to fetch Last.fm albums:",
-              albumsResponse.statusText,
-            );
-          }
+        const tracksResponse = await fetch(
+          `/api/lastfm/recent-tracks?username=${username}`,
+        );
+        if (tracksResponse.ok) {
+          tracksData = await tracksResponse.json();
+          setRecentTracks(tracksData);
         } else {
-          const tracksResponse = await fetch("/api/tracks");
-          if (tracksResponse.ok) {
-            tracksData = await tracksResponse.json();
-            setRecentTracks(tracksData);
-          } else {
-            console.error(
-              "Failed to fetch Spotify tracks:",
-              tracksResponse.statusText,
-            );
-          }
-
-          const playlistsResponse = await fetch("/api/playlists");
-          if (playlistsResponse.ok) {
-            playlistsData = await playlistsResponse.json();
-            setPlaylists(playlistsData);
-          } else {
-            console.error(
-              "Failed to fetch Spotify playlists:",
-              playlistsResponse.statusText,
-            );
-          }
+          console.error(
+            "Failed to fetch Last.fm tracks:",
+            tracksResponse.statusText,
+          );
         }
 
-        if (
-          tracksData.length === 0 &&
-          albumsData.length === 0 &&
-          playlistsData.length === 0
-        ) {
-          router.push("/spotify-limit");
+        const albumsResponse = await fetch(
+          `/api/lastfm/top-albums?username=${username}`,
+        );
+        if (albumsResponse.ok) {
+          albumsData = await albumsResponse.json();
+          setAlbums(albumsData);
+        } else {
+          console.error(
+            "Failed to fetch Last.fm albums:",
+            albumsResponse.statusText,
+          );
+        }
+
+        if (tracksData.length === 0 && albumsData.length === 0) {
+          router.push("/");
           return;
         }
       } catch (error) {
@@ -111,79 +77,40 @@ export default function ContentSelectClient() {
     );
   };
 
-  const handlePlaylistToggle = (playlistId) => {
-    setSelectedPlaylists((prev) =>
-      prev.includes(playlistId)
-        ? prev.filter((id) => id !== playlistId)
-        : [...prev, playlistId],
-    );
-  };
-
   const handleNext = async () => {
     setIsLoading(true);
 
     try {
       const selectedTracksData = selectAllTracks ? recentTracks : [];
 
+      const selectedAlbumsData = albums.filter((album) =>
+        selectedAlbums.includes(album.id),
+      );
+
       let allContentTracks = [];
-      let selectedContentData = [];
 
-      if (musicService === "lastfm") {
-        const selectedAlbumsData = albums.filter((album) =>
-          selectedAlbums.includes(album.id),
-        );
-        selectedContentData = selectedAlbumsData;
+      for (const album of selectedAlbumsData) {
+        const response = await fetch("/api/lastfm/album-tracks", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ artist: album.artist, album: album.name }),
+        });
 
-        for (const album of selectedAlbumsData) {
-          const response = await fetch("/api/lastfm/album-tracks", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ artist: album.artist, album: album.name }),
-          });
-
-          if (response.ok) {
-            const tracks = await response.json();
-            allContentTracks = [...allContentTracks, ...tracks];
-          } else {
-            console.error(
-              `Failed to fetch tracks for Last.fm album: ${album.name}`,
-            );
-          }
-        }
-      } else {
-        const selectedPlaylistsData = playlists.filter((playlist) =>
-          selectedPlaylists.includes(playlist.id),
-        );
-        selectedContentData = selectedPlaylistsData;
-
-        for (const playlist of selectedPlaylistsData) {
-          const response = await fetch("/api/playlist-tracks", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ playlistId: playlist.id }),
-          });
-
-          if (response.ok) {
-            const tracks = await response.json();
-            allContentTracks = [...allContentTracks, ...tracks];
-            console.log(
-              `Fetched ${tracks.length} tracks from Spotify playlist: ${playlist.name}`,
-            );
-          } else {
-            console.error(
-              `Failed to fetch tracks for Spotify playlist: ${playlist.name}`,
-            );
-          }
+        if (response.ok) {
+          const tracks = await response.json();
+          allContentTracks = [...allContentTracks, ...tracks];
+        } else {
+          console.error(
+            `Failed to fetch tracks for Last.fm album: ${album.name}`,
+          );
         }
       }
 
       const combinedTracks = [...selectedTracksData, ...allContentTracks];
 
-      const tracksWithFeatures = combinedTracks;
-
       const dataToSend = {
-        tracks: tracksWithFeatures,
-        content: selectedContentData,
+        tracks: combinedTracks,
+        content: selectedAlbumsData,
       };
 
       sessionStorage.setItem("selectedContent", JSON.stringify(dataToSend));
@@ -207,7 +134,7 @@ export default function ContentSelectClient() {
     <div className="min-h-screen flex flex-col items-center justify-center gap-5 font-sans p-8">
       <h1 className="text-3xl">Select Your Content</h1>
       <p>Choose your recent tracks and albums to use for recommendations</p>
-      {musicService === "lastfm" && (
+      {lastfmUsername && (
         <p className="text-sm text-gray-400">
           Using Last.fm data for: {lastfmUsername}
         </p>
@@ -227,57 +154,30 @@ export default function ContentSelectClient() {
           </label>
         </div>
 
-        {musicService === "lastfm" ? (
-          <div className="bg-[#1a1a1a] p-6 rounded-xl">
-            <h2 className="text-2xl mb-4 text-white">
-              Your Top Albums/EPs/Singles
-            </h2>
-            <div className="space-y-2 max-h-96 overflow-y-auto">
-              {albums.map((album) => (
-                <label
-                  key={album.id}
-                  className="flex items-center text-white gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer"
-                >
-                  <input
-                    type="checkbox"
-                    checked={selectedAlbums.includes(album.id)}
-                    onChange={() => handleAlbumToggle(album.id)}
-                    className="w-4 h-4 cursor-pointer"
-                  />
-                  <span>
-                    {album.name} - {album.artist}
-                    {album.playcount && ` (${album.playcount} plays)`}
-                  </span>
-                </label>
-              ))}
-            </div>
+        <div className="bg-[#1a1a1a] p-6 rounded-xl">
+          <h2 className="text-2xl mb-4 text-white">
+            Your Top Albums/EPs/Singles
+          </h2>
+          <div className="space-y-2 max-h-96 overflow-y-auto">
+            {albums.map((album) => (
+              <label
+                key={album.id}
+                className="flex items-center text-white gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  checked={selectedAlbums.includes(album.id)}
+                  onChange={() => handleAlbumToggle(album.id)}
+                  className="w-4 h-4 cursor-pointer"
+                />
+                <span>
+                  {album.name} - {album.artist}
+                  {album.playcount && ` (${album.playcount} plays)`}
+                </span>
+              </label>
+            ))}
           </div>
-        ) : (
-          <div className="bg-[#1a1a1a] p-6 rounded-xl">
-            <h2 className="text-2xl mb-4 text-white">Your Playlists</h2>
-            <div className="space-y-2 max-h-96 overflow-y-auto">
-              {playlists.map((playlist) => (
-                <label
-                  key={playlist.id}
-                  className="flex text-white items-center gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer"
-                >
-                  <input
-                    type="checkbox"
-                    checked={selectedPlaylists.includes(playlist.id)}
-                    onChange={() => handlePlaylistToggle(playlist.id)}
-                    className="w-4 h-4 cursor-pointer"
-                  />
-                  <span>
-                    {playlist.name}
-                    {playlist.tracks &&
-                      playlist.tracks.total &&
-                      ` (${playlist.tracks.total} tracks)`}
-                  </span>
-                </label>
-              ))}
-            </div>
-          </div>
-        )}
+        </div>
       </div>
 
       <button
