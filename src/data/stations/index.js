@@ -22,7 +22,7 @@ import { berlin } from "@/data/stations/berlin";
 import { tehran } from "@/data/stations/tehran";
 import { chicago } from "@/data/stations/chicago";
 
-export const stations = {
+const rawStations = {
   yerevan: processAutoStations(yerevan),
   tbilisi: processAutoStations(tbilisi),
   minsk: processAutoStations(minsk),
@@ -45,6 +45,10 @@ export const stations = {
   berlin: processAutoStations(berlin),
   tehran: processAutoStations(tehran),
   chicago: processAutoStations(chicago),
-}.sort((a, b) => a.name.localeCompare(b.name));
+};
+
+export const stations = Object.fromEntries(
+  Object.entries(rawStations).sort(([a], [b]) => a.localeCompare(b)),
+);
 
 export default stations;
