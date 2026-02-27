@@ -21,7 +21,7 @@ and more
 
 To use this locally you have to download the project and stuff but I recommend just going to https://spotify-metro.aregus.me/ 
 
-IF YOU STILL WANT TO USE IT LOCALLY U NEED TO DOWNLOAD THIS WHOLE THING DO NPM INSTALL THEN PUT 4 ENVS
+IF YOU STILL WANT TO USE IT LOCALLY U NEED TO DOWNLOAD THIS WHOLE THING DO NPM INSTALL and nicely insert your 2 environment variables :)
 
 ```
 AI_GATEWAY_API_KEY=
