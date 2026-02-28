@@ -25,10 +25,9 @@ export async function generateMetadata({ params }) {
 
 export default async function CityMetroPage({ params }) {
   const cookieStore = await cookies();
-  const spotifyToken = cookieStore.get("spotify_token")?.value;
   const lastfmUsername = cookieStore.get("lastfm_username")?.value;
 
-  if (!spotifyToken && !lastfmUsername) {
+  if (!lastfmUsername) {
     redirect("/");
   }
 

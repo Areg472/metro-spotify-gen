@@ -321,7 +321,7 @@ export const chicago = {
       conservatoryCentralParkDrive: {
         name: "Conservatory-Central Park Drive",
       },
-      kedzie: {
+      kedzieGreen: {
         name: "Kedzie",
       },
       californiaGreen: {
@@ -416,7 +416,7 @@ export const chicago = {
       pulaskiOrange: {
         name: "Pulaski",
       },
-      kedzie: {
+      kedzieOrange: {
         name: "Kedzie",
       },
       westernOrange: {
@@ -476,7 +476,7 @@ export const chicago = {
       centralPark: {
         name: "Central Park",
       },
-      kedzie: {
+      kedziePink: {
         name: "Kedzie",
       },
       californiaPink: {
