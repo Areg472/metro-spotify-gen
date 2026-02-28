@@ -6,9 +6,9 @@ export default async function ContentSelectPage() {
   const cookieStore = await cookies();
   const lastfmUsername = cookieStore.get("lastfm_username")?.value;
 
-  /*if (!lastfmUsername) {
+  if (!lastfmUsername) {
     redirect("/");
-  }*/
+  }
 
   return <ContentSelectClient />;
 }
