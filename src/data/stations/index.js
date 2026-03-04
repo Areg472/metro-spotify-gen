@@ -21,6 +21,7 @@ import { processAutoStations } from "./utils";
 import { berlin } from "@/data/stations/berlin";
 import { tehran } from "@/data/stations/tehran";
 import { chicago } from "@/data/stations/chicago";
+import { newyorkcity } from "@/data/stations/newyorkcity";
 
 const rawStations = {
   yerevan: processAutoStations(yerevan),
@@ -45,6 +46,7 @@ const rawStations = {
   berlin: processAutoStations(berlin),
   tehran: processAutoStations(tehran),
   chicago: processAutoStations(chicago),
+  newyorkcity: processAutoStations(newyorkcity),
 };
 
 export const stations = Object.fromEntries(

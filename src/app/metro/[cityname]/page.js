@@ -27,9 +27,9 @@ export default async function CityMetroPage({ params }) {
   const cookieStore = await cookies();
   const lastfmUsername = cookieStore.get("lastfm_username")?.value;
 
-  if (!lastfmUsername) {
+  /*if (!lastfmUsername) {
     redirect("/");
-  }
+  }*/
 
   const { cityname } = await params;
   const cityId = cityname.toLowerCase();

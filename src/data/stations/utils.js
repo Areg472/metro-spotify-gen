@@ -4,6 +4,7 @@ function processBranch(
   processedStations,
   extraConnectors,
   defaultConnectorSize,
+  verticalConnectorSize,
   visualLineIndexRef,
   branchOffsetMap = {},
   branchIndex = 0,
@@ -26,7 +27,7 @@ function processBranch(
   branchOffsetMap[branchedStationKey]++;
 
   const branchY =
-    parentY + defaultConnectorSize * branchOffsetMap[branchedStationKey];
+    parentY + verticalConnectorSize * branchOffsetMap[branchedStationKey];
   const extraConnectorX = branchedStation.connector.x;
 
   branchedStation.connector.bottom = true;
@@ -91,6 +92,7 @@ function processBranch(
       processedStations,
       extraConnectors,
       defaultConnectorSize,
+      verticalConnectorSize,
       visualLineIndexRef,
       branchOffsetMap,
     );
@@ -107,6 +109,7 @@ function processBranch(
         processedStations,
         extraConnectors,
         defaultConnectorSize,
+        verticalConnectorSize,
         visualLineIndexRef,
         branchOffsetMap,
         0,
@@ -126,7 +129,9 @@ export function processAutoStations(cityData) {
     return cityData;
   }
 
+  const isNewYork = cityData.name === "New York City";
   const defaultConnectorSize = cityData.defaultConnectorSize || 100;
+  const verticalConnectorSize = isNewYork ? 80 : defaultConnectorSize;
   const processedStations = {};
   const extraConnectors = [];
 
@@ -190,6 +195,7 @@ export function processAutoStations(cityData) {
           processedStations,
           extraConnectors,
           defaultConnectorSize,
+          verticalConnectorSize,
           visualLineIndexRef,
           branchOffsetMap,
         );
@@ -206,6 +212,7 @@ export function processAutoStations(cityData) {
             processedStations,
             extraConnectors,
             defaultConnectorSize,
+            verticalConnectorSize,
             visualLineIndexRef,
             branchOffsetMap,
             index,
@@ -217,7 +224,7 @@ export function processAutoStations(cityData) {
         });
       }
 
-      currentY = maxY + defaultConnectorSize;
+      currentY = maxY + verticalConnectorSize;
     },
   );
 
