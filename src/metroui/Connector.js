@@ -36,12 +36,14 @@ export function Connector({
   onClick,
   isSelected = false,
   isEndStation = false,
+  dimmed = false,
   zIndex,
   children,
 }) {
   const lines = [];
   const offsetStep = thickness * 2;
   const center = size / 2;
+  const opacity = dimmed ? 0.2 : 1;
 
   const outerRadius = 15;
   const sColor = stationColor || color;
@@ -134,6 +136,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -146,6 +149,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -158,6 +162,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -170,6 +175,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -182,6 +188,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -194,6 +201,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -208,6 +216,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -220,6 +229,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -232,6 +242,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -244,6 +255,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -258,6 +270,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -270,6 +283,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
+          strokeOpacity={opacity}
         />,
       );
     }
@@ -310,13 +324,20 @@ export function Connector({
                       : "transparent"
                 }
               />
-              <circle cx={center} cy={center} r={outerRadius} fill={sColor} />
+              <circle
+                cx={center}
+                cy={center}
+                r={outerRadius}
+                fill={sColor}
+                fillOpacity={opacity}
+              />
               {innerRadius > 0 && (
                 <circle
                   cx={center}
                   cy={center}
                   r={innerRadius}
                   fill={sInnerColor}
+                  fillOpacity={opacity}
                 />
               )}
             </>
@@ -348,6 +369,7 @@ export function Connector({
             style={{
               background: labelBg,
               color: labelColor,
+              opacity: opacity,
               fontSize: labelFontSize,
               fontWeight: 500,
               lineHeight: 1,

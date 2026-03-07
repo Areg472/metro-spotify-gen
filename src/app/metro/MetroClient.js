@@ -33,11 +33,13 @@ export default function MetroClient({ initialCityId, initialCityData }) {
         console.log("AI Response:", data);
 
         let content = data.text || "No response from AI.";
-       if (content.trim().startsWith("[")) {
+        if (content.trim().startsWith("[")) {
           try {
             let cleanedContent = content.trim();
-            cleanedContent = cleanedContent.replace(/^```json?\s*/i, '').replace(/```\s*$/, '');
-            
+            cleanedContent = cleanedContent
+              .replace(/^```json?\s*/i, "")
+              .replace(/```\s*$/, "");
+
             const jsonMatch = cleanedContent.match(/\[[\s\S]*\]/);
             if (jsonMatch) {
               const parsed = JSON.parse(jsonMatch[0]);
@@ -182,6 +184,8 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
 
   const handleStationClick = (station) => {
     if (startStation && endStation) {
+      setStartStation(station);
+      setEndStation(null);
       return;
     }
 
@@ -206,6 +210,37 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
   const currentStations = selectedCity
     ? Object.values(selectedCity.stations)
     : [];
+
+  const getIsDimmed = (item, isStation = true) => {
+    if (!startStation || !endStation) return false;
+
+    const sLine = startStation.lineId;
+    const eLine = endStation.lineId;
+
+    if (sLine === eLine) {
+      const itemLine = isStation ? item.lineId : item.lineId;
+      if (itemLine !== sLine) return true;
+
+      const minX = Math.min(startStation.connector.x, endStation.connector.x);
+      const maxX = Math.max(startStation.connector.x, endStation.connector.x);
+      const minY = Math.min(startStation.connector.y, endStation.connector.y);
+      const maxY = Math.max(startStation.connector.y, endStation.connector.y);
+
+      const itemX = isStation ? item.connector.x : item.x;
+      const itemY = isStation ? item.connector.y : item.y;
+
+      // For horizontal lines, only check X
+      if (minY === maxY) {
+        return itemX < minX || itemX > maxX || itemY !== minY;
+      }
+
+      return itemX < minX || itemX > maxX || itemY < minY || itemY > maxY;
+    }
+
+    // Different lines: just show the two lines
+    const itemLine = isStation ? item.lineId : item.lineId;
+    return itemLine !== sLine && itemLine !== eLine;
+  };
 
   return (
     <div className="flex flex-col mt-4 space-y-4 items-center">
@@ -286,6 +321,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                   onClick={() => handleStationClick(s)}
                   isSelected={startStation?.name === s.name}
                   isEndStation={endStation?.name === s.name}
+                  dimmed={getIsDimmed(s)}
                 />
               ))}
               {selectedCity.extraConnectors?.map((c, i) => (
@@ -293,6 +329,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                   key={`extra-${i}`}
                   size={selectedCity.defaultConnectorSize}
                   {...c}
+                  dimmed={getIsDimmed(c, false)}
                 />
               ))}
             </div>

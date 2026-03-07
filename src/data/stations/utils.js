@@ -36,6 +36,7 @@ function processBranch(
 
   extraConnectors.push({
     color: parentLineColor || branchData.color,
+    lineId: parentLineColor || branchData.color,
     ...(isLastBranch ? { top: true } : { vertical: true }),
     right: true,
     x: extraConnectorX,
@@ -62,6 +63,7 @@ function processBranch(
 
     processedStations[key] = {
       ...data,
+      lineId: branchData.color || parentLineColor,
       connector: {
         color: parentLineColor || branchData.color || data.color,
         station: true,
@@ -163,6 +165,7 @@ export function processAutoStations(cityData) {
 
         processedStations[key] = {
           ...data,
+          lineId: lineColor || data.color,
           connector: {
             color: lineColor || data.color,
             station: true,
