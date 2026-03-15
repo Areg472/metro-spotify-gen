@@ -6,6 +6,78 @@ import { Select } from "@/components/Select";
 import { stations } from "@/data/stations";
 import { Connector } from "@/metroui/Connector";
 
+function SkeletonSongListInline({ count = 5 }) {
+  return (
+    <div className="flex flex-col space-y-3 w-full">
+      {Array.from({ length: count }).map((_, i) => (
+        <div key={i} className="flex items-center space-x-3">
+          <div
+            className="skeleton rounded-full shrink-0"
+            style={{ width: 28, height: 28 }}
+          />
+          <div className="flex flex-col space-y-1.5 flex-1">
+            <div
+              className="skeleton h-3.5"
+              style={{ width: `${55 + (i % 3) * 15}%` }}
+            />
+            <div
+              className="skeleton h-3"
+              style={{ width: `${35 + (i % 4) * 10}%` }}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SkeletonMetroMapInline() {
+  return (
+    <div className="flex flex-col items-center p-10 bg-[#1a1a1a] rounded-xl shadow-2xl mt-4 w-full max-w-5xl">
+      <div className="skeleton h-7 w-48 mb-8" />
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ height: "400px" }}
+      >
+        <div
+          className="skeleton absolute"
+          style={{ left: 40, top: "45%", width: "85%", height: 8 }}
+        />
+        <div
+          className="skeleton absolute"
+          style={{ left: "72%", top: "20%", width: 8, height: "55%" }}
+        />
+        {[80, 200, 320, 440, 560, 680].map((x, i) => (
+          <div
+            key={i}
+            className="skeleton rounded-full absolute"
+            style={{ left: x, top: "calc(45% - 12px)", width: 24, height: 24 }}
+          />
+        ))}
+        {[160, 260].map((y, i) => (
+          <div
+            key={`b-${i}`}
+            className="skeleton rounded-full absolute"
+            style={{ left: "calc(72% - 12px)", top: y, width: 24, height: 24 }}
+          />
+        ))}
+        {[80, 200, 320, 440, 560, 680].map((x, i) => (
+          <div
+            key={`l-${i}`}
+            className="skeleton absolute"
+            style={{
+              left: x - 10,
+              top: "calc(45% - 40px)",
+              width: 70,
+              height: 10,
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function MetroClient({ initialCityId, initialCityData }) {
   const router = useRouter();
   const [recentTracks, setRecentTracks] = useState([]);
@@ -293,6 +365,8 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
         )}
       </div>
 
+      {!selectedCity && <SkeletonMetroMapInline />}
+
       {selectedCity && (
         <div className="flex flex-col items-center p-10 bg-[#1a1a1a] rounded-xl shadow-2xl mt-4 w-full max-w-5xl">
           <h2 className="text-white text-2xl font-bold mb-8">
@@ -342,9 +416,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                   {m.content}
                 </div>
               ))}
-              {isLoading && (
-                <div className="text-gray-400">AI is generating..</div>
-              )}
+              {isLoading && <SkeletonSongListInline count={4} />}
             </div>
           </div>
         </div>

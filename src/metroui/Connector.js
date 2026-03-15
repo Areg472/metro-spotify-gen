@@ -129,27 +129,52 @@ export function Connector({
 
     // Horizontal
     if (horizontal) {
+      // Split into left and right halves so start/end stations can dim their outer side
+      const leftOpacity = isSelected ? 0.2 : opacity;
+      const rightOpacity = isEndStation ? 0.2 : opacity;
       lines.push(
         <path
-          key={`h-${i}`}
-          d={`M0 ${center + offset}H${size}`}
+          key={`h-left-${i}`}
+          d={`M0 ${center + offset}H${center}`}
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={leftOpacity}
+          style={{ transition: "stroke-opacity 0.3s ease" }}
+        />,
+        <path
+          key={`h-right-${i}`}
+          d={`M${center} ${center + offset}H${size}`}
+          stroke={color}
+          strokeWidth={thickness}
+          strokeLinecap="round"
+          strokeOpacity={rightOpacity}
+          style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
     }
     // Vertical
     if (vertical) {
+      const topOpacity = isSelected ? 0.2 : opacity;
+      const bottomOpacity = isEndStation ? 0.2 : opacity;
       lines.push(
         <path
-          key={`v-${i}`}
-          d={`M${center + offset} 0V${size}`}
+          key={`v-top-${i}`}
+          d={`M${center + offset} 0V${center}`}
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={topOpacity}
+          style={{ transition: "stroke-opacity 0.3s ease" }}
+        />,
+        <path
+          key={`v-bottom-${i}`}
+          d={`M${center + offset} ${center}V${size}`}
+          stroke={color}
+          strokeWidth={thickness}
+          strokeLinecap="round"
+          strokeOpacity={bottomOpacity}
+          style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
     }
@@ -162,7 +187,8 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={isSelected ? 0.2 : opacity}
+          style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
     }
@@ -175,7 +201,8 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={isEndStation ? 0.2 : opacity}
+          style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
     }
@@ -188,7 +215,8 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={isSelected ? 0.2 : opacity}
+          style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
     }
@@ -201,7 +229,8 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={isEndStation ? 0.2 : opacity}
+          style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
     }
@@ -299,6 +328,8 @@ export function Connector({
           top: typeof y === "number" ? `${y}px` : y,
           cursor: onClick ? "pointer" : "default",
           zIndex: zIndex !== undefined ? zIndex : station ? 10 : 1,
+          opacity: opacity,
+          transition: "opacity 0.3s ease",
         }}
       >
         <svg
@@ -323,21 +354,54 @@ export function Connector({
                       ? "#93c5fd"
                       : "transparent"
                 }
+                style={{
+                  transition: "fill 0.3s ease",
+                }}
               />
               <circle
                 cx={center}
                 cy={center}
                 r={outerRadius}
                 fill={sColor}
-                fillOpacity={opacity}
+                style={{
+                  transition: "fill 0.3s ease",
+                }}
               />
+              {(isSelected || isEndStation) && (
+                <circle
+                  key={isSelected ? "sel" : "end"}
+                  cx={center}
+                  cy={center}
+                  r={outerRadius + 4}
+                  fill="none"
+                  stroke={isSelected ? "white" : "#93c5fd"}
+                  strokeWidth={1.5}
+                  strokeOpacity="0.5"
+                >
+                  <animate
+                    attributeName="r"
+                    from={outerRadius + 4}
+                    to={outerRadius + 12}
+                    dur="1.8s"
+                    repeatCount="indefinite"
+                    begin="0s"
+                  />
+                  <animate
+                    attributeName="stroke-opacity"
+                    from="0.5"
+                    to="0"
+                    dur="1.8s"
+                    repeatCount="indefinite"
+                    begin="0s"
+                  />
+                </circle>
+              )}
               {innerRadius > 0 && (
                 <circle
                   cx={center}
                   cy={center}
                   r={innerRadius}
                   fill={sInnerColor}
-                  fillOpacity={opacity}
                 />
               )}
             </>
