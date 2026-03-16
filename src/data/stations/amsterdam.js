@@ -1,992 +1,248 @@
 export const amsterdam = {
   name: "Amsterdam",
-  country: "The Netherlands",
+  country: "Netherlands",
   defaultConnectorSize: 60,
+  auto: true,
   stations: {
-    // Line 50 — Isolatorweg ↔ Gein
-    isolatorweg_50: {
-      name: "Isolatorweg",
-      name_nl: "Isolatorweg",
-      connector: {
-        color: "green",
-        right: true,
-        station: true,
-        x: 0,
-        y: 0,
+    lineFifty: {
+      color: "#ffc400",
+      isolatorweg: {
+        name: "Isolatorweg",
       },
-    },
-    sloterdijk_50: {
-      name: "Sloterdijk",
-      name_nl: "Sloterdijk",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 0,
-      },
-    },
-    deVlugtlanaan_50: {
-      name: "De Vlugtlaan",
-      name_nl: "De-Vlugtlaan",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 0,
-      },
-    },
-    janVanGalenStreet_50: {
-      name: "Jan van Galen Street",
-      name_nl: "Jan-van-Galen-Straße",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 0,
-      },
-    },
-    postjesweg_50: {
-      name: "Postjesweg",
-      name_nl: "Postjesweg",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 0,
-      },
-    },
-    lelylaan_50: {
-      name: "Lelylaan",
-      name_nl: "Lelylaan",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 0,
-      },
-    },
-    heemstedestraat_50: {
-      name: "Heemstedestraat",
-      name_nl: "Heemstedestraat",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 0,
-      },
-    },
-    henkSneevlietweg_50: {
-      name: "Henk Sneevlietweg",
-      name_nl: "Henk-Sneevliet-Weg",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 0,
-      },
-    },
-    amstelveenseweg_50: {
-      name: "Amstelveenseweg",
-      name_nl: "Amstelveenseweg",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 0,
-      },
-    },
-    zuid_50: {
-      name: "South",
-      name_nl: "Süd",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 0,
-      },
-    },
-    rai_50: {
-      name: "RAI",
-      name_nl: "RAI",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 0,
-      },
-    },
-    overamstel_50: {
-      name: "Overamstel",
-      name_nl: "Overamstel",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 0,
-      },
-    },
-    vanDerMadeweg_50: {
-      name: "Van der Madeweg",
-      name_nl: "Van-der-Made-Weg",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 0,
+      sloterdijk: {
+        name: "Sloterdijk",
       },
-    },
-    duivendrecht_50: {
-      name: "Duivendrecht",
-      name_nl: "Duivendrecht",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 0,
+      heemstedeAanleg: {
+        name: "Heemstedeaanleg",
       },
-    },
-    strandvliet_50: {
-      name: "Strandvliet",
-      name_nl: "Strandvliet",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 0,
+      vanHallstraat: {
+        name: "Van Hallstraat",
       },
-    },
-    bijlmerArena_50: {
-      name: "Bijlmer Arena",
-      name_nl: "Bijlmer-Arena",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 0,
+      deVlugtlaan: {
+        name: "De Vlugtlaan",
       },
-    },
-    bullewijk_50: {
-      name: "Bullewijk",
-      name_nl: "Bullewijk",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 0,
+      bos: {
+        name: "Bos en Lommer",
       },
-    },
-    holendrecht_50: {
-      name: "Holendrecht",
-      name_nl: "Holendrecht",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 0,
+      zuidoost: {
+        name: "Zuid",
       },
-    },
-    reigersbos_50: {
-      name: "Reigersbos",
-      name_nl: "Reigersbos",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 0,
+      amstelveenseweg: {
+        name: "Amstelveenseweg",
       },
-    },
-    gein_50: {
-      name: "Gein",
-      name_nl: "Gein",
-      connector: {
-        color: "green",
-        left: true,
-        station: true,
-        x: 1140,
-        y: 0,
+      poortwachter: {
+        name: "Poortwachter",
       },
-    },
-
-    // Line 51 — Central Station ↔ Westwijk
-    centralStation_51: {
-      name: "Central Station",
-      name_nl: "Hauptbahnhof",
-      connector: {
-        color: "orange",
-        right: true,
-        station: true,
-        x: 0,
-        y: 60,
-        labelPlacement: "bottom-right",
+      amsterdam: {
+        name: "Amsterdam RAI",
       },
-    },
-    nieuwmarkt_51: {
-      name: "New Market",
-      name_nl: "Nieuwmarkt",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 60,
-        labelPlacement: "bottom-right",
+      overamstel: {
+        name: "Overamstel",
       },
-    },
-    waterlooplein_51: {
-      name: "Waterloo Square",
-      name_nl: "Waterlooplein",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 60,
-        labelPlacement: "bottom-right",
+      vanderMadeweg: {
+        name: "Van der Madeweg",
       },
-    },
-    weesperplein_51: {
-      name: "Weesper Square",
-      name_nl: "Weesperplein",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 60,
-        labelPlacement: "bottom-right",
+      duivendrecht: {
+        name: "Duivendrecht",
       },
-    },
-    wibautstraat_51: {
-      name: "Wibaut Street",
-      name_nl: "Wibautstraße",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 60,
-        labelPlacement: "bottom-right",
+      strandvliet: {
+        name: "Strandvliet",
       },
-    },
-    amstel_51: {
-      name: "Amstel",
-      name_nl: "Amstel",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 60,
-        labelPlacement: "bottom-right",
+      bijlmerArena: {
+        name: "Bijlmer ArenA",
       },
-    },
-    spaklerweg_51: {
-      name: "Spaklerweg",
-      name_nl: "Spaklerweg",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 60,
-        labelPlacement: "bottom-right",
+      bullewijk: {
+        name: "Bullewijk",
       },
-    },
-    overamstel_51: {
-      name: "Overamstel",
-      name_nl: "Overamstel",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 60,
-        labelPlacement: "bottom-right",
+      holendrecht: {
+        name: "Holendrecht",
       },
-    },
-    rai_51: {
-      name: "RAI",
-      name_nl: "RAI",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 60,
-        labelPlacement: "bottom-right",
+      reigersbos: {
+        name: "Reigersbos",
       },
-    },
-    zuid_51: {
-      name: "South",
-      name_nl: "Süd",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 60,
-        labelPlacement: "bottom-right",
+      gein: {
+        name: "Gein",
       },
     },
-    deBoelelaanVU_51: {
-      name: "De Boelelaan / VU",
-      name_nl: "De-Boelelaan / VU",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 60,
-        labelPlacement: "bottom-right",
+    lineFiftyOne: {
+      color: "#ed1c24",
+      isolatorwegLineFiftyOne: {
+        name: "Isolatorweg",
       },
-    },
-    aJErnststraat_51: {
-      name: "A.J. Ernst Street",
-      name_nl: "A.-J.-Ernst-Straße",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 60,
-        labelPlacement: "bottom-right",
+      sloterdijkLineFiftyOne: {
+        name: "Sloterdijk",
       },
-    },
-    vanBoshuizenstraat_51: {
-      name: "Van Boshuizen Street",
-      name_nl: "Van-Boshuizen-Straße",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 60,
-        labelPlacement: "bottom-right",
+      heemstedeaanlegLineFiftyOne: {
+        name: "Heemstedeaanleg",
       },
-    },
-    uilenstede_51: {
-      name: "Uilenstede",
-      name_nl: "Uilenstede",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 60,
-        labelPlacement: "bottom-right",
+      vanHallstraatLineFiftyOne: {
+        name: "Van Hallstraat",
       },
-    },
-    kronenburg_51: {
-      name: "Kronenburg",
-      name_nl: "Kronenburg",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 60,
-        labelPlacement: "bottom-right",
+      deVlugtlaanLineFiftyOne: {
+        name: "De Vlugtlaan",
       },
-    },
-    zonnestein_51: {
-      name: "Zonnestein",
-      name_nl: "Zonnestein",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 60,
-        labelPlacement: "bottom-right",
+      bosEnLommerLineFiftyOne: {
+        name: "Bos en Lommer",
       },
-    },
-    onderuit_51: {
-      name: "Onderuit",
-      name_nl: "Onderuit",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 60,
-        labelPlacement: "bottom-right",
+      zuidLineFiftyOne: {
+        name: "Zuid",
       },
-    },
-    oranjebaan_51: {
-      name: "Orange Avenue",
-      name_nl: "Oranjebaan",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 60,
-        labelPlacement: "bottom-right",
+      amstelveensewegLineFiftyOne: {
+        name: "Amstelveenseweg",
       },
-    },
-    amstelveenCentrum_51: {
-      name: "Amstelveen Center",
-      name_nl: "Amstelveen Zentrum",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 60,
-        labelPlacement: "bottom-right",
+      poortwachterLineFiftyOne: {
+        name: "Poortwachter",
       },
-    },
-    ouderkerkerlaan_51: {
-      name: "Ouderkerkerlaan",
-      name_nl: "Ouderkerkerlaan",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 60,
-        labelPlacement: "bottom-right",
+      amsterdamRAILineFiftyOne: {
+        name: "Amsterdam RAI",
       },
-    },
-    sportlaan_51: {
-      name: "Sport Avenue",
-      name_nl: "Sportlaan",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 60,
-        labelPlacementlacement: "bottom-right",
+      overamstelLineFiftyOne: {
+        name: "Overamstel",
       },
-    },
-    marne_51: {
-      name: "Marne",
-      name_nl: "Marne",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 60,
-        labelPlacement: "bottom-right",
+      spaklerweg: {
+        name: "Spaklerweg",
       },
-    },
-    gondel_51: {
-      name: "Gondola",
-      name_nl: "Gondel",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 60,
-        labelPlacement: "bottom-right",
+      weesperplein: {
+        name: "Weesperplein",
       },
-    },
-    meent_51: {
-      name: "Meent",
-      name_nl: "Meent",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 60,
-        labelPlacement: "bottom-right",
+      wibautstraat: {
+        name: "Wibautstraat",
       },
-    },
-    brink_51: {
-      name: "Brink",
-      name_nl: "Brink",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 60,
-        labelPlacement: "bottom-right",
+      amstel: {
+        name: "Amstel",
       },
-    },
-    poortwachter_51: {
-      name: "Gatekeeper",
-      name_nl: "Poortwachter",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 60,
-        labelPlacement: "bottom-right",
+      vijzelgracht: {
+        name: "Vijzelgracht",
       },
-    },
-    spinnerij_51: {
-      name: "Spinnery",
-      name_nl: "Spinnerij",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1560,
-        y: 60,
-        labelPlacement: "bottom-right",
+      rokin: {
+        name: "Rokin",
       },
-    },
-    sacharovlaan_51: {
-      name: "Sacharov Avenue",
-      name_nl: "Sacharow-Allee",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1620,
-        y: 60,
-        labelPlacement: "bottom-right",
+      centraalStation: {
+        name: "Centraal Station",
       },
     },
-    westwijk_51: {
-      name: "Westwijk",
-      name_nl: "Westwijk",
-      connector: {
-        color: "orange",
-        left: true,
-        station: true,
-        x: 1680,
-        y: 60,
-        labelPlacement: "bottom-right",
+    lineFiftyTwo: {
+      color: "#0090d8",
+      noord: {
+        name: "Noord",
       },
-    },
-
-    // Line 52 — North ↔ South
-    north_52: {
-      name: "North",
-      name_nl: "Nord",
-      connector: {
-        color: "lightBlue",
-        right: true,
-        station: true,
-        x: 0,
-        y: 120,
+      noorderpark: {
+        name: "Noorderpark",
       },
-    },
-    noorderpark_52: {
-      name: "Northern Park",
-      name_nl: "Noorderpark",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 120,
+      centraalStationLineFiftyTwo: {
+        name: "Centraal Station",
       },
-    },
-    centralStation_52: {
-      name: "Central Station",
-      name_nl: "Hauptbahnhof",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 120,
+      rokinLineFiftyTwo: {
+        name: "Rokin",
       },
-    },
-    rokin_52: {
-      name: "Rokin",
-      name_nl: "Rokin",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 120,
+      vijzelgrachtLineFiftyTwo: {
+        name: "Vijzelgracht",
       },
-    },
-    vijzelgracht_52: {
-      name: "Vijzel Canal",
-      name_nl: "Vijzelgracht",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 120,
+      depijtLineFiftyTwo: {
+        name: "De Pijp",
       },
-    },
-    dePijp_52: {
-      name: "The Pipe",
-      name_nl: "De Pijp",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 120,
+      europaplein: {
+        name: "Europaplein",
       },
-    },
-    europaplein_52: {
-      name: "Europe Square",
-      name_nl: "Europaplatz",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 120,
+      zuidLineFiftyTwo: {
+        name: "Zuid",
       },
     },
-    zuid_52: {
-      name: "South",
-      name_nl: "Süd",
-      connector: {
-        color: "lightBlue",
-        left: true,
-        station: true,
-        x: 420,
-        y: 120,
+    lineFiftyThree: {
+      color: "#00a8e1",
+      gaasperplas: {
+        name: "Gaasperplas",
       },
-    },
-
-    // Line 53 — Central Station ↔ Gaasperplas
-    centralStation_53: {
-      name: "Central Station",
-      name_nl: "Hauptbahnhof",
-      connector: {
-        color: "red",
-        right: true,
-        station: true,
-        x: 0,
-        y: 180,
+      geinLineFiftyThree: {
+        name: "Gein",
       },
-    },
-    nieuwmarkt_53: {
-      name: "New Market",
-      name_nl: "Nieuwmarkt",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 180,
+      reigersbosLineFiftyThree: {
+        name: "Reigersbos",
       },
-    },
-    waterlooplein_53: {
-      name: "Waterloo Square",
-      name_nl: "Waterlooplein",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 180,
+      holendrechtLineFiftyThree: {
+        name: "Holendrecht",
       },
-    },
-    weesperplein_53: {
-      name: "Weesper Square",
-      name_nl: "Weesperplein",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 180,
+      bullewijkLineFiftyThree: {
+        name: "Bullewijk",
       },
-    },
-    wibautstraat_53: {
-      name: "Wibaut Street",
-      name_nl: "Wibautstraße",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 180,
+      bijlmerArenaLineFiftyThree: {
+        name: "Bijlmer ArenA",
       },
-    },
-    amstel_53: {
-      name: "Amstel",
-      name_nl: "Amstel",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 180,
+      strandvlietLineFiftyThree: {
+        name: "Strandvliet",
       },
-    },
-    spaklerweg_53: {
-      name: "Spaklerweg",
-      name_nl: "Spaklerweg",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 180,
+      duivendrechtLineFiftyThree: {
+        name: "Duivendrecht",
       },
-    },
-    vanDerMadeweg_53: {
-      name: "Van der Madeweg",
-      name_nl: "Van-der-Made-Weg",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 180,
+      vanderMadewegLineFiftyThree: {
+        name: "Van der Madeweg",
       },
-    },
-    venserpolder_53: {
-      name: "Venser Polder",
-      name_nl: "Venserpolder",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 180,
+      overamstelLineFiftyThree: {
+        name: "Overamstel",
       },
-    },
-    diemenSouth_53: {
-      name: "Diemen South",
-      name_nl: "Diemen Süd",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 180,
+      spaklerwegLineFiftyThree: {
+        name: "Spaklerweg",
       },
-    },
-    verrijnStuartweg_53: {
-      name: "Verrijn Stuartweg",
-      name_nl: "Verrijn-Stuart-Weg",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 180,
+      weesperpleinLineFiftyThree: {
+        name: "Weesperplein",
       },
-    },
-    ganzenhoef_53: {
-      name: "Ganzenhoef",
-      name_nl: "Ganzenhoef",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 180,
+      wibautstraatLineFiftyThree: {
+        name: "Wibautstraat",
       },
-    },
-    kraaiennest_53: {
-      name: "Crow's Nest",
-      name_nl: "Kraaiennest",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 180,
+      waterlooplein: {
+        name: "Waterlooplein",
       },
-    },
-    gaasperplas_53: {
-      name: "Gaasper Lake",
-      name_nl: "Gaasperplas",
-      connector: {
-        color: "red",
-        left: true,
-        station: true,
-        x: 780,
-        y: 180,
+      nieuwmarkt: {
+        name: "Nieuwmarkt",
       },
-    },
-
-    // Line 54 — Central Station ↔ Gein
-    centralStation_54: {
-      name: "Central Station",
-      name_nl: "Hauptbahnhof",
-      connector: {
-        color: "yellow",
-        right: true,
-        station: true,
-        x: 0,
-        y: 240,
+      centraalStationLineFiftyThree: {
+        name: "Centraal Station",
       },
     },
-    nieuwmarkt_54: {
-      name: "New Market",
-      name_nl: "Nieuwmarkt",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 240,
+    lineFiftyFour: {
+      color: "#ffdd00",
+      geinLineFiftyFour: {
+        name: "Gein",
       },
-    },
-    waterlooplein_54: {
-      name: "Waterloo Square",
-      name_nl: "Waterlooplein",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 240,
+      reigersbosLineFiftyFour: {
+        name: "Reigersbos",
       },
-    },
-    weesperplein_54: {
-      name: "Weesper Square",
-      name_nl: "Weesperplein",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 240,
+      holendrechtLineFiftyFour: {
+        name: "Holendrecht",
       },
-    },
-    wibautstraat_54: {
-      name: "Wibaut Street",
-      name_nl: "Wibautstraße",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 240,
+      bullewijkLineFiftyFour: {
+        name: "Bullewijk",
       },
-    },
-    amstel_54: {
-      name: "Amstel",
-      name_nl: "Amstel",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 240,
+      bijlmerArenaLineFiftyFour: {
+        name: "Bijlmer ArenA",
       },
-    },
-    spaklerweg_54: {
-      name: "Spaklerweg",
-      name_nl: "Spaklerweg",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 240,
+      strandvlietLineFiftyFour: {
+        name: "Strandvliet",
       },
-    },
-    vanDerMadeweg_54: {
-      name: "Van der Madeweg",
-      name_nl: "Van-der-Made-Weg",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 240,
+      diemen: {
+        name: "Diemen",
       },
-    },
-    duivendrecht_54: {
-      name: "Duivendrecht",
-      name_nl: "Duivendrecht",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 240,
+      sciencepark: {
+        name: "Science Park",
       },
-    },
-    strandvliet_54: {
-      name: "Strandvliet",
-      name_nl: "Strandvliet",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 240,
+      amstelLineFiftyFour: {
+        name: "Amstel",
       },
-    },
-    bijlmerArena_54: {
-      name: "Bijlmer Arena",
-      name_nl: "Bijlmer-Arena",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 240,
+      weesperpleinLineFiftyFour: {
+        name: "Weesperplein",
       },
-    },
-    bullewijk_54: {
-      name: "Bullewijk",
-      name_nl: "Bullewijk",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 240,
+      wibautstraatLineFiftyFour: {
+        name: "Wibautstraat",
       },
-    },
-    holendrecht_54: {
-      name: "Holendrecht",
-      name_nl: "Holendrecht",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 240,
+      waterloopleinLineFiftyFour: {
+        name: "Waterlooplein",
       },
-    },
-    reigersbos_54: {
-      name: "Reigersbos",
-      name_nl: "Reigersbos",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 240,
+      nieuwmarktLineFiftyFour: {
+        name: "Nieuwmarkt",
       },
-    },
-    gein_54: {
-      name: "Gein",
-      name_nl: "Gein",
-      connector: {
-        color: "yellow",
-        left: true,
-        station: true,
-        x: 840,
-        y: 240,
+      centraalStationLineFiftyFour: {
+        name: "Centraal Station",
       },
     },
   },
-  extraConnectors: [],
 };
