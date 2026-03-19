@@ -105,12 +105,6 @@ export const london = {
       hangerLane: {
         name: "Hanger Lane",
       },
-      ealingBroadwayCentral: {
-        name: "Ealing Broadway",
-      },
-      westActon: {
-        name: "West Acton",
-      },
       northActon: {
         name: "North Acton",
       },
@@ -144,7 +138,7 @@ export const london = {
       oxfordCircusCentral: {
         name: "Oxford Circus",
       },
-      tottenhamCourtRoad: {
+      tottenhamCourtRoadCentral: {
         name: "Tottenham Court Road",
       },
       holborn: {
@@ -177,57 +171,74 @@ export const london = {
       leytonstone: {
         name: "Leytonstone",
       },
-      snaresbrook: {
-        name: "Snaresbrook",
-      },
-      southWoodford: {
-        name: "South Woodford",
-      },
-      woodfordCentral: {
-        name: "Woodford",
-      },
-      rodingValley: {
-        name: "Roding Valley",
-      },
-      chigwellCentral: {
-        name: "Chigwell",
-      },
-      grangеHill: {
-        name: "Grange Hill",
-      },
-      hainault: {
-        name: "Hainault",
-      },
-      fairlop: {
-        name: "Fairlop",
-      },
-      barkingside: {
-        name: "Barkingside",
-      },
-      newburyPark: {
-        name: "Newbury Park",
-      },
-      redbridge: {
-        name: "Redbridge",
-      },
-      wanstead: {
-        name: "Wanstead",
-      },
-      buckhurstHill: {
-        name: "Buckhurst Hill",
-      },
-      loughtonCentral: {
-        name: "Loughton",
-      },
-      debdenCentral: {
-        name: "Debden",
-      },
-      theydonBois: {
-        name: "Theydon Bois",
-      },
-      epping: {
-        name: "Epping",
-      },
+      branches: [
+        {
+          branchedStation: "Leytonstone",
+          color: "#e41f1f",
+          stations: {
+            wanstead: {
+              name: "Wanstead",
+            },
+            redbridge: {
+              name: "Redbridge",
+            },
+            gantsHill: {
+              name: "Gants Hill",
+            },
+            newburyPark: {
+              name: "Newbury Park",
+            },
+            barkingside: {
+              name: "Barkingside",
+            },
+            fairlop: {
+              name: "Fairlop",
+            },
+            hainault: {
+              name: "Hainault",
+            },
+            grangeHill: {
+              name: "Grange Hill",
+            },
+            chigwell: {
+              name: "Chigwell",
+            },
+            rodingValley: {
+              name: "Roding Valley",
+            },
+          },
+        },
+        {
+          branchedStation: "Leytonstone",
+          color: "#e41f1f",
+          stations: {
+            snaresbrook: {
+              name: "Snaresbrook",
+            },
+            southWoodford: {
+              name: "South Woodford",
+            },
+            woodford: {
+              name: "Woodford",
+            },
+            buckhurstHill: {
+              name: "Buckhurst Hill",
+            },
+            loughton: {
+              name: "Loughton",
+            },
+            debden: {
+              name: "Debden",
+            },
+            theydonBois: {
+              name: "Theydon Bois",
+            },
+            epping: {
+              name: "Epping",
+            },
+          },
+        },
+      ],
     },
     circle: {
       color: "#ffd329",
@@ -252,7 +263,7 @@ export const london = {
       southKensingtonCircle: {
         name: "South Kensington",
       },
-      sloanneSquareCircle: {
+      sloaneSquareCircle: {
         name: "Sloane Square",
       },
       victoriaCircle: {
@@ -315,168 +326,203 @@ export const london = {
     },
     district: {
       color: "#007934",
-      upminster: {
-        name: "Upminster",
+      earlsCourtDistrict: {
+        name: "Earl's Court",
       },
-      upminsterBridge: {
-        name: "Upminster Bridge",
+      highStreetKensingtonDistrict: {
+        name: "High Street Kensington",
       },
-      hornchurch: {
-        name: "Hornchurch",
+      nottingHillGateDistrict: {
+        name: "Notting Hill Gate",
       },
-      elmPark: {
-        name: "Elm Park",
+      bayswaterDistrict: {
+        name: "Bayswater",
       },
-      dagenhamEast: {
-        name: "Dagenham East",
+      paddingtonDistrict: {
+        name: "Paddington",
       },
-      dagenhamHeathway: {
-        name: "Dagenham Heathway",
-      },
-      becontree: {
-        name: "Becontree",
-      },
-      upney: {
-        name: "Upney",
-      },
-      barkingDistrict: {
-        name: "Barking",
-      },
-      eastHamDistrict: {
-        name: "East Ham",
-      },
-      uptonPark: {
-        name: "Upton Park",
-      },
-      plaistow: {
-        name: "Plaistow",
-      },
-      westHamDistrict: {
-        name: "West Ham",
-      },
-      bromleyByBow: {
-        name: "Bromley-by-Bow",
-      },
-      bowRoad: {
-        name: "Bow Road",
-      },
-      mileEndDistrict: {
-        name: "Mile End",
-      },
-      stepneyGreen: {
-        name: "Stepney Green",
-      },
-      whitechapelDistrict: {
-        name: "Whitechapel",
-      },
-      aldgateEastDistrict: {
-        name: "Aldgate East",
-      },
-      towerHillDistrict: {
-        name: "Tower Hill",
-      },
-      monumentDistrict: {
-        name: "Monument",
-      },
-      cannonStreetDistrict: {
-        name: "Cannon Street",
-      },
-      mansionHouseDistrict: {
-        name: "Mansion House",
-      },
-      blackfriarsDistrict: {
-        name: "Blackfriars",
-      },
-      templeDistrict: {
-        name: "Temple",
-      },
-      embankmentDistrict: {
-        name: "Embankment",
-      },
-      westminsterDistrict: {
-        name: "Westminster",
-      },
-      stJamesParkDistrict: {
-        name: "St. James's Park",
-      },
-      victoriaDistrict: {
-        name: "Victoria",
-      },
-      sloaneSquareDistrict: {
-        name: "Sloane Square",
-      },
-      southKensingtonDistrict: {
-        name: "South Kensington",
+      edgwareRoadDistrict: {
+        name: "Edgware Road",
       },
       gloucesterRoadDistrict: {
         name: "Gloucester Road",
       },
-      earlsCourtDistrict: {
-        name: "Earl's Court",
+      southKensingtonDistrict: {
+        name: "South Kensington",
       },
-      westKensington: {
-        name: "West Kensington",
+      sloaneSquareDistrict: {
+        name: "Sloane Square",
       },
-      baronsCourtDistrict: {
-        name: "Barons Court",
+      victoriaDistrict: {
+        name: "Victoria",
       },
-      hammersmithDistrict: {
-        name: "Hammersmith",
+      stJamesParkDistrict: {
+        name: "St. James's Park",
       },
-      ravenscourtPark: {
-        name: "Ravenscourt Park",
+      westminsterDistrict: {
+        name: "Westminster",
       },
-      stamfordBrook: {
-        name: "Stamford Brook",
+      embankmentDistrict: {
+        name: "Embankment",
       },
-      turnhamGreen: {
-        name: "Turnham Green",
+      templeDistrict: {
+        name: "Temple",
       },
-      chiswickPark: {
-        name: "Chiswick Park",
+      blackfriarsDistrict: {
+        name: "Blackfriars",
       },
-      actonTown: {
-        name: "Acton Town",
+      mansionHouseDistrict: {
+        name: "Mansion House",
       },
-      ealingCommon: {
-        name: "Ealing Common",
+      cannonStreetDistrict: {
+        name: "Cannon Street",
       },
-      ealingBroadwayDistrict: {
-        name: "Ealing Broadway",
+      monumentDistrict: {
+        name: "Monument",
       },
-      kewGardens: {
-        name: "Kew Gardens",
+      towerHillDistrict: {
+        name: "Tower Hill",
       },
-      richmond: {
-        name: "Richmond",
+      aldgateEastDistrict: {
+        name: "Aldgate East",
       },
-      gunnersbury: {
-        name: "Gunnersbury",
+      whitechapelDistrict: {
+        name: "Whitechapel",
       },
-      wimbledon: {
-        name: "Wimbledon",
+      stepneyGreen: {
+        name: "Stepney Green",
       },
-      wimbledonPark: {
-        name: "Wimbledon Park",
+      mileEndDistrict: {
+        name: "Mile End",
       },
-      southfields: {
-        name: "Southfields",
+      bowRoad: {
+        name: "Bow Road",
       },
-      eastPutney: {
-        name: "East Putney",
+      bromleyByBow: {
+        name: "Bromley-by-Bow",
       },
-      putneyBridge: {
-        name: "Putney Bridge",
+      westHamDistrict: {
+        name: "West Ham",
       },
-      parsonsGreen: {
-        name: "Parsons Green",
+      plaistow: {
+        name: "Plaistow",
       },
-      fulhamBroadway: {
-        name: "Fulham Broadway",
+      uptonPark: {
+        name: "Upton Park",
       },
-      westBrompton: {
-        name: "West Brompton",
+      eastHamDistrict: {
+        name: "East Ham",
       },
+      barkingDistrict: {
+        name: "Barking",
+      },
+      upney: {
+        name: "Upney",
+      },
+      becontree: {
+        name: "Becontree",
+      },
+      dagenhamHeathway: {
+        name: "Dagenham Heathway",
+      },
+      dagenhamEast: {
+        name: "Dagenham East",
+      },
+      elmPark: {
+        name: "Elm Park",
+      },
+      hornchurch: {
+        name: "Hornchurch",
+      },
+      upminsterBridge: {
+        name: "Upminster Bridge",
+      },
+      upminster: {
+        name: "Upminster",
+      },
+      branches: [
+        {
+          branchedStation: "Earl's Court",
+          color: "#007934",
+          stations: {
+            westBrompton: {
+              name: "West Brompton",
+            },
+            fulhamBroadway: {
+              name: "Fulham Broadway",
+            },
+            parsonsGreen: {
+              name: "Parsons Green",
+            },
+            putneyBridge: {
+              name: "Putney Bridge",
+            },
+            eastPutney: {
+              name: "East Putney",
+            },
+            southfields: {
+              name: "Southfields",
+            },
+            wimbledonPark: {
+              name: "Wimbledon Park",
+            },
+            wimbledon: {
+              name: "Wimbledon",
+            },
+          },
+        },
+        {
+          branchedStation: "Earl's Court",
+          color: "#007934",
+          stations: {
+            westKensington: {
+              name: "West Kensington",
+            },
+            baronsCourt: {
+              name: "Barons Court",
+            },
+            hammersmith: {
+              name: "Hammersmith",
+            },
+            ravenscourtPark: {
+              name: "Ravenscourt Park",
+            },
+            stamfordBrook: {
+              name: "Stamford Brook",
+            },
+            turnhamGreen: {
+              name: "Turnham Green",
+            },
+            chiswickPark: {
+              name: "Chiswick Park",
+            },
+            actonTown: {
+              name: "Acton Town",
+            },
+            ealingCommonGreen: {
+              name: "Ealing Common",
+            },
+            ealingBroadway: {
+              name: "Ealing Broadway",
+            },
+          },
+        },
+        {
+          branchedStation: "Turnham Green",
+          color: "#007934",
+          stations: {
+            gunnersbury: {
+              name: "Gunnersbury",
+            },
+            kewGardens: {
+              name: "Kew Gardens",
+            },
+            richmond: {
+              name: "Richmond",
+            },
+          },
+        },
+      ],
     },
     hammersmithCity: {
       color: "#e899a8",
@@ -498,7 +544,7 @@ export const london = {
       ladbrokeGrove: {
         name: "Ladbroke Grove",
       },
-      westbourneParkHC: {
+      westbournePark: {
         name: "Westbourne Park",
       },
       royalOak: {
@@ -654,7 +700,7 @@ export const london = {
     },
     metropolitan: {
       color: "#893267",
-      aldgateMetropolitan: {
+      aldgate: {
         name: "Aldgate",
       },
       liverpoolStreetMetropolitan: {
@@ -696,93 +742,77 @@ export const london = {
       harrowOnTheHill: {
         name: "Harrow-on-the-Hill",
       },
-      westHarrow: {
-        name: "West Harrow",
-      },
-      raynersLaneMetropolitan: {
-        name: "Rayners Lane",
-      },
-      eastcote: {
-        name: "Eastcote",
-      },
-      ruislipManor: {
-        name: "Ruislip Manor",
-      },
-      ruislip: {
-        name: "Ruislip",
-      },
-      ickenham: {
-        name: "Ickenham",
-      },
-      hillingdon: {
-        name: "Hillingdon",
-      },
-      uxbridge: {
-        name: "Uxbridge",
-      },
-      moorPark: {
-        name: "Moor Park",
-      },
-      northwood: {
-        name: "Northwood",
-      },
-      northwoodHills: {
-        name: "Northwood Hills",
-      },
-      pinnerMetropolitan: {
-        name: "Pinner",
-      },
-      northHarrow: {
-        name: "North Harrow",
-      },
-      rickmansworth: {
-        name: "Rickmansworth",
-      },
-      chorleywood: {
-        name: "Chorleywood",
-      },
-      chalfontLatimer: {
-        name: "Chalfont & Latimer",
-      },
-      chesham: {
-        name: "Chesham",
-      },
-      amersham: {
-        name: "Amersham",
-      },
+      branches: [
+        {
+          branchedStation: "Harrow-on-the-Hill",
+          color: "#893267",
+          stations: {
+            northHarrow: {
+              name: "North Harrow",
+            },
+            pinner: {
+              name: "Pinner",
+            },
+            northwoodHills: {
+              name: "Northwood Hills",
+            },
+            northwood: {
+              name: "Northwood",
+            },
+            moorPark: {
+              name: "Moor Park",
+            },
+            rickmansworth: {
+              name: "Rickmansworth",
+            },
+            chorleywood: {
+              name: "Chorleywood",
+            },
+            chalfontLatimer: {
+              name: "Chalfont & Latimer",
+            },
+            amersham: {
+              name: "Amersham",
+            },
+          },
+        },
+        {
+          branchedStation: "Chalfont & Latimer",
+          color: "#893267",
+          stations: {
+            chesham: {
+              name: "Chesham",
+            },
+          },
+        },
+        {
+          branchedStation: "Rayners Lane",
+          color: "#893267",
+          stations: {
+            eastcote: {
+              name: "Eastcote",
+            },
+            ruislipManor: {
+              name: "Ruislip Manor",
+            },
+            ruislip: {
+              name: "Ruislip",
+            },
+            ickenham: {
+              name: "Ickenham",
+            },
+            hillingdon: {
+              name: "Hillingdon",
+            },
+            uxbridge: {
+              name: "Uxbridge",
+            },
+          },
+        },
+      ],
     },
     northern: {
       color: "#000000",
-      highBarnet: {
-        name: "High Barnet",
-      },
-      totteridgeWhetstone: {
-        name: "Totteridge & Whetstone",
-      },
-      woodsidepark: {
-        name: "Woodside Park",
-      },
-      westFinchley: {
-        name: "West Finchley",
-      },
-      finchleyCentral: {
-        name: "Finchley Central",
-      },
-      eastFinchley: {
-        name: "East Finchley",
-      },
-      highgate: {
-        name: "Highgate",
-      },
-      archway: {
-        name: "Archway",
-      },
-      tufnellPark: {
-        name: "Tufnell Park",
-      },
-      kentishTown: {
-        name: "Kentish Town",
-      },
       camdenTown: {
         name: "Camden Town",
       },
@@ -795,7 +825,7 @@ export const london = {
       kingsCrossStPancrasNorthern: {
         name: "King's Cross St. Pancras",
       },
-      angelNorthern: {
+      angel: {
         name: "Angel",
       },
       oldStreet: {
@@ -810,7 +840,7 @@ export const london = {
       londonBridgeNorthern: {
         name: "London Bridge",
       },
-      boroughNorthern: {
+      borough: {
         name: "Borough",
       },
       elephantCastleNorthern: {
@@ -819,90 +849,140 @@ export const london = {
       kennington: {
         name: "Kennington",
       },
-      ovalNorthern: {
-        name: "Oval",
-      },
-      stockwellNorthern: {
-        name: "Stockwell",
-      },
-      claphamNorth: {
-        name: "Clapham North",
-      },
-      claphamCommon: {
-        name: "Clapham Common",
-      },
-      claphamSouth: {
-        name: "Clapham South",
-      },
-      balham: {
-        name: "Balham",
-      },
-      tootingBec: {
-        name: "Tooting Bec",
-      },
-      tootingBroadway: {
-        name: "Tooting Broadway",
-      },
-      colliersWood: {
-        name: "Colliers Wood",
-      },
-      southWimbledon: {
-        name: "South Wimbledon",
-      },
-      morden: {
-        name: "Morden",
-      },
-      edgware: {
-        name: "Edgware",
-      },
-      burnOak: {
-        name: "Burnt Oak",
-      },
-      colindale: {
-        name: "Colindale",
-      },
-      hendonCentral: {
-        name: "Hendon Central",
-      },
-      brentCross: {
-        name: "Brent Cross",
-      },
-      goldersGreen: {
-        name: "Golders Green",
-      },
-      hampstead: {
-        name: "Hampstead",
-      },
-      belsizePark: {
-        name: "Belsize Park",
-      },
-      chalkFarm: {
-        name: "Chalk Farm",
-      },
-      camdenTownBranch: {
-        name: "Camden Town",
-      },
-      goodgeStreet: {
-        name: "Goodge Street",
-      },
-      tottenhamCourtRoadNorthern: {
-        name: "Tottenham Court Road",
-      },
-      leicesterSquare: {
-        name: "Leicester Square",
-      },
-      charingCrossNorthern: {
-        name: "Charing Cross",
-      },
-      embankmentNorthern: {
-        name: "Embankment",
-      },
-      waterlooNorthern: {
-        name: "Waterloo",
-      },
-      kenningtonBranch: {
-        name: "Kennington",
-      },
+      branches: [
+        {
+          branchedStation: "Camden Town",
+          color: "#000000",
+          stations: {
+            chalkFarm: {
+              name: "Chalk Farm",
+            },
+            belsizePark: {
+              name: "Belsize Park",
+            },
+            hampstead: {
+              name: "Hampstead",
+            },
+            goldersGreen: {
+              name: "Golders Green",
+            },
+            brentCross: {
+              name: "Brent Cross",
+            },
+            hendonCentral: {
+              name: "Hendon Central",
+            },
+            colindale: {
+              name: "Colindale",
+            },
+            burntOak: {
+              name: "Burnt Oak",
+            },
+            edgware: {
+              name: "Edgware",
+            },
+          },
+        },
+        {
+          branchedStation: "Camden Town",
+          color: "#000000",
+          stations: {
+            kentishTown: {
+              name: "Kentish Town",
+            },
+            tufnellPark: {
+              name: "Tufnell Park",
+            },
+            archway: {
+              name: "Archway",
+            },
+            highgate: {
+              name: "Highgate",
+            },
+            eastFinchley: {
+              name: "East Finchley",
+            },
+            finchleyCentral: {
+              name: "Finchley Central",
+            },
+            westFinchley: {
+              name: "West Finchley",
+            },
+            woodsidePark: {
+              name: "Woodside Park",
+            },
+            totteridgeWhetstone: {
+              name: "Totteridge & Whetstone",
+            },
+            highBarnet: {
+              name: "High Barnet",
+            },
+          },
+        },
+        {
+          branchedStation: "Kennington",
+          color: "#000000",
+          stations: {
+            oval: {
+              name: "Oval",
+            },
+            stockwell: {
+              name: "Stockwell",
+            },
+            claphamNorth: {
+              name: "Clapham North",
+            },
+            claphamCommon: {
+              name: "Clapham Common",
+            },
+            claphamSouth: {
+              name: "Clapham South",
+            },
+            balham: {
+              name: "Balham",
+            },
+            tootingBec: {
+              name: "Tooting Bec",
+            },
+            tootingBroadway: {
+              name: "Tooting Broadway",
+            },
+            colliersWood: {
+              name: "Colliers Wood",
+            },
+            southWimbledon: {
+              name: "South Wimbledon",
+            },
+            morden: {
+              name: "Morden",
+            },
+          },
+        },
+        {
+          branchedStation: "Kennington",
+          color: "#000000",
+          stations: {
+            waterloo: {
+              name: "Waterloo",
+            },
+            embankment: {
+              name: "Embankment",
+            },
+            charingCross: {
+              name: "Charing Cross",
+            },
+            leicesterSquare: {
+              name: "Leicester Square",
+            },
+            tottenhamCourtRoad: {
+              name: "Tottenham Court Road",
+            },
+            goodgeStreet: {
+              name: "Goodge Street",
+            },
+          },
+        },
+      ],
     },
     piccadilly: {
       color: "#0a3e87",
@@ -963,7 +1043,7 @@ export const london = {
       greenParkPiccadilly: {
         name: "Green Park",
       },
-      hydeparkCorner: {
+      hydeParkCorner: {
         name: "Hyde Park Corner",
       },
       knightsbridge: {
@@ -987,81 +1067,95 @@ export const london = {
       actonTownPiccadilly: {
         name: "Acton Town",
       },
-      ealingCommonPiccadilly: {
-        name: "Ealing Common",
-      },
-      northEaling: {
-        name: "North Ealing",
-      },
-      parkRoyal: {
-        name: "Park Royal",
-      },
-      alperton: {
-        name: "Alperton",
-      },
-      sudburyTown: {
-        name: "Sudbury Town",
-      },
-      sudburyHill: {
-        name: "Sudbury Hill",
-      },
-      southHarrow: {
-        name: "South Harrow",
-      },
-      raynersLanePiccadilly: {
-        name: "Rayners Lane",
-      },
-      eastcotePiccadilly: {
-        name: "Eastcote",
-      },
-      ruislipManorPiccadilly: {
-        name: "Ruislip Manor",
-      },
-      ruislipPiccadilly: {
-        name: "Ruislip",
-      },
-      ickenhamPiccadilly: {
-        name: "Ickenham",
-      },
-      hillingdonPiccadilly: {
-        name: "Hillingdon",
-      },
-      uxbridgePiccadilly: {
-        name: "Uxbridge",
-      },
-      heathrowTerminalsFourFive: {
-        name: "Heathrow Terminal 4",
-      },
-      heathrowTerminalsTwoThree: {
-        name: "Heathrow Terminals 2 & 3",
-      },
-      heathrowTerminalFive: {
-        name: "Heathrow Terminal 5",
-      },
-      hattonCross: {
-        name: "Hatton Cross",
-      },
-      hounslowWest: {
-        name: "Hounslow West",
-      },
-      hounslowCentral: {
-        name: "Hounslow Central",
-      },
-      hounslowEast: {
-        name: "Hounslow East",
-      },
-      osterley: {
-        name: "Osterley",
-      },
-      bostonManor: {
-        name: "Boston Manor",
-      },
-      northfields: {
-        name: "Northfields",
-      },
-      southEaling: {
-        name: "South Ealing",
-      },
+      branches: [
+        {
+          branchedStation: "Acton Town",
+          color: "#0a3e87",
+          stations: {
+            ealingCommon: {
+              name: "Ealing Common",
+            },
+            northEaling: {
+              name: "North Ealing",
+            },
+            parkRoyal: {
+              name: "Park Royal",
+            },
+            alperton: {
+              name: "Alperton",
+            },
+            sudburyTown: {
+              name: "Sudbury Town",
+            },
+            sudburyHill: {
+              name: "Sudbury Hill",
+            },
+            southHarrow: {
+              name: "South Harrow",
+            },
+            raynersLanePiccadilly: {
+              name: "Rayners Lane",
+            },
+            eastcotePiccadilly: {
+              name: "Eastcote",
+            },
+            ruislipManorPiccadilly: {
+              name: "Ruislip Manor",
+            },
+            ruislipPiccadilly: {
+              name: "Ruislip",
+            },
+            ickenhamPiccadilly: {
+              name: "Ickenham",
+            },
+            hillingdonPiccadilly: {
+              name: "Hillingdon",
+            },
+            uxbridgePiccadilly: {
+              name: "Uxbridge",
+            },
+          },
+        },
+        {
+          branchedStation: "Acton Town",
+          color: "#0a3e87",
+          stations: {
+            southEaling: {
+              name: "South Ealing",
+            },
+            northfields: {
+              name: "Northfields",
+            },
+            bostonManor: {
+              name: "Boston Manor",
+            },
+            osterley: {
+              name: "Osterley",
+            },
+            hounslowEast: {
+              name: "Hounslow East",
+            },
+            hounslowCentral: {
+              name: "Hounslow Central",
+            },
+            hounslowWest: {
+              name: "Hounslow West",
+            },
+            hattonCross: {
+              name: "Hatton Cross",
+            },
+            heathrowTerminalsTwoThree: {
+              name: "Heathrow Terminals 2 & 3",
+            },
+            heathrowTerminalFour: {
+              name: "Heathrow Terminal 4",
+            },
+            heathrowTerminalFive: {
+              name: "Heathrow Terminal 5",
+            },
+          },
+        },
+      ],
     },
     victoria: {
       color: "#009fe0",
@@ -1083,7 +1177,7 @@ export const london = {
       highburyIslington: {
         name: "Highbury & Islington",
       },
-      kingsCorssStPancrasVictoria: {
+      kingsCrossStPancrasVictoria: {
         name: "King's Cross St. Pancras",
       },
       eustonVictoria: {
@@ -1110,16 +1204,16 @@ export const london = {
       stockwellVictoria: {
         name: "Stockwell",
       },
-      brixtonVictoria: {
+      brixton: {
         name: "Brixton",
       },
     },
     waterlooCity: {
       color: "#70c3ce",
-      bankWaterloo: {
+      bank: {
         name: "Bank",
       },
-      waterlooWaterloo: {
+      waterlooWC: {
         name: "Waterloo",
       },
     },

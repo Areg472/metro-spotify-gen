@@ -1,26 +1,26 @@
 import { notFound, redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import MetroClient from "../MetroClient";
-import { processAutoStations } from "@/data/stations/utils";
+import stations from "@/data/stations";
 
 export async function generateMetadata({ params }) {
   const { cityname } = await params;
   const cityId = cityname.toLowerCase();
 
-  try {
-    const { [cityId]: city } = await import(`@/data/stations/${cityId}`);
+  const cityEntry = Object.entries(stations).find(
+    ([key]) => key.toLowerCase() === cityId,
+  );
 
-    if (!city) {
-      return { title: "City Not Found" };
-    }
-
-    return {
-      title: `${city.name} Metro - Metro Spotify Generator`,
-      description: `Generate a Spotify track list for ${city.name} metro.`,
-    };
-  } catch (e) {
+  if (!cityEntry) {
     return { title: "City Not Found" };
   }
+
+  const city = cityEntry[1];
+
+  return {
+    title: `${city.name} Metro - Metro Spotify Generator`,
+    description: `Generate a Spotify track list for ${city.name} metro.`,
+  };
 }
 
 export default async function CityMetroPage({ params }) {
@@ -34,16 +34,15 @@ export default async function CityMetroPage({ params }) {
   const { cityname } = await params;
   const cityId = cityname.toLowerCase();
 
-  try {
-    const cityData = await import(`@/data/stations/${cityId}`);
-    const city = processAutoStations(cityData[cityId]);
+  const cityEntry = Object.entries(stations).find(
+    ([key]) => key.toLowerCase() === cityId,
+  );
 
-    if (!city) {
-      notFound();
-    }
-
-    return <MetroClient initialCityId={cityId} initialCityData={city} />;
-  } catch (e) {
+  if (!cityEntry) {
     notFound();
   }
+
+  const [resolvedCityId, city] = cityEntry;
+
+  return <MetroClient initialCityId={resolvedCityId} initialCityData={city} />;
 }

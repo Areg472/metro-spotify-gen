@@ -4,6 +4,8 @@ import { vertex } from "@ai-sdk/google-vertex";
 export async function POST(request) {
   const { prompt } = await request.json();
 
+  console.log("[chat] Received prompt, sending to AI...");
+
   const result = await generateText({
     model: "google/gemini-3-flash",
     system: `You are a metro trip music assistant. 
@@ -20,12 +22,20 @@ CRITICAL RULES:
 - The TOTAL duration of ALL selected tracks combined must NOT exceed the trip duration.
 - Always leave a small time buffer (don't use 100% of trip time).
 
+MOOD & GENRE RULES (if mood/genre/tag data is provided in the prompt):
+- Match the overall mood of the playlist to the time of day: morning → calm/chill/acoustic; evening rush → energetic/upbeat; night → mellow/ambient.
+- Maintain GENRE CONTINUITY: avoid jarring genre switches between consecutive tracks. Prefer tracks that share at least one genre or mood tag with the previous track.
+- If a dominant genre/mood is present in the track list, lean towards it for the playlist.
+- Use the tags provided per track to inform your selection. Tags may include genres (e.g. "rock", "jazz"), moods (e.g. "chill", "energetic"), or descriptors (e.g. "rainy day", "workout").
+
 Output ONLY a JSON array: [{"title": "...", "artist": "..."}]`,
     prompt,
     tools: {
       google_search: vertex.tools.googleSearch({}),
     },
   });
+
+  console.log("[chat] AI response received, length:", result.text?.length ?? 0);
 
   return Response.json({ text: result.text });
 }

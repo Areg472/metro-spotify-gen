@@ -11,19 +11,8 @@ function SkeletonSongListInline({ count = 5 }) {
     <div className="flex flex-col space-y-3 w-full">
       {Array.from({ length: count }).map((_, i) => (
         <div key={i} className="flex items-center space-x-3">
-          <div
-            className="skeleton rounded-full shrink-0"
-            style={{ width: 28, height: 28 }}
-          />
           <div className="flex flex-col space-y-1.5 flex-1">
-            <div
-              className="skeleton h-3.5"
-              style={{ width: `${55 + (i % 3) * 15}%` }}
-            />
-            <div
-              className="skeleton h-3"
-              style={{ width: `${35 + (i % 4) * 10}%` }}
-            />
+            <div className="skeleton h-3.5" style={{ width: `250px` }} />
           </div>
         </div>
       ))}
@@ -148,7 +137,15 @@ export default function MetroClient({ initialCityId, initialCityData }) {
     }
   };
 
-  const handleRecommend = () => {
+  const getTimeOfDay = () => {
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 10) return "morning";
+    if (hour >= 10 && hour < 17) return "afternoon";
+    if (hour >= 17 && hour < 21) return "evening";
+    return "night";
+  };
+
+  const handleRecommend = async () => {
     if (!startStation || !endStation) {
       alert("Please select both start and end stations.");
       return;
@@ -159,6 +156,62 @@ export default function MetroClient({ initialCityId, initialCityData }) {
       return;
     }
 
+    setIsLoading(true);
+
+    const timeOfDay = getTimeOfDay();
+    console.log(
+      `[handleRecommend] Time of day: ${timeOfDay}, tracks: ${recentTracks.length}`,
+    );
+
+    // Fetch mood/genre tags for all tracks
+    let tagMap = {};
+    try {
+      const tracksForTags = recentTracks.map((item) => ({
+        artist: item.track.artists[0]?.name || "",
+        title: item.track.name,
+      }));
+      console.log(
+        `[handleRecommend] Fetching tags for ${tracksForTags.length} tracks...`,
+      );
+      const tagsResponse = await fetch("/api/lastfm/track-tags", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tracks: tracksForTags }),
+      });
+      if (tagsResponse.ok) {
+        const tagsData = await tagsResponse.json();
+        tagsData.forEach(({ artist, title, tags }) => {
+          tagMap[`${title}|||${artist}`] = tags;
+        });
+        const taggedCount = Object.values(tagMap).filter(
+          (t) => t.length > 0,
+        ).length;
+        console.log(
+          `[handleRecommend] Tags fetched. ${taggedCount}/${tracksForTags.length} tracks have tags`,
+        );
+
+        // Log dominant genres/moods
+        const allTags = Object.values(tagMap).flat();
+        const tagFreq = allTags.reduce((acc, t) => {
+          acc[t] = (acc[t] || 0) + 1;
+          return acc;
+        }, {});
+        const topTags = Object.entries(tagFreq)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 5)
+          .map(([t]) => t);
+        console.log(
+          `[handleRecommend] Dominant tags across library: [${topTags.join(", ")}]`,
+        );
+      } else {
+        console.warn(
+          "[handleRecommend] Failed to fetch track tags, proceeding without them",
+        );
+      }
+    } catch (err) {
+      console.error("[handleRecommend] Error fetching track tags:", err);
+    }
+
     const trackList = recentTracks
       .map((item) => {
         const track = item.track;
@@ -166,7 +219,10 @@ export default function MetroClient({ initialCityId, initialCityData }) {
         const totalSeconds = Math.floor(track.duration_ms / 1000);
         const minutes = Math.floor(totalSeconds / 60);
         const seconds = totalSeconds % 60;
-        return `- ${track.name} by ${artists} (${minutes} minutes and ${seconds} seconds)`;
+        const key = `${track.name}|||${track.artists[0]?.name || ""}`;
+        const tags = tagMap[key] || [];
+        const tagStr = tags.length > 0 ? ` [tags: ${tags.join(", ")}]` : "";
+        return `- ${track.name} by ${artists} (${minutes} minutes and ${seconds} seconds)${tagStr}`;
       })
       .join("\n");
 
@@ -180,7 +236,12 @@ export default function MetroClient({ initialCityId, initialCityData }) {
       }
     }
 
-    const prompt = `Metro trip: ${selectedCity?.name || "Yerevan"}, from "${startStation.name}" to "${endStation.name}".${weatherInfo}
+    console.log(
+      `[handleRecommend] Building prompt for trip: ${selectedCity?.name} — "${startStation.name}" → "${endStation.name}"`,
+    );
+
+    const prompt = `Metro trip: ${selectedCity?.name || "Yerevan"}, from "${startStation.name}" to "${endStation.name}".
+Time of day: ${timeOfDay} (use this to guide mood — morning: calm/chill, afternoon: neutral, evening: energetic/upbeat, night: mellow/ambient).${weatherInfo}
 
 INSTRUCTIONS:
 1. First, search the web for the exact travel time between these two metro stations (riding time only, exclude waiting).
@@ -194,12 +255,16 @@ INSTRUCTIONS:
 6. Pick from anywhere in the list, not just the top. Mix different songs to create an interesting playlist.
 7. ONLY for trips under 3 minutes, a single track is acceptable.
 8. NEVER exceed the trip duration, even by a few seconds. Always leave a small buffer.
+9. Use the [tags] on each track to match the mood for the time of day and maintain genre continuity between consecutive tracks.
 
-My recent tracks:
+My recent tracks (with mood/genre tags where available):
 ${trackList}
 
 Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
 
+    console.log(
+      `[handleRecommend] Prompt ready (${prompt.length} chars), sending to AI...`,
+    );
     sendMessage(prompt);
   };
 
