@@ -41,11 +41,15 @@ function processBranch(
 
   const isLastBranch = branchIndex === totalBranches - 1;
 
+  const branchStationCount = Object.keys(branchData.stations || {}).filter(
+    (k) => k !== "branch" && k !== "branches",
+  ).length;
+
   extraConnectors.push({
     color: parentLineColor || branchData.color,
     lineId: parentLineColor || branchData.color,
     ...(isLastBranch ? { top: true } : { vertical: true }),
-    right: true,
+    ...(branchStationCount > 1 ? { right: true } : {}),
     x: extraConnectorX,
     y: branchY,
   });
@@ -76,7 +80,7 @@ function processBranch(
         station: true,
         x: branchX,
         y: branchY,
-        ...(isFirst ? { horizontal: true } : {}),
+        ...(isFirst && !isLast ? { horizontal: true } : {}),
         ...(isLast ? { left: true } : {}),
         ...(!isFirst && !isLast ? { horizontal: true } : {}),
         ...(branchManualLabelPlacement
