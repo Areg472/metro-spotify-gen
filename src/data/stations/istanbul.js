@@ -2,1044 +2,432 @@ export const istanbul = {
   name: "Istanbul",
   country: "Turkey",
   defaultConnectorSize: 60,
+  auto: true,
   stations: {
-    // M1a (Yenikapı - Atatürk Havalimanı (Airport))
-    yenikapi_m1: {
-      name: "Yenikapi",
-      name_tr: "Yenikapı",
-      connector: {
-        color: "red",
-        right: true,
-        station: true,
-        bottom: true,
-        x: 0,
-        y: 0,
+    lineM1: {
+      color: "#e52713",
+      yenikapi: {
+        name: "Yenikapı",
+      },
+      aksaray: {
+        name: "Aksaray",
+      },
+      emniyetFatih: {
+        name: "Emniyet-Fatih",
+      },
+      ulubatli: {
+        name: "Ulubatlı",
+      },
+      bayrampaşa: {
+        name: "Bayrampaşa-Maltepe",
+      },
+      sagmalcilar: {
+        name: "Sağmalcılar",
+      },
+      kocatepe: {
+        name: "Kocatepe",
+      },
+      otogar: {
+        name: "Otogar",
+      },
+      branches: [
+        {
+          branchedStation: "Otogar",
+          color: "#e52713",
+          stations: {
+            terazidere: {
+              name: "Terazidere",
+            },
+            davutpasa: {
+              name: "Davutpaşa-YTÜ",
+            },
+            merter: {
+              name: "Merter",
+            },
+            zeytinburnu: {
+              name: "Zeytinburnu",
+            },
+            bakirkoyIncirli: {
+              name: "Bakırköy-İncirli",
+            },
+            bahcelievler: {
+              name: "Bahçelievler",
+            },
+            ataköyŞirinevler: {
+              name: "Ataköy-Şirinevler",
+            },
+            yenibosna: {
+              name: "Yenibosna",
+            },
+            dtoYenibosna: {
+              name: "DTM-İstanbul Fuar Merkezi",
+            },
+            ataturkHavaLimani: {
+              name: "Atatürk Havalimanı",
+            },
+          },
+        },
+        {
+          branchedStation: "Otogar",
+          color: "#e52713",
+          stations: {
+            esenler: {
+              name: "Esenler",
+            },
+            menderes: {
+              name: "Menderes",
+            },
+            üçyüzlüler: {
+              name: "Üçyüzlüler",
+            },
+            bağcılarMeydanStation: {
+              name: "Bağcılar Meydan",
+            },
+            kirazlı: {
+              name: "Kirazlı",
+            },
+          },
+        },
+      ],
+    },
+    lineM2: {
+      color: "#00a651",
+      yenikapıM2: {
+        name: "Yenikapı",
+      },
+      vezneciler: {
+        name: "Vezneciler-İstanbul Üniversitesi",
+      },
+      haliç: {
+        name: "Haliç",
+      },
+      şişhane: {
+        name: "Şişhane",
+      },
+      taksim: {
+        name: "Taksim",
       },
-    },
-    aksaray_m1: {
-      name: "Aksaray",
-      name_tr: "Aksaray",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 0,
+      osmanbey: {
+        name: "Osmanbey",
       },
-    },
-    emniyetFatih_m1: {
-      name: "Emniyet-Fatih",
-      name_tr: "Emniyet-Fatih",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 0,
+      şişli: {
+        name: "Şişli-Mecidiyeköy",
       },
-    },
-    topkapiUlubatli_m1: {
-      name: "Topkapi-Ulubatli",
-      name_tr: "Topkapı-Ulubatlı",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 0,
+      gayrettepe: {
+        name: "Gayrettepe",
       },
-    },
-    bayrampasaMaltepe_m1: {
-      name: "Bayrampasa-Maltepe",
-      name_tr: "Bayrampaşa-Maltepe",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 0,
+      levent: {
+        name: "Levent",
       },
-    },
-    sagmalcilar_m1: {
-      name: "Sagmalcilar",
-      name_tr: "Sağmalcılar",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 0,
+      fourthLevent: {
+        name: "4.Levent",
       },
-    },
-    kocatepe_m1: {
-      name: "Kocatepe",
-      name_tr: "Kocatepe",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 0,
+      sanayi: {
+        name: "Sanayi Mahallesi",
       },
-    },
-    // DIVIDER
-    otogar_m1: {
-      name: "Otogar",
-      name_tr: "Otogar",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        bottom: true,
-        x: 420,
-        y: 0,
+      itüAyazağa: {
+        name: "İTÜ-Ayazağa",
       },
-    },
-    terazidere: {
-      name: "Terazidere",
-      name_tr: "Terazidere",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 0,
+      atatürkOtoSanayi: {
+        name: "Atatürk Oto Sanayi",
       },
-    },
-    davutpasaYtu: {
-      name: "Davutpasa-YTU",
-      name_tr: "Davutpaşa-YTÜ",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 0,
+      darüşşafaka: {
+        name: "Darüşşafaka",
       },
-    },
-    merter: {
-      name: "Merter",
-      name_tr: "Merter",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 0,
+      hacıosman: {
+        name: "Hacıosman",
       },
-    },
-    zeytinburnu: {
-      name: "Zeytinburnu",
-      name_tr: "Zeytinburnu",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 0,
+      seyrantepe: {
+        name: "Seyrantepe",
       },
     },
-    bakirkoyIncirli: {
-      name: "Bakirkoy-Incirli",
-      name_tr: "Bakırköy-İncirli",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 0,
+    lineM3: {
+      color: "#00adef",
+      kirazlıM3: {
+        name: "Kirazlı",
       },
-    },
-    bahcelievler: {
-      name: "Bahcelievler",
-      name_tr: "Bahçelievler",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 0,
+      metrokent: {
+        name: "Metrokent",
       },
-    },
-    atakoySirinevler: {
-      name: "Atakoy-Sirinevler",
-      name_tr: "Ataköy-Şirinevler",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 0,
+      başakKonutları: {
+        name: "Başak Konutları",
       },
-    },
-    yenibosna: {
-      name: "Yenibosna",
-      name_tr: "Yenibosna",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 0,
+      siteler: {
+        name: "Siteler",
       },
-    },
-    dtmIstanbulFuarMerkezi: {
-      name: "DTM-Istanbul Fuar Merkezi",
-      name_tr: "DTM-İstanbul Fuar Merkezi",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 0,
+      turgutÖzal: {
+        name: "Turgut Özal",
       },
-    },
-    ataturkHavalimani: {
-      name: "Ataturk Havalimani (Airport)",
-      name_tr: "Atatürk Havalimanı (Airport)",
-      connector: {
-        color: "red",
-        left: true,
-        station: true,
-        x: 1020,
-        y: 0,
+      ikitelliSanayi: {
+        name: "İkitelli Sanayi",
       },
-    },
-
-    // M1b (Yenikapı - Kirazlı-Bağcılar) - only unique stations
-    esenler: {
-      name: "Esenler",
-      name_tr: "Esenler",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 60,
-        labelPlacement: "bottom-right",
+      ispartakule: {
+        name: "Ispartakule",
       },
-    },
-    menderes: {
-      name: "Menderes",
-      name_tr: "Menderes",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 60,
-        labelPlacement: "bottom-right",
+      mahmutbey: {
+        name: "Mahmutbey",
       },
-    },
-    ucyuzlu: {
-      name: "Ucyuzlu",
-      name_tr: "Üçyüzlü",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 60,
-        labelPlacement: "bottom-right",
+      kayabaşı: {
+        name: "Kayabaşı",
       },
-    },
-    bagcilarMeydan: {
-      name: "Bagcilar-Meydan",
-      name_tr: "Bağcılar-Meydan",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 60,
-        labelPlacement: "bottom-right",
+      bahçeşehir: {
+        name: "Bahçeşehir",
       },
-    },
-    kirazliBagcilar_m1: {
-      name: "Kirazli-Bagcilar",
-      name_tr: "Kirazlı-Bağcılar",
-      connector: {
-        color: "red",
-        left: true,
-        station: true,
-        x: 720,
-        y: 60,
-        labelPlacement: "bottom-right",
+      olimpiyat: {
+        name: "Olimpiyat-Avrupa Konutları",
       },
     },
-
-    // M2 (Yenikapı - Hacıosman)
-    yenikapi_m2: {
-      name: "Yenikapi",
-      name_tr: "Yenikapı",
-      connector: {
-        color: "green",
-        top: true,
-        right: true,
-        station: true,
-        x: 0,
-        y: 120,
+    lineM4: {
+      color: "#ea66a6",
+      kadıköy: {
+        name: "Kadıköy",
       },
-    },
-    vezneciler: {
-      name: "Vezneciler",
-      name_tr: "Vezneciler",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 120,
+      ayrılıkÇeşmesi: {
+        name: "Ayrılık Çeşmesi",
       },
-    },
-    halic: {
-      name: "Halic",
-      name_tr: "Haliç",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 120,
+      acıbadem: {
+        name: "Acıbadem",
       },
-    },
-    sishane: {
-      name: "Sishane",
-      name_tr: "Şişhane",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 120,
+      ünutashı: {
+        name: "Ünalan",
       },
-    },
-    taksim: {
-      name: "Taksim",
-      name_tr: "Taksim",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 120,
+      göztepe: {
+        name: "Göztepe",
       },
-    },
-    osmanbey: {
-      name: "Osmanbey",
-      name_tr: "Osmanbey",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 120,
+      yenisahra: {
+        name: "Yenisahra",
       },
-    },
-    sisliMecidiyekoy: {
-      name: "Sisli-Mecidiyekoy",
-      name_tr: "Şişli-Mecidiyeköy",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 120,
+      kozyatağı: {
+        name: "Kozyatağı",
       },
-    },
-    gayrettepe: {
-      name: "Gayrettepe",
-      name_tr: "Gayrettepe",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 120,
+      bostancı: {
+        name: "Bostancı",
       },
-    },
-    levent_m2: {
-      name: "Levent",
-      name_tr: "Levent",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 120,
+      küçükyalı: {
+        name: "Küçükyalı",
       },
-    },
-    levent4: {
-      name: "4. Levent",
-      name_tr: "4. Levent",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 120,
+      maltepe: {
+        name: "Maltepe",
       },
-    },
-    // DIVIDER
-    sanayiMahallesi_m2: {
-      name: "Sanayi Mahallesi",
-      name_tr: "Sanayi Mahallesi",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        bottom: true,
-        x: 600,
-        y: 120,
+      huzurevi: {
+        name: "Huzurevi",
       },
-    },
-    ituAyazaga: {
-      name: "ITU-Ayazaga",
-      name_tr: "İTÜ-Ayazağa",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 120,
+      gülsuyu: {
+        name: "Gülsuyu",
       },
-    },
-    ataturkOtoSanayi: {
-      name: "Ataturk Oto Sanayi",
-      name_tr: "Atatürk Oto Sanayi",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 120,
+      esenkent: {
+        name: "Esenkent",
       },
-    },
-    darussafaka: {
-      name: "Darussafaka",
-      name_tr: "Darüşşafaka",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 120,
+      hastaneAdliye: {
+        name: "Hastane-Adliye",
       },
-    },
-    haciosman: {
-      name: "Haciosman",
-      name_tr: "Hacıosman",
-      connector: {
-        color: "green",
-        left: true,
-        station: true,
-        x: 840,
-        y: 120,
+      soğanlık: {
+        name: "Soğanlık",
       },
-    },
-
-    // M2 (Sanayi Mahallesi - Seyrantepe) - branch
-    seyrantepe: {
-      name: "Seyrantepe",
-      name_tr: "Seyrantepe",
-      connector: {
-        color: "green",
-        left: true,
-        station: true,
-        x: 660,
-        y: 180,
+      kartal: {
+        name: "Kartal",
       },
-    },
-
-    // M3 (Kirazlı-Bağcılar - Olimpiyat)
-    kirazliBagcilar_m3: {
-      name: "Kirazli-Bagcilar",
-      name_tr: "Kirazlı-Bağcılar",
-      connector: {
-        color: "lightBlue",
-        right: true,
-        station: true,
-        x: 0,
-        y: 180,
-        labelPlacement: "bottom-right",
+      yakacık: {
+        name: "Yakacık-Adnan Kahveci",
       },
-    },
-    yenimahalle_m3: {
-      name: "Yenimahalle",
-      name_tr: "Yenimahalle",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 180,
-        labelPlacement: "bottom-right",
+      pendik: {
+        name: "Pendik",
       },
-    },
-    mahmutbey_m3: {
-      name: "Mahmutbey",
-      name_tr: "Mahmutbey",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 180,
-        labelPlacement: "bottom-right",
+      tavşantepe: {
+        name: "Tavşantepe",
       },
-    },
-    istoc_m3: {
-      name: "ISTOC",
-      name_tr: "İSTOÇ",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 180,
-        labelPlacement: "bottom-right",
+      fevziÇakmak: {
+        name: "Fevzi Çakmak",
       },
-    },
-    // DIVIDER
-    ikitelliSanayi_m3: {
-      name: "Ikitelli Sanayi",
-      name_tr: "İkitelli Sanayi",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        bottom: true,
-        station: true,
-        x: 240,
-        y: 180,
-        labelPlacement: "bottom-right",
+      yenişehir: {
+        name: "Yenişehir",
       },
-    },
-    ziyaGokalpMahallesi: {
-      name: "Ziya Gokalp Mahallesi",
-      name_tr: "Ziya Gökalp Mahallesi",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 180,
-        labelPlacement: "bottom-right",
+      kurtköy: {
+        name: "Kurtköy",
       },
-    },
-    olimpiyat: {
-      name: "Olimpiyat",
-      name_tr: "Olimpiyat",
-      connector: {
-        color: "lightBlue",
-        left: true,
-        station: true,
-        x: 360,
-        y: 180,
-        labelPlacement: "bottom-right",
+      sabıhaGökcenHavalimanı: {
+        name: "Sabiha Gökçen Havalimanı",
       },
     },
-
-    // M3 (Kirazlı-Bağcılar - MetroKent) - only unique stations beyond İkitelli Sanayi
-    turgutOzal: {
-      name: "Turgut Ozal",
-      name_tr: "Turgut Özal",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 240,
+    lineM5: {
+      color: "#7e3795",
+      üsküdar: {
+        name: "Üsküdar",
       },
-    },
-    siteler: {
-      name: "Siteler",
-      name_tr: "Siteler",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 240,
+      fistikağac: {
+        name: "Fıstıkağacı",
       },
-    },
-    basakKonutlari: {
-      name: "Basak Konutlari",
-      name_tr: "Başak Konutları",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 240,
+      bağlarbaşı: {
+        name: "Bağlarbaşı",
       },
-    },
-    metrokent: {
-      name: "MetroKent",
-      name_tr: "MetroKent",
-      connector: {
-        color: "lightBlue",
-        left: true,
-        station: true,
-        x: 480,
-        y: 240,
+      altunizade: {
+        name: "Altunizade",
       },
-    },
-
-    // M4 (Kadıköy - Tavşantepe)
-    kadikoy: {
-      name: "Kadikoy",
-      name_tr: "Kadıköy",
-      connector: {
-        color: "#BD313B",
-        right: true,
-        station: true,
-        x: 0,
-        y: 300,
+      kısıklı: {
+        name: "Kısıklı",
       },
-    },
-    ayrilikCesmesi: {
-      name: "Ayrilik Cesmesi",
-      name_tr: "Ayrılık Çeşmesi",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 300,
+      bulgurlu: {
+        name: "Bulgurlu",
       },
-    },
-    acibadem: {
-      name: "Acibadem",
-      name_tr: "Acıbadem",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 300,
+      ümraniye: {
+        name: "Ümraniye",
       },
-    },
-    unalan: {
-      name: "Unalan",
-      name_tr: "Ünalan",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 300,
+      çarşı: {
+        name: "Çarşı",
       },
-    },
-    goztepe: {
-      name: "Goztepe",
-      name_tr: "Göztepe",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 300,
+      yamanevler: {
+        name: "Yamanevler",
       },
-    },
-    yenisahra: {
-      name: "Yenisahra",
-      name_tr: "Yenisahra",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 300,
+      çakmak: {
+        name: "Çakmak",
       },
-    },
-    kozyatagi: {
-      name: "Kozyatagi",
-      name_tr: "Kozyatağı",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 300,
+      ihsaniye: {
+        name: "İhsaniye",
       },
-    },
-    bostanci: {
-      name: "Bostanci",
-      name_tr: "Bostancı",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 300,
+      ataşehir: {
+        name: "Ataşehir",
       },
-    },
-    kucukyali: {
-      name: "Kucukyali",
-      name_tr: "Küçükyalı",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 300,
+      yenisahrM5: {
+        name: "Yenisahra",
       },
-    },
-    maltepe: {
-      name: "Maltepe",
-      name_tr: "Maltepe",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 300,
+      sancaktepe: {
+        name: "Sancaktepe",
       },
-    },
-    huzurevi: {
-      name: "Huzurevi",
-      name_tr: "Huzurevi",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 300,
+      hilal: {
+        name: "Hilal",
       },
-    },
-    gulsuyu: {
-      name: "Gulsuyu",
-      name_tr: "Gülsuyu",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 300,
+      çekmeköy: {
+        name: "Çekmeköy",
       },
-    },
-    esenkent: {
-      name: "Esenkent",
-      name_tr: "Esenkent",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 300,
+      samandıraMerkez: {
+        name: "Samandıra Merkez",
       },
     },
-    hastaneAdliye: {
-      name: "Hastane-Adliye",
-      name_tr: "Hastane-Adliye",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 300,
+    lineM6: {
+      color: "#8d5b29",
+      leventM6: {
+        name: "Levent",
       },
-    },
-    soganlik: {
-      name: "Soganlik",
-      name_tr: "Soğanlık",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 300,
+      nispetiye: {
+        name: "Nispetiye",
       },
-    },
-    kartal: {
-      name: "Kartal",
-      name_tr: "Kartal",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 300,
+      etiler: {
+        name: "Etiler",
       },
-    },
-    yakacik: {
-      name: "Yakacik",
-      name_tr: "Yakacık",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 300,
+      bomonti: {
+        name: "Bomonti",
       },
     },
-    pendik: {
-      name: "Pendik",
-      name_tr: "Pendik",
-      connector: {
-        color: "#BD313B",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 300,
+    lineM7: {
+      color: "#ed1e79",
+      mecidiyeköy: {
+        name: "Mecidiyeköy",
       },
-    },
-    tavsantepe: {
-      name: "Tavsantepe",
-      name_tr: "Tavşantepe",
-      connector: {
-        color: "#BD313B",
-        left: true,
-        station: true,
-        x: 1080,
-        y: 300,
+      çağlayan: {
+        name: "Çağlayan",
       },
-    },
-
-    // M5 (Üsküdar - Çekmeköy)
-    uskudar: {
-      name: "Uskudar",
-      name_tr: "Üsküdar",
-      connector: {
-        color: "purple",
-        right: true,
-        station: true,
-        x: 0,
-        y: 360,
-        labelPlacement: "bottom-right",
+      kağıthane: {
+        name: "Kağıthane",
       },
-    },
-    fistikagaci: {
-      name: "Fistikagaci",
-      name_tr: "Fıstıkağacı",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 360,
-        labelPlacement: "bottom-right",
+      nurtepe: {
+        name: "Nurtepe",
       },
-    },
-    baglarbasi: {
-      name: "Baglarbasi",
-      name_tr: "Bağlarbaşı",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 360,
-        labelPlacement: "bottom-right",
+      alibeyköy: {
+        name: "Alibeyköy",
       },
-    },
-    altunizade: {
-      name: "Altunizade",
-      name_tr: "Altunizade",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 360,
-        labelPlacement: "bottom-right",
+      çırsirHavuzbaşı: {
+        name: "Çırçır",
       },
-    },
-    kisikli: {
-      name: "Kisikli",
-      name_tr: "Kısıklı",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 360,
-        labelPlacement: "bottom-right",
+      yenimahalle: {
+        name: "Yenimahalle",
       },
-    },
-    bulgurluLibadiye: {
-      name: "Bulgurlu-Libadiye",
-      name_tr: "Bulgurlu—Libadiye",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 360,
-        labelPlacement: "bottom-right",
+      tekstilkent: {
+        name: "Tekstilkent",
       },
-    },
-    umraniye: {
-      name: "Umraniye",
-      name_tr: "Ümraniye",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 360,
-        labelPlacement: "bottom-right",
+      akşemsettin: {
+        name: "Akşemsettin",
       },
-    },
-    carsi: {
-      name: "Carsi",
-      name_tr: "Çarşı",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 360,
-        labelPlacement: "bottom-right",
+      göztepeMimarSinan: {
+        name: "Göztepe-Mimar Sinan",
       },
-    },
-    yamanevler: {
-      name: "Yamanevler",
-      name_tr: "Yamanevler",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 360,
-        labelPlacement: "bottom-right",
+      yeşilpınar: {
+        name: "Yeşilpınar",
       },
-    },
-    cakmak: {
-      name: "Cakmak",
-      name_tr: "Çakmak",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 360,
-        labelPlacement: "bottom-right",
+      karadeniz: {
+        name: "Karadeniz Mahallesi",
       },
-    },
-    ihlamurkuyu: {
-      name: "Ihlamurkuyu",
-      name_tr: "Ihlamurkuyu",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 360,
-        labelPlacement: "bottom-right",
+      yıldırımBeyazitÜniversitesi: {
+        name: "Yıldırım Beyazıt Üniversitesi",
       },
-    },
-    altinsehir: {
-      name: "Altinsehir",
-      name_tr: "Altınşehir",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 360,
-        labelPlacement: "bottom-right",
+      mahmutbeyM7: {
+        name: "Mahmutbey",
       },
     },
-    imamHatip: {
-      name: "Imam Hatip",
-      name_tr: "İmam Hatip",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 360,
-        labelPlacement: "bottom-right",
+    lineM9: {
+      color: "#febe10",
+      ataköy: {
+        name: "Ataköy",
       },
-    },
-    dudullu: {
-      name: "Dudullu",
-      name_tr: "Dudullu",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 360,
-        labelPlacement: "bottom-right",
+      şirinevler: {
+        name: "Şirinevler",
       },
-    },
-    necipFazil: {
-      name: "Necip Fazil",
-      name_tr: "Necip Fazıl",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 360,
-        labelPlacement: "bottom-right",
+      yenibosnaM9: {
+        name: "Yenibosna",
       },
-    },
-    cekmekoy: {
-      name: "Cekmekoy",
-      name_tr: "Çekmeköy",
-      connector: {
-        color: "purple",
-        left: true,
-        station: true,
-        x: 900,
-        y: 360,
-        labelPlacement: "bottom-right",
+      sefaköy: {
+        name: "Sefaköy",
       },
-    },
-
-    // M6 (Levent - Boğaziçi Üniversitesi)
-    levent_m6: {
-      name: "Levent",
-      name_tr: "Levent",
-      connector: {
-        color: "#93845E",
-        right: true,
-        station: true,
-        x: 0,
-        y: 420,
+      küçükçekmece: {
+        name: "Küçükçekmece",
       },
-    },
-    nispetiye: {
-      name: "Nispetiye",
-      name_tr: "Nispetiye",
-      connector: {
-        color: "#93845E",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 420,
+      soğuksu: {
+        name: "Soğuksu",
       },
-    },
-    etiler: {
-      name: "Etiler",
-      name_tr: "Etiler",
-      connector: {
-        color: "#93845E",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 420,
+      cumhuriyetMahallesi: {
+        name: "Cumhuriyet Mahallesi",
       },
+      halkalıM9: {
+        name: "Halkalı Merkez",
+      },
+      olimpiyatM9: {
+        name: "Olimpiyat",
+      },
     },
-    bogaziciUniversitesi: {
-      name: "Bogazici Universitesi",
-      name_tr: "Boğaziçi Üniversitesi",
-      connector: {
-        color: "#93845E",
-        left: true,
-        station: true,
-        x: 180,
-        y: 420,
+    lineM11: {
+      color: "#a57bb7",
+      gayrettepeM11: {
+        name: "Gayrettepe",
+      },
+      kağıthaneM11: {
+        name: "Kağıthane",
+      },
+      gayrettepe2: {
+        name: "Çeliktepe",
+      },
+      hasdal: {
+        name: "Hasdal",
+      },
+      kemerburgaz: {
+        name: "Kemerburgaz",
+      },
+      gökturk: {
+        name: "Göktürk",
+      },
+      ihsaniye11: {
+        name: "İhsaniye",
+      },
+      istoç: {
+        name: "İstoç",
+      },
+      ikitelli: {
+        name: "İkitelli Organize Sanayi",
+      },
+      arnavutköyHastane: {
+        name: "Arnavutköy Hastane",
+      },
+      istanbulHavalimani: {
+        name: "İstanbul Havalimanı",
       },
     },
   },
-  extraConnectors: [
-    { color: "red", top: true, x: 420, y: 60, right: true },
-    { color: "green", top: true, x: 600, y: 180, right: true },
-    { color: "green", vertical: true, x: 0, y: 60 },
-    { color: "lightBlue", top: true, right: true, x: 240, y: 240 },
-  ],
 };

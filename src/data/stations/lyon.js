@@ -2,516 +2,157 @@ export const lyon = {
   name: "Lyon",
   country: "France",
   defaultConnectorSize: 60,
+  auto: true,
   stations: {
-    // Line A (Perrache - Vaulx-en-Velin - La Soie)
-    perrache: {
-      name: "Perrache",
-      name_fr: "Perrache",
-      connector: {
-        color: "#9C344C",
-        right: true,
-        station: true,
-        x: 0,
-        y: 0,
-        labelPlacement: "bottom-right",
+    lineA: {
+      color: "#ed1c24",
+      perrache: {
+        name: "Perrache",
+      },
+      ampereVictorHugo: {
+        name: "Ampère-Victor Hugo",
+      },
+      bellecour: {
+        name: "Bellecour",
+      },
+      cordelliers: {
+        name: "Cordeliers",
+      },
+      hotelDeVilleLouisPradel: {
+        name: "Hôtel de Ville-Louis Pradel",
+      },
+      fochesLineA: {
+        name: "Foch",
+      },
+      massena: {
+        name: "Masséna",
+      },
+      charpennes: {
+        name: "Charpennes-Charles Hernu",
+      },
+      republiqueMVilleurbanne: {
+        name: "République-Villeurbanne",
+      },
+      graтteСiel: {
+        name: "Gratte-Ciel",
+      },
+      flachet: {
+        name: "Flachet",
+      },
+      cusset: {
+        name: "Cusset",
+      },
+      laurentBonnevayAstroballe: {
+        name: "Laurent Bonnevay-Astroballe",
+      },
+      vaulxEnVelinLaSoie: {
+        name: "Vaulx-en-Velin La Soie",
       },
     },
-    ampereVictorHugo: {
-      name: "Ampere - Victor Hugo",
-      name_fr: "Ampère - Victor Hugo",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 0,
-        labelPlacement: "bottom-right",
+    lineB: {
+      color: "#00aeef",
+      charpенnesLineB: {
+        name: "Charpennes-Charles Hernu",
+      },
+      bosonsLineB: {
+        name: "Brotteaux",
+      },
+      partDieu: {
+        name: "Part-Dieu-Vivier Merle",
+      },
+      placeGuichard: {
+        name: "Place Guichard-Bourse du Travail",
+      },
+      saxeGambetta: {
+        name: "Saxe-Gambetta",
+      },
+      jeanMace: {
+        name: "Jean Macé",
+      },
+      placeJeanJaures: {
+        name: "Place Jean Jaurès",
+      },
+      debourg: {
+        name: "Debourg",
+      },
+      stadeDeGerland: {
+        name: "Stade de Gerland",
+      },
+      oullinsGare: {
+        name: "Oullins Gare",
+      },
+      oullinsCentre: {
+        name: "Oullins Centre",
+      },
+      saintGenisLavalHopitalLyonSud: {
+        name: "Saint-Genis-Laval Hôpital Lyon Sud",
       },
     },
-    bellecour_a: {
-      name: "Bellecour",
-      name_fr: "Bellecour",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 0,
-        labelPlacement: "bottom-right",
+    lineC: {
+      color: "#f99d1d",
+      cuire: {
+        name: "Cuire",
+      },
+      henon: {
+        name: "Hénon",
+      },
+      croixRousse: {
+        name: "Croix-Rousse",
+      },
+      croixPaquet: {
+        name: "Croix-Paquet",
+      },
+      hotelDeVilleLineC: {
+        name: "Hôtel de Ville-Louis Pradel",
       },
     },
-    cordeliers: {
-      name: "Cordeliers",
-      name_fr: "Cordeliers",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 0,
-        labelPlacement: "bottom-right",
+    lineD: {
+      color: "#009a94",
+      gareDeVaise: {
+        name: "Gare de Vaise",
       },
-    },
-    hotelDeVilleLouisPradel_a: {
-      name: "Hotel de Ville - Louis Pradel",
-      name_fr: "Hôtel de Ville - Louis Pradel",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 0,
-        labelPlacement: "bottom-right",
+      valmy: {
+        name: "Valmy",
       },
-    },
-    foch: {
-      name: "Foch",
-      name_fr: "Foch",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 0,
-        labelPlacement: "bottom-right",
+      gorgeDeLoup: {
+        name: "Gorge de Loup",
       },
-    },
-    massena: {
-      name: "Massena",
-      name_fr: "Masséna",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 0,
+      vieuxLyon: {
+        name: "Vieux Lyon-Cathédrale St-Jean",
       },
-    },
-    charpennes_a: {
-      name: "Charpennes",
-      name_fr: "Charpennes",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 0,
-        labelPlacement: "bottom-right",
+      bellecourLineD: {
+        name: "Bellecour",
       },
-    },
-    republiqueVilleurbanne: {
-      name: "Republique Villeurbanne",
-      name_fr: "République Villeurbanne",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 0,
-        labelPlacement: "bottom-right",
+      guillotiere: {
+        name: "Guillotière-Gabriel Péri",
       },
-    },
-    gratteCiel: {
-      name: "Gratte-Ciel",
-      name_fr: "Gratte-Ciel",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 0,
-        labelPlacement: "bottom-right",
+      saxeGambettaLineD: {
+        name: "Saxe-Gambetta",
       },
-    },
-    flachet: {
-      name: "Flachet",
-      name_fr: "Flachet",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 0,
-        labelPlacement: "bottom-right",
+      garibaldi: {
+        name: "Garibaldi",
       },
-    },
-    cusset: {
-      name: "Cusset",
-      name_fr: "Cusset",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 0,
-        labelPlacement: "bottom-right",
+      sansSouci: {
+        name: "Sans Souci",
       },
-    },
-    laurentBonnevay: {
-      name: "Laurent Bonnevay",
-      name_fr: "Laurent Bonnevay",
-      connector: {
-        color: "#9C344C",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 0,
-        labelPlacement: "bottom-right",
+      monplaisirLumiere: {
+        name: "Monplaisir-Lumière",
       },
-    },
-    vaulxEnVelinLaSoie: {
-      name: "Vaulx-en-Velin - La Soie",
-      name_fr: "Vaulx-en-Velin - La Soie",
-      connector: {
-        color: "#9C344C",
-        left: true,
-        station: true,
-        x: 780,
-        y: 0,
-        labelPlacement: "bottom-right",
+      grangeBlanche: {
+        name: "Grange Blanche",
       },
-    },
-
-    // Line B (Charpennes - Gare d'Oullins)
-    charpennes_b: {
-      name: "Charpennes",
-      name_fr: "Charpennes",
-      connector: {
-        color: "teal",
-        right: true,
-        station: true,
-        x: 0,
-        y: 60,
+      laеnnec: {
+        name: "Laënnec",
       },
-    },
-    brotteaux: {
-      name: "Brotteaux",
-      name_fr: "Brotteaux",
-      connector: {
-        color: "teal",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 60,
+      mermozPinel: {
+        name: "Mermoz-Pinel",
       },
-    },
-    garePartDieu: {
-      name: "Gare Part-Dieu",
-      name_fr: "Gare Part-Dieu",
-      connector: {
-        color: "teal",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 60,
+      parilly: {
+        name: "Parilly",
       },
-    },
-    placeGuichard: {
-      name: "Place Guichard",
-      name_fr: "Place Guichard",
-      connector: {
-        color: "teal",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 60,
-      },
-    },
-    saxeGambetta_b: {
-      name: "Saxe-Gambetta",
-      name_fr: "Saxe-Gambetta",
-      connector: {
-        color: "teal",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 60,
-      },
-    },
-    jeanMace: {
-      name: "Jean Mace",
-      name_fr: "Jean Macé",
-      connector: {
-        color: "teal",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 60,
-      },
-    },
-    placeJeanJaures: {
-      name: "Place Jean Jaures",
-      name_fr: "Place Jean Jaurès",
-      connector: {
-        color: "teal",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 60,
-      },
-    },
-    debourg: {
-      name: "Debourg",
-      name_fr: "Debourg",
-      connector: {
-        color: "teal",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 60,
-      },
-    },
-    stadeDeGerland: {
-      name: "Stade de Gerland",
-      name_fr: "Stade de Gerland",
-      connector: {
-        color: "teal",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 60,
-      },
-    },
-    gareDOullins: {
-      name: "Gare d'Oullins",
-      name_fr: "Gare d'Oullins",
-      connector: {
-        color: "teal",
-        left: true,
-        station: true,
-        x: 540,
-        y: 60,
-      },
-    },
-
-    // Line C (Hôtel de Ville - Louis Pradel - Cuire)
-    hotelDeVilleLouisPradel_c: {
-      name: "Hotel de Ville - Louis Pradel",
-      name_fr: "Hôtel de Ville - Louis Pradel",
-      connector: {
-        color: "yellow",
-        right: true,
-        station: true,
-        x: 0,
-        y: 120,
-        labelPlacement: "bottom-right",
-      },
-    },
-    croixPaquet: {
-      name: "Croix-Paquet",
-      name_fr: "Croix-Paquet",
-      connector: {
-        color: "yellow",
-        station: true,
-        horizontal: true,
-        x: 60,
-        y: 120,
-        labelPlacement: "bottom-right",
-      },
-    },
-    croixRousse: {
-      name: "Croix-Rousse",
-      name_fr: "Croix-Rousse",
-      connector: {
-        color: "yellow",
-        station: true,
-        horizontal: true,
-        x: 120,
-        y: 120,
-        labelPlacement: "bottom-right",
-      },
-    },
-    henon: {
-      name: "Henon",
-      name_fr: "Hénon",
-      connector: {
-        color: "yellow",
-        station: true,
-        horizontal: true,
-        x: 180,
-        y: 120,
-        labelPlacement: "bottom-right",
-      },
-    },
-    cuire: {
-      name: "Cuire",
-      name_fr: "Cuire",
-      connector: {
-        color: "yellow",
-        station: true,
-        left: true,
-        x: 240,
-        y: 120,
-        labelPlacement: "bottom-right",
-      },
-    },
-
-    // Line D (Gare de Vaise - Gare de Vénissieux)
-    gareDeVaise: {
-      name: "Gare de Vaise",
-      name_fr: "Gare de Vaise",
-      connector: {
-        color: "green",
-        station: true,
-        right: true,
-        x: 0,
-        y: 180,
-      },
-    },
-    valmy: {
-      name: "Valmy",
-      name_fr: "Valmy",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 60,
-        y: 180,
-      },
-    },
-    gorgeDeLoup: {
-      name: "Gorge de Loup",
-      name_fr: "Gorge de Loup",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 120,
-        y: 180,
-      },
-    },
-    vieuxLyonCathedraleStJean: {
-      name: "Vieux Lyon - Cathedrale St.Jean",
-      name_fr: "Vieux Lyon - Cathédrale St.Jean",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 180,
-        y: 180,
-      },
-    },
-    bellecour_d: {
-      name: "Bellecour",
-      name_fr: "Bellecour",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 240,
-        y: 180,
-      },
-    },
-    guillotiereGabrielPeri: {
-      name: "Guillotiere - Gabriel Peri",
-      name_fr: "Guillotière - Gabriel Péri",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 300,
-        y: 180,
-      },
-    },
-    saxeGambetta_d: {
-      name: "Saxe-Gambetta",
-      name_fr: "Saxe-Gambetta",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 360,
-        y: 180,
-      },
-    },
-    garibaldi: {
-      name: "Garibaldi",
-      name_fr: "Garibaldi",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 420,
-        y: 180,
-      },
-    },
-    sansSouci: {
-      name: "Sans-Souci",
-      name_fr: "Sans-Souci",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 480,
-        y: 180,
-      },
-    },
-    monplaisirLumiere: {
-      name: "Monplaisir-Lumiere",
-      name_fr: "Monplaisir-Lumière",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 540,
-        y: 180,
-      },
-    },
-    grangeBlanche: {
-      name: "Grange-Blanche",
-      name_fr: "Grange-Blanche",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 600,
-        y: 180,
-      },
-    },
-    laennec: {
-      name: "Laennec",
-      name_fr: "Laënnec",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 660,
-        y: 180,
-      },
-    },
-    mermozPinel: {
-      name: "Mermoz-Pinel",
-      name_fr: "Mermoz-Pinel",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 720,
-        y: 180,
-      },
-    },
-    parilly: {
-      name: "Parilly",
-      name_fr: "Parilly",
-      connector: {
-        color: "green",
-        station: true,
-        horizontal: true,
-        x: 780,
-        y: 180,
-      },
-    },
-    gareDeVenissieux: {
-      name: "Gare de Venissieux",
-      name_fr: "Gare de Vénissieux",
-      connector: {
-        color: "green",
-        station: true,
-        left: true,
-        x: 840,
-        y: 180,
+      gareDeVenissieux: {
+        name: "Gare de Vénissieux",
       },
     },
   },
-  extraConnectors: [],
 };
