@@ -2,342 +2,187 @@ export const tashkent = {
   name: "Tashkent",
   country: "Uzbekistan",
   defaultConnectorSize: 60,
+  auto: true,
   stations: {
-    // Chilonzor Line (Buyuk Ipak Yoli - Olmazar)
-    buyukIpakYoli: {
-      name: "Buyuk Ipak Yoli",
-      name_uz: "Buyuk Ipak Yo'li",
-      connector: {
-        color: "red",
-        right: true,
-        station: true,
-        x: 0,
-        y: 0,
-      },
-    },
-    pushkin: {
-      name: "Pushkin",
-      name_uz: "Pushkin",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 0,
-      },
-    },
-    hamidOlimjon: {
-      name: "Hamid Olimjon",
-      name_uz: "Hamid Olimjon",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 0,
-      },
-    },
-    amirTemurXiyoboni: {
-      name: "Amir Temur Xiyoboni",
-      name_uz: "Amir Temur Xiyoboni",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 0,
-      },
-    },
-    mustaqilliqMaidoni: {
-      name: "Mustaqilliq Maidoni",
-      name_uz: "Mustaqillik Maydoni",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 0,
-      },
-    },
-    paxtakor: {
-      name: "Paxtakor",
-      name_uz: "Paxtakor",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 0,
-      },
-    },
-    bunyodkor: {
-      name: "Bunyodkor",
-      name_uz: "Bunyodkor",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 0,
-      },
-    },
-    milliyBog: {
-      name: "Milliy Bog",
-      name_uz: "Milliy Bog'",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 0,
-      },
-    },
-    novza: {
-      name: "Novza",
-      name_uz: "Novza",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 0,
-      },
-    },
-    mirzoUlugbek: {
-      name: "Mirzo Ulugbek",
-      name_uz: "Mirzo Ulug'bek",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 0,
-      },
-    },
     chilonzor: {
-      name: "Chilonzor",
-      name_uz: "Chilonzor",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 0,
+      color: "#c1272d",
+      buyukIpakYoli: {
+        name: "Buyuk Ipak Yoli",
+      },
+      yoshlik: {
+        name: "Yoshlik",
+      },
+      hamid: {
+        name: "Hamid Olimjon",
+      },
+      pushkin: {
+        name: "Pushkin",
+      },
+      amirTimurHiyoboni: {
+        name: "Amir Timur Hiyoboni",
+      },
+      yunusRajabiy: {
+        name: "Yunus Rajabiy",
+      },
+      abdullaQodiriy: {
+        name: "Abdulla Qodiriy",
+      },
+      minorChilonzor: {
+        name: "Minor",
+      },
+      bodomzor: {
+        name: "Bodomzor",
+      },
+      shahriston: {
+        name: "Shahriston",
+      },
+      pakhtakor: {
+        name: "Pakhtakor",
+      },
+      mustaqillikMaydoni: {
+        name: "Mustaqillik Maydoni",
+      },
+      tashkent: {
+        name: "Tashkent",
+      },
+      khamza: {
+        name: "Khamza",
+      },
+      chorsu: {
+        name: "Chorsu",
+      },
+      chilonzor: {
+        name: "Chilonzor",
+      },
+      sabirRahimov: {
+        name: "Sabir Rahimov",
+      },
+      almazar: {
+        name: "Almazar",
+      },
+      mirzoUlugbek: {
+        name: "Mirzo Ulugbek",
+      },
+      novza: {
+        name: "Novza",
+      },
+      millyBog: {
+        name: "Milly Bog",
+      },
+      kipchak: {
+        name: "Kipchak",
       },
     },
-    olmazar: {
-      name: "Olmazar",
-      name_uz: "Olmazar",
-      connector: {
-        color: "red",
-        left: true,
-        station: true,
-        x: 660,
-        y: 0,
+    uzbekiston: {
+      color: "#0072bc",
+      alisherNavoi: {
+        name: "Alisher Navoi",
+      },
+      kosmonavtlar: {
+        name: "Kosmonavtlar",
+      },
+      oybek: {
+        name: "Oybek",
+      },
+      toshkentUzbek: {
+        name: "Toshkent",
+      },
+      mashinasozlar: {
+        name: "Mashinasozlar",
+      },
+      tinchlik: {
+        name: "Tinchlik",
+      },
+      shaxriston: {
+        name: "Shaxriston",
+      },
+      beruniy: {
+        name: "Beruniy",
+      },
+      tinchlikUzbek: {
+        name: "Tinchlik",
+      },
+      chorsuUzbek: {
+        name: "Chorsu",
+      },
+      mingOrik: {
+        name: "Ming Orik",
       },
     },
-
-    // O'zbekiston Line (Beruniy - Dustlik)
-    beruniy: {
-      name: "Beruniy",
-      name_uz: "Beruniy",
-      connector: {
-        color: "blue",
-        right: true,
-        station: true,
-        x: 0,
-        y: 60,
-        labelPlacement: "bottom-right",
+    yunusabad: {
+      color: "#00a550",
+      mingOrikYunus: {
+        name: "Ming Orik",
+      },
+      amirTimurYunus: {
+        name: "Amir Timur Hiyoboni",
+      },
+      yunusRajabiyYunus: {
+        name: "Yunus Rajabiy",
+      },
+      abdullaQodiriyYunus: {
+        name: "Abdulla Qodiriy",
+      },
+      minorYunus: {
+        name: "Minor",
+      },
+      bodomzorYunus: {
+        name: "Bodomzor",
+      },
+      shahristonYunus: {
+        name: "Shahriston",
+      },
+      yunusabad: {
+        name: "Yunusabad",
+      },
+      turkiston: {
+        name: "Turkiston",
       },
     },
-    tinchlik: {
-      name: "Tinchlik",
-      name_uz: "Tinchlik",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 60,
-        labelPlacement: "bottom-right",
+    circle: {
+      color: "#f7941d",
+      dustlik: {
+        name: "Dustlik",
       },
-    },
-    chorsu: {
-      name: "Chorsu",
-      name_uz: "Chorsu",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 60,
-        labelPlacement: "bottom-right",
+      technopark: {
+        name: "Technopark",
       },
-    },
-    gafurGulom: {
-      name: "Gafur Gulom",
-      name_uz: "G'afur G'ulom",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 60,
-        labelPlacement: "bottom-right",
+      sergeli: {
+        name: "Sergeli",
       },
-    },
-    alisherNavoiy: {
-      name: "Alisher Navoiy",
-      name_uz: "Alisher Navoiy",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 60,
-        labelPlacement: "bottom-right",
+      olmazor: {
+        name: "Olmazor",
       },
-    },
-    ozbekiston: {
-      name: "Ozbekiston",
-      name_uz: "O'zbekiston",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 60,
-        labelPlacement: "bottom-right",
+      choponota: {
+        name: "Choponota",
       },
-    },
-    kosmonavtlar: {
-      name: "Kosmonavtlar",
-      name_uz: "Kosmonavtlar",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 60,
-        labelPlacement: "bottom-right",
+      uzgarish: {
+        name: "Uzgarish",
       },
-    },
-    oybek: {
-      name: "Oybek",
-      name_uz: "Oybek",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 60,
-        labelPlacement: "bottom-right",
+      qoyliq: {
+        name: "Qoyliq",
       },
-    },
-    toshkent: {
-      name: "Toshkent",
-      name_uz: "Toshkent",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 60,
-        labelPlacement: "bottom-right",
+      vokzal: {
+        name: "Vokzal",
       },
-    },
-    mashinasozlar: {
-      name: "Mashinasozlar",
-      name_uz: "Mashinasozlar",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 60,
-        labelPlacement: "bottom-right",
+      farobiy: {
+        name: "Farobiy",
       },
-    },
-    dustlik: {
-      name: "Dustlik",
-      name_uz: "Dustlik",
-      connector: {
-        color: "blue",
-        left: true,
-        station: true,
-        x: 600,
-        y: 60,
-        labelPlacement: "bottom-right",
+      qatortol: {
+        name: "Qatortol",
       },
-    },
-
-    // Yunusobod Line (Shahriston - Ming Orik)
-    shahriston: {
-      name: "Shahriston",
-      name_uz: "Shahriston",
-      connector: {
-        color: "green",
-        right: true,
-        station: true,
-        x: 0,
-        y: 120,
+      quruvchilar: {
+        name: "Quruvchilar",
       },
-    },
-    bodomzor: {
-      name: "Bodomzor",
-      name_uz: "Bodomzor",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 120,
+      guliston: {
+        name: "Guliston",
       },
-    },
-    minor: {
-      name: "Minor",
-      name_uz: "Minor",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 120,
+      novzaCircle: {
+        name: "Novza",
       },
-    },
-    abdullaQodirii: {
-      name: "Abdulla Qodirii",
-      name_uz: "Abdulla Qodiriy",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 120,
-      },
-    },
-    yunusRajabiy: {
-      name: "Yunus Rajabiy",
-      name_uz: "Yunus Rajabiy",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 120,
-      },
-    },
-    mingOrik: {
-      name: "Ming Orik",
-      name_uz: "Ming O'rik",
-      connector: {
-        color: "green",
-        left: true,
-        station: true,
-        x: 300,
-        y: 120,
+      shotaRustaveli: {
+        name: "Shota Rustaveli",
       },
     },
   },
-  extraConnectors: [],
 };

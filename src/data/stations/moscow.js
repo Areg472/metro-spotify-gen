@@ -2,3121 +2,774 @@ export const moscow = {
   name: "Moscow",
   country: "Russia",
   defaultConnectorSize: 60,
+  auto: true,
   stations: {
-    // Sokolnicheskaya Line (Red Line) - Bulvar Rokossovskogo - Kommunarka
-    bulvarRokossovskogo_sokol: {
-      name: "Bulvar Rokossovskogo",
-      name_ru: "Бульвар Рокоссовского",
-      connector: {
-        color: "red",
-        right: true,
-        station: true,
-        x: 0,
-        y: 10,
-        labelPlacement: "bottom-right",
+    lineOne: {
+      color: "#ed1b35",
+      buninskayaAlleya: {
+        name: "Buninskaya Alleya",
       },
-    },
-    cherkizovskaya: {
-      name: "Cherkizovskaya",
-      name_ru: "Черкизовская",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    preobrazhenskayaPloshchad: {
-      name: "Preobrazhenskaya Ploshchad",
-      name_ru: "Преображенская площадь",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    sokolniki: {
-      name: "Sokolniki",
-      name_ru: "Сокольники",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    krasnoselskaya: {
-      name: "Krasnoselskaya",
-      name_ru: "Красносельская",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    komsomolskaya_sokol: {
-      name: "Komsomolskaya",
-      name_ru: "Комсомольская",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    krasnyeVorota: {
-      name: "Krasnye Vorota",
-      name_ru: "Красные ворота",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    chistyePrudy: {
-      name: "Chistye Prudy",
-      name_ru: "Чистые пруды",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    lubyanka: {
-      name: "Lubyanka",
-      name_ru: "Лубянка",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    okhotnyRyad: {
-      name: "Okhotny Ryad",
-      name_ru: "Охотный ряд",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    bibliotekaImeniLenina: {
-      name: "Biblioteka Imeni Lenina",
-      name_ru: "Библиотека имени Ленина",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    kropotkinskaya: {
-      name: "Kropotkinskaya",
-      name_ru: "Кропоткинская",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    parkKultury_sokol: {
-      name: "Park Kultury",
-      name_ru: "Парк культуры",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    frunzenskaya: {
-      name: "Frunzenskaya",
-      name_ru: "Фрунзенская",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    sportivnaya: {
-      name: "Sportivnaya",
-      name_ru: "Спортивная",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    vorobyovyGory: {
-      name: "Vorobyovy Gory",
-      name_ru: "Воробьёвы горы",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    universitet: {
-      name: "Universitet",
-      name_ru: "Университет",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    prospektVernadskogo: {
-      name: "Prospekt Vernadskogo",
-      name_ru: "Проспект Вернадского",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    yugoZapadnaya: {
-      name: "Yugo-Zapadnaya",
-      name_ru: "Юго-Западная",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    troparyovo: {
-      name: "Troparyovo",
-      name_ru: "Тропарёво",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    rumyantsevo: {
-      name: "Rumyantsevo",
-      name_ru: "Румянцево",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    salaryevo: {
-      name: "Salaryevo",
-      name_ru: "Саларьево",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    filatovLug: {
-      name: "Filatov Lug",
-      name_ru: "Филатов луг",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    prokshino: {
-      name: "Prokshino",
-      name_ru: "Прокшино",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    olkhovaya: {
-      name: "Olkhovaya",
-      name_ru: "Ольховая",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-    kommunarka: {
-      name: "Kommunarka",
-      name_ru: "Коммунарка",
-      connector: {
-        color: "red",
-        left: true,
-        station: true,
-        x: 1500,
-        y: 10,
-        labelPlacement: "bottom-right",
-      },
-    },
-
-    // Zamoskvoretskaya Line (Green Line) - Khovrino - Alma-Atinskaya
-    khovrino: {
-      name: "Khovrino",
-      name_ru: "Ховрино",
-      connector: {
-        color: "green",
-        right: true,
-        station: true,
-        x: 0,
-        y: 70,
-      },
-    },
-    belomorskaya: {
-      name: "Belomorskaya",
-      name_ru: "Беломорская",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 70,
-      },
-    },
-    rechnoyVokzal: {
-      name: "Rechnoy Vokzal",
-      name_ru: "Речной вокзал",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 70,
-      },
-    },
-    vodnyStadion: {
-      name: "Vodny Stadion",
-      name_ru: "Водный стадион",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 70,
-      },
-    },
-    voykovskaya: {
-      name: "Voykovskaya",
-      name_ru: "Войковская",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 70,
-      },
-    },
-    sokol: {
-      name: "Sokol",
-      name_ru: "Сокол",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 70,
-      },
-    },
-    aeroport: {
-      name: "Aeroport",
-      name_ru: "Аэропорт",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 70,
-      },
-    },
-    dinamo: {
-      name: "Dinamo",
-      name_ru: "Динамо",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 70,
-      },
-    },
-    belorusskaya_zamos: {
-      name: "Belorusskaya",
-      name_ru: "Белорусская",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 70,
-      },
-    },
-    mayakovskaya: {
-      name: "Mayakovskaya",
-      name_ru: "Маяковская",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 70,
-      },
-    },
-    tverskaya: {
-      name: "Tverskaya",
-      name_ru: "Тверская",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 70,
-      },
-    },
-    teatralnaya: {
-      name: "Teatralnaya",
-      name_ru: "Театральная",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 70,
-      },
-    },
-    novokuznetskaya: {
-      name: "Novokuznetskaya",
-      name_ru: "Новокузнецкая",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 70,
-      },
-    },
-    paveletskaya_zamos: {
-      name: "Paveletskaya",
-      name_ru: "Павелецкая",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 70,
-      },
-    },
-    avtozavodskaya_zamos: {
-      name: "Avtozavodskaya",
-      name_ru: "Автозаводская",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 70,
-      },
-    },
-    tekhnopark: {
-      name: "Tekhnopark",
-      name_ru: "Технопарк",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 70,
-      },
-    },
-    kolomenskaya: {
-      name: "Kolomenskaya",
-      name_ru: "Коломенская",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 70,
-      },
-    },
-    kashirskaya_zamos: {
-      name: "Kashirskaya",
-      name_ru: "Каширская",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 70,
-      },
-    },
-    kantemirovskaya: {
-      name: "Kantemirovskaya",
-      name_ru: "Кантемировская",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 70,
-      },
-    },
-    tsaritsyno: {
-      name: "Tsaritsyno",
-      name_ru: "Царицыно",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 70,
-      },
-    },
-    orekhovo: {
-      name: "Orekhovo",
-      name_ru: "Орехово",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 70,
-      },
-    },
-    domodedovskaya: {
-      name: "Domodedovskaya",
-      name_ru: "Домодедовская",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 70,
-      },
-    },
-    krasnogvardeyskaya: {
-      name: "Krasnogvardeyskaya",
-      name_ru: "Красногвардейская",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 70,
+      ulitsaGorchakova: {
+        name: "Ulitsa Gorchakova",
       },
-    },
-    almaAtinskaya: {
-      name: "Alma-Atinskaya",
-      name_ru: "Алма-Атинская",
-      connector: {
-        color: "green",
-        left: true,
-        station: true,
-        x: 1380,
-        y: 70,
+      bulvarDmitriyaDonskogo: {
+        name: "Bulvar Dmitriya Donskogo",
       },
-    },
-
-    // Arbatsko-Pokrovskaya Line (Blue Line) - Pyatnitskoye Shosse - Shchyolkovskaya
-    pyatnitskoyShosse: {
-      name: "Pyatnitskoye Shosse",
-      name_ru: "Пятницкое шоссе",
-      connector: {
-        color: "blue",
-        right: true,
-        station: true,
-        x: 0,
-        y: 130,
-        labelPlacement: "bottom-right",
+      annino: {
+        name: "Annino",
       },
-    },
-    mitino: {
-      name: "Mitino",
-      name_ru: "Митино",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 130,
-        labelPlacement: "bottom-right",
+      ulitsaAkademikaYankova: {
+        name: "Ulitsa Akademika Yankova",
       },
-    },
-    volokolamskaya: {
-      name: "Volokolamskaya",
-      name_ru: "Волоколамская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 130,
-        labelPlacement: "bottom-right",
+      sevastopolskaya: {
+        name: "Sevastopolskaya",
       },
-    },
-    myakinino: {
-      name: "Myakinino",
-      name_ru: "Мякинино",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 130,
-        labelPlacement: "bottom-right",
+      chertanovskaya: {
+        name: "Chertanovskaya",
       },
-    },
-    strogino: {
-      name: "Strogino",
-      name_ru: "Строгино",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 130,
-        labelPlacement: "bottom-right",
+      yuzhnaya: {
+        name: "Yuzhnaya",
       },
-    },
-    krylatskoye: {
-      name: "Krylatskoye",
-      name_ru: "Крылатское",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 130,
-        labelPlacement: "bottom-right",
+      prazhskaya: {
+        name: "Prazhskaya",
       },
-    },
-    molodyozhnaya: {
-      name: "Molodyozhnaya",
-      name_ru: "Молодёжная",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 130,
-        labelPlacement: "bottom-right",
+      ulitsaAkademikaYangelya: {
+        name: "Ulitsa Akademika Yangelya",
       },
-    },
-    kuntsevskaya_arbat: {
-      name: "Kuntsevskaya",
-      name_ru: "Кунцевская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 130,
-        labelPlacement: "bottom-right",
+      kakhovskaya: {
+        name: "Kakhovskaya",
       },
-    },
-    slavyanskyBulvar: {
-      name: "Slavyansky Bulvar",
-      name_ru: "Славянский бульвар",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 130,
-        labelPlacement: "bottom-right",
+      sevastopolskyProspekt: {
+        name: "Sevastopolsky Prospekt",
       },
-    },
-    parkPobedy_arbat: {
-      name: "Park Pobedy",
-      name_ru: "Парк Победы",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 130,
-        labelPlacement: "bottom-right",
+      nakhimskyProspekt: {
+        name: "Nakhimovsky Prospekt",
       },
-    },
-    kiyevskaya_arbat: {
-      name: "Kiyevskaya",
-      name_ru: "Киевская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 130,
-        labelPlacement: "bottom-right",
+      profsoyuznaya: {
+        name: "Profsoyuznaya",
       },
-    },
-    smolenskaya_arbat: {
-      name: "Smolenskaya",
-      name_ru: "Смоленская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 130,
-        labelPlacement: "bottom-right",
+      novocheremushkskaya: {
+        name: "Novocheremushkskaya",
       },
-    },
-    arbatskaya_arbat: {
-      name: "Arbatskaya",
-      name_ru: "Арбатская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 130,
-        labelPlacement: "bottom-right",
+      kaluzhskaya: {
+        name: "Kaluzhskaya",
       },
-    },
-    ploshchadRevolyutsii: {
-      name: "Ploshchad Revolyutsii",
-      name_ru: "Площадь Революции",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 130,
-        labelPlacement: "bottom-right",
+      belyayevo: {
+        name: "Belyayevo",
       },
-    },
-    kurskaya_arbat: {
-      name: "Kurskaya",
-      name_ru: "Курская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 130,
-        labelPlacement: "bottom-right",
+      konkovo: {
+        name: "Konkovo",
       },
-    },
-    baumanskaya: {
-      name: "Baumanskaya",
-      name_ru: "Бауманская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 130,
-        labelPlacement: "bottom-right",
+      tyoplyStanLineOne: {
+        name: "Tyoply Stan",
       },
-    },
-    elektrozavodskaya: {
-      name: "Elektrozavodskaya",
-      name_ru: "Электрозаводская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 130,
-        labelPlacement: "bottom-right",
+      yasenevo: {
+        name: "Yasenevo",
       },
-    },
-    semyonovskaya: {
-      name: "Semyonovskaya",
-      name_ru: "Семёновская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 130,
-        labelPlacement: "bottom-right",
+      novoyasenevskaya: {
+        name: "Novoyasenevskaya",
       },
-    },
-    partizanskaya: {
-      name: "Partizanskaya",
-      name_ru: "Партизанская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 130,
-        labelPlacement: "bottom-right",
+      bitsevskiyPark: {
+        name: "Bitsevsky Park",
       },
-    },
-    izmaylovskaya: {
-      name: "Izmaylovskaya",
-      name_ru: "Измайловская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 130,
-        labelPlacement: "bottom-right",
+      lesnaya: {
+        name: "Lesnaya",
       },
-    },
-    pervomayskaya: {
-      name: "Pervomayskaya",
-      name_ru: "Первомайская",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 130,
-        labelPlacement: "bottom-right",
+      ulitsaDmitrievskogo: {
+        name: "Ulitsa Dmitrievskogo",
       },
-    },
-    shchyolkovskaya: {
-      name: "Shchyolkovskaya",
-      name_ru: "Щёлковская",
-      connector: {
-        color: "blue",
-        left: true,
-        station: true,
-        x: 1260,
-        y: 130,
-        labelPlacement: "bottom-right",
+      zyablikovo: {
+        name: "Zyablikovo",
       },
-    },
-
-    // Filyovskaya Line (Light Blue Line) - Has 2 branches
-    aleksandrovskySad_fily: {
-      name: "Aleksandrovsky Sad",
-      name_ru: "Александровский сад",
-      connector: {
-        color: "#19c1f3",
-        right: true,
-        station: true,
-        x: 0,
-        y: 190,
+      oktyabrskaya: {
+        name: "Oktyabrskaya",
       },
-    },
-    arbatskaya_fily: {
-      name: "Arbatskaya",
-      name_ru: "Арбатская",
-      connector: {
-        color: "#19c1f3",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 190,
+      shabolovskaya: {
+        name: "Shabolovskaya",
       },
-    },
-    smolenskaya_fily: {
-      name: "Smolenskaya",
-      name_ru: "Смоленская",
-      connector: {
-        color: "#19c1f3",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 190,
+      leninskProspekt: {
+        name: "Leninsky Prospekt",
       },
-    },
-    kiyevskaya_fily: {
-      name: "Kiyevskaya",
-      name_ru: "Киевская",
-      connector: {
-        color: "#19c1f3",
-        horizontal: true,
-        bottom: true,
-        station: true,
-        x: 180,
-        y: 190,
+      akademicheskaya: {
+        name: "Akademicheskaya",
       },
-    },
-    vystavochnaya: {
-      name: "Vystavochnaya",
-      name_ru: "Выставочная",
-      connector: {
-        color: "#19c1f3",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 250,
-        labelPlacement: "bottom-right",
+      universitet: {
+        name: "Universitet",
       },
-    },
-    mezhdunarodnaya: {
-      name: "Mezhdunarodnaya",
-      name_ru: "Международная",
-      connector: {
-        color: "#19c1f3",
-        left: true,
-        station: true,
-        x: 300,
-        y: 250,
-        labelPlacement: "bottom-right",
+      vorobyovyGory: {
+        name: "Vorobyovy Gory",
       },
-    },
-    studencheskaya: {
-      name: "Studencheskaya",
-      name_ru: "Студенческая",
-      connector: {
-        color: "#19c1f3",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 190,
+      sportivnaya: {
+        name: "Sportivnaya",
       },
-    },
-    kutuzovskaya_fily: {
-      name: "Kutuzovskaya",
-      name_ru: "Кутузовская",
-      connector: {
-        color: "#19c1f3",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 190,
+      parkKulturyLineOne: {
+        name: "Park Kultury",
       },
-    },
-    fili: {
-      name: "Fili",
-      name_ru: "Фили",
-      connector: {
-        color: "#19c1f3",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 190,
+      kropotkinskaya: {
+        name: "Kropotkinskaya",
       },
-    },
-    bagrationovskaya: {
-      name: "Bagrationovskaya",
-      name_ru: "Багратионовская",
-      connector: {
-        color: "#19c1f3",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 190,
+      bibliotekImeniLenina: {
+        name: "Biblioteka Imeni Lenina",
       },
-    },
-    filyovskyPark: {
-      name: "Filyovsky Park",
-      name_ru: "Филёвский парк",
-      connector: {
-        color: "#19c1f3",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 190,
+      okhotnyRyad: {
+        name: "Okhotny Ryad",
       },
-    },
-    pionerskaya: {
-      name: "Pionerskaya",
-      name_ru: "Пионерская",
-      connector: {
-        color: "#19c1f3",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 190,
+      lubyanka: {
+        name: "Lubyanka",
       },
-    },
-    kuntsevskaya_fily: {
-      name: "Kuntsevskaya",
-      name_ru: "Кунцевская",
-      connector: {
-        color: "#19c1f3",
-        left: true,
-        station: true,
-        x: 600,
-        y: 190,
+      krasnyeVorota: {
+        name: "Krasniye Vorota",
       },
-    },
-
-    // Koltsevaya Line (Brown Circle Line)
-    parkKultury_koltse: {
-      name: "Park Kultury",
-      name_ru: "Парк культуры",
-      connector: {
-        color: "brown",
-        right: true,
-        station: true,
-        x: 0,
-        y: 310,
+      chistyePrudy: {
+        name: "Chistiye Prudy",
       },
-    },
-    kiyevskaya_koltse: {
-      name: "Kiyevskaya",
-      name_ru: "Киевская",
-      connector: {
-        color: "brown",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 310,
+      sokolniki: {
+        name: "Sokolniki",
       },
-    },
-    krasnopresnenskaya: {
-      name: "Krasnopresnenskaya",
-      name_ru: "Краснопресненская",
-      connector: {
-        color: "brown",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 310,
+      krasnoselskaya: {
+        name: "Krasnoselskaya",
       },
-    },
-    belorusskaya_koltse: {
-      name: "Belorusskaya",
-      name_ru: "Белорусская",
-      connector: {
-        color: "brown",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 310,
+      komsomolskayaLineOne: {
+        name: "Komsomolskaya",
       },
-    },
-    novoslobodskaya: {
-      name: "Novoslobodskaya",
-      name_ru: "Новослободская",
-      connector: {
-        color: "brown",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 310,
+      preobrazhenPl: {
+        name: "Preobrazhenskaya Ploshchad",
       },
-    },
-    prospektMira_koltse: {
-      name: "Prospekt Mira",
-      name_ru: "Проспект Мира",
-      connector: {
-        color: "brown",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 310,
+      cherkizovskaya: {
+        name: "Cherkizovskaya",
       },
-    },
-    komsomolskaya_koltse: {
-      name: "Komsomolskaya",
-      name_ru: "Комсомольская",
-      connector: {
-        color: "brown",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 310,
+      ulitsaPodbelskogo: {
+        name: "Ulitsa Podbelskogo",
       },
-    },
-    kurskaya_koltse: {
-      name: "Kurskaya",
-      name_ru: "Курская",
-      connector: {
-        color: "brown",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 310,
+      bulvarRokossovskogo: {
+        name: "Bulvar Rokossovskogo",
       },
-    },
-    taganskaya_koltse: {
-      name: "Taganskaya",
-      name_ru: "Таганская",
-      connector: {
-        color: "brown",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 310,
+      tcherMoskva: {
+        name: "Cherkizovo",
       },
-    },
-    paveletskaya_koltse: {
-      name: "Paveletskaya",
-      name_ru: "Павелецкая",
-      connector: {
-        color: "brown",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 310,
+      potapovo: {
+        name: "Potapovo",
       },
     },
-    dobryninskaya: {
-      name: "Dobryninskaya",
-      name_ru: "Добрынинская",
-      connector: {
-        color: "brown",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 310,
+    lineTwo: {
+      color: "#44b85c",
+      khovrino: {
+        name: "Khovrino",
       },
-    },
-    oktyabrskaya_koltse: {
-      name: "Oktyabrskaya",
-      name_ru: "Октябрьская",
-      connector: {
-        color: "brown",
-        left: true,
-        station: true,
-        x: 660,
-        y: 310,
+      belomorskaya: {
+        name: "Belomorskaya",
       },
-    },
-
-    // Kaluzhsko-Rizhskaya Line (Orange Line)
-    medvedkovo: {
-      name: "Medvedkovo",
-      name_ru: "Медведково",
-      connector: {
-        color: "orange",
-        right: true,
-        station: true,
-        x: 0,
-        y: 370,
-        labelPlacement: "bottom-right",
+      rechnoyVokzal: {
+        name: "Rechnoy Vokzal",
       },
-    },
-    babushkinskaya: {
-      name: "Babushkinskaya",
-      name_ru: "Бабушкинская",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 370,
-        labelPlacement: "bottom-right",
+      vodniyStadion: {
+        name: "Vodny Stadion",
       },
-    },
-    sviblovo: {
-      name: "Sviblovo",
-      name_ru: "Свиблово",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 370,
-        labelPlacement: "bottom-right",
+      voykovskaya: {
+        name: "Voykovskaya",
       },
-    },
-    botanicheskySad_kaluzh: {
-      name: "Botanichesky Sad",
-      name_ru: "Ботанический сад",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 370,
-        labelPlacement: "bottom-right",
+      sokol: {
+        name: "Sokol",
       },
-    },
-    vdnkh: {
-      name: "VDNKh",
-      name_ru: "ВДНХ",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 370,
-        labelPlacement: "bottom-right",
+      aeroport: {
+        name: "Aeroport",
       },
-    },
-    alekseyevskaya: {
-      name: "Alekseyevskaya",
-      name_ru: "Алексеевская",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 370,
-        labelPlacement: "bottom-right",
+      dinamo: {
+        name: "Dinamo",
       },
-    },
-    rizhskaya: {
-      name: "Rizhskaya",
-      name_ru: "Рижская",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 370,
-        labelPlacement: "bottom-right",
+      belorusskaya: {
+        name: "Belorusskaya",
       },
-    },
-    prospektMira_kaluzh: {
-      name: "Prospekt Mira",
-      name_ru: "Проспект Мира",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 370,
-        labelPlacement: "bottom-right",
+      mayakovskaya: {
+        name: "Mayakovskaya",
       },
-    },
-    sukharevskaya: {
-      name: "Sukharevskaya",
-      name_ru: "Сухаревская",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 370,
-        labelPlacement: "bottom-right",
+      tverskaya: {
+        name: "Tverskaya",
       },
-    },
-    turgenevskaya: {
-      name: "Turgenevskaya",
-      name_ru: "Тургеневская",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 370,
-        labelPlacement: "bottom-right",
+      teatralnaya: {
+        name: "Teatralnaya",
       },
-    },
-    kitayGorod_kaluzh: {
-      name: "Kitay-gorod",
-      name_ru: "Китай-город",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 370,
-        labelPlacement: "bottom-right",
+      novokuznetskaya: {
+        name: "Novokuznetskaya",
       },
-    },
-    tretyakovskaya_kaluzh: {
-      name: "Tretyakovskaya",
-      name_ru: "Третьяковская",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 370,
-        labelPlacement: "bottom-right",
+      paveletskaya: {
+        name: "Paveletskaya",
       },
-    },
-    oktyabrskaya_kaluzh: {
-      name: "Oktyabrskaya",
-      name_ru: "Октябрьская",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 370,
-        labelPlacement: "bottom-right",
+      avtozavodskaya: {
+        name: "Avtozavodskaya",
       },
-    },
-    shabolovskaya: {
-      name: "Shabolovskaya",
-      name_ru: "Шаболовская",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 370,
-        labelPlacement: "bottom-right",
+      tekhnologicheskyInstitut: {
+        name: "Tekhnologichesky Institut",
       },
-    },
-    leninskyProspekt: {
-      name: "Leninsky Prospekt",
-      name_ru: "Ленинский проспект",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 370,
-        labelPlacement: "bottom-right",
+      kolomenskaya: {
+        name: "Kolomenskaya",
       },
-    },
-    akademicheskaya: {
-      name: "Akademicheskaya",
-      name_ru: "Академическая",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 370,
-        labelPlacement: "bottom-right",
+      kashirskaya: {
+        name: "Kashirskaya",
       },
-    },
-    profsoyuznaya: {
-      name: "Profsoyuznaya",
-      name_ru: "Профсоюзная",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 370,
-        labelPlacement: "bottom-right",
+      kantemirovskaya: {
+        name: "Kantemirovskaya",
       },
-    },
-    novyeCheryomushki: {
-      name: "Novye Cheryomushki",
-      name_ru: "Новые Черёмушки",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 370,
-        labelPlacement: "bottom-right",
+      tsaritsyno: {
+        name: "Tsaritsyno",
       },
-    },
-    kaluzhskaya: {
-      name: "Kaluzhskaya",
-      name_ru: "Калужская",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 370,
-        labelPlacement: "bottom-right",
+      orekhovo: {
+        name: "Orekhovo",
       },
-    },
-    belyayevo: {
-      name: "Belyayevo",
-      name_ru: "Беляево",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 370,
-        labelPlacement: "bottom-right",
+      domodedovskaya: {
+        name: "Domodedovskaya",
       },
-    },
-    konkovo: {
-      name: "Konkovo",
-      name_ru: "Коньково",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 370,
-        labelPlacement: "bottom-right",
+      krasnogvardeyskaya: {
+        name: "Krasnogvardeyskaya",
       },
-    },
-    tyoplyStan: {
-      name: "Tyoply Stan",
-      name_ru: "Тёплый стан",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 370,
-        labelPlacement: "bottom-right",
+      almaAtinskaya: {
+        name: "Alma-Atinskaya",
       },
     },
-    yasenevo: {
-      name: "Yasenevo",
-      name_ru: "Ясенево",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 370,
-        labelPlacement: "bottom-right",
+    lineThree: {
+      color: "#0078bf",
+      pyatnitskoeShosse: {
+        name: "Pyatnitskoye Shosse",
       },
-    },
-    novoyasenevskaya: {
-      name: "Novoyasenevskaya",
-      name_ru: "Новоясеневская",
-      connector: {
-        color: "orange",
-        left: true,
-        station: true,
-        x: 1380,
-        y: 370,
-        labelPlacement: "bottom-right",
+      mitino: {
+        name: "Mitino",
       },
-    },
-
-    // Tagansko-Krasnopresnenskaya Line (Purple Line)
-    planernaya: {
-      name: "Planernaya",
-      name_ru: "Планерная",
-      connector: {
-        color: "purple",
-        right: true,
-        station: true,
-        x: 0,
-        y: 430,
+      volokolamskaya: {
+        name: "Volokolamskaya",
       },
-    },
-    skhodnenskaya: {
-      name: "Skhodnenskaya",
-      name_ru: "Сходненская",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 430,
+      myakinino: {
+        name: "Myakinino",
       },
-    },
-    tushinskaya: {
-      name: "Tushinskaya",
-      name_ru: "Тушинская",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 430,
+      strogino: {
+        name: "Strogino",
       },
-    },
-    spartak: {
-      name: "Spartak",
-      name_ru: "Спартак",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 430,
+      krylatskoye: {
+        name: "Krylatskoye",
       },
-    },
-    shchukinskaya: {
-      name: "Shchukinskaya",
-      name_ru: "Щукинская",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 430,
+      molodyozhnaya: {
+        name: "Molodyozhnaya",
       },
-    },
-    oktyabrskoyePole: {
-      name: "Oktyabrskoye Pole",
-      name_ru: "Октябрьское поле",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 430,
+      kuntsevskaya: {
+        name: "Kuntsevskaya",
       },
-    },
-    polezhayevskaya: {
-      name: "Polezhayevskaya",
-      name_ru: "Полежаевская",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 430,
+      slavyanskyBulvar: {
+        name: "Slavyansky Bulvar",
       },
-    },
-    begovaya: {
-      name: "Begovaya",
-      name_ru: "Беговая",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 430,
+      parkPobedy: {
+        name: "Park Pobedy",
       },
-    },
-    ulitsa1905Goda: {
-      name: "Ulitsa 1905 Goda",
-      name_ru: "Улица 1905 года",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 430,
+      kievskayaLineThree: {
+        name: "Kievskaya",
       },
-    },
-    barrikadnaya: {
-      name: "Barrikadnaya",
-      name_ru: "Баррикадная",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 430,
+      smolenskaya: {
+        name: "Smolenskaya",
       },
-    },
-    pushkinskaya: {
-      name: "Pushkinskaya",
-      name_ru: "Пушкинская",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 430,
+      arbatskaya: {
+        name: "Arbatskaya",
       },
-    },
-    kuznetskyMost: {
-      name: "Kuznetsky Most",
-      name_ru: "Кузнецкий мост",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 430,
+      ploschadRevolyutsii: {
+        name: "Ploschad Revolyutsii",
       },
-    },
-    kitayGorod_tagan: {
-      name: "Kitay-gorod",
-      name_ru: "Китай-город",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 430,
+      kurskayaLineThree: {
+        name: "Kurskaya",
       },
-    },
-    taganskaya_tagan: {
-      name: "Taganskaya",
-      name_ru: "Таганская",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 430,
+      baumanskaya: {
+        name: "Baumanskaya",
       },
-    },
-    proletarskaya: {
-      name: "Proletarskaya",
-      name_ru: "Пролетарская",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 430,
+      elektrozavodskaya: {
+        name: "Elektrozavodskaya",
       },
-    },
-    volgogradskyProspekt: {
-      name: "Volgogradsky Prospekt",
-      name_ru: "Волгоградский проспект",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 430,
+      semyonovskaya: {
+        name: "Semyonovskaya",
       },
-    },
-    tekstilshchiki: {
-      name: "Tekstilshchiki",
-      name_ru: "Текстильщики",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 430,
+      partizanskaya: {
+        name: "Partizanskaya",
       },
-    },
-    kuzminki: {
-      name: "Kuzminki",
-      name_ru: "Кузьминки",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 430,
+      izmaylovskaya: {
+        name: "Izmaylovskaya",
       },
-    },
-    ryazanskyProspekt: {
-      name: "Ryazansky Prospekt",
-      name_ru: "Рязанский проспект",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 430,
+      pervomayskaya: {
+        name: "Pervomayskaya",
       },
-    },
-    vykhino: {
-      name: "Vykhino",
-      name_ru: "Выхино",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 430,
+      shchyolkovskaya: {
+        name: "Shchyolkovskaya",
       },
     },
-    lermontovskyProspekt: {
-      name: "Lermontovsky Prospekt",
-      name_ru: "Лермонтовский проспект",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 430,
+    lineFour: {
+      color: "#19c1f3",
+      aleksandrovskyeSad: {
+        name: "Aleksandrovskiy Sad",
       },
-    },
-    zhulebino: {
-      name: "Zhulebino",
-      name_ru: "Жулебино",
-      connector: {
-        color: "purple",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 430,
+      arbatskayaLineFour: {
+        name: "Arbatskaya",
       },
-    },
-    kotelniki: {
-      name: "Kotelniki",
-      name_ru: "Котельники",
-      connector: {
-        color: "purple",
-        left: true,
-        station: true,
-        x: 1320,
-        y: 430,
+      smolenskayaLineFour: {
+        name: "Smolenskaya",
       },
-    },
-
-    // Kalininsko-Solntsevskaya Line (Yellow Line) - Eastern section
-    novokosino: {
-      name: "Novokosino",
-      name_ru: "Новокосино",
-      connector: {
-        color: "yellow",
-        right: true,
-        station: true,
-        x: 0,
-        y: 490,
-        labelPlacement: "bottom-right",
+      kievskayaLineFour: {
+        name: "Kievskaya",
       },
-    },
-    novogireyevo: {
-      name: "Novogireyevo",
-      name_ru: "Новогиреево",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 490,
-        labelPlacement: "bottom-right",
+      studentcheskaya: {
+        name: "Studentcheskaya",
       },
-    },
-    perovo: {
-      name: "Perovo",
-      name_ru: "Перово",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 490,
-        labelPlacement: "bottom-right",
+      kutuzovskaya: {
+        name: "Kutuzovskaya",
       },
-    },
-    shosseEntuziastov_kalin: {
-      name: "Shosse Entuziastov",
-      name_ru: "Шоссе Энтузиастов",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 490,
-        labelPlacement: "bottom-right",
+      fili: {
+        name: "Fili",
       },
-    },
-    aviamotornaya: {
-      name: "Aviamotornaya",
-      name_ru: "Авиамоторная",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 490,
-        labelPlacement: "bottom-right",
+      bagrationovskaya: {
+        name: "Bagrationovskaya",
       },
-    },
-    ploshchadIlyicha: {
-      name: "Ploshchad Ilyicha",
-      name_ru: "Площадь Ильича",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 490,
-        labelPlacement: "bottom-right",
+      filyovskyPark: {
+        name: "Filyovsky Park",
       },
-    },
-    marksistskaya: {
-      name: "Marksistskaya",
-      name_ru: "Марксистская",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 490,
-        labelPlacement: "bottom-right",
+      pionerskaya: {
+        name: "Pionerskaya",
       },
-    },
-    tretyakovskaya_kalin: {
-      name: "Tretyakovskaya",
-      name_ru: "Третьяковская",
-      connector: {
-        color: "yellow",
-        left: true,
-        station: true,
-        x: 420,
-        y: 490,
-        labelPlacement: "bottom-right",
+      kuntsevskayaLineFour: {
+        name: "Kuntsevskaya",
       },
-    },
-
-    // Kalininsko-Solntsevskaya Line (Yellow Line) - Western section
-    delovoyTsentr_kalin: {
-      name: "Delovoy Tsentr",
-      name_ru: "Деловой центр",
-      connector: {
-        color: "yellow",
-        right: true,
-        station: true,
-        x: 540,
-        y: 490,
-        labelPlacement: "bottom-right",
+      vystavochnaya: {
+        name: "Vystavochnaya",
       },
-    },
-    parkPobedy_kalin: {
-      name: "Park Pobedy",
-      name_ru: "Парк Победы",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 490,
-        labelPlacement: "bottom-right",
+      mezhdunarodnaya: {
+        name: "Mezhdunarodnaya",
       },
     },
-    minskaya: {
-      name: "Minskaya",
-      name_ru: "Минская",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 490,
-        labelPlacement: "bottom-right",
+    lineFive: {
+      color: "#894e35",
+      kievskayaCircle: {
+        name: "Kievskaya",
       },
-    },
-    lomonosovskyProspekt: {
-      name: "Lomonosovsky Prospekt",
-      name_ru: "Ломоносовский проспект",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 490,
-        labelPlacement: "bottom-right",
+      parkKulturyCircle: {
+        name: "Park Kultury",
       },
-    },
-    ramenki: {
-      name: "Ramenki",
-      name_ru: "Раменки",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 490,
-        labelPlacement: "bottom-right",
+      oktyabrskayaCircle: {
+        name: "Oktyabrskaya",
       },
-    },
-    michurinskyProspekt: {
-      name: "Michurinsky Prospekt",
-      name_ru: "Мичуринский проспект",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 490,
-        labelPlacement: "bottom-right",
+      dobryninskaya: {
+        name: "Dobryninskaya",
       },
-    },
-    ozyornaya: {
-      name: "Ozyornaya",
-      name_ru: "Озёрная",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 490,
-        labelPlacement: "bottom-right",
+      paveletskayaCircle: {
+        name: "Paveletskaya",
       },
-    },
-    govorovo: {
-      name: "Govorovo",
-      name_ru: "Говорово",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 490,
-        labelPlacement: "bottom-right",
+      taganskayaCircle: {
+        name: "Taganskaya",
       },
-    },
-    solntsevo: {
-      name: "Solntsevo",
-      name_ru: "Солнцево",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 490,
-        labelPlacement: "bottom-right",
+      kurskayaCircle: {
+        name: "Kurskaya",
       },
-    },
-    borovskoShosse: {
-      name: "Borovskoye Shosse",
-      name_ru: "Боровское шоссе",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 490,
-        labelPlacement: "bottom-right",
+      komsomolskayaCircle: {
+        name: "Komsomolskaya",
       },
-    },
-    novoperedelkino: {
-      name: "Novoperedelkino",
-      name_ru: "Новопеределкино",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 490,
-        labelPlacement: "bottom-right",
+      prospektMiraCircle: {
+        name: "Prospekt Mira",
       },
-    },
-    rasskazovka: {
-      name: "Rasskazovka",
-      name_ru: "Рассказовка",
-      connector: {
-        color: "yellow",
-        left: true,
-        station: true,
-        x: 1200,
-        y: 490,
-        labelPlacement: "bottom-right",
+      novoslobodskaya: {
+        name: "Novoslobodskaya",
       },
-    },
-
-    // Serpukhovsko-Timiryazevskaya Line (Grey Line)
-    altufyevo: {
-      name: "Altufyevo",
-      name_ru: "Алтуфьево",
-      connector: {
-        color: "gray",
-        right: true,
-        station: true,
-        x: 0,
-        y: 550,
+      belorusskayaCircle: {
+        name: "Belorusskaya",
       },
-    },
-    bibirevo: {
-      name: "Bibirevo",
-      name_ru: "Бибирево",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 550,
+      krasnopresnenskaya: {
+        name: "Krasnopresnenskaya",
       },
     },
-    otradnoye: {
-      name: "Otradnoye",
-      name_ru: "Отрадное",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 550,
+    lineSix: {
+      color: "#f58631",
+      medvedkovo: {
+        name: "Medvedkovo",
       },
-    },
-    vladykino_serpukh: {
-      name: "Vladykino",
-      name_ru: "Владыкино",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 550,
+      babushkinskaya: {
+        name: "Babushkinskaya",
       },
-    },
-    petrovskoRazumovskaya_serpukh: {
-      name: "Petrovsko-Razumovskaya",
-      name_ru: "Петровско-Разумовская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 550,
+      sviblovo: {
+        name: "Sviblovo",
       },
-    },
-    timiryazevskaya_serpukh: {
-      name: "Timiryazevskaya",
-      name_ru: "Тимирязевская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 550,
+      botanicheskySad: {
+        name: "Botanichesky Sad",
       },
-    },
-    dmitrovskaya: {
-      name: "Dmitrovskaya",
-      name_ru: "Дмитровская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 550,
+      vdnkh: {
+        name: "VDNKh",
       },
-    },
-    savyolovskaya_serpukh: {
-      name: "Savyolovskaya",
-      name_ru: "Савёловская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 550,
+      alekseyevskaya: {
+        name: "Alekseyevskaya",
       },
-    },
-    mendeleyevskaya: {
-      name: "Mendeleyevskaya",
-      name_ru: "Менделеевская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 550,
+      rizhskaya: {
+        name: "Rizhskaya",
       },
-    },
-    tsvetnovBulvar: {
-      name: "Tsvetnoy Bulvar",
-      name_ru: "Цветной бульвар",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 550,
+      prospektMiraLineSix: {
+        name: "Prospekt Mira",
       },
-    },
-    chekhovskaya: {
-      name: "Chekhovskaya",
-      name_ru: "Чеховская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 550,
+      sukharevskaya: {
+        name: "Sukharevskaya",
       },
-    },
-    borovitskaya: {
-      name: "Borovitskaya",
-      name_ru: "Боровицкая",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 550,
+      turgenevskaya: {
+        name: "Turgenevskaya",
       },
-    },
-    polyanka: {
-      name: "Polyanka",
-      name_ru: "Полянка",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 550,
+      kitayGorodLineSix: {
+        name: "Kitay-Gorod",
       },
-    },
-    serpukhovskaya: {
-      name: "Serpukhovskaya",
-      name_ru: "Серпуховская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 550,
+      tretyakovskaya: {
+        name: "Tretyakovskaya",
       },
-    },
-    tulskaya: {
-      name: "Tulskaya",
-      name_ru: "Тульская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 550,
+      oktyabrskayaLineSix: {
+        name: "Oktyabrskaya",
       },
-    },
-    nagatinskaya: {
-      name: "Nagatinskaya",
-      name_ru: "Нагатинская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 550,
+      shabolovskayaLineSix: {
+        name: "Shabolovskaya",
       },
-    },
-    nagornaya: {
-      name: "Nagornaya",
-      name_ru: "Нагорная",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 550,
+      leninskProspektLineSix: {
+        name: "Leninsky Prospekt",
       },
-    },
-    nakhimovskyProspekt: {
-      name: "Nakhimovsky Prospekt",
-      name_ru: "Нахимовский проспект",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 550,
+      akademicheskayaLineSix: {
+        name: "Akademicheskaya",
       },
-    },
-    sevastopolskaya: {
-      name: "Sevastopolskaya",
-      name_ru: "Севастопольская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 550,
+      profsoyuznayaLineSix: {
+        name: "Profsoyuznaya",
       },
-    },
-    chertanovskaya: {
-      name: "Chertanovskaya",
-      name_ru: "Чертановская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 550,
+      novocheremushkskayaLineSix: {
+        name: "Novocheremushkskaya",
       },
-    },
-    yuzhnaya: {
-      name: "Yuzhnaya",
-      name_ru: "Южная",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 550,
+      kaluzhskayaLineSix: {
+        name: "Kaluzhskaya",
       },
-    },
-    prazhskaya: {
-      name: "Prazhskaya",
-      name_ru: "Пражская",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 550,
+      belyayevoLineSix: {
+        name: "Belyayevo",
       },
-    },
-    ulitsaAkademikaYangelya: {
-      name: "Ulitsa Akademika Yangelya",
-      name_ru: "Улица Академика Янгеля",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 550,
+      konkovoLineSix: {
+        name: "Konkovo",
       },
-    },
-    annino: {
-      name: "Annino",
-      name_ru: "Аннино",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 550,
+      tyoplyStanLineSix: {
+        name: "Tyoply Stan",
       },
-    },
-    bulvarDmitriyaDonskogo: {
-      name: "Bulvar Dmitriya Donskogo",
-      name_ru: "Бульвар Дмитрия Донского",
-      connector: {
-        color: "gray",
-        left: true,
-        station: true,
-        x: 1440,
-        y: 550,
+      yaseneLineSix: {
+        name: "Yasenevo",
       },
-    },
-
-    // Lyublinsko-Dmitrovskaya Line (Lime Line)
-    seligerskaya: {
-      name: "Seligerskaya",
-      name_ru: "Селигерская",
-      connector: {
-        color: "lime",
-        right: true,
-        station: true,
-        x: 0,
-        y: 610,
-        labelPlacement: "bottom-right",
+      novoyasenevskayaLineSix: {
+        name: "Novoyasenevskaya",
       },
     },
-    verkhniyeLikhobory: {
-      name: "Verkhniye Likhobory",
-      name_ru: "Верхние Лихоборы",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 610,
-        labelPlacement: "bottom-right",
+    lineSeven: {
+      color: "#9c18a4",
+      planernaya: {
+        name: "Planernaya",
       },
-    },
-    okruzhnaya_lyubl: {
-      name: "Okruzhnaya",
-      name_ru: "Окружная",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 610,
-        labelPlacement: "bottom-right",
+      skhodnenskaya: {
+        name: "Skhodnenskaya",
       },
-    },
-    petrovskoRazumovskaya_lyubl: {
-      name: "Petrovsko-Razumovskaya",
-      name_ru: "Петровско-Разумовская",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 610,
-        labelPlacement: "bottom-right",
+      tushinskaya: {
+        name: "Tushinskaya",
       },
-    },
-    fonvizinskaya: {
-      name: "Fonvizinskaya",
-      name_ru: "Фонвизинская",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 610,
-        labelPlacement: "bottom-right",
+      spartak: {
+        name: "Spartak",
       },
-    },
-    butyrskaya: {
-      name: "Butyrskaya",
-      name_ru: "Бутырская",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 610,
-        labelPlacement: "bottom-right",
+      shchukinskaya: {
+        name: "Shchukinskaya",
       },
-    },
-    maryinaRoshcha: {
-      name: "Maryina Roshcha",
-      name_ru: "Марьина роща",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 610,
-        labelPlacement: "bottom-right",
+      oktyabrskoePole: {
+        name: "Oktyabrskoye Pole",
       },
-    },
-    dostoyevskaya: {
-      name: "Dostoyevskaya",
-      name_ru: "Достоевская",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 610,
-        labelPlacement: "bottom-right",
+      polezhayevskaya: {
+        name: "Polezhayevskaya",
       },
-    },
-    trubnaya: {
-      name: "Trubnaya",
-      name_ru: "Трубная",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 610,
-        labelPlacement: "bottom-right",
+      begovaya: {
+        name: "Begovaya",
       },
-    },
-    sretenskyBulvar: {
-      name: "Sretensky Bulvar",
-      name_ru: "Сретенский бульвар",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 610,
-        labelPlacement: "bottom-right",
+      ulitsaTysyachaSemyosotPyatogoGoda: {
+        name: "Ulitsa 1905 Goda",
       },
-    },
-    chkalovskaya: {
-      name: "Chkalovskaya",
-      name_ru: "Чкаловская",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 610,
-        labelPlacement: "bottom-right",
+      barrikadnaya: {
+        name: "Barrikadnaya",
       },
-    },
-    rimskaya: {
-      name: "Rimskaya",
-      name_ru: "Римская",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 610,
-        labelPlacement: "bottom-right",
+      pushkinskaya: {
+        name: "Pushkinskaya",
       },
-    },
-    krestyanskaVastava: {
-      name: "Krestyanskaya Zastava",
-      name_ru: "Крестьянская застава",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 610,
-        labelPlacement: "bottom-right",
+      kuznetskiyMost: {
+        name: "Kuznetsky Most",
       },
-    },
-    dubrovka_lyubl: {
-      name: "Dubrovka",
-      name_ru: "Дубровка",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 610,
-        labelPlacement: "bottom-right",
+      kitayGorodLineSeven: {
+        name: "Kitay-Gorod",
       },
-    },
-    kozhukhovskaya: {
-      name: "Kozhukhovskaya",
-      name_ru: "Кожуховская",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 610,
-        labelPlacement: "bottom-right",
+      taganskayaLineSeven: {
+        name: "Taganskaya",
       },
-    },
-    pechatniki: {
-      name: "Pechatniki",
-      name_ru: "Печатники",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 610,
-        labelPlacement: "bottom-right",
+      proletarskaya: {
+        name: "Proletarskaya",
       },
-    },
-    volzhskaya: {
-      name: "Volzhskaya",
-      name_ru: "Волжская",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 610,
-        labelPlacement: "bottom-right",
+      volgogradskiyProspekt: {
+        name: "Volgogradsky Prospekt",
       },
-    },
-    lyublino: {
-      name: "Lyublino",
-      name_ru: "Люблино",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 610,
-        labelPlacement: "bottom-right",
+      tekstilshchiki: {
+        name: "Tekstilshchiki",
       },
-    },
-    bratislavskaya: {
-      name: "Bratislavskaya",
-      name_ru: "Братиславская",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 610,
-        labelPlacement: "bottom-right",
+      kuzminki: {
+        name: "Kuzminki",
       },
-    },
-    maryino: {
-      name: "Maryino",
-      name_ru: "Марьино",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 610,
-        labelPlacement: "bottom-right",
+      ryazanskyProspekt: {
+        name: "Ryazansky Prospekt",
       },
-    },
-    borisovo: {
-      name: "Borisovo",
-      name_ru: "Борисово",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 610,
-        labelPlacement: "bottom-right",
+      vykhino: {
+        name: "Vykhino",
       },
-    },
-    shipilovskaya: {
-      name: "Shipilovskaya",
-      name_ru: "Шипиловская",
-      connector: {
-        color: "lime",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 610,
-        labelPlacement: "bottom-right",
+      lermontovskiyProspekt: {
+        name: "Lermontovsky Prospekt",
       },
-    },
-    zyablikovo: {
-      name: "Zyablikovo",
-      name_ru: "Зябликово",
-      connector: {
-        color: "lime",
-        left: true,
-        station: true,
-        x: 1320,
-        y: 610,
-        labelPlacement: "bottom-right",
+      zhulebino: {
+        name: "Zhulebino",
       },
-    },
-
-    // Bolshaya Koltsevaya Line (Big Circle Line - Turquoise)
-    savyolovskaya_bkl: {
-      name: "Savyolovskaya",
-      name_ru: "Савёловская",
-      connector: {
-        color: "#79cdcd",
-        right: true,
-        station: true,
-        x: 0,
-        y: 670,
+      kotelniki: {
+        name: "Kotelniki",
       },
     },
-    petrovskyPark: {
-      name: "Petrovsky Park",
-      name_ru: "Петровский парк",
-      connector: {
-        color: "#79cdcd",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 670,
+    lineEight: {
+      color: "#ffcb31",
+      tretyakovskayaLineEight: {
+        name: "Tretyakovskaya",
       },
-    },
-    cska: {
-      name: "CSKA",
-      name_ru: "ЦСКА",
-      connector: {
-        color: "#79cdcd",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 670,
+      marksistskaya: {
+        name: "Marksistskaya",
       },
-    },
-    khoroshyovskaya: {
-      name: "Khoroshyovskaya",
-      name_ru: "Хорошёвская",
-      connector: {
-        color: "#79cdcd",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 670,
+      ploschadIlicha: {
+        name: "Ploschad Ilicha",
       },
-    },
-    shelepikha_bkl: {
-      name: "Shelepikha",
-      name_ru: "Шелепиха",
-      connector: {
-        color: "#79cdcd",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 670,
+      aviamotornaya: {
+        name: "Aviamotornaya",
       },
-    },
-    delovoyTsentr_bkl: {
-      name: "Delovoy Tsentr",
-      name_ru: "Деловой центр",
-      connector: {
-        color: "#79cdcd",
-        left: true,
-        station: true,
-        x: 300,
-        y: 670,
+      shosseEntuziastov: {
+        name: "Shosse Entuziastov",
       },
-    },
-
-    // Kakhovskaya Line (Teal Line)
-    kashirskaya_kakh: {
-      name: "Kashirskaya",
-      name_ru: "Каширская",
-      connector: {
-        color: "#7ac9c6",
-        right: true,
-        station: true,
-        x: 0,
-        y: 730,
-        labelPlacement: "bottom-right",
+      perovo: {
+        name: "Perovo",
       },
-    },
-    varshavskaya: {
-      name: "Varshavskaya",
-      name_ru: "Варшавская",
-      connector: {
-        color: "#7ac9c6",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 730,
-        labelPlacement: "bottom-right",
+      novogireyevo: {
+        name: "Novogireyevo",
       },
-    },
-    kakhovskaya: {
-      name: "Kakhovskaya",
-      name_ru: "Каховская",
-      connector: {
-        color: "#7ac9c6",
-        left: true,
-        station: true,
-        x: 120,
-        y: 730,
-        labelPlacement: "bottom-right",
+      novokosino: {
+        name: "Novokosino",
       },
+      branches: [
+        {
+          branchedStation: "Tretyakovskaya",
+          color: "#ffcb31",
+          stations: {
+            ploschadRevolyutsiiLineEight: {
+              name: "Ploschad Revolyutsii",
+            },
+            teatralnayaLineEight: {
+              name: "Teatralnaya",
+            },
+            tverskayaLineEight: {
+              name: "Tverskaya",
+            },
+            chekhovskaya: {
+              name: "Chekhovskaya",
+            },
+            borovitskaya: {
+              name: "Borovitskaya",
+            },
+            polyanka: {
+              name: "Polyanka",
+            },
+            serpukhovskaya: {
+              name: "Serpukhovskaya",
+            },
+            tulskaya: {
+              name: "Tulskaya",
+            },
+            nagatinskaya: {
+              name: "Nagatinskaya",
+            },
+            nagornaya: {
+              name: "Nagornaya",
+            },
+            nakhimskyProspektLineEight: {
+              name: "Nakhimovsky Prospekt",
+            },
+            sevastopolskyProspektLineEight: {
+              name: "Sevastopolsky Prospekt",
+            },
+            chertanovskayaLineEight: {
+              name: "Chertanovskaya",
+            },
+            yuzhnayaLineEight: {
+              name: "Yuzhnaya",
+            },
+            prazhskayaLineEight: {
+              name: "Prazhskaya",
+            },
+            ulitsaAkademikaYangelyaLineEight: {
+              name: "Ulitsa Akademika Yangelya",
+            },
+            anninoLineEight: {
+              name: "Annino",
+            },
+            bulvarDmitriyaDonskogoLineEight: {
+              name: "Bulvar Dmitriya Donskogo",
+            },
+          },
+        },
+        {
+          branchedStation: "Tretyakovskaya",
+          color: "#ffcb31",
+          stations: {
+            delovoTsentr: {
+              name: "Delovoy Tsentr",
+            },
+            parkPobedyLineEight: {
+              name: "Park Pobedy",
+            },
+          },
+        },
+      ],
     },
-
-    // Butovskaya Line (Light Blue Line)
-    bittsevskyPark: {
-      name: "Bittsevsky Park",
-      name_ru: "Битцевский парк",
-      connector: {
-        color: "#b3c0e3",
-        right: true,
-        station: true,
-        x: 0,
-        y: 800,
+    lineNine: {
+      color: "#a1a2a3",
+      altufyevo: {
+        name: "Altufyevo",
       },
-    },
-    lesoparkovaya: {
-      name: "Lesoparkovaya",
-      name_ru: "Лесопарковая",
-      connector: {
-        color: "#b3c0e3",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 800,
+      bibirevo: {
+        name: "Bibirevo",
       },
-    },
-    ulitsaStarokachalovskaya: {
-      name: "Ulitsa Starokachalovskaya",
-      name_ru: "Улица Старокачаловская",
-      connector: {
-        color: "#b3c0e3",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 800,
+      otradnoye: {
+        name: "Otradnoye",
       },
-    },
-    ulitsaSkobelevskaya: {
-      name: "Ulitsa Skobelevskaya",
-      name_ru: "Улица Скобелевская",
-      connector: {
-        color: "#b3c0e3",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 800,
+      vladykino: {
+        name: "Vladykino",
       },
-    },
-    bulvarAdmiralaUshakova: {
-      name: "Bulvar Admirala Ushakova",
-      name_ru: "Бульвар Адмирала Ушакова",
-      connector: {
-        color: "#b3c0e3",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 800,
+      petrovskoRazumovskaya: {
+        name: "Petrovsko-Razumovskaya",
       },
-    },
-    ulitsaGorchakova: {
-      name: "Ulitsa Gorchakova",
-      name_ru: "Улица Горчакова",
-      connector: {
-        color: "#b3c0e3",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 800,
+      timiryazevskaya: {
+        name: "Timiryazevskaya",
       },
-    },
-    buninskayaAlleya: {
-      name: "Buninskaya Alleya",
-      name_ru: "Бунинская аллея",
-      connector: {
-        color: "#b3c0e3",
-        left: true,
-        station: true,
-        x: 360,
-        y: 800,
+      dmitrovskaya: {
+        name: "Dmitrovskaya",
       },
-    },
-
-    // Moscow Monorail
-    ulitsaSergeyaEyzenshteyna: {
-      name: "Ulitsa Sergeya Eyzenshteyna",
-      name_ru: "Улица Сергея Эйзенштейна",
-      connector: {
-        color: "#1f7cb9",
-        right: true,
-        station: true,
-        x: 0,
-        y: 860,
-        labelPlacement: "bottom-right",
+      savyolovskaya: {
+        name: "Savyolovskaya",
       },
-    },
-    vystavochnyTsentr: {
-      name: "Vystavochny Tsentr",
-      name_ru: "Выставочный центр",
-      connector: {
-        color: "#1f7cb9",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 860,
-        labelPlacement: "bottom-right",
+      mendeleyevskaya: {
+        name: "Mendeleyevskaya",
       },
-    },
-    ulitsaAkademikaKorolyova: {
-      name: "Ulitsa Akademika Korolyova",
-      name_ru: "Улица Академика Королёва",
-      connector: {
-        color: "#1f7cb9",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 860,
-        labelPlacement: "bottom-right",
+      tsvetnoyBulvar: {
+        name: "Tsvetnoy Bulvar",
       },
-    },
-    teletsentr: {
-      name: "Teletsentr",
-      name_ru: "Телецентр",
-      connector: {
-        color: "#1f7cb9",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 860,
-        labelPlacement: "bottom-right",
+      chekhovskayaLineNine: {
+        name: "Chekhovskaya",
       },
-    },
-    ulitsaMilashenkova: {
-      name: "Ulitsa Milashenkova",
-      name_ru: "Улица Милашенкова",
-      connector: {
-        color: "#1f7cb9",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 860,
-        labelPlacement: "bottom-right",
+      borovitskayaLineNine: {
+        name: "Borovitskaya",
       },
-    },
-    timiryazevskayaMonorail: {
-      name: "Timiryazevskaya Monorail",
-      name_ru: "Тимирязевская",
-      connector: {
-        color: "#1f7cb9",
-        left: true,
-        station: true,
-        x: 300,
-        y: 860,
-        labelPlacement: "bottom-right",
+      polyankaLineNine: {
+        name: "Polyanka",
       },
-    },
-
-    // Moscow Central Circle (MCC)
-    okruzhnaya_mcc: {
-      name: "Okruzhnaya",
-      name_ru: "Окружная",
-      connector: {
-        color: "#dd0918",
-        right: true,
-        station: true,
-        x: 0,
-        y: 920,
+      serpukhovskayaLineNine: {
+        name: "Serpukhovskaya",
       },
-    },
-    vladykino_mcc: {
-      name: "Vladykino",
-      name_ru: "Владыкино",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 920,
+      tulskayaLineNine: {
+        name: "Tulskaya",
       },
-    },
-    botanicheskySad_mcc: {
-      name: "Botanichesky Sad",
-      name_ru: "Ботанический сад",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 920,
+      nagatinskayaLineNine: {
+        name: "Nagatinskaya",
       },
-    },
-    rostokino: {
-      name: "Rostokino",
-      name_ru: "Ростокино",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 920,
+      nagornayaLineNine: {
+        name: "Nagornaya",
       },
-    },
-    belokamennaya: {
-      name: "Belokamennaya",
-      name_ru: "Белокаменная",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 920,
+      prazhskayaLineNine: {
+        name: "Prazhskaya",
       },
-    },
-    bulvarRokossovskogo_mcc: {
-      name: "Bulvar Rokossovskogo",
-      name_ru: "Бульвар Рокоссовского",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 920,
+      ulitsaAkademikaYangelyaLineNine: {
+        name: "Ulitsa Akademika Yangelya",
       },
-    },
-    lokomotiv: {
-      name: "Lokomotiv",
-      name_ru: "Локомотив",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 920,
+      anninoLineNine: {
+        name: "Annino",
       },
-    },
-    izmaylovo: {
-      name: "Izmaylovo",
-      name_ru: "Измайлово",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 920,
+      bulvarDmitriyaDonskogoLineNine: {
+        name: "Bulvar Dmitriya Donskogo",
       },
     },
-    sokolinayaGora: {
-      name: "Sokolinaya Gora",
-      name_ru: "Соколиная гора",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 920,
+    lineTen: {
+      color: "#7fd134",
+      lobnya: {
+        name: "Lobnya",
       },
-    },
-    shosseEntuziastov_mcc: {
-      name: "Shosse Entuziastov",
-      name_ru: "Шоссе Энтузиастов",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 920,
+      sheremetyevo: {
+        name: "Sheremetyevo",
       },
-    },
-    andronovka: {
-      name: "Andronovka",
-      name_ru: "Андроновка",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 920,
+      khimki: {
+        name: "Khimki",
       },
-    },
-    nizhegorodskaya: {
-      name: "Nizhegorodskaya",
-      name_ru: "Нижегородская",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 920,
+      planernayaLineTen: {
+        name: "Planernaya",
       },
-    },
-    novokhokhlovskaya: {
-      name: "Novokhokhlovskaya",
-      name_ru: "Новохохловская",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 920,
+      shodnenskayaLineTen: {
+        name: "Skhodnenskaya",
       },
-    },
-    ugreshskaya: {
-      name: "Ugreshskaya",
-      name_ru: "Угрешская",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 920,
+      tushinskayaLineTen: {
+        name: "Tushinskaya",
       },
-    },
-    dubrovka_mcc: {
-      name: "Dubrovka",
-      name_ru: "Дубровка",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 920,
+      spartakLineTen: {
+        name: "Spartak",
       },
-    },
-    avtozavodskaya_mcc: {
-      name: "Avtozavodskaya",
-      name_ru: "Автозаводская",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 920,
+      shchukinskayaLineTen: {
+        name: "Shchukinskaya",
       },
-    },
-    verkhniyeKotly: {
-      name: "Verkhnie Kotly",
-      name_ru: "Верхние Котлы",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 920,
+      oktyabrskoePoleLineTen: {
+        name: "Oktyabrskoye Pole",
       },
-    },
-    krymskaya: {
-      name: "Krymskaya",
-      name_ru: "Крымская",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 920,
+      polezhayevskayaLineTen: {
+        name: "Polezhayevskaya",
       },
-    },
-    ploshchadGagarina: {
-      name: "Ploshchad Gagarina",
-      name_ru: "Площадь Гагарина",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 920,
+      khoroshyovo: {
+        name: "Khoroshyovo",
       },
-    },
-    luzhniki: {
-      name: "Luzhniki",
-      name_ru: "Лужники",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 920,
+      shelepikha: {
+        name: "Shelepikha",
       },
-    },
-    kutuzovskaya_mcc: {
-      name: "Kutuzovskaya",
-      name_ru: "Кутузовская",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 920,
+      testovskaya: {
+        name: "Testovskaya",
       },
-    },
-    delovoyTsentr_mcc: {
-      name: "Delovoy Tsentr",
-      name_ru: "Деловой центр",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 920,
+      delovoyTsentrLineTen: {
+        name: "Delovoy Tsentr",
       },
-    },
-    shelepikha_mcc: {
-      name: "Shelepikha",
-      name_ru: "Шелепиха",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 920,
+      savyolovskayaLineTen: {
+        name: "Savyolovskaya",
       },
-    },
-    khoroshyovo: {
-      name: "Khoroshyovo",
-      name_ru: "Хорошёво",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 920,
+      dmitrovskayaLineTen: {
+        name: "Dmitrovskaya",
       },
-    },
-    zorge: {
-      name: "Zorge",
-      name_ru: "Зорге",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 920,
+      timiryazevskayaLineTen: {
+        name: "Timiryazevskaya",
       },
-    },
-    panfilovskaya: {
-      name: "Panfilovskaya",
-      name_ru: "Панфиловская",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 920,
+      petrovskayaRazumovskayaLineTen: {
+        name: "Petrovsko-Razumovskaya",
       },
-    },
-    streshnevo: {
-      name: "Streshnevo",
-      name_ru: "Стрешнево",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1560,
-        y: 920,
+      fonvizinskaya: {
+        name: "Fonvizinskaya",
       },
-    },
-    baltiyskaya: {
-      name: "Baltiyskaya",
-      name_ru: "Балтийская",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1620,
-        y: 920,
+      butyrskaya: {
+        name: "Butyrskaya",
       },
-    },
-    koptevo: {
-      name: "Koptevo",
-      name_ru: "Коптево",
-      connector: {
-        color: "#dd0918",
-        horizontal: true,
-        station: true,
-        x: 1680,
-        y: 920,
+      maryinaRoshcha: {
+        name: "Maryina Roshcha",
       },
-    },
-    likhobory: {
-      name: "Likhobory",
-      name_ru: "Лихоборы",
-      connector: {
-        color: "#dd0918",
-        left: true,
-        station: true,
-        x: 1740,
-        y: 920,
+      dostoevskaya: {
+        name: "Dostoevskaya",
       },
-    },
-
-    // Nekrasovskaya Line (Pink Line)
-    kosino: {
-      name: "Kosino",
-      name_ru: "Косино",
-      connector: {
-        color: "pink",
-        right: true,
-        station: true,
-        x: 0,
-        y: 980,
-        labelPlacement: "bottom-right",
+      sretenskyBulvar: {
+        name: "Sretensky Bulvar",
       },
-    },
-    ulitsaDmitriyevskogo: {
-      name: "Ulitsa Dmitriyevskogo",
-      name_ru: "Улица Дмитриевского",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 980,
-        labelPlacement: "bottom-right",
+      trubnaya: {
+        name: "Trubnaya",
       },
-    },
-    lukhmanovskaya: {
-      name: "Lukhmanovskaya",
-      name_ru: "Лухмановская",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 980,
-        labelPlacement: "bottom-right",
+      tsvetnoyBulvarLineTen: {
+        name: "Tsvetnoy Bulvar",
       },
-    },
-    nekrasovka: {
-      name: "Nekrasovka",
-      name_ru: "Некрасовка",
-      connector: {
-        color: "pink",
-        left: true,
-        station: true,
-        x: 180,
-        y: 980,
-        labelPlacement: "bottom-right",
+      mendeleyevskayaLineTen: {
+        name: "Mendeleyevskaya",
       },
     },
   },
-  extraConnectors: [
-    { color: "#19c1f3", top: true, right: true, x: 180, y: 250 },
-  ],
 };
