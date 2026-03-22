@@ -1,1524 +1,546 @@
 export const washington = {
-  name: "Washington",
+  name: "Washington DC",
   country: "United States",
   defaultConnectorSize: 60,
+  auto: true,
   stations: {
-    // Red Line (Shady Grove - Glenmont)
-    shadyGrove: {
-      name: "Shady Grove",
-      connector: {
-        color: "red",
-        right: true,
-        station: true,
-        x: 0,
-        y: 0,
+    redLine: {
+      color: "#e51937",
+      shadyGrove: {
+        name: "Shady Grove",
       },
-    },
-    rockville: {
-      name: "Rockville",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 0,
-      },
-    },
-    twinbrook: {
-      name: "Twinbrook",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 0,
-      },
-    },
-    whiteFlint: {
-      name: "White Flint",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 0,
-      },
-    },
-    grosvenorStrathmore: {
-      name: "Grosvenor-Strathmore",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 0,
-      },
-    },
-    medicalCenter: {
-      name: "Medical Center",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 0,
-      },
-    },
-    bethesda: {
-      name: "Bethesda",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 0,
-      },
-    },
-    friendshipHeights: {
-      name: "Friendship Heights",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 0,
-      },
-    },
-    tenleytownAu: {
-      name: "Tenleytown-AU",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 0,
-      },
-    },
-    vanNessUdc: {
-      name: "Van Ness-UDC",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 0,
-      },
-    },
-    clevelandPark: {
-      name: "Cleveland Park",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 0,
+      rockville: {
+        name: "Rockville",
       },
-    },
-    woodleyPark: {
-      name: "Woodley Park",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 0,
-      },
-    },
-    dupontCircle: {
-      name: "Dupont Circle",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 0,
-      },
-    },
-    farragutNorth: {
-      name: "Farragut North",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 0,
-      },
-    },
-    metroCenter_red: {
-      name: "Metro Center",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 0,
-      },
-    },
-    galleryPlace_red: {
-      name: "Gallery Place",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 0,
-      },
-    },
-    judiciarySquare: {
-      name: "Judiciary Square",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 0,
-      },
-    },
-    unionStation: {
-      name: "Union Station",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 0,
-      },
-    },
-    nomaGallaudetU: {
-      name: "NoMa-Gallaudet U",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 0,
+      twinbrook: {
+        name: "Twinbrook",
       },
-    },
-    rhodeIslandAvenueBrentwood: {
-      name: "Rhode Island Avenue",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 0,
-        labelPlacement: "bottom-right",
-      },
-    },
-    brooklandCua: {
-      name: "Brookland-CUA",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 0,
-      },
-    },
-    fortTotten_red: {
-      name: "Fort Totten",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 0,
+      whiteFlint: {
+        name: "White Flint",
       },
-    },
-    takoma: {
-      name: "Takoma",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 0,
+      grosvenorStrathmore: {
+        name: "Grosvenor-Strathmore",
       },
-    },
-    silverSpring: {
-      name: "Silver Spring",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 0,
+      northBethesda: {
+        name: "North Bethesda",
       },
-    },
-    forestGlen: {
-      name: "Forest Glen",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 0,
+      medicalCenter: {
+        name: "Medical Center",
       },
-    },
-    wheaton: {
-      name: "Wheaton",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 0,
+      bethesda: {
+        name: "Bethesda",
       },
-    },
-    glenmont: {
-      name: "Glenmont",
-      connector: {
-        color: "red",
-        left: true,
-        station: true,
-        x: 1560,
-        y: 0,
+      friendshipHeights: {
+        name: "Friendship Heights",
       },
-    },
-
-    // Blue Line (Franconia–Springfield - Largo Town Center)
-    franconiaSpringfield: {
-      name: "Franconia-Springfield",
-      connector: {
-        color: "blue",
-        right: true,
-        station: true,
-        x: 0,
-        y: 60,
-        labelPlacement: "bottom-right",
+      tenleytown: {
+        name: "Tenleytown-AU",
       },
-    },
-    vanDornStreet: {
-      name: "Van Dorn Street",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 60,
-        labelPlacement: "bottom-right",
+      vanNess: {
+        name: "Van Ness-UDC",
       },
-    },
-    kingStreetOldTown_blue: {
-      name: "King Street - Old Town",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 60,
-        labelPlacement: "bottom-right",
+      clevelandPark: {
+        name: "Cleveland Park",
       },
-    },
-    braddockRoad_blue: {
-      name: "Braddock Road",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 60,
-        labelPlacement: "bottom-right",
+      woodleyPark: {
+        name: "Woodley Park-Zoo/Adams Morgan",
       },
-    },
-    ronaldReaganWashingtonNationalAirport_blue: {
-      name: "Ronald Reagan Airport",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 60,
-        labelPlacement: "bottom-right",
+      dupontCircle: {
+        name: "Dupont Circle",
       },
-    },
-    crystalCity_blue: {
-      name: "Crystal City",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 60,
-        labelPlacement: "bottom-right",
+      farragutNorth: {
+        name: "Farragut North",
       },
-    },
-    pentagonCity_blue: {
-      name: "Pentagon City",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 60,
-        labelPlacement: "bottom-right",
+      metroCenter: {
+        name: "Metro Center",
       },
-    },
-    pentagon_blue: {
-      name: "Pentagon",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 60,
-        labelPlacement: "bottom-right",
+      galleryPlaceChinatown: {
+        name: "Gallery Place-Chinatown",
       },
-    },
-    arlingtonCemetery: {
-      name: "Arlington Cemetery",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 60,
-        labelPlacement: "bottom-right",
+      judiciarySquare: {
+        name: "Judiciary Square",
       },
-    },
-    rosslyn_blue: {
-      name: "Rosslyn",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 60,
-        labelPlacement: "bottom-right",
+      unionStation: {
+        name: "Union Station",
       },
-    },
-    foggyBottomGwu_blue: {
-      name: "Foggy Bottom - GWU",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 60,
-        labelPlacement: "bottom-right",
+      nomaGallaudet: {
+        name: "NoMa-Gallaudet U",
       },
-    },
-    farragutWest_blue: {
-      name: "Farragut West",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 60,
-        labelPlacement: "bottom-right",
+      rhodeIslandAve: {
+        name: "Rhode Island Ave-Brentwood",
       },
-    },
-    mcphersonSquare_blue: {
-      name: "McPherson Square",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 60,
-        labelPlacement: "bottom-right",
+      brookland: {
+        name: "Brookland-CUA",
       },
-    },
-    metroCenter_blue: {
-      name: "Metro Center",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 60,
-        labelPlacement: "bottom-right",
+      fortTotten: {
+        name: "Fort Totten",
       },
-    },
-    federalTriangle_blue: {
-      name: "Federal Triangle",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 60,
-        labelPlacement: "bottom-right",
+      takoma: {
+        name: "Takoma",
       },
-    },
-    smithsonian_blue: {
-      name: "Smithsonian",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 60,
-        labelPlacement: "bottom-right",
+      silverSpring: {
+        name: "Silver Spring",
       },
-    },
-    lenfantPlaza_blue: {
-      name: "L'Enfant Plaza",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 60,
-        labelPlacement: "bottom-right",
+      forestGlen: {
+        name: "Forest Glen",
       },
-    },
-    federalCenterSw_blue: {
-      name: "Federal Center SW",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 60,
-        labelPlacement: "bottom-right",
+      wheaton: {
+        name: "Wheaton",
       },
-    },
-    capitolSouth_blue: {
-      name: "Capitol South",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 60,
-        labelPlacement: "bottom-right",
+      glenmont: {
+        name: "Glenmont",
       },
     },
-    easternMarket_blue: {
-      name: "Eastern Market",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 60,
-        labelPlacement: "bottom-right",
+    orangeLine: {
+      color: "#f7941d",
+      newCarrollton: {
+        name: "New Carrollton",
       },
-    },
-    potomacAvenue_blue: {
-      name: "Potomac Avenue",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 60,
-        labelPlacement: "bottom-right",
+      landoverOrange: {
+        name: "Landover",
       },
-    },
-    stadiumArmory_blue: {
-      name: "Stadium-Armory",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 60,
-        labelPlacement: "bottom-right",
+      cheverly: {
+        name: "Cheverly",
       },
-    },
-    benningRoad_blue: {
-      name: "Benning Road",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 60,
-        labelPlacement: "bottom-right",
+      deanwood: {
+        name: "Deanwood",
       },
-    },
-    capitolHeights_blue: {
-      name: "Capitol Heights",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 60,
-        labelPlacement: "bottom-right",
+      minnesotaAve: {
+        name: "Minnesota Ave",
       },
-    },
-    addisonRoad_blue: {
-      name: "Addison Road",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 60,
-        labelPlacement: "bottom-right",
+      stadiumArmory: {
+        name: "Stadium-Armory",
       },
-    },
-    morganBoulevard_blue: {
-      name: "Morgan Boulevard",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 60,
-        labelPlacement: "bottom-right",
+      potomacAve: {
+        name: "Potomac Ave",
       },
-    },
-    largoTownCenter_blue: {
-      name: "Largo Town Center",
-      connector: {
-        color: "blue",
-        left: true,
-        station: true,
-        x: 1560,
-        y: 60,
-        labelPlacement: "bottom-right",
+      easternMarket: {
+        name: "Eastern Market",
       },
-    },
-
-    // Orange Line (Vienna - New Carrollton)
-    vienna: {
-      name: "Vienna",
-      connector: {
-        color: "orange",
-        right: true,
-        station: true,
-        x: 0,
-        y: 120,
+      capitolSouth: {
+        name: "Capitol South",
       },
-    },
-    dunnLoring: {
-      name: "Dunn Loring",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 120,
+      lenfantPlazaOrange: {
+        name: "L'Enfant Plaza",
       },
-    },
-    westFallsChurch: {
-      name: "West Falls Church",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 120,
+      smithsonian: {
+        name: "Smithsonian",
       },
-    },
-    eastFallsChurch_orange: {
-      name: "East Falls Church",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 120,
+      federalTriangle: {
+        name: "Federal Triangle",
       },
-    },
-    ballstonMu_orange: {
-      name: "Ballston-MU",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 120,
+      metroCenterOrange: {
+        name: "Metro Center",
       },
-    },
-    virginiaSquareGmu_orange: {
-      name: "Virginia Square-GMU",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 120,
+      mcphersonSquare: {
+        name: "McPherson Square",
       },
-    },
-    clarendon_orange: {
-      name: "Clarendon",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 120,
+      farragutWest: {
+        name: "Farragut West",
       },
-    },
-    courtHouse_orange: {
-      name: "Court House",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 120,
+      foggyBottomGWU: {
+        name: "Foggy Bottom-GWU",
       },
-    },
-    rosslyn_orange: {
-      name: "Rosslyn",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 120,
+      rosslynOrange: {
+        name: "Rosslyn",
       },
-    },
-    foggyBottomGwu_orange: {
-      name: "Foggy Bottom - GWU",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 120,
+      arlingtonCemetery: {
+        name: "Arlington Cemetery",
       },
-    },
-    farragutWest_orange: {
-      name: "Farragut West",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 120,
+      pentagonOrange: {
+        name: "Pentagon",
       },
-    },
-    mcphersonSquare_orange: {
-      name: "McPherson Square",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 120,
+      pentagonCity: {
+        name: "Pentagon City",
       },
-    },
-    metroCenter_orange: {
-      name: "Metro Center",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 120,
+      crystalCity: {
+        name: "Crystal City",
       },
-    },
-    federalTriangle_orange: {
-      name: "Federal Triangle",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 120,
+      ronaldReaganAirport: {
+        name: "Ronald Reagan Washington National Airport",
       },
-    },
-    smithsonian_orange: {
-      name: "Smithsonian",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 120,
+      braddockRoad: {
+        name: "Braddock Road",
       },
-    },
-    lenfantPlaza_orange: {
-      name: "L'Enfant Plaza",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 120,
+      potomacYard: {
+        name: "Potomac Yard",
       },
-    },
-    federalCenterSw_orange: {
-      name: "Federal Center SW",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 120,
+      kingStreetOldTown: {
+        name: "King St-Old Town",
       },
-    },
-    capitolSouth_orange: {
-      name: "Capitol South",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 120,
+      eisenhowerAve: {
+        name: "Eisenhower Avenue",
       },
-    },
-    easternMarket_orange: {
-      name: "Eastern Market",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 120,
+      hungtington: {
+        name: "Huntington",
       },
+      branches: [
+        {
+          branchedStation: "Stadium-Armory",
+          color: "#f7941d",
+          stations: {
+            eastFallsChurch: {
+              name: "East Falls Church",
+            },
+            westFallsChurch: {
+              name: "West Falls Church",
+            },
+            dunnLoring: {
+              name: "Dunn Loring-Merrifield",
+            },
+            vienna: {
+              name: "Vienna/Fairfax-GMU",
+            },
+          },
+        },
+      ],
+    },
+    silverLine: {
+      color: "#919d9d",
+      largoTownCenter: {
+        name: "Largo Town Center",
+      },
+      morganBoulevardSilver: {
+        name: "Morgan Boulevard",
+      },
+      downtownLargoSilver: {
+        name: "Downtown Largo",
+      },
+      landoverSilver: {
+        name: "Landover",
+      },
+      newCarrolltonSilver: {
+        name: "New Carrollton",
+      },
+      cheverlySilver: {
+        name: "Cheverly",
+      },
+      deanwoodSilver: {
+        name: "Deanwood",
+      },
+      minnesotaAveSilver: {
+        name: "Minnesota Ave",
+      },
+      stadiumArmorySilver: {
+        name: "Stadium-Armory",
+      },
+      potomacAveSilver: {
+        name: "Potomac Ave",
+      },
+      easternMarketSilver: {
+        name: "Eastern Market",
+      },
+      capitolSouthSilver: {
+        name: "Capitol South",
+      },
+      lenfantPlazaSilver: {
+        name: "L'Enfant Plaza",
+      },
+      smithsonianSilver: {
+        name: "Smithsonian",
+      },
+      federalTriangleSilver: {
+        name: "Federal Triangle",
+      },
+      metroCenterSilver: {
+        name: "Metro Center",
+      },
+      mcphersonSquareSilver: {
+        name: "McPherson Square",
+      },
+      farragutWestSilver: {
+        name: "Farragut West",
+      },
+      foggyBottomGWUSilver: {
+        name: "Foggy Bottom-GWU",
+      },
+      rosslynSilver: {
+        name: "Rosslyn",
+      },
+      branches: [
+        {
+          branchedStation: "Rosslyn",
+          color: "#919d9d",
+          stations: {
+            courthouseVienna: {
+              name: "Court House",
+            },
+            clarendonVienna: {
+              name: "Clarendon",
+            },
+            virginiaSq: {
+              name: "Virginia Square-GMU",
+            },
+            ballstonMUSilver: {
+              name: "Ballston-MU",
+            },
+            eastFallsChurchSilver: {
+              name: "East Falls Church",
+            },
+            mclean: {
+              name: "McLean",
+            },
+            tysonsCorner: {
+              name: "Tysons",
+            },
+            greensboro: {
+              name: "Greensboro",
+            },
+            springHill: {
+              name: "Spring Hill",
+            },
+            wiehleRestonEast: {
+              name: "Wiehle-Reston East",
+            },
+            restonTownCenter: {
+              name: "Reston Town Center",
+            },
+            herndon: {
+              name: "Herndon",
+            },
+            innovationCenter: {
+              name: "Innovation Center",
+            },
+            dullesAirport: {
+              name: "Washington Dulles International Airport",
+            },
+            loudounGateway: {
+              name: "Loudoun Gateway",
+            },
+            ashburn: {
+              name: "Ashburn",
+            },
+          },
+        },
+      ],
     },
-    potomacAvenue_orange: {
-      name: "Potomac Avenue",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 120,
+    blueLine: {
+      color: "#0892d0",
+      franconiaSpringfield: {
+        name: "Franconia-Springfield",
       },
-    },
-    stadiumArmory_orange: {
-      name: "Stadium-Armory",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 120,
+      vanDornStreet: {
+        name: "Van Dorn Street",
       },
-    },
-    minnesotaAvenue: {
-      name: "Minnesota Avenue",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 120,
+      kingStreetOldTownBlue: {
+        name: "King St-Old Town",
       },
-    },
-    deanwood: {
-      name: "Deanwood",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 120,
+      potomacYardBlue: {
+        name: "Potomac Yard",
       },
-    },
-    cheverly: {
-      name: "Cheverly",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 120,
+      braddockRoadBlue: {
+        name: "Braddock Road",
       },
-    },
-    landover: {
-      name: "Landover",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 120,
+      ronaldReaganAirportBlue: {
+        name: "Ronald Reagan Washington National Airport",
       },
-    },
-    newCarrollton: {
-      name: "New Carrollton",
-      connector: {
-        color: "orange",
-        left: true,
-        station: true,
-        x: 1500,
-        y: 120,
+      crystalCityBlue: {
+        name: "Crystal City",
       },
-    },
-
-    // Yellow Line (Huntington - Fort Totten)
-    huntington: {
-      name: "Huntington",
-      connector: {
-        color: "yellow",
-        right: true,
-        station: true,
-        x: 0,
-        y: 180,
-        labelPlacement: "bottom-right",
+      pentagonCityBlue: {
+        name: "Pentagon City",
       },
-    },
-    eisenhowerAvenue: {
-      name: "Eisenhower Avenue",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 180,
-        labelPlacement: "bottom-right",
+      pentagonBlue: {
+        name: "Pentagon",
       },
-    },
-    kingStreetOldTown_yellow: {
-      name: "King Street - Old Town",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 180,
-        labelPlacement: "bottom-right",
+      arlingtonCemeteryBlue: {
+        name: "Arlington Cemetery",
       },
-    },
-    braddockRoad_yellow: {
-      name: "Braddock Road",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 180,
-        labelPlacement: "bottom-right",
+      rosslynBlue: {
+        name: "Rosslyn",
       },
-    },
-    ronaldReaganWashingtonNationalAirport_yellow: {
-      name: "Ronald Reagan Airport",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 180,
-        labelPlacement: "bottom-right",
+      foggyBottomGWUBlue: {
+        name: "Foggy Bottom-GWU",
       },
-    },
-    crystalCity_yellow: {
-      name: "Crystal City",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 180,
-        labelPlacement: "bottom-right",
+      farragutWestBlue: {
+        name: "Farragut West",
       },
-    },
-    pentagonCity_yellow: {
-      name: "Pentagon City",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 180,
-        labelPlacement: "bottom-right",
+      mcphersonSquareBlue: {
+        name: "McPherson Square",
       },
-    },
-    pentagon_yellow: {
-      name: "Pentagon",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 180,
-        labelPlacement: "bottom-right",
+      metroCenterBlue: {
+        name: "Metro Center",
       },
-    },
-    lenfantPlaza_yellow: {
-      name: "L'Enfant Plaza",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 180,
-        labelPlacement: "bottom-right",
+      federalTriangleBlue: {
+        name: "Federal Triangle",
       },
-    },
-    archivesNavyMemorialPennQuarter_yellow: {
-      name: "Archives - Navy Memorial",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 180,
-        labelPlacement: "bottom-right",
+      smithsonianBlue: {
+        name: "Smithsonian",
       },
-    },
-    galleryPlace_yellow: {
-      name: "Gallery Place",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 180,
-        labelPlacement: "bottom-right",
+      lenfantPlazaBlue: {
+        name: "L'Enfant Plaza",
       },
-    },
-    mountVernonSquare_yellow: {
-      name: "Mount Vernon Square",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 180,
-        labelPlacement: "bottom-right",
+      capitolSouthBlue: {
+        name: "Capitol South",
       },
-    },
-    shawHowardUniversity_yellow: {
-      name: "Shaw - Howard University",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 180,
-        labelPlacement: "bottom-right",
+      easternMarketBlue: {
+        name: "Eastern Market",
       },
-    },
-    uStreetAfricanAmericanCivilWarMemorialCardozo_yellow: {
-      name: "U Street",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 180,
-        labelPlacement: "bottom-right",
+      potomacAveBlue: {
+        name: "Potomac Ave",
       },
-    },
-    columbiaHeights_yellow: {
-      name: "Columbia Heights",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 180,
-        labelPlacement: "bottom-right",
+      stadiumArmoryBlue: {
+        name: "Stadium-Armory",
       },
-    },
-    georgiaAvenuePetworth_yellow: {
-      name: "Georgia Avenue - Petworth",
-      connector: {
-        color: "yellow",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 180,
-        labelPlacement: "bottom-right",
+      minnesotaAveBlue: {
+        name: "Minnesota Ave",
       },
-    },
-    fortTotten_yellow: {
-      name: "Fort Totten",
-      connector: {
-        color: "yellow",
-        left: true,
-        station: true,
-        x: 960,
-        y: 180,
-        labelPlacement: "bottom-right",
+      deanwoodBlue: {
+        name: "Deanwood",
       },
-    },
-
-    // Green Line (Branch Ave - Greenbelt)
-    branchAvenue: {
-      name: "Branch Avenue",
-      connector: {
-        color: "green",
-        right: true,
-        station: true,
-        x: 0,
-        y: 240,
+      cheverlyBlue: {
+        name: "Cheverly",
       },
-    },
-    suitland: {
-      name: "Suitland",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 240,
+      landoverBlue: {
+        name: "Landover",
       },
-    },
-    naylorRoad: {
-      name: "Naylor Road",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 240,
+      newCarrolltonBlue: {
+        name: "New Carrollton",
       },
-    },
-    southernAvenue: {
-      name: "Southern Avenue",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 240,
+      downtownLargoBlue: {
+        name: "Downtown Largo",
       },
-    },
-    congressHeights: {
-      name: "Congress Heights",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 240,
+      morganBoulevardBlue: {
+        name: "Morgan Boulevard",
       },
-    },
-    anacostia: {
-      name: "Anacostia",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 240,
+      largoTownCenterBlue: {
+        name: "Largo Town Center",
       },
     },
-    navyYardBallpark: {
-      name: "Navy Yard - Ballpark",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 240,
+    greenLine: {
+      color: "#00b251",
+      greenbelt: {
+        name: "Greenbelt",
       },
-    },
-    waterfront: {
-      name: "Waterfront",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 240,
+      collegepark: {
+        name: "College Park-U of Md",
       },
-    },
-    lenfantPlaza_green: {
-      name: "L'Enfant Plaza",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 240,
+      princeGeorgesPlaza: {
+        name: "Prince George's Plaza",
       },
-    },
-    archivesNavyMemorialPennQuarter_green: {
-      name: "Archives - Navy Memorial",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 240,
+      westHyattsville: {
+        name: "West Hyattsville",
       },
-    },
-    galleryPlace_green: {
-      name: "Gallery Place",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 240,
+      fortTottenGreen: {
+        name: "Fort Totten",
       },
-    },
-    mountVernonSquare_green: {
-      name: "Mount Vernon Square",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 240,
+      georgiaAvePetworth: {
+        name: "Georgia Ave-Petworth",
       },
-    },
-    shawHowardUniversity_green: {
-      name: "Shaw - Howard University",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 240,
+      columbiaHeights: {
+        name: "Columbia Heights",
       },
-    },
-    uStreetAfricanAmericanCivilWarMemorialCardozo_green: {
-      name: "U Street",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 240,
+      uStreet: {
+        name: "U Street/African-Amer Civil War Memorial/Cardozo",
       },
-    },
-    columbiaHeights_green: {
-      name: "Columbia Heights",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 240,
+      shawHoward: {
+        name: "Shaw-Howard U",
       },
-    },
-    georgiaAvenuePetworth_green: {
-      name: "Georgia Avenue - Petworth",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 240,
+      mountVernonSqGreen: {
+        name: "Mount Vernon Sq 7th St-Convention Center",
       },
-    },
-    fortTotten_green: {
-      name: "Fort Totten",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 240,
+      galleryPlaceGreen: {
+        name: "Gallery Place-Chinatown",
       },
-    },
-    westHyattsville: {
-      name: "West Hyattsville",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 240,
+      archivesNavyMemorial: {
+        name: "Archives-Navy Mem'l-Penn Quarter",
       },
-    },
-    princeGeorgesPlaza: {
-      name: "Prince George's Plaza",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 240,
+      lenfantPlazaGreen: {
+        name: "L'Enfant Plaza",
       },
-    },
-    collegeParkUniversityOfMaryland: {
-      name: "University of Maryland",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 240,
+      waterfront: {
+        name: "Waterfront",
       },
-    },
-    greenbelt: {
-      name: "Greenbelt",
-      connector: {
-        color: "green",
-        left: true,
-        station: true,
-        x: 1200,
-        y: 240,
+      navyYard: {
+        name: "Navy Yard-Ballpark",
       },
-    },
-
-    // Silver Line (Wiehle – Reston East - Largo Town Center)
-    wiehleRestonEast: {
-      name: "Wiehle-Reston East",
-      connector: {
-        color: "gray",
-        right: true,
-        station: true,
-        x: 0,
-        y: 300,
+      anacostia: {
+        name: "Anacostia",
       },
-    },
-    springHill: {
-      name: "Spring Hill",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 300,
+      congressHeights: {
+        name: "Congress Heights",
       },
-    },
-    greensboro: {
-      name: "Greensboro",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 300,
+      southernAvenue: {
+        name: "Southern Avenue",
       },
-    },
-    tysonsCorner: {
-      name: "Tysons Corner",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 300,
+      naylorRoad: {
+        name: "Naylor Road",
       },
-    },
-    mclean: {
-      name: "McLean",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 300,
+      suitland: {
+        name: "Suitland",
       },
-    },
-    eastFallsChurch_silver: {
-      name: "East Falls Church",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 300,
+      branchAvenue: {
+        name: "Branch Ave",
       },
     },
-    ballstonMu_silver: {
-      name: "Ballston-MU",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 300,
+    yellowLine: {
+      color: "#ffd100",
+      huntingtonYellow: {
+        name: "Huntington",
       },
-    },
-    virginiaSquareGmu_silver: {
-      name: "Virginia Square-GMU",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 300,
+      eisenhowerAveYellow: {
+        name: "Eisenhower Avenue",
       },
-    },
-    clarendon_silver: {
-      name: "Clarendon",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 300,
+      kingStreetOldTownYellow: {
+        name: "King St-Old Town",
       },
-    },
-    courtHouse_silver: {
-      name: "Court House",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 300,
+      potomacYardYellow: {
+        name: "Potomac Yard",
       },
-    },
-    rosslyn_silver: {
-      name: "Rosslyn",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 300,
+      braddockRoadYellow: {
+        name: "Braddock Road",
       },
-    },
-    foggyBottomGwu_silver: {
-      name: "Foggy Bottom - GWU",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 300,
+      ronaldReaganAirportYellow: {
+        name: "Ronald Reagan Washington National Airport",
       },
-    },
-    farragutWest_silver: {
-      name: "Farragut West",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 300,
+      crystalCityYellow: {
+        name: "Crystal City",
       },
-    },
-    mcphersonSquare_silver: {
-      name: "McPherson Square",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 300,
+      pentagonCityYellow: {
+        name: "Pentagon City",
       },
-    },
-    metroCenter_silver: {
-      name: "Metro Center",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 300,
+      pentagonYellow: {
+        name: "Pentagon",
       },
-    },
-    federalTriangle_silver: {
-      name: "Federal Triangle",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 300,
+      lenfantPlazaYellow: {
+        name: "L'Enfant Plaza",
       },
-    },
-    smithsonian_silver: {
-      name: "Smithsonian",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 300,
+      archivesNavyMemorialYellow: {
+        name: "Archives-Navy Mem'l-Penn Quarter",
       },
-    },
-    lenfantPlaza_silver: {
-      name: "L'Enfant Plaza",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 300,
+      galleryPlaceYellow: {
+        name: "Gallery Place-Chinatown",
       },
-    },
-    federalCenterSw_silver: {
-      name: "Federal Center SW",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 300,
+      mountVernonSqYellow: {
+        name: "Mount Vernon Sq 7th St-Convention Center",
       },
-    },
-    capitolSouth_silver: {
-      name: "Capitol South",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 300,
+      shawHowardYellow: {
+        name: "Shaw-Howard U",
       },
-    },
-    easternMarket_silver: {
-      name: "Eastern Market",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 300,
+      uStreetYellow: {
+        name: "U Street/African-Amer Civil War Memorial/Cardozo",
       },
-    },
-    potomacAvenue_silver: {
-      name: "Potomac Avenue",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 300,
+      columbiaHeightsYellow: {
+        name: "Columbia Heights",
       },
-    },
-    stadiumArmory_silver: {
-      name: "Stadium-Armory",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 300,
+      georgiaAvePetworthYellow: {
+        name: "Georgia Ave-Petworth",
       },
-    },
-    benningRoad_silver: {
-      name: "Benning Road",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 300,
+      fortTottenYellow: {
+        name: "Fort Totten",
       },
-    },
-    capitolHeights_silver: {
-      name: "Capitol Heights",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 300,
+      westHyattsvilleYellow: {
+        name: "West Hyattsville",
       },
-    },
-    addisonRoad_silver: {
-      name: "Addison Road",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 300,
+      princeGeorgesPlazaYellow: {
+        name: "Prince George's Plaza",
       },
-    },
-    morganBoulevard_silver: {
-      name: "Morgan Boulevard",
-      connector: {
-        color: "gray",
-        horizontal: true,
-        station: true,
-        x: 1560,
-        y: 300,
+      collegeParkYellow: {
+        name: "College Park-U of Md",
       },
-    },
-    largoTownCenter_silver: {
-      name: "Largo Town Center",
-      connector: {
-        color: "gray",
-        left: true,
-        station: true,
-        x: 1620,
-        y: 300,
+      greenbeltYellow: {
+        name: "Greenbelt",
       },
     },
   },
-  extraConnectors: [],
 };

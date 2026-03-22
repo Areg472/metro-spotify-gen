@@ -1,251 +1,73 @@
 export const tbilisi = {
   name: "Tbilisi",
   country: "Georgia",
-  defaultConnectorSize: 75,
+  defaultConnectorSize: 60,
+  auto: true,
   stations: {
-    akhmeteli_theatre: {
-      name: "Akhmeteli Theatre",
-      name_ka: "ახმეტელის თეატრი",
-      connector: { color: "red", right: true, station: true, x: 0, y: 0 },
-    },
-    sarajishvili: {
-      name: "Sarajishvili",
-      name_ka: "სარაჯიშვილი",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 75,
-        y: 0,
+    akhmeteliVarketili: {
+      color: "#ed1c24",
+      akhmeteli: {
+        name: "Akhmeteli",
+      },
+      sarajishvili: {
+        name: "Sarajishvili",
+      },
+      gotsiridze: {
+        name: "Gotsiridze",
+      },
+      nadzaladevi: {
+        name: "Nadzaladevi",
+      },
+      stationSquareOne: {
+        name: "Station Square 1",
+      },
+      marjanishvili: {
+        name: "Marjanishvili",
+      },
+      rustaveli: {
+        name: "Rustaveli",
+      },
+      libertySquare: {
+        name: "Liberty Square",
+      },
+      avlabari: {
+        name: "Avlabari",
+      },
+      threeHundredAragveli: {
+        name: "300 Aragveli",
+      },
+      isani: {
+        name: "Isani",
+      },
+      samgori: {
+        name: "Samgori",
+      },
+      varketili: {
+        name: "Varketili",
       },
     },
-    guramishvili: {
-      name: "Guramishvili",
-      name_ka: "გურამიშვილი",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 150,
-        y: 0,
+    saburtalo: {
+      color: "#00a651",
+      stationSquareTwo: {
+        name: "Station Square 2",
       },
-    },
-    ghrmaghele: {
-      name: "Ghrmaghele",
-      name_ka: "ღრმაღელე",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 225,
-        y: 0,
+      tsereteli: {
+        name: "Tsereteli",
       },
-    },
-    didube: {
-      name: "Didube",
-      name_ka: "დიდუბე",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 0,
+      technicalUniversity: {
+        name: "Technical University",
       },
-    },
-    gotsiridze: {
-      name: "Gotsiridze",
-      name_ka: "გოცირიძე",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 375,
-        y: 0,
+      medicalUniversity: {
+        name: "Medical University",
       },
-    },
-    nadzaladevi: {
-      name: "Nadzaladevi",
-      name_ka: "ნაძალადევი",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 450,
-        y: 0,
+      delisi: {
+        name: "Delisi",
       },
-    },
-    station_square_1: {
-      name: "Station Sq. I",
-      name_ka: "სადგურის მოედანი I",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        bottom: true,
-        x: 525,
-        y: 0,
-        labelPlacement: "top-right",
+      vazhaPshavela: {
+        name: "Vazha-Pshavela",
       },
-    },
-    marjanishvili: {
-      name: "Marjanishvili",
-      name_ka: "მარჯანიշვილი",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 0,
-      },
-    },
-    rustaveli: {
-      name: "Rustaveli",
-      name_ka: "რუსთაველი",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 675,
-        y: 0,
-      },
-    },
-    freedom_square: {
-      name: "Freedom Square",
-      name_ka: "თავისუფლების მოედანი",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 750,
-        y: 0,
-      },
-    },
-    avlabari: {
-      name: "Avlabari",
-      name_ka: "ავლაბარი",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 825,
-        y: 0,
-      },
-    },
-    aragveli: {
-      name: "300 Aragveli",
-      name_ka: "300 არაგველი",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 0,
-      },
-    },
-    isani: {
-      name: "Isani",
-      name_ka: "ისანი",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 975,
-        y: 0,
-      },
-    },
-    samgori: {
-      name: "Samgori",
-      name_ka: "სამგორი",
-      connector: {
-        color: "red",
-        horizontal: true,
-        station: true,
-        x: 1050,
-        y: 0,
-      },
-    },
-    varketili: {
-      name: "Varketili",
-      name_ka: "ვარკეთილი",
-      connector: {
-        color: "red",
-        left: true,
-        station: true,
-        x: 1125,
-        y: 0,
-      },
-    },
-    station_square_2: {
-      name: "Station Sq. II",
-      name_ka: "სადგურის მოედანი II",
-      connector: {
-        color: "green",
-        top: true,
-        left: true,
-        station: true,
-        x: 525,
-        y: 75,
-        labelPlacement: "bottom-right",
-      },
-    },
-    technical_university: {
-      name: "Technical Uni.",
-      name_ka: "ტექნიკური უნივერსიტეტი",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 450,
-        y: 75,
-        labelPlacement: "bottom-right",
-      },
-    },
-    medical_university: {
-      name: "Medical Uni.",
-      name_ka: "სამედიცინო უნივერსიტეტი",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 375,
-        y: 75,
-        labelPlacement: "bottom-right",
-      },
-    },
-    delisi: {
-      name: "Delisi",
-      name_ka: "დელისი",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 75,
-        labelPlacement: "bottom-right",
-      },
-    },
-    vazha_pshavela: {
-      name: "Vazha-Pshavela",
-      name_ka: "ვაჟა-ფშაველა",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 225,
-        y: 75,
-        labelPlacement: "bottom-right",
-      },
-    },
-    state_university: {
-      name: "State Uni.",
-      name_ka: "უნივერსიტეტი",
-      connector: {
-        color: "green",
-        right: true,
-        station: true,
-        x: 150,
-        y: 75,
-        labelPlacement: "bottom-right",
+      stateUniversity: {
+        name: "State University",
       },
     },
   },

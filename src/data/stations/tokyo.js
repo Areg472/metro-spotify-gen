@@ -2,3462 +2,926 @@ export const tokyo = {
   name: "Tokyo",
   country: "Japan",
   defaultConnectorSize: 60,
+  auto: true,
   stations: {
-    // Asakusa Line (Nishi-magome - Oshiage)
-    nishiMagome: {
-      name: "Nishi-magome",
-      name_ja: "西馬込",
-      connector: {
-        color: "#ff69b4",
-        right: true,
-        station: true,
-        x: 0,
-        y: 0,
+    ginzaLine: {
+      color: "#f39700",
+      shibuya: {
+        name: "Shibuya",
       },
-    },
-    magome: {
-      name: "Magome",
-      name_ja: "馬込",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 0,
-      },
-    },
-    nakanobu: {
-      name: "Nakanobu",
-      name_ja: "中延",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 0,
-      },
-    },
-    togoshi: {
-      name: "Togoshi",
-      name_ja: "戸越",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 0,
-      },
-    },
-    gotanda_asakusa: {
-      name: "Gotanda",
-      name_ja: "五反田",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 0,
-      },
-    },
-    takanawadai: {
-      name: "Takanawadai",
-      name_ja: "高輪台",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 0,
-      },
-    },
-    sengakuji: {
-      name: "Sengakuji",
-      name_ja: "泉岳寺",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 0,
-      },
-    },
-    mita_asakusa: {
-      name: "Mita",
-      name_ja: "三田",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 0,
-      },
-    },
-    daimon_asakusa: {
-      name: "Daimon",
-      name_ja: "大門",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 0,
-      },
-    },
-    shimbashi_asakusa: {
-      name: "Shimbashi",
-      name_ja: "新橋",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 0,
-      },
-    },
-    higashiGinza_asakusa: {
-      name: "Higashi-ginza",
-      name_ja: "東銀座",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 0,
-      },
-    },
-    takaracho: {
-      name: "Takaracho",
-      name_ja: "宝町",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 0,
-      },
-    },
-    nihombashi_asakusa: {
-      name: "Nihombashi",
-      name_ja: "日本橋",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 0,
-      },
-    },
-    ningyocho_asakusa: {
-      name: "Ningyocho",
-      name_ja: "人形町",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 0,
-      },
-    },
-    higashiNihombashi: {
-      name: "Higashi-nihombashi",
-      name_ja: "東日本橋",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 0,
-      },
-    },
-    asakusabashi: {
-      name: "Asakusabashi",
-      name_ja: "浅草橋",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 0,
-      },
-    },
-    kuramae_asakusa: {
-      name: "Kuramae",
-      name_ja: "蔵前",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 0,
-      },
-    },
-    asakusa_asakusa: {
-      name: "Asakusa",
-      name_ja: "浅草",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 0,
-      },
-    },
-    honjoAzumabashi: {
-      name: "Honjo-azumabashi",
-      name_ja: "本所吾妻橋",
-      connector: {
-        color: "#ff69b4",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 0,
-      },
-    },
-    oshiage_asakusa: {
-      name: "Oshiage",
-      name_ja: "押上",
-      connector: {
-        color: "#ff69b4",
-        left: true,
-        station: true,
-        x: 1140,
-        y: 0,
-      },
-    },
-
-    // Mita Line (Meguro - Nishi-takashimadaira)
-    meguro_mita: {
-      name: "Meguro",
-      name_ja: "目黒",
-      connector: {
-        color: "#0079c2",
-        right: true,
-        station: true,
-        x: 0,
-        y: 60,
-        labelPlacement: "bottom-right",
-      },
-    },
-    shirokanedai_mita: {
-      name: "Shirokanedai",
-      name_ja: "白金台",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 60,
-        labelPlacement: "bottom-right",
-      },
-    },
-    shirokaneTakanawa_mita: {
-      name: "Shirokane-takanawa",
-      name_ja: "白金高輪",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 60,
-        labelPlacement: "bottom-right",
+      omotesando: {
+        name: "Omotesando",
       },
-    },
-    mita_mita: {
-      name: "Mita",
-      name_ja: "三田",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 60,
-        labelPlacement: "bottom-right",
+      gaiemmae: {
+        name: "Gaiemmae",
       },
-    },
-    shibakoen: {
-      name: "Shibakoen",
-      name_ja: "芝公園",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 60,
-        labelPlacement: "bottom-right",
+      aoyamaItchome: {
+        name: "Aoyama-itchome",
       },
-    },
-    onarimon: {
-      name: "Onarimon",
-      name_ja: "御成門",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 60,
-        labelPlacement: "bottom-right",
+      akasakaMitsuke: {
+        name: "Akasaka-mitsuke",
       },
-    },
-    uchisaiwaicho: {
-      name: "Uchisaiwaicho",
-      name_ja: "内幸町",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 60,
-        labelPlacement: "bottom-right",
+      tameikeSanno: {
+        name: "Tameike-sanno",
       },
-    },
-    hibiya_mita: {
-      name: "Hibiya",
-      name_ja: "日比谷",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 60,
-        labelPlacement: "bottom-right",
+      toranomon: {
+        name: "Toranomon",
       },
-    },
-    otemachi_mita: {
-      name: "Otemachi",
-      name_ja: "大手町",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 60,
-        labelPlacement: "bottom-right",
+      shinbashi: {
+        name: "Shimbashi",
       },
-    },
-    jimbocho_mita: {
-      name: "Jimbocho",
-      name_ja: "神保町",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 60,
-        labelPlacement: "bottom-right",
+      ginza: {
+        name: "Ginza",
       },
-    },
-    suidobashi: {
-      name: "Suidobashi",
-      name_ja: "水道橋",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 60,
-        labelPlacement: "bottom-right",
+      kyobashi: {
+        name: "Kyobashi",
       },
-    },
-    kasuga_mita: {
-      name: "Kasuga",
-      name_ja: "春日",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 60,
-        labelPlacement: "bottom-right",
+      nihombashi: {
+        name: "Nihombashi",
       },
-    },
-    hakusan: {
-      name: "Hakusan",
-      name_ja: "白山",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 60,
-        labelPlacement: "bottom-right",
+      mitsukoshimae: {
+        name: "Mitsukoshimae",
       },
-    },
-    sengoku: {
-      name: "Sengoku",
-      name_ja: "千石",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 60,
-        labelPlacement: "bottom-right",
+      kandasudacho: {
+        name: "Kanda",
       },
-    },
-    sugamo: {
-      name: "Sugamo",
-      name_ja: "巣鴨",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 60,
-        labelPlacement: "bottom-right",
+      suehirocho: {
+        name: "Suehirocho",
       },
-    },
-    nishiSugamo: {
-      name: "Nishi-sugamo",
-      name_ja: "西巣鴨",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 60,
-        labelPlacement: "bottom-right",
+      uenoHirokoji: {
+        name: "Ueno-hirokoji",
       },
-    },
-    shinItabashi: {
-      name: "Shin-itabashi",
-      name_ja: "新板橋",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 60,
-        labelPlacement: "bottom-right",
+      ueno: {
+        name: "Ueno",
       },
-    },
-    itabashikuyakushomae: {
-      name: "Itabashikuyakushomae",
-      name_ja: "板橋区役所前",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 60,
-        labelPlacement: "bottom-right",
+      inaricho: {
+        name: "Inaricho",
       },
-    },
-    itabashihoncho: {
-      name: "Itabashihoncho",
-      name_ja: "板橋本町",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 60,
-        labelPlacement: "bottom-right",
+      tawaramachi: {
+        name: "Tawaramachi",
       },
-    },
-    motohasunuma: {
-      name: "Motohasunuma",
-      name_ja: "本蓮沼",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 60,
-        labelPlacement: "bottom-right",
+      asakusa: {
+        name: "Asakusa",
       },
     },
-    shimuraSakaue: {
-      name: "Shimura-sakaue",
-      name_ja: "志村坂上",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 60,
-        labelPlacement: "bottom-right",
+    marounouchiLine: {
+      color: "#e60012",
+      ogikubo: {
+        name: "Ogikubo",
       },
-    },
-    shimuraSanchome: {
-      name: "Shimura-sanchome",
-      name_ja: "志村三丁目",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 60,
-        labelPlacement: "bottom-right",
+      minamiAsagaya: {
+        name: "Minami-asagaya",
       },
-    },
-    hasune: {
-      name: "Hasune",
-      name_ja: "蓮根",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 60,
-        labelPlacement: "bottom-right",
+      shinyukashima: {
+        name: "Shin-koenji",
       },
-    },
-    nishidai: {
-      name: "Nishidai",
-      name_ja: "西台",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 60,
-        labelPlacement: "bottom-right",
+      higashiKoenji: {
+        name: "Higashi-koenji",
       },
-    },
-    takashimadaira: {
-      name: "Takashimadaira",
-      name_ja: "高島平",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 60,
-        labelPlacement: "bottom-right",
+      shinNakano: {
+        name: "Shin-nakano",
       },
-    },
-    shinTakashimadaira: {
-      name: "Shin-takashimadaira",
-      name_ja: "新高島平",
-      connector: {
-        color: "#0079c2",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 60,
-        labelPlacement: "bottom-right",
+      nakanoSakaue: {
+        name: "Nakano-sakaue",
       },
-    },
-    nishiTakashimadaira: {
-      name: "Nishi-takashimadaira",
-      name_ja: "西高島平",
-      connector: {
-        color: "#0079c2",
-        left: true,
-        station: true,
-        x: 1560,
-        y: 60,
-        labelPlacement: "bottom-right",
+      nishiShinjuku: {
+        name: "Nishi-shinjuku",
       },
-    },
-
-    // Shinjuku Line (Shinjuku - Motoyawata)
-    shinjuku_shinjuku: {
-      name: "Shinjuku",
-      name_ja: "新宿",
-      connector: {
-        color: "#6cbb5a",
-        right: true,
-        station: true,
-        x: 0,
-        y: 120,
+      shinjuku: {
+        name: "Shinjuku",
       },
-    },
-    shinjukuSanchome_shinjuku: {
-      name: "Shinjuku-sanchome",
-      name_ja: "新宿三丁目",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 120,
+      shinjukuSanchome: {
+        name: "Shinjuku-sanchome",
       },
-    },
-    akebonobashi: {
-      name: "Akebonobashi",
-      name_ja: "曙橋",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 120,
+      shinjukuGyoemmae: {
+        name: "Shinjuku-gyoemmae",
       },
-    },
-    ichigaya_shinjuku: {
-      name: "Ichigaya",
-      name_ja: "市ヶ谷",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 120,
+      yotsuya: {
+        name: "Yotsuya",
       },
-    },
-    kudanshita_shinjuku: {
-      name: "Kudanshita",
-      name_ja: "九段下",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 120,
+      yotsuyaSanchome: {
+        name: "Yotsuya-sanchome",
       },
-    },
-    jimbocho_shinjuku: {
-      name: "Jimbocho",
-      name_ja: "神保町",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 120,
+      akasakaMitsuke: {
+        name: "Akasaka-mitsuke",
       },
-    },
-    ogawamachi: {
-      name: "Ogawamachi",
-      name_ja: "小川町",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 120,
+      kokkaigigidoMae: {
+        name: "Kokkai-gijido-mae",
+      },
+      kasumigaseki: {
+        name: "Kasumigaseki",
+      },
+      ginzaMarunouchi: {
+        name: "Ginza",
+      },
+      tokyoMarunouchi: {
+        name: "Tokyo",
       },
-    },
-    iwamotocho: {
-      name: "Iwamotocho",
-      name_ja: "岩本町",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 120,
+      otemachi: {
+        name: "Otemachi",
       },
-    },
-    bakuroYokoyama: {
-      name: "Bakuro-yokoyama",
-      name_ja: "馬喰横山",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 120,
+      awajicho: {
+        name: "Awajicho",
       },
-    },
-    hamacho: {
-      name: "Hamacho",
-      name_ja: "浜町",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 120,
+      ochanomizu: {
+        name: "Ochanomizu",
       },
-    },
-    morishita_shinjuku: {
-      name: "Morishita",
-      name_ja: "森下",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 120,
+      hongosanchome: {
+        name: "Hongo-sanchome",
       },
-    },
-    kikukawa: {
-      name: "Kikukawa",
-      name_ja: "菊川",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 120,
+      korakuen: {
+        name: "Korakuen",
       },
-    },
-    sumiyoshi_shinjuku: {
-      name: "Sumiyoshi",
-      name_ja: "住吉",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 120,
+      myogadani: {
+        name: "Myogadani",
       },
-    },
-    nishiOjima: {
-      name: "Nishi-ojima",
-      name_ja: "西大島",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 120,
+      shinsenkawa: {
+        name: "Shin-otsuka",
       },
-    },
-    ojima: {
-      name: "Ojima",
-      name_ja: "大島",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 120,
+      ikebukuro: {
+        name: "Ikebukuro",
       },
-    },
-    higashiOjima: {
-      name: "Higashi-ojima",
-      name_ja: "東大島",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 120,
+      nakanofujimicho: {
+        name: "Nakano-fujimicho",
       },
+      branches: [
+        {
+          branchedStation: "Nakano-fujimicho",
+          color: "#e60012",
+          stations: {
+            nakanoshimbashi: {
+              name: "Nakano-shimbashi",
+            },
+            nakanosakaue: {
+              name: "Nakano-sakaue",
+            },
+            nishishinjukuBranch: {
+              name: "Nishi-shinjuku",
+            },
+            shinjukuBranch: {
+              name: "Shinjuku",
+            },
+          },
+        },
+        {
+          branchedStation: "Nakano-fujimicho",
+          color: "#e60012",
+          stations: {
+            honancho: {
+              name: "Honancho",
+            },
+          },
+        },
+      ],
     },
-    funabori: {
-      name: "Funabori",
-      name_ja: "船堀",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 120,
+    hibiyaLine: {
+      color: "#9caeb7",
+      nakaMeguro: {
+        name: "Naka-meguro",
       },
-    },
-    ichinoe: {
-      name: "Ichinoe",
-      name_ja: "一之江",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 120,
+      ebisu: {
+        name: "Ebisu",
       },
-    },
-    mizue: {
-      name: "Mizue",
-      name_ja: "瑞江",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 120,
+      hiroo: {
+        name: "Hiroo",
       },
-    },
-    shinozaki: {
-      name: "Shinozaki",
-      name_ja: "篠崎",
-      connector: {
-        color: "#6cbb5a",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 120,
+      roppongi: {
+        name: "Roppongi",
       },
-    },
-    motoyawata: {
-      name: "Motoyawata",
-      name_ja: "本八幡",
-      connector: {
-        color: "#6cbb5a",
-        left: true,
-        station: true,
-        x: 1200,
-        y: 120,
+      kamiyacho: {
+        name: "Kamiyacho",
       },
-    },
-
-    // Oedo Line (Tochomae - Hikarigaoka) - circular line
-    tochomae_oedo: {
-      name: "Tochomae",
-      name_ja: "都庁前",
-      connector: {
-        color: "#8b008b",
-        right: true,
-        station: true,
-        x: 0,
-        y: 180,
-        labelPlacement: "bottom-right",
+      kasumigasekiHibiya: {
+        name: "Kasumigaseki",
       },
-    },
-    shinjukuNishiguchi: {
-      name: "Shinjuku-nishiguchi",
-      name_ja: "新宿西口",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 180,
-        labelPlacement: "bottom-right",
+      hibiya: {
+        name: "Hibiya",
       },
-    },
-    higashiShinjuku_oedo: {
-      name: "Higashi-shinjuku",
-      name_ja: "東新宿",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 180,
-        labelPlacement: "bottom-right",
+      ginzaHibiya: {
+        name: "Ginza",
       },
-    },
-    wakamatsuKawada: {
-      name: "Wakamatsu-kawada",
-      name_ja: "若松河田",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 180,
-        labelPlacement: "bottom-right",
+      higashiGinza: {
+        name: "Higashi-ginza",
       },
-    },
-    ushigomeYanagicho: {
-      name: "Ushigome-yanagicho",
-      name_ja: "牛込柳町",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 180,
-        labelPlacement: "bottom-right",
+      tsukiji: {
+        name: "Tsukiji",
       },
-    },
-    ushigomeKagurazaka: {
-      name: "Ushigome-kagurazaka",
-      name_ja: "牛込神楽坂",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 180,
-        labelPlacement: "bottom-right",
+      hatchobori: {
+        name: "Hatchobori",
       },
-    },
-    iidabashi_oedo: {
-      name: "Iidabashi",
-      name_ja: "飯田橋",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 180,
-        labelPlacement: "bottom-right",
+      kayabacho: {
+        name: "Kayabacho",
       },
-    },
-    kasuga_oedo: {
-      name: "Kasuga",
-      name_ja: "春日",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 180,
-        labelPlacement: "bottom-right",
+      ningyocho: {
+        name: "Ningyocho",
       },
-    },
-    hongoSanchome_oedo: {
-      name: "Hongo-sanchome",
-      name_ja: "本郷三丁目",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 180,
-        labelPlacement: "bottom-right",
+      kodenmacho: {
+        name: "Kodenmacho",
       },
-    },
-    uenoOkachimachi: {
-      name: "Ueno-okachimachi",
-      name_ja: "上野御徒町",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 180,
-        labelPlacement: "bottom-right",
+      akihabara: {
+        name: "Akihabara",
       },
-    },
-    shinOkachimachi: {
-      name: "Shin-okachimachi",
-      name_ja: "新御徒町",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 180,
-        labelPlacement: "bottom-right",
+      nakaOkachimachi: {
+        name: "Naka-okachimachi",
       },
-    },
-    kuramae_oedo: {
-      name: "Kuramae",
-      name_ja: "蔵前",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 180,
-        labelPlacement: "bottom-right",
+      uenoHibiya: {
+        name: "Ueno",
       },
-    },
-    ryogoku: {
-      name: "Ryogoku",
-      name_ja: "両国",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 180,
-        labelPlacement: "bottom-right",
+      iriya: {
+        name: "Iriya",
       },
-    },
-    morishita_oedo: {
-      name: "Morishita",
-      name_ja: "森下",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 180,
-        labelPlacement: "bottom-right",
+      minowa: {
+        name: "Minowa",
       },
-    },
-    kiyosumiShirakawa_oedo: {
-      name: "Kiyosumi-shirakawa",
-      name_ja: "清澄白河",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 180,
-        labelPlacement: "bottom-right",
+      minamiSenju: {
+        name: "Minami-senju",
       },
-    },
-    monzenNakacho_oedo: {
-      name: "Monzen-Nakacho",
-      name_ja: "門前仲町",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 180,
-        labelPlacement: "bottom-right",
+      kitaSenju: {
+        name: "Kita-senju",
       },
     },
-    tsukishima_oedo: {
-      name: "Tsukishima",
-      name_ja: "月島",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 180,
-        labelPlacement: "bottom-right",
+    tozaiLine: {
+      color: "#00a7db",
+      nakano: {
+        name: "Nakano",
       },
-    },
-    kachidoki: {
-      name: "Kachidoki",
-      name_ja: "勝どき",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 180,
-        labelPlacement: "bottom-right",
+      ochiai: {
+        name: "Ochiai",
       },
-    },
-    tsukijishijo: {
-      name: "Tsukijishijo",
-      name_ja: "築地市場",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 180,
-        labelPlacement: "bottom-right",
+      takadanobaba: {
+        name: "Takadanobaba",
       },
-    },
-    shiodome: {
-      name: "Shiodome",
-      name_ja: "汐留",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 180,
-        labelPlacement: "bottom-right",
+      waseda: {
+        name: "Waseda",
       },
-    },
-    daimon_oedo: {
-      name: "Daimon",
-      name_ja: "大門",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 180,
-        labelPlacement: "bottom-right",
+      kagurazaka: {
+        name: "Kagurazaka",
       },
-    },
-    akabanebashi: {
-      name: "Akabanebashi",
-      name_ja: "赤羽橋",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 180,
-        labelPlacement: "bottom-right",
+      iidabashi: {
+        name: "Iidabashi",
       },
-    },
-    azabuJuban_oedo: {
-      name: "Azabu-juban",
-      name_ja: "麻布十番",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 180,
-        labelPlacement: "bottom-right",
+      kudanshita: {
+        name: "Kudanshita",
       },
-    },
-    roppongi_oedo: {
-      name: "Roppongi",
-      name_ja: "六本木",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 180,
-        labelPlacement: "bottom-right",
+      takebashi: {
+        name: "Takebashi",
       },
-    },
-    aoyamaItchome_oedo: {
-      name: "Aoyama-itchome",
-      name_ja: "青山一丁目",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 180,
-        labelPlacement: "bottom-right",
+      otemachiTozai: {
+        name: "Otemachi",
       },
-    },
-    kokuritsuKyogijo: {
-      name: "Kokuritsu-kyogijo",
-      name_ja: "国立競技場",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 180,
-        labelPlacement: "bottom-right",
+      nihombashiTozai: {
+        name: "Nihombashi",
       },
-    },
-    yoyogi_oedo: {
-      name: "Yoyogi",
-      name_ja: "代々木",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1560,
-        y: 180,
-        labelPlacement: "bottom-right",
+      kayabachoTozai: {
+        name: "Kayabacho",
       },
-    },
-    shinjuku_oedo: {
-      name: "Shinjuku",
-      name_ja: "新宿",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1620,
-        y: 180,
-        labelPlacement: "bottom-right",
+      monzennakacho: {
+        name: "Monzen-nakacho",
       },
-    },
-    nishiShinjukuGochome: {
-      name: "Nishi-shinjuku-gochome",
-      name_ja: "西新宿五丁目",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1680,
-        y: 180,
-        labelPlacement: "bottom-right",
+      kiba: {
+        name: "Kiba",
       },
-    },
-    nakanoSakaue_oedo: {
-      name: "Nakano-sakaue",
-      name_ja: "中野坂上",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1740,
-        y: 180,
-        labelPlacement: "bottom-right",
+      toyocho: {
+        name: "Toyocho",
       },
-    },
-    higashiNakano: {
-      name: "Higashi-nakano",
-      name_ja: "東中野",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1800,
-        y: 180,
-        labelPlacement: "bottom-right",
+      minamiSunamachi: {
+        name: "Minami-sunamachi",
       },
-    },
-    nakai: {
-      name: "Nakai",
-      name_ja: "中井",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1860,
-        y: 180,
-        labelPlacement: "bottom-right",
+      nishikasai: {
+        name: "Nishi-kasai",
       },
-    },
-    ochiaiMinamiNagasaki: {
-      name: "Ochiai-minami-nagasaki",
-      name_ja: "落合南長崎",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1920,
-        y: 180,
-        labelPlacement: "bottom-right",
+      kasai: {
+        name: "Kasai",
       },
-    },
-    shinEgota: {
-      name: "Shin-egota",
-      name_ja: "新江古田",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 1980,
-        y: 180,
-        labelPlacement: "bottom-right",
+      urayasu: {
+        name: "Urayasu",
       },
-    },
-    nerima_oedo: {
-      name: "Nerima",
-      name_ja: "練馬",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 2040,
-        y: 180,
-        labelPlacement: "bottom-right",
+      minamígyotoku: {
+        name: "Minami-gyotoku",
       },
-    },
-    toshimaen: {
-      name: "Toshimaen",
-      name_ja: "豊島園",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 2100,
-        y: 180,
-        labelPlacement: "bottom-right",
+      gyotoku: {
+        name: "Gyotoku",
       },
-    },
-    nerimaKasugacho: {
-      name: "Nerima-kasugacho",
-      name_ja: "練馬春日町",
-      connector: {
-        color: "#8b008b",
-        horizontal: true,
-        station: true,
-        x: 2160,
-        y: 180,
-        labelPlacement: "bottom-right",
+      myoden: {
+        name: "Myoden",
       },
-    },
-    hikarigaoka: {
-      name: "Hikarigaoka",
-      name_ja: "光が丘",
-      connector: {
-        color: "#8b008b",
-        left: true,
-        station: true,
-        x: 2220,
-        y: 180,
-        labelPlacement: "bottom-right",
+      barakiNakayama: {
+        name: "Baraki-nakayama",
       },
-    },
-
-    // Rinkai Line (Shin-Kiba - Osaki)
-    shinKiba_rinkai: {
-      name: "Shin-Kiba",
-      name_ja: "新木場",
-      connector: {
-        color: "#00418e",
-        right: true,
-        station: true,
-        x: 0,
-        y: 240,
+      nishiFunabashi: {
+        name: "Nishi-funabashi",
       },
     },
-    shinonome: {
-      name: "Shinonome",
-      name_ja: "東雲",
-      connector: {
-        color: "#00418e",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 240,
+    chiyodaLine: {
+      color: "#00bb85",
+      yoyogiUehara: {
+        name: "Yoyogi-uehara",
       },
-    },
-    kokusaiTenjijo: {
-      name: "Kokusai-Tenjijo",
-      name_ja: "国際展示場",
-      connector: {
-        color: "#00418e",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 240,
+      yoyogiKoen: {
+        name: "Yoyogi-koen",
       },
-    },
-    tokyoTeleport: {
-      name: "Tokyo Teleport",
-      name_ja: "東京テレポート",
-      connector: {
-        color: "#00418e",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 240,
+      meijijingumae: {
+        name: "Meijijingumae Harajuku",
       },
-    },
-    tennozuIsle: {
-      name: "Tennozu Isle",
-      name_ja: "天王洲アイル",
-      connector: {
-        color: "#00418e",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 240,
+      omotesandoChiyoda: {
+        name: "Omotesando",
       },
-    },
-    shinagawaSeaside: {
-      name: "Shinagawa Seaside",
-      name_ja: "品川シーサイド",
-      connector: {
-        color: "#00418e",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 240,
+      nogizaka: {
+        name: "Nogizaka",
       },
-    },
-    oimachi: {
-      name: "Oimachi",
-      name_ja: "大井町",
-      connector: {
-        color: "#00418e",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 240,
+      akasakaChiyoda: {
+        name: "Akasaka",
       },
-    },
-    osaki: {
-      name: "Osaki",
-      name_ja: "大崎",
-      connector: {
-        color: "#00418e",
-        left: true,
-        station: true,
-        x: 420,
-        y: 240,
+      kokkaigigidomaeChiyoda: {
+        name: "Kokkai-gijido-mae",
       },
-    },
-
-    // Ginza Line (Shibuya - Asakusa)
-    shibuya_ginza: {
-      name: "Shibuya",
-      name_ja: "渋谷",
-      connector: {
-        color: "#f39700",
-        right: true,
-        station: true,
-        x: 0,
-        y: 300,
-        labelPlacement: "bottom-right",
+      kasumigasekiChiyoda: {
+        name: "Kasumigaseki",
       },
-    },
-    omotesando_ginza: {
-      name: "Omotesando",
-      name_ja: "表参道",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 300,
-        labelPlacement: "bottom-right",
+      hibiyaChiyoda: {
+        name: "Hibiya",
       },
-    },
-    gaiemmae: {
-      name: "Gaiemmae",
-      name_ja: "外苑前",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 300,
-        labelPlacement: "bottom-right",
+      nijubashimae: {
+        name: "Nijubashimae",
       },
-    },
-    aoyamaItchome_ginza: {
-      name: "Aoyama-itchome",
-      name_ja: "青山一丁目",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 300,
-        labelPlacement: "bottom-right",
+      otemachiChiyoda: {
+        name: "Otemachi",
       },
-    },
-    akasakaMitsuke_ginza: {
-      name: "Akasaka-Mitsuke",
-      name_ja: "赤坂見附",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 300,
-        labelPlacement: "bottom-right",
+      shintomicho: {
+        name: "Shin-ochanomizu",
       },
-    },
-    tameikeSanno_ginza: {
-      name: "Tameike-Sanno",
-      name_ja: "溜池山王",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 300,
-        labelPlacement: "bottom-right",
+      yushima: {
+        name: "Yushima",
       },
-    },
-    toranomon: {
-      name: "Toranomon",
-      name_ja: "虎ノ門",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 300,
-        labelPlacement: "bottom-right",
+      nezu: {
+        name: "Nezu",
       },
-    },
-    shimbashi_ginza: {
-      name: "Shimbashi",
-      name_ja: "新橋",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 300,
-        labelPlacement: "bottom-right",
+      sendagi: {
+        name: "Sendagi",
       },
-    },
-    ginza_ginza: {
-      name: "Ginza",
-      name_ja: "銀座",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 300,
-        labelPlacement: "bottom-right",
+      nishiNippori: {
+        name: "Nishi-nippori",
       },
-    },
-    kyobashi: {
-      name: "Kyobashi",
-      name_ja: "京橋",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 300,
-        labelPlacement: "bottom-right",
+      machiya: {
+        name: "Machiya",
       },
-    },
-    nihombashi_ginza: {
-      name: "Nihombashi",
-      name_ja: "日本橋",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 300,
-        labelPlacement: "bottom-right",
+      kitaSenjuChiyoda: {
+        name: "Kita-senju",
       },
-    },
-    mitsukoshimae_ginza: {
-      name: "Mitsukoshimae",
-      name_ja: "三越前",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 300,
-        labelPlacement: "bottom-right",
+      ayase: {
+        name: "Ayase",
       },
+      branches: [
+        {
+          branchedStation: "Ayase",
+          color: "#00bb85",
+          stations: {
+            kitaAyase: {
+              name: "Kita-ayase",
+            },
+          },
+        },
+      ],
     },
-    kanda: {
-      name: "Kanda",
-      name_ja: "神田",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 300,
-        labelPlacement: "bottom-right",
+    yurakuchoLine: {
+      color: "#c9af00",
+      wakoshi: {
+        name: "Wakoshi",
       },
-    },
-    suehirocho: {
-      name: "Suehirocho",
-      name_ja: "末広町",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 300,
-        labelPlacement: "bottom-right",
+      chikatetsuNarimasu: {
+        name: "Chikatetsu-narimasu",
       },
-    },
-    uenoHirokoji: {
-      name: "Ueno-Hirokoji",
-      name_ja: "上野広小路",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 300,
-        labelPlacement: "bottom-right",
+      chikatetsuAkaсuka: {
+        name: "Chikatetsu-akatsuka",
       },
-    },
-    ueno_ginza: {
-      name: "Ueno",
-      name_ja: "上野",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 300,
-        labelPlacement: "bottom-right",
+      heiwadai: {
+        name: "Heiwadai",
       },
-    },
-    inaricho: {
-      name: "Inaricho",
-      name_ja: "稲荷町",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 300,
-        labelPlacement: "bottom-right",
+      hikawadai: {
+        name: "Hikawadai",
       },
-    },
-    tawaramachi: {
-      name: "Tawaramachi",
-      name_ja: "田原町",
-      connector: {
-        color: "#f39700",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 300,
-        labelPlacement: "bottom-right",
+      kotakeMukaihara: {
+        name: "Kotake-mukaihara",
       },
-    },
-    asakusa_ginza: {
-      name: "Asakusa",
-      name_ja: "浅草",
-      connector: {
-        color: "#f39700",
-        left: true,
-        station: true,
-        x: 1080,
-        y: 300,
-        labelPlacement: "bottom-right",
+      senkawa: {
+        name: "Senkawa",
       },
-    },
-
-    // Marunouchi Line (Ogikubo - Ikebukuro)
-    ogikubo: {
-      name: "Ogikubo",
-      name_ja: "荻窪",
-      connector: {
-        color: "#e60012",
-        right: true,
-        station: true,
-        x: 0,
-        y: 360,
+      kanamecho: {
+        name: "Kanamecho",
       },
-    },
-    minamiAsagaya: {
-      name: "Minami-Asagaya",
-      name_ja: "南阿佐ヶ谷",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 360,
+      ikebukuroYurakucho: {
+        name: "Ikebukuro",
       },
-    },
-    shinKoenji: {
-      name: "Shin-Koenji",
-      name_ja: "新高円寺",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 360,
+      higashiIkebukuro: {
+        name: "Higashi-ikebukuro",
       },
-    },
-    higashiKoenji: {
-      name: "Higashi-Koenji",
-      name_ja: "東高円寺",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 360,
+      gokokuji: {
+        name: "Gokokuji",
       },
-    },
-    shinNakano: {
-      name: "Shin-Nakano",
-      name_ja: "新中野",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 360,
+      edogawabashi: {
+        name: "Edogawabashi",
       },
-    },
-    // DIVIDER
-    nakanoSakaue_marunouchi: {
-      name: "Nakano-sakaue",
-      name_ja: "中野坂上",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        bottom: true,
-        x: 300,
-        y: 360,
+      iidabashiYurakucho: {
+        name: "Iidabashi",
       },
-    },
-    nishiShinjuku: {
-      name: "Nishi-Shinjuku",
-      name_ja: "西新宿",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 360,
+      ichigaya: {
+        name: "Ichigaya",
       },
-    },
-    shinjuku_marunouchi: {
-      name: "Shinjuku",
-      name_ja: "新宿",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 360,
+      kojimachi: {
+        name: "Kojimachi",
       },
-    },
-    shinjukuSanchome_marunouchi: {
-      name: "Shinjuku-sanchome",
-      name_ja: "新宿三丁目",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 360,
+      nagatachoYurakucho: {
+        name: "Nagatacho",
       },
-    },
-    shinjukuGyoemmae: {
-      name: "Shinjuku-Gyoemmae",
-      name_ja: "新宿御苑前",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 360,
+      sakuradamon: {
+        name: "Sakuradamon",
       },
-    },
-    yotsuyaSanchome: {
-      name: "Yotsuya-Sanchome",
-      name_ja: "四谷三丁目",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 360,
+      yurakucho: {
+        name: "Yurakucho",
       },
-    },
-    yotsuya_marunouchi: {
-      name: "Yotsuya",
-      name_ja: "四ツ谷",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 360,
+      ginzaItchome: {
+        name: "Ginza-itchome",
       },
-    },
-    akasakaMitsuke_marunouchi: {
-      name: "Akasaka-Mitsuke",
-      name_ja: "赤坂見附",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 360,
+      shintomicho: {
+        name: "Shintomicho",
       },
-    },
-    kokkaiGijidoMae_marunouchi: {
-      name: "Kokkai-Gijido-mae",
-      name_ja: "国会議事堂前",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 360,
+      tsukishima: {
+        name: "Tsukishima",
       },
-    },
-    kasumigaseki_marunouchi: {
-      name: "Kasumigaseki",
-      name_ja: "霞ケ関",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 360,
+      toyosu: {
+        name: "Toyosu",
       },
-    },
-    ginza_marunouchi: {
-      name: "Ginza",
-      name_ja: "銀座",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 360,
+      tatsumi: {
+        name: "Tatsumi",
       },
-    },
-    tokyo: {
-      name: "Tokyo",
-      name_ja: "東京",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 360,
+      shinonome: {
+        name: "Shinonome",
       },
-    },
-    otemachi_marunouchi: {
-      name: "Otemachi",
-      name_ja: "大手町",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 360,
+      shinkiba: {
+        name: "Shin-kiba",
       },
     },
-    awajicho: {
-      name: "Awajicho",
-      name_ja: "淡路町",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 360,
+    hanzomonLine: {
+      color: "#8f76d6",
+      shibuyaHanzomon: {
+        name: "Shibuya",
       },
-    },
-    ochanomizu_marunouchi: {
-      name: "Ochanomizu",
-      name_ja: "御茶ノ水",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 360,
+      omotesandoHanzomon: {
+        name: "Omotesando",
       },
-    },
-    hongoSanchome_marunouchi: {
-      name: "Hongo-Sanchome",
-      name_ja: "本郷三丁目",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 360,
+      aoyamaItchomeHanzomon: {
+        name: "Aoyama-itchome",
       },
-    },
-    korakuen_marunouchi: {
-      name: "Korakuen",
-      name_ja: "後楽園",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 360,
+      nagatacho: {
+        name: "Nagatacho",
       },
-    },
-    myogadani: {
-      name: "Myogadani",
-      name_ja: "茗荷谷",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 360,
+      hanzomon: {
+        name: "Hanzomon",
       },
-    },
-    shinOtsuka: {
-      name: "Shin-Otsuka",
-      name_ja: "新大塚",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 360,
+      kudanshitaHanzomon: {
+        name: "Kudanshita",
       },
-    },
-    ikebukuro_marunouchi: {
-      name: "Ikebukuro",
-      name_ja: "池袋",
-      connector: {
-        color: "#e60012",
-        left: true,
-        station: true,
-        x: 1440,
-        y: 360,
+      jimbocho: {
+        name: "Jimbocho",
       },
-    },
-
-    // Marunouchi Branch Line (Honancho - Nakano-Sakaue)
-    honancho: {
-      name: "Honancho",
-      name_ja: "方南町",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 420,
-        labelPlacement: "bottom-right",
+      otemachiHanzomon: {
+        name: "Otemachi",
       },
-    },
-    nakanoFujimicho: {
-      name: "Nakano-Fujimicho",
-      name_ja: "中野富士見町",
-      connector: {
-        color: "#e60012",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 420,
-        labelPlacement: "bottom-right",
+      mitsukoshimaeHanzomon: {
+        name: "Mitsukoshimae",
       },
-    },
-    nakanoShimbashi: {
-      name: "Nakano-Shimbashi",
-      name_ja: "中野新橋",
-      connector: {
-        color: "#e60012",
-        right: true,
-        station: true,
-        x: 120,
-        y: 420,
-        labelPlacement: "bottom-right",
+      suitengumae: {
+        name: "Suitengumae",
       },
-    },
-
-    // Hibiya Line (Naka-meguro - Kita-senju)
-    nakaMeguro: {
-      name: "Naka-meguro",
-      name_ja: "中目黒",
-      connector: {
-        color: "#778899",
-        right: true,
-        station: true,
-        x: 0,
-        y: 480,
+      kiyosumiShirakawa: {
+        name: "Kiyosumi-shirakawa",
       },
-    },
-    ebisu: {
-      name: "Ebisu",
-      name_ja: "恵比寿",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 480,
+      sumiyoshi: {
+        name: "Sumiyoshi",
       },
-    },
-    hiroo: {
-      name: "Hiroo",
-      name_ja: "広尾",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 480,
+      kinshicho: {
+        name: "Kinshicho",
       },
-    },
-    roppongi_hibiya: {
-      name: "Roppongi",
-      name_ja: "六本木",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 480,
+      oshiage: {
+        name: "Oshiage",
       },
     },
-    kamiyacho: {
-      name: "Kamiyacho",
-      name_ja: "神谷町",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 480,
+    nambokuLine: {
+      color: "#00ac9b",
+      meguro: {
+        name: "Meguro",
       },
-    },
-    kasumigaseki_hibiya: {
-      name: "Kasumigaseki",
-      name_ja: "霞ケ関",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 480,
+      shirokanedai: {
+        name: "Shirokanedai",
       },
-    },
-    hibiya_hibiya: {
-      name: "Hibiya",
-      name_ja: "日比谷",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 480,
+      shirokaneTakanawa: {
+        name: "Shirokane-takanawa",
       },
-    },
-    ginza_hibiya: {
-      name: "Ginza",
-      name_ja: "銀座",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 480,
+      azabuJuban: {
+        name: "Azabu-juban",
       },
-    },
-    higashiGinza_hibiya: {
-      name: "Higashi-ginza",
-      name_ja: "東銀座",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 480,
+      roppongіItchome: {
+        name: "Roppongi-itchome",
       },
-    },
-    tsukiji: {
-      name: "Tsukiji",
-      name_ja: "築地",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 480,
+      tameikeSannoNamboku: {
+        name: "Tameike-sanno",
       },
-    },
-    hatchobori: {
-      name: "Hatchobori",
-      name_ja: "八丁堀",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 480,
+      nagatachoNamboku: {
+        name: "Nagatacho",
       },
-    },
-    kayabacho_hibiya: {
-      name: "Kayabacho",
-      name_ja: "茅場町",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 480,
+      yotsuyaNamboku: {
+        name: "Yotsuya",
       },
-    },
-    ningyocho_hibiya: {
-      name: "Ningyocho",
-      name_ja: "人形町",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 480,
+      ichigayaNamboku: {
+        name: "Ichigaya",
       },
-    },
-    kodemmacho: {
-      name: "Kodemmacho",
-      name_ja: "小伝馬町",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 480,
+      iidabashiNamboku: {
+        name: "Iidabashi",
       },
-    },
-    akihabara: {
-      name: "Akihabara",
-      name_ja: "秋葉原",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 480,
+      korakuenNamboku: {
+        name: "Korakuen",
       },
-    },
-    nakaOkachimachi: {
-      name: "Naka-okachimachi",
-      name_ja: "仲御徒町",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 480,
+      todaimae: {
+        name: "Todaimae",
       },
-    },
-    ueno_hibiya: {
-      name: "Ueno",
-      name_ja: "上野",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 480,
+      honKomagome: {
+        name: "Hon-komagome",
       },
-    },
-    iriya: {
-      name: "Iriya",
-      name_ja: "入谷",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 480,
+      komagome: {
+        name: "Komagome",
       },
-    },
-    minowa: {
-      name: "Minowa",
-      name_ja: "三ノ輪",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 480,
+      nishigahara: {
+        name: "Nishigahara",
       },
-    },
-    minamiSenju: {
-      name: "Minami-senju",
-      name_ja: "南千住",
-      connector: {
-        color: "#778899",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 480,
+      ojikamiya: {
+        name: "Oji-kamiya",
       },
-    },
-    kitaSenju_hibiya: {
-      name: "Kita-senju",
-      name_ja: "北千住",
-      connector: {
-        color: "#778899",
-        left: true,
-        station: true,
-        x: 1200,
-        y: 480,
+      oji: {
+        name: "Oji",
       },
-    },
-
-    // Tozai Line (Nakano - Nishi-Funabashi)
-    nakano_tozai: {
-      name: "Nakano",
-      name_ja: "中野",
-      connector: {
-        color: "#00a7db",
-        right: true,
-        station: true,
-        x: 0,
-        y: 540,
-        labelPlacement: "bottom-right",
+      shimo: {
+        name: "Shimo",
       },
-    },
-    ochiai: {
-      name: "Ochiai",
-      name_ja: "落合",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 540,
-        labelPlacement: "bottom-right",
+      akabaneIwabuchi: {
+        name: "Akabane-iwabuchi",
       },
     },
-    takadanobaba: {
-      name: "Takadanobaba",
-      name_ja: "高田馬場",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 540,
-        labelPlacement: "bottom-right",
+    fukutoshinLine: {
+      color: "#bb641d",
+      wakoshiFukutoshin: {
+        name: "Wakoshi",
       },
-    },
-    waseda: {
-      name: "Waseda",
-      name_ja: "早稲田",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 540,
-        labelPlacement: "bottom-right",
+      chikatetsuNarimasuFukutoshin: {
+        name: "Chikatetsu-narimasu",
       },
-    },
-    kagurazaka: {
-      name: "Kagurazaka",
-      name_ja: "神楽坂",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 540,
-        labelPlacement: "bottom-right",
+      chikatetsuAkatsukaFukutoshin: {
+        name: "Chikatetsu-akatsuka",
       },
-    },
-    iidabashi_tozai: {
-      name: "Iidabashi",
-      name_ja: "飯田橋",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 540,
-        labelPlacement: "bottom-right",
+      heiwadaiFukutoshin: {
+        name: "Heiwadai",
       },
-    },
-    kudanshita_tozai: {
-      name: "Kudanshita",
-      name_ja: "九段下",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 540,
-        labelPlacement: "bottom-right",
+      hikawadaiFukutoshin: {
+        name: "Hikawadai",
       },
-    },
-    takebashi: {
-      name: "Takebashi",
-      name_ja: "竹橋",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 540,
-        labelPlacement: "bottom-right",
+      kotakeMukaiharaFukutoshin: {
+        name: "Kotake-mukaihara",
       },
-    },
-    otemachi_tozai: {
-      name: "Otemachi",
-      name_ja: "大手町",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 540,
-        labelPlacement: "bottom-right",
+      senkawaFukutoshin: {
+        name: "Senkawa",
       },
-    },
-    nihombashi_tozai: {
-      name: "Nihombashi",
-      name_ja: "日本橋",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 540,
-        labelPlacement: "bottom-right",
+      kanamechoFukutoshin: {
+        name: "Kanamecho",
       },
-    },
-    kayabacho_tozai: {
-      name: "Kayabacho",
-      name_ja: "茅場町",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 540,
-        labelPlacement: "bottom-right",
+      ikebukuroFukutoshin: {
+        name: "Ikebukuro",
       },
-    },
-    monzenNakacho_tozai: {
-      name: "Monzen-Nakacho",
-      name_ja: "門前仲町",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 540,
-        labelPlacement: "bottom-right",
+      zoshigaya: {
+        name: "Zoshigaya",
       },
-    },
-    kiba: {
-      name: "Kiba",
-      name_ja: "木場",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 540,
-        labelPlacement: "bottom-right",
+      nishiwaseda: {
+        name: "Nishi-waseda",
       },
-    },
-    toyocho: {
-      name: "Toyocho",
-      name_ja: "東陽町",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 540,
-        labelPlacement: "bottom-right",
+      higashishinjuku: {
+        name: "Higashi-shinjuku",
       },
-    },
-    minamiSunamachi: {
-      name: "Minami-Sunamachi",
-      name_ja: "南砂町",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 540,
-        labelPlacement: "bottom-right",
+      shinjukuSanchomeFukutoshin: {
+        name: "Shinjuku-sanchome",
       },
-    },
-    nishiKasai: {
-      name: "Nishi-Kasai",
-      name_ja: "西葛西",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 540,
-        labelPlacement: "bottom-right",
+      kitaSando: {
+        name: "Kita-sando",
       },
-    },
-    kasai: {
-      name: "Kasai",
-      name_ja: "葛西",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 540,
-        labelPlacement: "bottom-right",
+      meijijingumaeFukutoshin: {
+        name: "Meijijingumae Harajuku",
       },
-    },
-    urayasu: {
-      name: "Urayasu",
-      name_ja: "浦安",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 540,
-        labelPlacement: "bottom-right",
+      shibuyaFukutoshin: {
+        name: "Shibuya",
       },
     },
-    minamiGyotoku: {
-      name: "Minami-Gyotoku",
-      name_ja: "南行徳",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 540,
-        labelPlacement: "bottom-right",
+    toeiAsakusaLine: {
+      color: "#e85298",
+      nishiMagome: {
+        name: "Nishi-magome",
       },
-    },
-    gyotoku: {
-      name: "Gyotoku",
-      name_ja: "行徳",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 540,
-        labelPlacement: "bottom-right",
+      magome: {
+        name: "Magome",
       },
-    },
-    myoden: {
-      name: "Myoden",
-      name_ja: "妙典",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 540,
-        labelPlacement: "bottom-right",
+      nakanobu: {
+        name: "Nakanobu",
       },
-    },
-    barakiNakayama: {
-      name: "Baraki-Nakayama",
-      name_ja: "原木中山",
-      connector: {
-        color: "#00a7db",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 540,
-        labelPlacement: "bottom-right",
+      togoshiGinza: {
+        name: "Togoshi-ginza",
       },
-    },
-    nishiFunabashi: {
-      name: "Nishi-Funabashi",
-      name_ja: "西船橋",
-      connector: {
-        color: "#00a7db",
-        left: true,
-        station: true,
-        x: 1320,
-        y: 540,
-        labelPlacement: "bottom-right",
+      gotanda: {
+        name: "Gotanda",
       },
-    },
-
-    // Chiyoda Line (Yoyogi-uehara - Ayase)
-    yoyogiUehara: {
-      name: "Yoyogi-uehara",
-      name_ja: "代々木上原",
-      connector: {
-        color: "#1f8651",
-        left: true,
-        station: true,
-        x: 1140,
-        y: 600,
+      takanawadai: {
+        name: "Takanawadai",
       },
-    },
-    yoyogiKoen: {
-      name: "Yoyogi-koen",
-      name_ja: "代々木公園",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 600,
+      sengakuji: {
+        name: "Sengakuji",
       },
-    },
-    meijiJingumae_chiyoda: {
-      name: "Meiji-jingumae",
-      name_ja: "明治神宮前",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 600,
+      mita: {
+        name: "Mita",
       },
-    },
-    omotesando_chiyoda: {
-      name: "Omotesando",
-      name_ja: "表参道",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 600,
+      daimon: {
+        name: "Daimon",
       },
-    },
-    nogizaka: {
-      name: "Nogizaka",
-      name_ja: "乃木坂",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 600,
+      shimbashiAsakusa: {
+        name: "Shimbashi",
       },
-    },
-    akasaka: {
-      name: "Akasaka",
-      name_ja: "赤坂",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 600,
+      higashiGinzaAsakusa: {
+        name: "Higashi-ginza",
       },
-    },
-    kokkaiGijidoMae_chiyoda: {
-      name: "Kokkai-Gijido-mae",
-      name_ja: "国会議事堂前",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 600,
+      takaracho: {
+        name: "Takaracho",
       },
-    },
-    kasumigaseki_chiyoda: {
-      name: "Kasumigaseki",
-      name_ja: "霞ケ関",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 600,
+      nihombashiAsakusa: {
+        name: "Nihombashi",
       },
-    },
-    hibiya_chiyoda: {
-      name: "Hibiya",
-      name_ja: "日比谷",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 600,
+      ningyochoAsakusa: {
+        name: "Ningyocho",
       },
-    },
-    nijubashimae: {
-      name: "Nijubashimae",
-      name_ja: "二重橋前",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 600,
+      higashiNihombashi: {
+        name: "Higashi-nihombashi",
       },
-    },
-    otemachi_chiyoda: {
-      name: "Otemachi",
-      name_ja: "大手町",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 600,
+      asakusabashi: {
+        name: "Asakusabashi",
       },
-    },
-    shinOchanomizu: {
-      name: "Shin-ochanomizu",
-      name_ja: "新御茶ノ水",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 600,
+      kuramaeAsakusa: {
+        name: "Kuramae",
       },
-    },
-    yushima: {
-      name: "Yushima",
-      name_ja: "湯島",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 600,
+      asakusaToei: {
+        name: "Asakusa",
       },
-    },
-    nezu: {
-      name: "Nezu",
-      name_ja: "根津",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 600,
+      honjoAzumabashi: {
+        name: "Honjo-azumabashi",
       },
-    },
-    sendagi: {
-      name: "Sendagi",
-      name_ja: "千駄木",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 600,
+      oshiageToei: {
+        name: "Oshiage",
       },
     },
-    nishiNippori: {
-      name: "Nishi-nippori",
-      name_ja: "西日暮里",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 600,
+    toeiMitaLine: {
+      color: "#0079c2",
+      meguroToei: {
+        name: "Meguro",
       },
-    },
-    machiya: {
-      name: "Machiya",
-      name_ja: "町屋",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 600,
+      shirokanedaiToei: {
+        name: "Shirokanedai",
       },
-    },
-    kitaSenju_chiyoda: {
-      name: "Kita-senju",
-      name_ja: "北千住",
-      connector: {
-        color: "#1f8651",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 600,
+      shirokaneTakanawaToei: {
+        name: "Shirokane-takanawa",
       },
-    },
-    ayase_chiyoda: {
-      name: "Ayase",
-      name_ja: "綾瀬",
-      connector: {
-        color: "#1f8651",
-        right: true,
-        bottom: true,
-        station: true,
-        x: 60,
-        y: 600,
+      mitaToei: {
+        name: "Mita",
       },
-    },
-
-    // Chiyoda Line Branch (Ayase - Kita-ayase)
-    kitaAyase: {
-      name: "Kita-ayase",
-      name_ja: "北綾瀬",
-      connector: {
-        color: "#1f8651",
-        right: true,
-        station: true,
-        x: 0,
-        y: 660,
+      shibakoеn: {
+        name: "Shibakoen",
       },
-    },
-
-    // Yurakucho Line (Wakoshi - Shin-kiba)
-    wakoshi_yurakucho: {
-      name: "Wakoshi",
-      name_ja: "和光市",
-      connector: {
-        color: "#d0a534",
-        right: true,
-        station: true,
-        x: 0,
-        y: 720,
+      onarimon: {
+        name: "Onarimon",
       },
-    },
-    chikatetsuNarimasu_yurakucho: {
-      name: "Chikatetsu-narimasu",
-      name_ja: "地下鉄成増",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 720,
+      uchisaiwaicho: {
+        name: "Uchisaiwaicho",
       },
-    },
-    chikatetsuAkatsuka_yurakucho: {
-      name: "Chikatetsu-akatsuka",
-      name_ja: "地下鉄赤塚",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 720,
+      hibiyaToei: {
+        name: "Hibiya",
       },
-    },
-    heiwadai_yurakucho: {
-      name: "Heiwadai",
-      name_ja: "平和台",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 720,
+      otemachiToei: {
+        name: "Otemachi",
       },
-    },
-    hikawadai_yurakucho: {
-      name: "Hikawadai",
-      name_ja: "氷川台",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 720,
+      jimbochoToei: {
+        name: "Jimbocho",
       },
-    },
-    kotakeMukaihara_yurakucho: {
-      name: "Kotake-mukaihara",
-      name_ja: "小竹向原",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 720,
+      kasuga: {
+        name: "Kasuga",
       },
-    },
-    senkawa_yurakucho: {
-      name: "Senkawa",
-      name_ja: "千川",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 720,
+      hakusan: {
+        name: "Hakusan",
       },
-    },
-    kanamecho_yurakucho: {
-      name: "Kanamecho",
-      name_ja: "要町",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 720,
+      sengoku: {
+        name: "Sengoku",
       },
-    },
-    ikebukuro_yurakucho: {
-      name: "Ikebukuro",
-      name_ja: "池袋",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 720,
+      sugamo: {
+        name: "Sugamo",
       },
-    },
-    higashiIkebukuro: {
-      name: "Higashi-ikebukuro",
-      name_ja: "東池袋",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 720,
+      nishiSugamo: {
+        name: "Nishi-sugamo",
       },
-    },
-    gokokuji: {
-      name: "Gokokuji",
-      name_ja: "護国寺",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 720,
+      shinItabashi: {
+        name: "Shin-itabashi",
       },
-    },
-    edogawabashi: {
-      name: "Edogawabashi",
-      name_ja: "江戸川橋",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 720,
+      itabashikuyakushomae: {
+        name: "Itabashi-kuyakushomae",
       },
-    },
-    iidabashi_yurakucho: {
-      name: "Iidabashi",
-      name_ja: "飯田橋",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 720,
+      itabashihoncho: {
+        name: "Itabashi-honcho",
       },
-    },
-    ichigaya_yurakucho: {
-      name: "Ichigaya",
-      name_ja: "市ヶ谷",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 720,
+      motohаsunuma: {
+        name: "Motohasunuma",
       },
-    },
-    kojimachi: {
-      name: "Kojimachi",
-      name_ja: "麹町",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 720,
+      shimuraSakaue: {
+        name: "Shimura-sakaue",
       },
-    },
-    nagatacho_yurakucho: {
-      name: "Nagatacho",
-      name_ja: "永田町",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 720,
+      shimuraSanchome: {
+        name: "Shimura-sanchome",
       },
-    },
-    sakuradamon: {
-      name: "Sakuradamon",
-      name_ja: "桜田門",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 720,
+      hasune: {
+        name: "Hasune",
       },
-    },
-    yurakucho: {
-      name: "Yurakucho",
-      name_ja: "有楽町",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 720,
+      takashimadaira: {
+        name: "Takashimadaira",
       },
-    },
-    ginzaItchome: {
-      name: "Ginza-itchome",
-      name_ja: "銀座一丁目",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 720,
+      nishitakashimadaira: {
+        name: "Nishi-takashimadaira",
       },
-    },
-    shintomicho: {
-      name: "Shintomicho",
-      name_ja: "新富町",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 720,
+      shinTakashimadaira: {
+        name: "Shin-takashimadaira",
       },
     },
-    tsukishima_yurakucho: {
-      name: "Tsukishima",
-      name_ja: "月島",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 720,
+    toeiShinjukuLine: {
+      color: "#6cbb5a",
+      shinjukuToei: {
+        name: "Shinjuku",
       },
-    },
-    toyosu: {
-      name: "Toyosu",
-      name_ja: "豊洲",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 720,
+      shinjukuSanchomeToei: {
+        name: "Shinjuku-sanchome",
       },
-    },
-    tatsumi: {
-      name: "Tatsumi",
-      name_ja: "辰巳",
-      connector: {
-        color: "#d0a534",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 720,
+      akebonobaashi: {
+        name: "Akebonobashi",
       },
-    },
-    shinKiba_yurakucho: {
-      name: "Shin-Kiba",
-      name_ja: "新木場",
-      connector: {
-        color: "#d0a534",
-        left: true,
-        station: true,
-        x: 1380,
-        y: 720,
+      ichigayaToei: {
+        name: "Ichigaya",
       },
-    },
-
-    // Hanzomon Line (Shibuya - Oshiage)
-    shibuya_hanzomon: {
-      name: "Shibuya",
-      name_ja: "渋谷",
-      connector: {
-        color: "#9478cd",
-        right: true,
-        station: true,
-        x: 0,
-        y: 780,
-        labelPlacement: "bottom-right",
+      kudanshitaToei: {
+        name: "Kudanshita",
       },
-    },
-    omotesando_hanzomon: {
-      name: "Omotesando",
-      name_ja: "表参道",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 780,
-        labelPlacement: "bottom-right",
+      jimbochoToeiShinjuku: {
+        name: "Jimbocho",
       },
-    },
-    aoyamaItchome_hanzomon: {
-      name: "Aoyama-itchome",
-      name_ja: "青山一丁目",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 780,
-        labelPlacement: "bottom-right",
+      ogawamachi: {
+        name: "Ogawamachi",
       },
-    },
-    nagatacho_hanzomon: {
-      name: "Nagatacho",
-      name_ja: "永田町",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 780,
-        labelPlacement: "bottom-right",
+      iwamotocho: {
+        name: "Iwamotocho",
       },
-    },
-    hanzomon: {
-      name: "Hanzomon",
-      name_ja: "半蔵門",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 780,
-        labelPlacement: "bottom-right",
+      bakurocho: {
+        name: "Bakurocho",
       },
-    },
-    kudanshita_hanzomon: {
-      name: "Kudanshita",
-      name_ja: "九段下",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 780,
-        labelPlacement: "bottom-right",
+      hamachoToei: {
+        name: "Hamacho",
       },
-    },
-    jimbocho_hanzomon: {
-      name: "Jimbocho",
-      name_ja: "神保町",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 780,
-        labelPlacement: "bottom-right",
+      morishita: {
+        name: "Morishita",
       },
-    },
-    otemachi_hanzomon: {
-      name: "Otemachi",
-      name_ja: "大手町",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 780,
-        labelPlacement: "bottom-right",
+      kikukawa: {
+        name: "Kikukawa",
       },
-    },
-    mitsukoshimae_hanzomon: {
-      name: "Mitsukoshimae",
-      name_ja: "三越前",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 780,
-        labelPlacement: "bottom-right",
+      sumiyoshiToei: {
+        name: "Sumiyoshi",
       },
-    },
-    suitengumae: {
-      name: "Suitengumae",
-      name_ja: "水天宮前",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 780,
-        labelPlacement: "bottom-right",
+      nishiOjima: {
+        name: "Nishi-ojima",
       },
-    },
-    kiyosumiShirakawa_hanzomon: {
-      name: "Kiyosumi-shirakawa",
-      name_ja: "清澄白河",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 780,
-        labelPlacement: "bottom-right",
+      ojima: {
+        name: "Ojima",
       },
-    },
-    sumiyoshi_hanzomon: {
-      name: "Sumiyoshi",
-      name_ja: "住吉",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 780,
-        labelPlacement: "bottom-right",
+      higashiOjima: {
+        name: "Higashi-ojima",
       },
-    },
-    kinshicho: {
-      name: "Kinshicho",
-      name_ja: "錦糸町",
-      connector: {
-        color: "#9478cd",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 780,
-        labelPlacement: "bottom-right",
+      funabori: {
+        name: "Funabori",
       },
-    },
-    oshiage_hanzomon: {
-      name: "Oshiage",
-      name_ja: "押上",
-      connector: {
-        color: "#9478cd",
-        left: true,
-        station: true,
-        x: 780,
-        y: 780,
-        labelPlacement: "bottom-right",
+      ichinoe: {
+        name: "Ichinoe",
       },
-    },
-
-    // Namboku Line (Meguro - Akabane-Iwabuchi)
-    meguro_namboku: {
-      name: "Meguro",
-      name_ja: "目黒",
-      connector: {
-        color: "#48cfc9",
-        right: true,
-        station: true,
-        x: 0,
-        y: 840,
+      mizueToei: {
+        name: "Mizue",
       },
-    },
-    shirokanedai_namboku: {
-      name: "Shirokanedai",
-      name_ja: "白金台",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 840,
+      shinozaki: {
+        name: "Shinozaki",
       },
-    },
-    shirokaneTakanawa_namboku: {
-      name: "Shirokane-takanawa",
-      name_ja: "白金高輪",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 840,
+      motoyawata: {
+        name: "Motoyawata",
       },
     },
-    azabuJuban_namboku: {
-      name: "Azabu-juban",
-      name_ja: "麻布十番",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 840,
+    toeiOedoLine: {
+      color: "#b51e82",
+      tochomae: {
+        name: "Tochomae",
       },
-    },
-    roppongiItchome: {
-      name: "Roppongi-Itchome",
-      name_ja: "六本木一丁目",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 840,
+      shinjukuNishiguchi: {
+        name: "Shinjuku-nishiguchi",
       },
-    },
-    tameikeSanno_namboku: {
-      name: "Tameike-Sanno",
-      name_ja: "溜池山王",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 840,
+      higashiShinjukuOedo: {
+        name: "Higashi-shinjuku",
       },
-    },
-    nagatacho_namboku: {
-      name: "Nagatacho",
-      name_ja: "永田町",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 840,
+      wakamatsukawada: {
+        name: "Wakamatsu-kawada",
       },
-    },
-    yotsuya_namboku: {
-      name: "Yotsuya",
-      name_ja: "四ツ谷",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 840,
+      ushigomeYanagichо: {
+        name: "Ushigome-yanagicho",
       },
-    },
-    ichigaya_namboku: {
-      name: "Ichigaya",
-      name_ja: "市ヶ谷",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 840,
+      ushigomeKagurazaka: {
+        name: "Ushigome-kagurazaka",
       },
-    },
-    iidabashi_namboku: {
-      name: "Iidabashi",
-      name_ja: "飯田橋",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 840,
+      iidabashiOedo: {
+        name: "Iidabashi",
       },
-    },
-    korakuen_namboku: {
-      name: "Korakuen",
-      name_ja: "後楽園",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 840,
+      kasugaOedo: {
+        name: "Kasuga",
       },
-    },
-    todaimae: {
-      name: "Todaimae",
-      name_ja: "東大前",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 840,
+      hongoSanchomeOedo: {
+        name: "Hongo-sanchome",
       },
-    },
-    honKomagome: {
-      name: "Hon-Komagome",
-      name_ja: "本駒込",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 840,
+      uenoOkachimachi: {
+        name: "Ueno-okachimachi",
       },
-    },
-    komagome: {
-      name: "Komagome",
-      name_ja: "駒込",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 840,
+      shinOkachimachi: {
+        name: "Shin-okachimachi",
       },
-    },
-    nishigahara: {
-      name: "Nishigahara",
-      name_ja: "西ケ原",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 840,
+      kurамaeOedo: {
+        name: "Kuramae",
       },
-    },
-    oji: {
-      name: "Oji",
-      name_ja: "王子",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 840,
+      ryogoku: {
+        name: "Ryogoku",
       },
-    },
-    ojiKamiya: {
-      name: "Oji-Kamiya",
-      name_ja: "王子神谷",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 840,
+      morizenakacho: {
+        name: "Morishita",
       },
-    },
-    shimo: {
-      name: "Shimo",
-      name_ja: "志茂",
-      connector: {
-        color: "#48cfc9",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 840,
+      kiyosumiShirakawaOedo: {
+        name: "Kiyosumi-shirakawa",
       },
-    },
-    akabaneIwabuchi: {
-      name: "Akabane-Iwabuchi",
-      name_ja: "赤羽岩淵",
-      connector: {
-        color: "#48cfc9",
-        left: true,
-        station: true,
-        x: 1080,
-        y: 840,
+      monzenNakachoOedo: {
+        name: "Monzen-nakacho",
       },
-    },
-
-    // Fukutoshin Line (Wakoshi - Shibuya)
-    wakoshi_fukutoshin: {
-      name: "Wakoshi",
-      name_ja: "和光市",
-      connector: {
-        color: "#924112",
-        right: true,
-        station: true,
-        x: 0,
-        y: 900,
-        labelPlacement: "bottom-right",
+      tsukishimaOedo: {
+        name: "Tsukishima",
       },
-    },
-    chikatetsuNarimasu_fukutoshin: {
-      name: "Chikatetsu-narimasu",
-      name_ja: "地下鉄成増",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 900,
-        labelPlacement: "bottom-right",
+      kachidoki: {
+        name: "Kachidoki",
       },
-    },
-    chikatetsuAkatsuka_fukutoshin: {
-      name: "Chikatetsu-akatsuka",
-      name_ja: "地下鉄赤塚",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 900,
-        labelPlacement: "bottom-right",
+      tsukijishijo: {
+        name: "Tsukijishijo",
       },
-    },
-    heiwadai_fukutoshin: {
-      name: "Heiwadai",
-      name_ja: "平和台",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 900,
-        labelPlacement: "bottom-right",
+      shiodome: {
+        name: "Shiodome",
       },
-    },
-    hikawadai_fukutoshin: {
-      name: "Hikawadai",
-      name_ja: "氷川台",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 900,
-        labelPlacement: "bottom-right",
+      daimonOedo: {
+        name: "Daimon",
       },
-    },
-    kotakeMukaihara_fukutoshin: {
-      name: "Kotake-mukaihara",
-      name_ja: "小竹向原",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 900,
-        labelPlacement: "bottom-right",
+      akаbanebashi: {
+        name: "Akabanebashi",
       },
-    },
-    senkawa_fukutoshin: {
-      name: "Senkawa",
-      name_ja: "千川",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 900,
-        labelPlacement: "bottom-right",
+      azabuJubanOedo: {
+        name: "Azabu-juban",
       },
-    },
-    kanamecho_fukutoshin: {
-      name: "Kanamecho",
-      name_ja: "要町",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 900,
-        labelPlacement: "bottom-right",
+      roppongіOedo: {
+        name: "Roppongi",
       },
-    },
-    ikebukuro_fukutoshin: {
-      name: "Ikebukuro",
-      name_ja: "池袋",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 900,
-        labelPlacement: "bottom-right",
+      aoyamaItchomeOedo: {
+        name: "Aoyama-itchome",
       },
-    },
-    zoshigaya: {
-      name: "Zoshigaya",
-      name_ja: "雑司が谷",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 900,
-        labelPlacement: "bottom-right",
+      kokuritsuKyogijo: {
+        name: "Kokuritsu-kyogijo",
       },
-    },
-    nishiWaseda: {
-      name: "Nishi-waseda",
-      name_ja: "西早稲田",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 900,
-        labelPlacement: "bottom-right",
+      yoyogi: {
+        name: "Yoyogi",
       },
-    },
-    higashiShinjuku_fukutoshin: {
-      name: "Higashi-shinjuku",
-      name_ja: "東新宿",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 900,
-        labelPlacement: "bottom-right",
+      shinjukuOedo: {
+        name: "Shinjuku",
       },
-    },
-    shinjukuSanchome_fukutoshin: {
-      name: "Shinjuku-sanchome",
-      name_ja: "新宿三丁目",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 900,
-        labelPlacement: "bottom-right",
+      toshimaen: {
+        name: "Toshimaen",
       },
-    },
-    kitaSando: {
-      name: "Kita-sando",
-      name_ja: "北参道",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 900,
-        labelPlacement: "bottom-right",
+      nerima: {
+        name: "Nerima",
       },
-    },
-    meijiJingumae_fukutoshin: {
-      name: "Meiji-jingumae",
-      name_ja: "明治神宮前",
-      connector: {
-        color: "#924112",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 900,
-        labelPlacement: "bottom-right",
+      nerimaKasugacho: {
+        name: "Nerima-kasugacho",
       },
-    },
-    shibuya_fukutoshin: {
-      name: "Shibuya",
-      name_ja: "渋谷",
-      connector: {
-        color: "#924112",
-        left: true,
-        station: true,
-        x: 900,
-        y: 900,
-        labelPlacement: "bottom-right",
+      hikarigaoka: {
+        name: "Hikarigaoka",
       },
     },
   },
-  extraConnectors: [
-    { color: "#e60012", top: true, left: true, x: 300, y: 420 },
-    { color: "#1f8651", top: true, left: true, x: 60, y: 660 },
-  ],
 };
