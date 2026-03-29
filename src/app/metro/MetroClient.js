@@ -1,10 +1,10 @@
 "use client";
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { Select } from "@/components/Select";
 import { stations } from "@/data/stations";
 import { Connector } from "@/metroui/Connector";
+import dynamic from "next/dynamic";
+const CityMap = dynamic(() => import("@/components/CityMap"), { ssr: false });
 
 function SkeletonSongListInline({ count = 5 }) {
   return (
@@ -73,6 +73,7 @@ export default function MetroClient({ initialCityId, initialCityData }) {
   const [selectedCity, setSelectedCity] = useState(
     initialCityData || (initialCityId ? stations[initialCityId] : null),
   );
+  const [selectedCityId, setSelectedCityId] = useState(initialCityId || null);
   const [startStation, setStartStation] = useState(null);
   const [endStation, setEndStation] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -379,28 +380,53 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
     return itemLine !== sLine && itemLine !== eLine;
   };
 
+  const [mapOpen, setMapOpen] = useState(!initialCityId);
+  const mapContentRef = useRef(null);
   return (
     <div className="flex flex-col mt-4 space-y-4 items-center">
-      <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 items-center">
-        <p>City</p>
-        <Select
-          options={cities}
-          placeholder="Select a City"
-          value={selectedCity?.name || ""}
-          onChange={(e) => {
-            const cityEntry = Object.entries(stations).find(
-              ([_, c]) => c.name === e.target.value,
-            );
-            if (cityEntry) {
-              const [cityId] = cityEntry;
-              router.push(`/metro/${cityId}`);
-            } else {
-              router.push("/metro");
-            }
+      <div className="w-full max-w-5xl">
+        <button
+          onClick={() => setMapOpen((o) => !o)}
+          className="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-gray-700 bg-gray-900 hover:bg-gray-800 transition-colors cursor-pointer"
+        >
+          <span className="text-white font-semibold">City Selection</span>
+          <span className="text-gray-400 text-sm flex items-center gap-2">
+            {selectedCity ? (
+              <span className="text-blue-400">{selectedCity.name}</span>
+            ) : (
+              <span>No city selected</span>
+            )}
+            <span className="ml-1">{mapOpen ? "▲" : "▼"}</span>
+          </span>
+        </button>
+        <div
+          style={{
+            maxHeight: mapOpen
+              ? `${mapContentRef.current?.scrollHeight ?? 480}px`
+              : "0px",
+            overflow: "hidden",
+            transition: "max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
           }}
-          optionClassName="text-white bg-black"
-          className="text-white bg-black"
-        />
+        >
+          <div ref={mapContentRef}>
+            <div className="mt-2">
+              <p className="text-center mb-2 text-gray-400 text-sm">
+                Click a city on the map to select it
+              </p>
+              <CityMap
+                selectedCityId={selectedCityId}
+                onCitySelect={(cityId) => {
+                  setSelectedCityId(cityId);
+                  setSelectedCity(stations[cityId]);
+                  setStartStation(null);
+                  setEndStation(null);
+                  setMapOpen(false);
+                  setTimeout(() => router.push(`/metro/${cityId}`), 350);
+                }}
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
       {startStation && <p>Selected Start Station: {startStation.name}</p>}

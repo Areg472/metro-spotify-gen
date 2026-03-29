@@ -48,7 +48,7 @@ function processBranch(
   extraConnectors.push({
     color: parentLineColor || branchData.color,
     lineId: parentLineColor || branchData.color,
-    ...(isLastBranch ? { top: true } : { vertical: true }),
+    ...(isLastBranch ? { top: true, right: true } : { vertical: true }),
     ...(branchStationCount > 1 ? { right: true } : {}),
     x: extraConnectorX,
     y: branchY,
