@@ -380,7 +380,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
     return itemLine !== sLine && itemLine !== eLine;
   };
 
-  const [mapOpen, setMapOpen] = useState(!initialCityId);
+  const [mapOpen, setMapOpen] = useState(false);
   const mapContentRef = useRef(null);
   return (
     <div className="flex flex-col mt-4 space-y-4 items-center">

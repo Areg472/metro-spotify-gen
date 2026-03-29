@@ -10,8 +10,16 @@ import {
 import "leaflet/dist/leaflet.css";
 import { stations } from "@/data/stations";
 
-// Module-level cache — survives component re-mounts so data is never refetched
-let cachedCoordsMap = null;
+// Session-level cache — survives component re-mounts but clears when the tab is closed
+const SESSION_KEY = "cityCoords";
+let cachedCoordsMap = (() => {
+  try {
+    const raw = sessionStorage.getItem(SESSION_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+})();
 let savedZoom = 2;
 let savedCenter = [30, 20];
 
@@ -50,6 +58,9 @@ export default function CityMap({ selectedCityId, onCitySelect }) {
       .then((res) => res.json())
       .then((data) => {
         cachedCoordsMap = data;
+        try {
+          sessionStorage.setItem(SESSION_KEY, JSON.stringify(data));
+        } catch {}
         setCoordsMap(data);
       })
       .catch(() => {});
