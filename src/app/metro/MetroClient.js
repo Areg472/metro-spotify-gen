@@ -1,8 +1,9 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { stations } from "@/data/stations";
 import { Connector } from "@/metroui/Connector";
+import { findHighlightPath } from "@/data/stations/pathfinding";
 import dynamic from "next/dynamic";
 const CityMap = dynamic(() => import("@/components/CityMap"), { ssr: false });
 
@@ -349,35 +350,20 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
     ? Object.values(selectedCity.stations)
     : [];
 
-  const getIsDimmed = (item, isStation = true) => {
+  const highlightPath = useMemo(() => {
+    if (!selectedCity || !startStation || !endStation) return null;
+    return findHighlightPath(selectedCity, startStation, endStation);
+  }, [selectedCity, startStation, endStation]);
+
+  const getIsDimmed = (key) => {
     if (!startStation || !endStation) return false;
+    if (!highlightPath) return false;
+    return !highlightPath.pathKeys.has(key);
+  };
 
-    const sLine = startStation.lineId;
-    const eLine = endStation.lineId;
-
-    if (sLine === eLine) {
-      const itemLine = isStation ? item.lineId : item.lineId;
-      if (itemLine !== sLine) return true;
-
-      const minX = Math.min(startStation.connector.x, endStation.connector.x);
-      const maxX = Math.max(startStation.connector.x, endStation.connector.x);
-      const minY = Math.min(startStation.connector.y, endStation.connector.y);
-      const maxY = Math.max(startStation.connector.y, endStation.connector.y);
-
-      const itemX = isStation ? item.connector.x : item.x;
-      const itemY = isStation ? item.connector.y : item.y;
-
-      // For horizontal lines, only check X
-      if (minY === maxY) {
-        return itemX < minX || itemX > maxX || itemY !== minY;
-      }
-
-      return itemX < minX || itemX > maxX || itemY < minY || itemY > maxY;
-    }
-
-    // Different lines: just show the two lines
-    const itemLine = isStation ? item.lineId : item.lineId;
-    return itemLine !== sLine && itemLine !== eLine;
+  const getActiveLegs = (key) => {
+    if (!highlightPath) return null;
+    return highlightPath.activeLegs.get(key);
   };
 
   const [mapOpen, setMapOpen] = useState(false);
@@ -489,7 +475,8 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                   onClick={() => handleStationClick(s)}
                   isSelected={startStation?.name === s.name}
                   isEndStation={endStation?.name === s.name}
-                  dimmed={getIsDimmed(s)}
+                  dimmed={getIsDimmed(stationId)}
+                  activeLegs={getActiveLegs(stationId)}
                 />
               ))}
               {selectedCity.extraConnectors?.map((c, i) => (
@@ -497,7 +484,8 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                   key={`extra-${i}`}
                   size={selectedCity.defaultConnectorSize}
                   {...c}
-                  dimmed={getIsDimmed(c, false)}
+                  dimmed={getIsDimmed(`extra-${i}`)}
+                  activeLegs={getActiveLegs(`extra-${i}`)}
                 />
               ))}
             </div>

@@ -37,6 +37,7 @@ export function Connector({
   isSelected = false,
   isEndStation = false,
   dimmed = false,
+  activeLegs,
   zIndex,
   children,
 }) {
@@ -44,6 +45,12 @@ export function Connector({
   const offsetStep = thickness * 2;
   const center = size / 2;
   const opacity = dimmed ? 0.2 : 1;
+
+  const getLegOpacity = (legName) => {
+    if (dimmed) return 0.2;
+    if (!activeLegs) return 1;
+    return activeLegs.has(legName) ? 1 : 0.2;
+  };
 
   const outerRadius = 15;
   const sColor = stationColor || color;
@@ -129,9 +136,6 @@ export function Connector({
 
     // Horizontal
     if (horizontal) {
-      // Split into left and right halves so start/end stations can dim their outer side
-      const leftOpacity = isSelected ? 0.2 : opacity;
-      const rightOpacity = isEndStation ? 0.2 : opacity;
       lines.push(
         <path
           key={`h-left-${i}`}
@@ -139,7 +143,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={leftOpacity}
+          strokeOpacity={getLegOpacity("left")}
           style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
         <path
@@ -148,15 +152,13 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={rightOpacity}
+          strokeOpacity={getLegOpacity("right")}
           style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
     }
     // Vertical
     if (vertical) {
-      const topOpacity = isSelected ? 0.2 : opacity;
-      const bottomOpacity = isEndStation ? 0.2 : opacity;
       lines.push(
         <path
           key={`v-top-${i}`}
@@ -164,7 +166,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={topOpacity}
+          strokeOpacity={getLegOpacity("top")}
           style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
         <path
@@ -173,7 +175,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={bottomOpacity}
+          strokeOpacity={getLegOpacity("bottom")}
           style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
@@ -187,7 +189,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={isSelected ? 0.2 : opacity}
+          strokeOpacity={getLegOpacity("left")}
           style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
@@ -201,7 +203,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={isEndStation ? 0.2 : opacity}
+          strokeOpacity={getLegOpacity("right")}
           style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
@@ -215,7 +217,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={isSelected ? 0.2 : opacity}
+          strokeOpacity={getLegOpacity("top")}
           style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
@@ -229,7 +231,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={isEndStation ? 0.2 : opacity}
+          strokeOpacity={getLegOpacity("bottom")}
           style={{ transition: "stroke-opacity 0.3s ease" }}
         />,
       );
@@ -245,7 +247,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={getLegOpacity("diagonalNW")}
         />,
       );
     }
@@ -258,7 +260,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={getLegOpacity("diagonalNE")}
         />,
       );
     }
@@ -271,7 +273,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={getLegOpacity("diagonalSW")}
         />,
       );
     }
@@ -284,7 +286,7 @@ export function Connector({
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={getLegOpacity("diagonalSE")}
         />,
       );
     }
@@ -293,26 +295,44 @@ export function Connector({
     if (fullDiagonal) {
       lines.push(
         <path
-          key={`fd-${i}`}
-          d={`M0 0 L${size} ${size}`}
-          transform={`translate(${offset}, ${-offset})`}
+          key={`fd-nw-${i}`}
+          d={`M${center} ${center} L0 0`}
+          transform={`translate(${offset}, ${offset})`}
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={getLegOpacity("diagonalNW")}
+        />,
+        <path
+          key={`fd-se-${i}`}
+          d={`M${center} ${center} L${size} ${size}`}
+          transform={`translate(${-offset}, ${-offset})`}
+          stroke={color}
+          strokeWidth={thickness}
+          strokeLinecap="round"
+          strokeOpacity={getLegOpacity("diagonalSE")}
         />,
       );
     }
     if (fullDiagonalInv) {
       lines.push(
         <path
-          key={`fdi-${i}`}
-          d={`M0 ${size} L${size} 0`}
+          key={`fdi-ne-${i}`}
+          d={`M${center} ${center} L${size} 0`}
           transform={`translate(${-offset}, ${offset})`}
           stroke={color}
           strokeWidth={thickness}
           strokeLinecap="round"
-          strokeOpacity={opacity}
+          strokeOpacity={getLegOpacity("diagonalNE")}
+        />,
+        <path
+          key={`fdi-sw-${i}`}
+          d={`M${center} ${center} L0 ${size}`}
+          transform={`translate(${offset}, ${-offset})`}
+          stroke={color}
+          strokeWidth={thickness}
+          strokeLinecap="round"
+          strokeOpacity={getLegOpacity("diagonalSW")}
         />,
       );
     }
