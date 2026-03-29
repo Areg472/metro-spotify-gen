@@ -10,7 +10,6 @@ import {
 import "leaflet/dist/leaflet.css";
 import { stations } from "@/data/stations";
 
-// Session-level cache — survives component re-mounts but clears when the tab is closed
 const SESSION_KEY = "cityCoords";
 let cachedCoordsMap = (() => {
   try {
@@ -70,7 +69,13 @@ export default function CityMap({ selectedCityId, onCitySelect }) {
   return (
     <div
       className="w-full rounded-xl overflow-hidden border border-gray-700"
-      style={{ height: "420px" }}
+      style={{
+        height: "420px",
+        contain: "strict",
+        transform: "translateZ(0)",
+        backfaceVisibility: "hidden",
+        willChange: "transform",
+      }}
     >
       <MapContainer
         center={savedCenter}

@@ -406,6 +406,9 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
               : "0px",
             overflow: "hidden",
             transition: "max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+            willChange: "max-height",
+            transform: "translateZ(0)",
+            backfaceVisibility: "hidden",
           }}
         >
           <div ref={mapContentRef}>

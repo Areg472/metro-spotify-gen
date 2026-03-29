@@ -2,4466 +2,1220 @@ export const paris = {
   name: "Paris",
   country: "France",
   defaultConnectorSize: 60,
+  auto: true,
   stations: {
-    // M1 (La Défense - Château de Vincennes)
-    laDefense: {
-      name: "La Defense",
-      name_fr: "La Défense",
-      connector: {
-        color: "#ffbf00",
-        right: true,
-        station: true,
-        x: 0,
-        y: 30,
-        labelPlacement: "bottom-right",
+    lineOne: {
+      color: "#ffcd00",
+      laDefense: {
+        name: "La Défense",
       },
-    },
-    esplanadeDeLaDefense: {
-      name: "Esplanade de La Defense",
-      name_fr: "Esplanade de La Défense",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    pontDeNeuilly: {
-      name: "Pont de Neuilly",
-      name_fr: "Pont de Neuilly",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    lesSablons: {
-      name: "Les Sablons",
-      name_fr: "Les Sablons",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    porteMaillot: {
-      name: "Porte Maillot",
-      name_fr: "Porte Maillot",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    argentine: {
-      name: "Argentine",
-      name_fr: "Argentine",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    charlesDeGaulleEtoile_m1: {
-      name: "Charles de Gaulle-Etoile",
-      name_fr: "Charles de Gaulle-Étoile",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    georgesV: {
-      name: "Georges V",
-      name_fr: "Georges V",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    franklinDRoosevelt_m1: {
-      name: "Franklin D. Roosevelt",
-      name_fr: "Franklin D. Roosevelt",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    champsElyseesClemenceau_m1: {
-      name: "Champs-Elysees-Clemenceau",
-      name_fr: "Champs-Élysées-Clemenceau",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    concorde_m1: {
-      name: "Concorde",
-      name_fr: "Concorde",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    tuileries: {
-      name: "Tuileries",
-      name_fr: "Tuileries",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    palaisRoyalMuseeDuLouvre_m1: {
-      name: "Palais Royal-Musee du Louvre",
-      name_fr: "Palais Royal-Musée du Louvre",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    louvreRivoli: {
-      name: "Louvre-Rivoli",
-      name_fr: "Louvre-Rivoli",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    chatelet_m1: {
-      name: "Chatelet",
-      name_fr: "Châtelet",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    hotelDeVille_m1: {
-      name: "Hotel de Ville",
-      name_fr: "Hôtel de Ville",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    saintPaul: {
-      name: "Saint-Paul",
-      name_fr: "Saint-Paul",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    bastille_m1: {
-      name: "Bastille",
-      name_fr: "Bastille",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    gareDeLyon_m1: {
-      name: "Gare de Lyon",
-      name_fr: "Gare de Lyon",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    reuillyDiderot_m1: {
-      name: "Reuilly-Diderot",
-      name_fr: "Reuilly-Diderot",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    nation_m1: {
-      name: "Nation",
-      name_fr: "Nation",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    porteDeVincennes: {
-      name: "Porte de Vincennes",
-      name_fr: "Porte de Vincennes",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    saintMande: {
-      name: "Saint-Mande",
-      name_fr: "Saint-Mandé",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    berault: {
-      name: "Berault",
-      name_fr: "Bérault",
-      connector: {
-        color: "#ffbf00",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-    chateauDeVincennes: {
-      name: "Chateau de Vincennes",
-      name_fr: "Château de Vincennes",
-      connector: {
-        color: "#ffbf00",
-        left: true,
-        station: true,
-        x: 1440,
-        y: 30,
-        labelPlacement: "bottom-right",
-      },
-    },
-
-    // M2 (Porte Dauphine - Nation)
-    porteDauphine: {
-      name: "Porte Dauphine",
-      name_fr: "Porte Dauphine",
-      connector: {
-        color: "lightBlue",
-        right: true,
-        station: true,
-        x: 0,
-        y: 90,
-      },
-    },
-    victorHugo: {
-      name: "Victor Hugo",
-      name_fr: "Victor Hugo",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 90,
-      },
-    },
-    charlesDeGaulleEtoile_m2: {
-      name: "Charles de Gaulle-Etoile",
-      name_fr: "Charles de Gaulle-Étoile",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 90,
-      },
-    },
-    ternes: {
-      name: "Ternes",
-      name_fr: "Ternes",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 90,
-      },
-    },
-    courcelles: {
-      name: "Courcelles",
-      name_fr: "Courcelles",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 90,
-      },
-    },
-    monceau: {
-      name: "Monceau",
-      name_fr: "Monceau",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 90,
-      },
-    },
-    villiers_m2: {
-      name: "Villiers",
-      name_fr: "Villiers",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 90,
-      },
-    },
-    rome: {
-      name: "Rome",
-      name_fr: "Rome",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 90,
-      },
-    },
-    placeDeClichy_m2: {
-      name: "Place de Clichy",
-      name_fr: "Place de Clichy",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 90,
-      },
-    },
-    blanche: {
-      name: "Blanche",
-      name_fr: "Blanche",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 90,
-      },
-    },
-    pigalle_m2: {
-      name: "Pigalle",
-      name_fr: "Pigalle",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 90,
-      },
-    },
-    anvers: {
-      name: "Anvers",
-      name_fr: "Anvers",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 90,
-      },
-    },
-    barbesRochechouart_m2: {
-      name: "Barbes - Rochechouart",
-      name_fr: "Barbès - Rochechouart",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 90,
-      },
-    },
-    laChapelle: {
-      name: "La Chapelle",
-      name_fr: "La Chapelle",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 90,
+      esplanadeDeLaDefense: {
+        name: "Esplanade de La Défense",
       },
-    },
-    stalingrad_m2: {
-      name: "Stalingrad",
-      name_fr: "Stalingrad",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 90,
+      pontDeNeuilly: {
+        name: "Pont de Neuilly",
       },
-    },
-    jaures_m2: {
-      name: "Jaures",
-      name_fr: "Jaurès",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 90,
+      lesSablons: {
+        name: "Les Sablons",
       },
-    },
-    colonelFabien: {
-      name: "Colonel Fabien",
-      name_fr: "Colonel Fabien",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 90,
+      porteMaillot: {
+        name: "Porte Maillot",
       },
-    },
-    belleville_m2: {
-      name: "Belleville",
-      name_fr: "Belleville",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 90,
+      argentine: {
+        name: "Argentine",
       },
-    },
-    couronnes: {
-      name: "Couronnes",
-      name_fr: "Couronnes",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 90,
+      charlesDegaulleEtoile: {
+        name: "Charles de Gaulle-Étoile",
       },
-    },
-    menilmontant: {
-      name: "Menilmontant",
-      name_fr: "Ménilmontant",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 90,
+      georgev: {
+        name: "George V",
       },
-    },
-    pereLachaise_m2: {
-      name: "Pere Lachaise",
-      name_fr: "Père Lachaise",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 90,
+      franklinRoosevelt: {
+        name: "Franklin D. Roosevelt",
       },
-    },
-    philippeAuguste: {
-      name: "Philippe Auguste",
-      name_fr: "Philippe Auguste",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 90,
+      champselyseesclemenceau: {
+        name: "Champs-Élysées-Clemenceau",
       },
-    },
-    alexandreDumas: {
-      name: "Alexandre Dumas",
-      name_fr: "Alexandre Dumas",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 90,
+      concorde: {
+        name: "Concorde",
       },
-    },
-    avron: {
-      name: "Avron",
-      name_fr: "Avron",
-      connector: {
-        color: "lightBlue",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 90,
+      tuileriesLineOne: {
+        name: "Tuileries",
       },
-    },
-    nation_m2: {
-      name: "Nation",
-      name_fr: "Nation",
-      connector: {
-        color: "lightBlue",
-        left: true,
-        station: true,
-        x: 1440,
-        y: 90,
+      palaisRoyalMuseeDuLouvre: {
+        name: "Palais Royal-Musée du Louvre",
       },
-    },
-
-    // M3 (Pont de Levallois Bécon - Gallieni)
-    pontDeLevalloisBecon: {
-      name: "Pont de Levallois Becon",
-      name_fr: "Pont de Levallois Bécon",
-      connector: {
-        color: "#748500",
-        right: true,
-        station: true,
-        x: 0,
-        y: 150,
-        labelPlacement: "bottom-right",
+      louvreRivoli: {
+        name: "Louvre-Rivoli",
       },
-    },
-    anatoleFrance: {
-      name: "Anatole France",
-      name_fr: "Anatole France",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 150,
-        labelPlacement: "bottom-right",
+      chatelethLineOne: {
+        name: "Châtelet",
       },
-    },
-    louiseMichel: {
-      name: "Louise Michel",
-      name_fr: "Louise Michel",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 150,
-        labelPlacement: "bottom-right",
+      hotelDeVille: {
+        name: "Hôtel de Ville",
       },
-    },
-    porteDeChamperret: {
-      name: "Porte de Champerret",
-      name_fr: "Porte de Champerret",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 150,
-        labelPlacement: "bottom-right",
+      stPaulLineOne: {
+        name: "St-Paul",
       },
-    },
-    pereire: {
-      name: "Pereire",
-      name_fr: "Pereire",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 150,
-        labelPlacement: "bottom-right",
+      bastille: {
+        name: "Bastille",
       },
-    },
-    wagram: {
-      name: "Wagram",
-      name_fr: "Wagram",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 150,
-        labelPlacement: "bottom-right",
+      gareDelyon: {
+        name: "Gare de Lyon",
       },
-    },
-    malesherbes: {
-      name: "Malesherbes",
-      name_fr: "Malesherbes",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 150,
-        labelPlacement: "bottom-right",
+      reuillyDiderot: {
+        name: "Reuilly-Diderot",
       },
-    },
-    villiers_m3: {
-      name: "Villiers",
-      name_fr: "Villiers",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 150,
-        labelPlacement: "bottom-right",
+      nationLineOne: {
+        name: "Nation",
       },
-    },
-    europe: {
-      name: "Europe",
-      name_fr: "Europe",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 150,
-        labelPlacement: "bottom-right",
+      porteDeVincennes: {
+        name: "Porte de Vincennes",
       },
-    },
-    saintLazare_m3: {
-      name: "Saint-Lazare",
-      name_fr: "Saint-Lazare",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 150,
-        labelPlacement: "bottom-right",
+      saintMandeLineOne: {
+        name: "Saint-Mandé",
       },
-    },
-    havreCaumartin_m3: {
-      name: "Havre - Caumartin",
-      name_fr: "Havre - Caumartin",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 150,
-        labelPlacement: "bottom-right",
+      berot: {
+        name: "Bérault",
       },
-    },
-    opera_m3: {
-      name: "Opera",
-      name_fr: "Opéra",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 150,
-        labelPlacement: "bottom-right",
+      chateauDeVincennes: {
+        name: "Château de Vincennes",
       },
     },
-    quatreSeptembre: {
-      name: "Quatre-Septembre",
-      name_fr: "Quatre-Septembre",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 150,
-        labelPlacement: "bottom-right",
+    lineTwo: {
+      color: "#0064b0",
+      porteDauphine: {
+        name: "Porte Dauphine",
       },
-    },
-    bourse: {
-      name: "Bourse",
-      name_fr: "Bourse",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 150,
-        labelPlacement: "bottom-right",
+      victorHugo: {
+        name: "Victor Hugo",
       },
-    },
-    sentier: {
-      name: "Sentier",
-      name_fr: "Sentier",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 150,
-        labelPlacement: "bottom-right",
+      charlesDegaulleEtoileLineTwo: {
+        name: "Charles de Gaulle-Étoile",
       },
-    },
-    reaumurSebastopol_m3: {
-      name: "Reaumur - Sebastopol",
-      name_fr: "Réaumur - Sébastopol",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 150,
-        labelPlacement: "bottom-right",
+      ternes: {
+        name: "Ternes",
       },
-    },
-    artsEtMetiers_m3: {
-      name: "Arts et Metiers",
-      name_fr: "Arts et Métiers",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 150,
-        labelPlacement: "bottom-right",
+      courcelles: {
+        name: "Courcelles",
       },
-    },
-    temple: {
-      name: "Temple",
-      name_fr: "Temple",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 150,
-        labelPlacement: "bottom-right",
+      monceau: {
+        name: "Monceau",
       },
-    },
-    republique_m3: {
-      name: "Republique",
-      name_fr: "République",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 150,
-        labelPlacement: "bottom-right",
+      villiersLineTwo: {
+        name: "Villiers",
       },
-    },
-    parmentier: {
-      name: "Parmentier",
-      name_fr: "Parmentier",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 150,
-        labelPlacement: "bottom-right",
+      rome: {
+        name: "Rome",
       },
-    },
-    rueSaintMaur: {
-      name: "Rue Saint-Maur",
-      name_fr: "Rue Saint-Maur",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 150,
-        labelPlacement: "bottom-right",
+      placeDeclichy: {
+        name: "Place de Clichy",
       },
-    },
-    pereLachaise_m3: {
-      name: "Pere Lachaise",
-      name_fr: "Père Lachaise",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 150,
-        labelPlacement: "bottom-right",
+      blanche: {
+        name: "Blanche",
       },
-    },
-    gambetta_m3: {
-      name: "Gambetta",
-      name_fr: "Gambetta",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        bottom: true,
-        x: 1320,
-        y: 150,
-        labelPlacement: "bottom-right",
+      pigalle: {
+        name: "Pigalle",
       },
-    },
-    porteDeBagnolet: {
-      name: "Porte de Bagnolet",
-      name_fr: "Porte de Bagnolet",
-      connector: {
-        color: "#748500",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 150,
-        labelPlacement: "bottom-right",
+      anversLineTwo: {
+        name: "Anvers",
       },
-    },
-    gallieni: {
-      name: "Gallieni",
-      name_fr: "Gallieni",
-      connector: {
-        color: "#748500",
-        left: true,
-        station: true,
-        x: 1440,
-        y: 150,
-        labelPlacement: "bottom-right",
+      barbесRochechouart: {
+        name: "Barbès-Rochechouart",
       },
-    },
-
-    // M3bis (Porte des Lilas - Gambetta)
-    porteDesLilas_m3bis: {
-      name: "Porte des Lilas",
-      name_fr: "Porte des Lilas",
-      connector: {
-        color: "blue",
-        left: true,
-        station: true,
-        x: 1500,
-        y: 210,
+      laChapelleLineTwo: {
+        name: "La Chapelle",
       },
-    },
-    saintFargeau: {
-      name: "Saint-Fargeau",
-      name_fr: "Saint-Fargeau",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 210,
+      stalingrad: {
+        name: "Stalingrad",
       },
-    },
-    pelleport: {
-      name: "Pelleport",
-      name_fr: "Pelleport",
-      connector: {
-        color: "blue",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 210,
+      jaures: {
+        name: "Jaurès",
       },
-    },
-    gambetta_m3bis: {
-      name: "Gambetta",
-      name_fr: "Gambetta",
-      connector: {
-        color: "blue",
-        right: true,
-        top: true,
-        station: true,
-        x: 1320,
-        y: 210,
+      colonelFabien: {
+        name: "Colonel Fabien",
       },
-    },
-
-    // M4 (Porte de Clignancourt - Mairie de Montrouge)
-    porteDeClignancourt: {
-      name: "Porte de Clignancourt",
-      name_fr: "Porte de Clignancourt",
-      connector: {
-        color: "violet",
-        right: true,
-        station: true,
-        x: 0,
-        y: 270,
-        labelPlacement: "bottom-right",
+      belleville: {
+        name: "Belleville",
       },
-    },
-    simplon: {
-      name: "Simplon",
-      name_fr: "Simplon",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 270,
-        labelPlacement: "bottom-right",
+      couronnes: {
+        name: "Couronnes",
       },
-    },
-    marcadetPoissonniers_m4: {
-      name: "Marcadet Poissonniers",
-      name_fr: "Marcadet Poissonniers",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 270,
-        labelPlacement: "bottom-right",
+      menilmontant: {
+        name: "Ménilmontant",
       },
-    },
-    chateauRouge: {
-      name: "Chateau Rouge",
-      name_fr: "Château Rouge",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 270,
-        labelPlacement: "bottom-right",
+      perelaChaise: {
+        name: "Père Lachaise",
       },
-    },
-    barbesRochechouart_m4: {
-      name: "Barbes - Rochechouart",
-      name_fr: "Barbès - Rochechouart",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 270,
-        labelPlacement: "bottom-right",
+      philippeAuguste: {
+        name: "Philippe Auguste",
       },
-    },
-    gareDuNord_m4: {
-      name: "Gare du Nord",
-      name_fr: "Gare du Nord",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 270,
-        labelPlacement: "bottom-right",
+      alexandredumas: {
+        name: "Alexandre Dumas",
       },
-    },
-    gareDeLEst_m4: {
-      name: "Gare de l'Est",
-      name_fr: "Gare de l'Est",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 270,
-        labelPlacement: "bottom-right",
+      avron: {
+        name: "Avron",
       },
-    },
-    chateauDEau: {
-      name: "Chateau d'Eau",
-      name_fr: "Château d'Eau",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 270,
-        labelPlacement: "bottom-right",
+      nationLineTwo: {
+        name: "Nation",
       },
     },
-    strasbourgSaintDenis_m4: {
-      name: "Strasbourg Saint-Denis",
-      name_fr: "Strasbourg Saint-Denis",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 270,
-        labelPlacement: "bottom-right",
+    lineThree: {
+      color: "#9f9825",
+      pontDeLevalloisBecon: {
+        name: "Pont de Levallois-Bécon",
       },
-    },
-    reaumurSebastopol_m4: {
-      name: "Reaumur - Sebastopol",
-      name_fr: "Réaumur - Sébastopol",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 270,
-        labelPlacement: "bottom-right",
+      anatoleFrance: {
+        name: "Anatole France",
       },
-    },
-    etienneMarcel: {
-      name: "Etienne Marcel",
-      name_fr: "Étienne Marcel",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 270,
-        labelPlacement: "bottom-right",
+      louiseMichel: {
+        name: "Louise Michel",
       },
-    },
-    lesHalles: {
-      name: "Les Halles",
-      name_fr: "Les Halles",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 270,
-        labelPlacement: "bottom-right",
+      porteDechamperret: {
+        name: "Porte de Champerret",
       },
-    },
-    chatelet_m4: {
-      name: "Chatelet",
-      name_fr: "Châtelet",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 270,
-        labelPlacement: "bottom-right",
+      pereire: {
+        name: "Pereire",
       },
-    },
-    cite: {
-      name: "Cite",
-      name_fr: "Cité",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 270,
-        labelPlacement: "bottom-right",
+      wagram: {
+        name: "Wagram",
       },
-    },
-    saintMichel_m4: {
-      name: "Saint-Michel",
-      name_fr: "Saint-Michel",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 270,
-        labelPlacement: "bottom-right",
+      malesherbesLineThree: {
+        name: "Malesherbes",
       },
-    },
-    odeon_m4: {
-      name: "Odeon",
-      name_fr: "Odéon",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 270,
-        labelPlacement: "bottom-right",
+      villiersLineThree: {
+        name: "Villiers",
       },
-    },
-    saintGermainDesPres: {
-      name: "Saint-Germain-des-Pres",
-      name_fr: "Saint-Germain-des-Prés",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 270,
-        labelPlacement: "bottom-right",
+      europeLineThree: {
+        name: "Europe",
       },
-    },
-    saintSulpice: {
-      name: "Saint-Sulpice",
-      name_fr: "Saint-Sulpice",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 270,
-        labelPlacement: "bottom-right",
+      stLazare: {
+        name: "St-Lazare",
       },
-    },
-    saintPlacide: {
-      name: "Saint-Placide",
-      name_fr: "Saint-Placide",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 270,
-        labelPlacement: "bottom-right",
+      havreCaumartin: {
+        name: "Havre-Caumartin",
       },
-    },
-    montparnasseBienvenue_m4: {
-      name: "Montparnasse Bienvenue",
-      name_fr: "Montparnasse Bienvenüe",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 270,
-        labelPlacement: "bottom-right",
+      operaLineThree: {
+        name: "Opéra",
       },
-    },
-    vavin: {
-      name: "Vavin",
-      name_fr: "Vavin",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 270,
-        labelPlacement: "bottom-right",
+      quatreSeptembre: {
+        name: "Quatre-Septembre",
       },
-    },
-    raspail_m4: {
-      name: "Raspail",
-      name_fr: "Raspail",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 270,
-        labelPlacement: "bottom-right",
+      bourse: {
+        name: "Bourse",
       },
-    },
-    denfertRochereau_m4: {
-      name: "Denfert-Rochereau",
-      name_fr: "Denfert-Rochereau",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 270,
-        labelPlacement: "bottom-right",
+      sentier: {
+        name: "Sentier",
       },
-    },
-    moutonDuvernet: {
-      name: "Mouton-Duvernet",
-      name_fr: "Mouton-Duvernet",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 270,
-        labelPlacement: "bottom-right",
+      reaumurSebastopol: {
+        name: "Réaumur-Sébastopol",
       },
-    },
-    alesia: {
-      name: "Alesia",
-      name_fr: "Alésia",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 270,
-        labelPlacement: "bottom-right",
+      artsEtMetiers: {
+        name: "Arts et Métiers",
       },
-    },
-    porteDOrlean: {
-      name: "Porte d'Orlean",
-      name_fr: "Porte d'Orléan",
-      connector: {
-        color: "violet",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 270,
-        labelPlacement: "bottom-right",
+      templeLineThree: {
+        name: "Temple",
       },
-    },
-    mairieDeMontrouge: {
-      name: "Mairie de Montrouge",
-      name_fr: "Mairie de Montrouge",
-      connector: {
-        color: "violet",
-        left: true,
-        station: true,
-        x: 1560,
-        y: 270,
-        labelPlacement: "bottom-right",
+      republiqueLineThree: {
+        name: "République",
       },
-    },
-
-    // M5 (Bobigny Pablo Picasso - Place d'Italie)
-    bobignyPabloPicasso: {
-      name: "Bobigny Pablo Picasso",
-      name_fr: "Bobigny Pablo Picasso",
-      connector: {
-        color: "orange",
-        right: true,
-        station: true,
-        x: 0,
-        y: 330,
+      parmentier: {
+        name: "Parmentier",
       },
-    },
-    bobignyPantinRaymondQueneau: {
-      name: "Bobigny - Pantin Raymond Queneau",
-      name_fr: "Bobigny - Pantin Raymond Queneau",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 330,
+      rueStMaur: {
+        name: "Rue St-Maur",
       },
-    },
-    egliseDePantin: {
-      name: "Eglise de Pantin",
-      name_fr: "Église de Pantin",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 330,
+      pereLineThree: {
+        name: "Père Lachaise",
       },
-    },
-    hoche: {
-      name: "Hoche",
-      name_fr: "Hoche",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 330,
+      gambetta: {
+        name: "Gambetta",
       },
-    },
-    porteDePantin: {
-      name: "Porte de Pantin",
-      name_fr: "Porte de Pantin",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 330,
+      porteDeBagnolet: {
+        name: "Porte de Bagnolet",
       },
-    },
-    ourcq: {
-      name: "Ourcq",
-      name_fr: "Ourcq",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 330,
+      gallieni: {
+        name: "Gallieni",
       },
     },
-    laumiere: {
-      name: "Laumiere",
-      name_fr: "Laumière",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 330,
+    lineThreeBis: {
+      color: "#9f9825",
+      gambettaThreeBis: {
+        name: "Gambetta",
       },
-    },
-    jaures_m5: {
-      name: "Jaures",
-      name_fr: "Jaurès",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 330,
+      pelleport: {
+        name: "Pelleport",
       },
-    },
-    stalingrad_m5: {
-      name: "Stalingrad",
-      name_fr: "Stalingrad",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 330,
+      stFargeau: {
+        name: "St-Fargeau",
       },
-    },
-    gareDuNord_m5: {
-      name: "Gare du Nord",
-      name_fr: "Gare du Nord",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 330,
+      porteDesLilas: {
+        name: "Porte des Lilas",
       },
     },
-    gareDeLEst_m5: {
-      name: "Gare de l'Est",
-      name_fr: "Gare de l'Est",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 330,
+    lineFour: {
+      color: "#a0006e",
+      porteDeClignancourt: {
+        name: "Porte de Clignancourt",
       },
-    },
-    jacquesBonsergent: {
-      name: "Jacques Bonsergent",
-      name_fr: "Jacques Bonsergent",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 330,
+      simplon: {
+        name: "Simplon",
       },
-    },
-    republique_m5: {
-      name: "Republique",
-      name_fr: "République",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 330,
+      marcelSembat: {
+        name: "Marcadet-Poissonniers",
       },
-    },
-    oberkampf_m5: {
-      name: "Oberkampf",
-      name_fr: "Oberkampf",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 330,
+      chateauRouge: {
+        name: "Château Rouge",
       },
-    },
-    richardLenoir: {
-      name: "Richard Lenoir",
-      name_fr: "Richard Lenoir",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 330,
+      barbèsRochechouartLineFour: {
+        name: "Barbès-Rochechouart",
       },
-    },
-    breguetSabin: {
-      name: "Breguet Sabin",
-      name_fr: "Bréguet Sabin",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 330,
+      gardeDuNordLineFour: {
+        name: "Gare du Nord",
       },
-    },
-    bastille_m5: {
-      name: "Bastille",
-      name_fr: "Bastille",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 330,
+      gardeDeLest: {
+        name: "Gare de l'Est",
       },
-    },
-    quaiDeLaRapee: {
-      name: "Quai de la Rapee",
-      name_fr: "Quai de la Râpée",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 330,
+      chateauDeau: {
+        name: "Château d'Eau",
       },
-    },
-    gareDAusterlitz_m5: {
-      name: "Gare d'Austerlitz",
-      name_fr: "Gare d'Austerlitz",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 330,
+      strasbourgStdenis: {
+        name: "Strasbourg-St-Denis",
       },
-    },
-    saintMarcel: {
-      name: "Saint-Marcel",
-      name_fr: "Saint-Marcel",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 330,
+      reaumurSebastopolLineFour: {
+        name: "Réaumur-Sébastopol",
       },
-    },
-    campoFormio: {
-      name: "Campo-Formio",
-      name_fr: "Campo-Formio",
-      connector: {
-        color: "orange",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 330,
+      etiennemarcel: {
+        name: "Étienne Marcel",
       },
-    },
-    placeDItalie_m5: {
-      name: "Place d'Italie",
-      name_fr: "Place d'Italie",
-      connector: {
-        color: "orange",
-        left: true,
-        station: true,
-        x: 1260,
-        y: 330,
+      lesHalles: {
+        name: "Les Halles",
       },
-    },
-
-    // M6 (Charles de Gaulle Etoile - Nation)
-    charlesDeGaulleEtoile_m6: {
-      name: "Charles de Gaulle-Etoile",
-      name_fr: "Charles de Gaulle-Étoile",
-      connector: {
-        color: "#4D8C35",
-        right: true,
-        station: true,
-        x: 0,
-        y: 390,
-        labelPlacement: "bottom-right",
+      chateletLineFour: {
+        name: "Châtelet",
       },
-    },
-    kleber: {
-      name: "Kleber",
-      name_fr: "Kléber",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 390,
-        labelPlacement: "bottom-right",
+      cite: {
+        name: "Cité",
       },
-    },
-    boissiere: {
-      name: "Boissiere",
-      name_fr: "Boissière",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 390,
-        labelPlacement: "bottom-right",
+      stMichelLineFour: {
+        name: "St-Michel",
       },
-    },
-    trocadero_m6: {
-      name: "Trocadero",
-      name_fr: "Trocadéro",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 390,
-        labelPlacement: "bottom-right",
+      odeonLineFour: {
+        name: "Odéon",
       },
-    },
-    passy: {
-      name: "Passy",
-      name_fr: "Passy",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 390,
-        labelPlacement: "bottom-right",
+      stGermainDesPres: {
+        name: "St-Germain-des-Prés",
       },
-    },
-    birHakeim: {
-      name: "Bir-Hakeim",
-      name_fr: "Bir-Hakeim",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 390,
-        labelPlacement: "bottom-right",
+      stSulpice: {
+        name: "St-Sulpice",
       },
-    },
-    dupleix: {
-      name: "Dupleix",
-      name_fr: "Dupleix",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 390,
-        labelPlacement: "bottom-right",
+      stPlacide: {
+        name: "St-Placide",
       },
-    },
-    laMotttePicquetGrenelle_m6: {
-      name: "La Motte Picquet-Grenelle",
-      name_fr: "La Motte Picquet-Grenelle",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 390,
-        labelPlacement: "bottom-right",
+      montparnasseBienvenue: {
+        name: "Montparnasse-Bienvenüe",
       },
-    },
-    cambronne: {
-      name: "Cambronne",
-      name_fr: "Cambronne",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 390,
-        labelPlacement: "bottom-right",
+      vavin: {
+        name: "Vavin",
       },
-    },
-    sevresLecourbe: {
-      name: "Sevres-Lecourbe",
-      name_fr: "Sèvres-Lecourbe",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 390,
-        labelPlacement: "bottom-right",
+      raspail: {
+        name: "Raspail",
       },
-    },
-    pasteur_m6: {
-      name: "Pasteur",
-      name_fr: "Pasteur",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 390,
-        labelPlacement: "bottom-right",
+      denfertRochereau: {
+        name: "Denfert-Rochereau",
       },
-    },
-    montparnasseBienvenue_m6: {
-      name: "Montparnasse Bienvenue",
-      name_fr: "Montparnasse Bienvenüe",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 390,
-        labelPlacement: "bottom-right",
+      mouchetard: {
+        name: "Mouton-Duvernet",
       },
-    },
-    edgarQuinet: {
-      name: "Edgar Quinet",
-      name_fr: "Edgar Quinet",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 390,
-        labelPlacement: "bottom-right",
+      alesia: {
+        name: "Alésia",
       },
-    },
-    raspail_m6: {
-      name: "Raspail",
-      name_fr: "Raspail",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 390,
-        labelPlacement: "bottom-right",
+      porteDOrleans: {
+        name: "Porte d'Orléans",
       },
-    },
-    denfertRochereau_m6: {
-      name: "Denfert-Rochereau",
-      name_fr: "Denfert-Rochereau",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 390,
-        labelPlacement: "bottom-right",
+      mairieDeMontrouge: {
+        name: "Mairie de Montrouge",
       },
-    },
-    saintJacques: {
-      name: "Saint-Jacques",
-      name_fr: "Saint-Jacques",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 390,
-        labelPlacement: "bottom-right",
+      barbaraLineFour: {
+        name: "Barbara",
       },
-    },
-    glaciere: {
-      name: "Glaciere",
-      name_fr: "Glacière",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 390,
-        labelPlacement: "bottom-right",
+      beaubourgQuartier: {
+        name: "Bagneux-Lucie Aubrac",
       },
     },
-    corvisart: {
-      name: "Corvisart",
-      name_fr: "Corvisart",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 390,
-        labelPlacement: "bottom-right",
+    lineFive: {
+      color: "#f28e42",
+      bobignyPabloPicasso: {
+        name: "Bobigny-Pablo Picasso",
       },
-    },
-    placeDItalie_m6: {
-      name: "Place d'Italie",
-      name_fr: "Place d'Italie",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 390,
-        labelPlacement: "bottom-right",
+      raimundMartin: {
+        name: "Bobigny-Pantin-Raymond Queneau",
       },
-    },
-    nationale: {
-      name: "Nationale",
-      name_fr: "Nationale",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 390,
-        labelPlacement: "bottom-right",
+      egliseDePantin: {
+        name: "Église de Pantin",
       },
-    },
-    chevaleret: {
-      name: "Chevaleret",
-      name_fr: "Chevaleret",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 390,
-        labelPlacement: "bottom-right",
+      hoche: {
+        name: "Hoche",
       },
-    },
-    quaiDeLaGare: {
-      name: "Quai de la Gare",
-      name_fr: "Quai de la Gare",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 390,
-        labelPlacement: "bottom-right",
+      porteDePantin: {
+        name: "Porte de Pantin",
       },
-    },
-    bercy_m6: {
-      name: "Bercy",
-      name_fr: "Bercy",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 390,
-        labelPlacement: "bottom-right",
+      ourcq: {
+        name: "Ourcq",
       },
-    },
-    dugommier: {
-      name: "Dugommier",
-      name_fr: "Dugommier",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 390,
-        labelPlacement: "bottom-right",
+      laumiere: {
+        name: "Laumière",
       },
-    },
-    daumesnil_m6: {
-      name: "Daumesnil",
-      name_fr: "Daumesnil",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 390,
-        labelPlacement: "bottom-right",
+      jauresLineFive: {
+        name: "Jaurès",
       },
-    },
-    belAir: {
-      name: "Bel-Air",
-      name_fr: "Bel-Air",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 390,
-        labelPlacement: "bottom-right",
+      stalingradLineFive: {
+        name: "Stalingrad",
       },
-    },
-    picpus: {
-      name: "Picpus",
-      name_fr: "Picpus",
-      connector: {
-        color: "#4D8C35",
-        horizontal: true,
-        station: true,
-        x: 1560,
-        y: 390,
-        labelPlacement: "bottom-right",
+      gardeduNordLineFive: {
+        name: "Gare du Nord",
       },
-    },
-    nation_m6: {
-      name: "Nation",
-      name_fr: "Nation",
-      connector: {
-        color: "#4D8C35",
-        left: true,
-        station: true,
-        x: 1620,
-        y: 390,
-        labelPlacement: "bottom-right",
+      gardeestLineFive: {
+        name: "Gare de l'Est",
       },
-    },
-
-    // M7 (La Courneuve - 8 Mai 1945 - Villejuif - Louis Aragon)
-    laCourneuve8Mai1945_m7: {
-      name: "La Courneuve - 8 Mai 1945",
-      name_fr: "La Courneuve - 8 Mai 1945",
-      connector: {
-        color: "pink",
-        right: true,
-        station: true,
-        x: 0,
-        y: 450,
+      jacquesBonsergent: {
+        name: "Jacques Bonsergent",
       },
-    },
-    fortDAubervilliers_m7: {
-      name: "Fort d'Aubervilliers",
-      name_fr: "Fort d'Aubervilliers",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 450,
+      republiqueLineFive: {
+        name: "République",
       },
-    },
-    aubervilliersPantinQuatreChemins_m7: {
-      name: "Aubervilliers - Pantin - Quatre Chemins",
-      name_fr: "Aubervilliers - Pantin - Quatre Chemins",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 450,
+      oberkampf: {
+        name: "Oberkampf",
       },
-    },
-    porteDeLaVillette_m7: {
-      name: "Porte de la Villette",
-      name_fr: "Porte de la Villette",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 450,
+      richardLenoir: {
+        name: "Richard-Lenoir",
       },
-    },
-    corentinCariou_m7: {
-      name: "Corentin Cariou",
-      name_fr: "Corentin Cariou",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 450,
+      bregueтSabin: {
+        name: "Bréguet-Sabin",
       },
-    },
-    crimee_m7: {
-      name: "Crimee",
-      name_fr: "Crimée",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 450,
+      bastilleLineFive: {
+        name: "Bastille",
       },
-    },
-    riquet_m7: {
-      name: "Riquet",
-      name_fr: "Riquet",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 450,
+      quaiDeLaRapee: {
+        name: "Quai de la Rapée",
       },
-    },
-    stalingrad_m7: {
-      name: "Stalingrad",
-      name_fr: "Stalingrad",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 450,
+      gareDausterlitz: {
+        name: "Gare d'Austerlitz",
       },
-    },
-    // M7 BIS
-    louisBlanc_m7: {
-      name: "Louis Blanc",
-      name_fr: "Louis Blanc",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        bottom: true,
-        x: 480,
-        y: 450,
+      stMarcel: {
+        name: "St-Marcel",
       },
-    },
-    chateauLandon_m7: {
-      name: "Chateau-Landon",
-      name_fr: "Château-Landon",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 450,
+      campoDifformio: {
+        name: "Campo Formio",
       },
-    },
-    gareDeLEst_m7: {
-      name: "Gare de l'Est",
-      name_fr: "Gare de l'Est",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 450,
+      placeDitalie: {
+        name: "Place d'Italie",
       },
     },
-    poissonniere_m7: {
-      name: "Poissonniere",
-      name_fr: "Poissonnière",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 450,
+    lineSix: {
+      color: "#82c8e6",
+      charlesDegaulleEtoileLineSix: {
+        name: "Charles de Gaulle-Étoile",
       },
-    },
-    cadet_m7: {
-      name: "Cadet",
-      name_fr: "Cadet",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 450,
+      kleber: {
+        name: "Kléber",
       },
-    },
-    lePeletier_m7: {
-      name: "Le Peletier",
-      name_fr: "Le Peletier",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 450,
+      boissiere: {
+        name: "Boissière",
       },
-    },
-    chausseeDAntinLaFayette_m7: {
-      name: "Chaussee d'Antin - La Fayette",
-      name_fr: "Chaussée d'Antin - La Fayette",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 450,
+      trocadero: {
+        name: "Trocadéro",
       },
-    },
-    opera_m7: {
-      name: "Opera",
-      name_fr: "Opéra",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 450,
+      passy: {
+        name: "Passy",
       },
-    },
-    pyramides_m7: {
-      name: "Pyramides",
-      name_fr: "Pyramides",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 450,
+      birhakeim: {
+        name: "Bir-Hakeim",
       },
-    },
-    palaisRoyalMuseeDuLouvre_m7: {
-      name: "Palais Royal-Musee du Louvre",
-      name_fr: "Palais Royal-Musée du Louvre",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 450,
+      dupleix: {
+        name: "Dupleix",
       },
-    },
-    pontNeuf_m7: {
-      name: "Pont Neuf",
-      name_fr: "Pont Neuf",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 450,
+      laMottePicketGrenelle: {
+        name: "La Motte-Picquet-Grenelle",
       },
-    },
-    chatelet_m7: {
-      name: "Chatelet",
-      name_fr: "Châtelet",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 450,
+      cambronne: {
+        name: "Cambronne",
       },
-    },
-    pontMarie_m7: {
-      name: "Pont Marie",
-      name_fr: "Pont Marie",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 450,
+      sevresLecourbe: {
+        name: "Sèvres-Lecourbe",
       },
-    },
-    sullyMorland_m7: {
-      name: "Sully - Morland",
-      name_fr: "Sully - Morland",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 450,
+      pasteur: {
+        name: "Pasteur",
       },
-    },
-    jussieu_m7: {
-      name: "Jussieu",
-      name_fr: "Jussieu",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 450,
+      montparnasseBienvenueLineSix: {
+        name: "Montparnasse-Bienvenüe",
       },
-    },
-    placeMonge_m7: {
-      name: "Place Monge",
-      name_fr: "Place Monge",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 450,
+      edgarQuinet: {
+        name: "Edgar Quinet",
       },
-    },
-    censierDaubenton_m7: {
-      name: "Censier - Daubenton",
-      name_fr: "Censier - Daubenton",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 450,
+      raspailLineSix: {
+        name: "Raspail",
       },
-    },
-    lesGobelins_m7: {
-      name: "Les Gobelins",
-      name_fr: "Les Gobelins",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 450,
+      denfertRochereauLineSix: {
+        name: "Denfert-Rochereau",
       },
-    },
-    placeDItalie_m7: {
-      name: "Place d'Italie",
-      name_fr: "Place d'Italie",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1560,
-        y: 450,
+      saintJacques: {
+        name: "Saint-Jacques",
       },
-    },
-    tolbiac_m7: {
-      name: "Tolbiac",
-      name_fr: "Tolbiac",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1620,
-        y: 450,
+      glaciere: {
+        name: "Glacière",
       },
-    },
-    maisonBlanche_m7: {
-      name: "Maison Blanche",
-      name_fr: "Maison Blanche",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1680,
-        y: 450,
+      corvisart: {
+        name: "Corvisart",
       },
-    },
-    leKremlinBicetre: {
-      name: "Le Kremlin-Bicetre",
-      name_fr: "Le Kremlin-Bicêtre",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1800,
-        y: 450,
+      placeDitalieLineSix: {
+        name: "Place d'Italie",
       },
-    },
-    villejuifLeoLagrange: {
-      name: "Villejuif - Leo Lagrange",
-      name_fr: "Villejuif - Léo Lagrange",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1860,
-        y: 450,
+      nationLineSix: {
+        name: "Nation",
       },
     },
-    villejuifPaulVaillantCouturier: {
-      name: "Villejuif - Paul Vaillant-Couturier",
-      name_fr: "Villejuif - Paul Vaillant-Couturier",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1920,
-        y: 450,
+    lineSeven: {
+      color: "#f3a4ba",
+      laСourneuve: {
+        name: "La Courneuve-8 Mai 1945",
       },
-    },
-    villejuifLouisAragon: {
-      name: "Villejuif - Louis Aragon",
-      name_fr: "Villejuif - Louis Aragon",
-      connector: {
-        color: "pink",
-        left: true,
-        station: true,
-        x: 1980,
-        y: 450,
+      fortDAubervilliers: {
+        name: "Fort d'Aubervilliers",
       },
-    },
-
-    // M7 (La Courneuve - 8 Mai 1945 - Mairie d'Ivry) - branch
-    porteDItalie_m7b: {
-      name: "Porte d'Italie",
-      name_fr: "Porte d'Italie",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        bottom: true,
-        station: true,
-        x: 1740,
-        y: 450,
+      aubervillierspantinQuatreChem: {
+        name: "Aubervilliers-Pantin Quatre Chemins",
       },
-    },
-    porteDeChoisy: {
-      name: "Porte de Choisy",
-      name_fr: "Porte de Choisy",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1800,
-        y: 510,
-        labelPlacement: "bottom-right",
+      porteDelaVillette: {
+        name: "Porte de la Villette",
       },
-    },
-    porteDIvry: {
-      name: "Porte d'Ivry",
-      name_fr: "Porte d'Ivry",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1860,
-        y: 510,
-        labelPlacement: "bottom-right",
+      corentinCariou: {
+        name: "Corentin Cariou",
       },
-    },
-    pierreEtMarieCurie: {
-      name: "Pierre et Marie Curie",
-      name_fr: "Pierre et Marie Curie",
-      connector: {
-        color: "pink",
-        horizontal: true,
-        station: true,
-        x: 1920,
-        y: 510,
-        labelPlacement: "bottom-right",
+      criméeLineSeven: {
+        name: "Crimée",
       },
-    },
-    mairieDIvry: {
-      name: "Mairie d'Ivry",
-      name_fr: "Mairie d'Ivry",
-      connector: {
-        color: "pink",
-        left: true,
-        station: true,
-        x: 1980,
-        y: 510,
-        labelPlacement: "bottom-right",
+      rigalLineSeven: {
+        name: "Riquet",
       },
-    },
-
-    // M7bis (Louis Blanc - Pré Saint-Gervais)
-    louisBlanc_m7bis: {
-      name: "Louis Blanc",
-      name_fr: "Louis Blanc",
-      connector: {
-        color: "green",
-        top: true,
-        right: true,
-        station: true,
-        x: 480,
-        y: 510,
-        labelPlacement: "bottom-right",
+      stalingradLineSeven: {
+        name: "Stalingrad",
       },
-    },
-    jaures_m7bis: {
-      name: "Jaures",
-      name_fr: "Jaurès",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 510,
-        labelPlacement: "bottom-right",
+      louisBlanc: {
+        name: "Louis Blanc",
       },
-    },
-    bolivar: {
-      name: "Bolivar",
-      name_fr: "Bolivar",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 510,
-        labelPlacement: "bottom-right",
+      chateauLandon: {
+        name: "Château Landon",
       },
-    },
-    buttesChaumont: {
-      name: "Buttes Chaumont",
-      name_fr: "Buttes Chaumont",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 510,
-        labelPlacement: "bottom-right",
+      gardeestLineSeven: {
+        name: "Gare de l'Est",
       },
-    },
-    botzaris_m7bis: {
-      name: "Botzaris",
-      name_fr: "Botzaris",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 510,
-        labelPlacement: "bottom-right",
+      poissoniere: {
+        name: "Poissonnière",
       },
-    },
-    placeDesFetes_m7bis: {
-      name: "Place des Fetes",
-      name_fr: "Place des Fêtes",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 510,
-        labelPlacement: "bottom-right",
+      cadetLineSeven: {
+        name: "Cadet",
       },
-    },
-    preSaintGervais: {
-      name: "Pre Saint-Gervais",
-      name_fr: "Pré Saint-Gervais",
-      connector: {
-        color: "green",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 510,
-        labelPlacement: "bottom-right",
+      lePeletier: {
+        name: "Le Peletier",
       },
-    },
-    danube: {
-      name: "Danube",
-      name_fr: "Danube",
-      connector: {
-        color: "green",
-        left: true,
-        station: true,
-        x: 900,
-        y: 510,
-        labelPlacement: "bottom-right",
+      chausseeDantin: {
+        name: "Chaussée d'Antin-La Fayette",
       },
-    },
-
-    // M8 (Balard - Créteil – Pointe du Lac)
-    balard: {
-      name: "Balard",
-      name_fr: "Balard",
-      connector: {
-        color: "#e19bdf",
-        right: true,
-        station: true,
-        x: 0,
-        y: 570,
+      operaLineSeven: {
+        name: "Opéra",
       },
-    },
-    lourmel: {
-      name: "Lourmel",
-      name_fr: "Lourmel",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 570,
+      pyramidesLineSeven: {
+        name: "Pyramides",
       },
-    },
-    boucicaut: {
-      name: "Boucicaut",
-      name_fr: "Boucicaut",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 570,
+      palaisRoyalMuseeДuLouvreLineSeven: {
+        name: "Palais Royal-Musée du Louvre",
       },
-    },
-    felixFaure: {
-      name: "Felix Faure",
-      name_fr: "Félix Faure",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 570,
+      pontNeuf: {
+        name: "Pont Neuf",
       },
-    },
-    commerce: {
-      name: "Commerce",
-      name_fr: "Commerce",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 570,
+      chateletLineSeven: {
+        name: "Châtelet",
       },
-    },
-    laMotttePicquetGrenelle_m8: {
-      name: "La Motte Picquet-Grenelle",
-      name_fr: "La Motte Picquet-Grenelle",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 570,
+      pontMarie: {
+        name: "Pont Marie",
       },
-    },
-    ecoleMilitaire: {
-      name: "Ecole Militaire",
-      name_fr: "École Militaire",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 570,
+      sullymordand: {
+        name: "Sully-Morland",
       },
-    },
-    laTourMaubourg: {
-      name: "La Tour-Maubourg",
-      name_fr: "La Tour-Maubourg",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 570,
+      jardindesPlantes: {
+        name: "Jussieu",
       },
-    },
-    invalides_m8: {
-      name: "Invalides",
-      name_fr: "Invalides",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 570,
+      placemдonge: {
+        name: "Place Monge",
       },
-    },
-    concorde_m8: {
-      name: "Concorde",
-      name_fr: "Concorde",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 570,
+      censierDaubenton: {
+        name: "Censier-Daubenton",
       },
-    },
-    madeleine_m8: {
-      name: "Madeleine",
-      name_fr: "Madeleine",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 570,
+      lesGobelins: {
+        name: "Les Gobelins",
       },
-    },
-    opera_m8: {
-      name: "Opera",
-      name_fr: "Opéra",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 570,
+      placeDitalieLineSeven: {
+        name: "Place d'Italie",
       },
-    },
-    richelieuDrouot_m8: {
-      name: "Richelieu - Drouot",
-      name_fr: "Richelieu – Drouot",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 570,
+      tolbiac: {
+        name: "Tolbiac",
       },
-    },
-    grandsBoulevards_m8: {
-      name: "Grands Boulevards",
-      name_fr: "Grands Boulevards",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 570,
+      maisonBlanche: {
+        name: "Maison Blanche",
       },
+      branches: [
+        {
+          branchedStation: "Maison Blanche",
+          color: "#f3a4ba",
+          stations: {
+            leKremlinBicetre: {
+              name: "Le Kremlin-Bicêtre",
+            },
+            villejuifLeoLagrange: {
+              name: "Villejuif-Léo Lagrange",
+            },
+            villejuifPaulVaillantCouturier: {
+              name: "Villejuif-Paul Vaillant-Couturier",
+            },
+            villejuifLouisAragon: {
+              name: "Villejuif-Louis Aragon",
+            },
+          },
+        },
+        {
+          branchedStation: "Maison Blanche",
+          color: "#f3a4ba",
+          stations: {
+            porteditalie: {
+              name: "Porte d'Italie",
+            },
+            porteDChoisy: {
+              name: "Porte de Choisy",
+            },
+            porteDivry: {
+              name: "Porte d'Ivry",
+            },
+            pierreетMarieCurie: {
+              name: "Pierre et Marie Curie",
+            },
+            mairiedivry: {
+              name: "Mairie d'Ivry",
+            },
+          },
+        },
+      ],
     },
-    bonneNouvelle_m8: {
-      name: "Bonne Nouvelle",
-      name_fr: "Bonne Nouvelle",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 570,
+    lineSevenBis: {
+      color: "#82c8e6",
+      louisBlancSevenBis: {
+        name: "Louis Blanc",
       },
-    },
-    strasbourgSaintDenis_m8: {
-      name: "Strasbourg Saint-Denis",
-      name_fr: "Strasbourg Saint-Denis",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 570,
+      jauresSevenBis: {
+        name: "Jaurès",
       },
-    },
-    republique_m8: {
-      name: "Republique",
-      name_fr: "République",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 570,
+      bolivar: {
+        name: "Bolivar",
       },
-    },
-    fillesDuCalvaire: {
-      name: "Filles du Calvaire",
-      name_fr: "Filles du Calvaire",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 570,
+      buttesChaumont: {
+        name: "Buttes Chaumont",
       },
-    },
-    saintSebastienFroissart: {
-      name: "Saint-Sebastien - Froissart",
-      name_fr: "Saint-Sébastien – Froissart",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 570,
+      botzaris: {
+        name: "Botzaris",
       },
-    },
-    cheminVert: {
-      name: "Chemin Vert",
-      name_fr: "Chemin Vert",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 570,
+      placeDeFetes: {
+        name: "Place des Fêtes",
       },
-    },
-    bastille_m8: {
-      name: "Bastille",
-      name_fr: "Bastille",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 570,
+      preStGervais: {
+        name: "Pré-St-Gervais",
       },
     },
-    ledruRollin: {
-      name: "Ledru-Rollin",
-      name_fr: "Ledru-Rollin",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 570,
+    lineEight: {
+      color: "#c9910d",
+      pointeDuLac: {
+        name: "Pointe du Lac",
       },
-    },
-    faidherbeChaligny: {
-      name: "Faidherbe - Chaligny",
-      name_fr: "Faidherbe – Chaligny",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 570,
+      créteilLecLerc: {
+        name: "Créteil-L'Échat",
       },
-    },
-    reuillyDiderot_m8: {
-      name: "Reuilly-Diderot",
-      name_fr: "Reuilly-Diderot",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 570,
+      creteilUniversite: {
+        name: "Créteil-Université",
       },
-    },
-    montgallet: {
-      name: "Montgallet",
-      name_fr: "Montgallet",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 570,
+      creteilPrefecture: {
+        name: "Créteil-Préfecture",
       },
-    },
-    daumesnil_m8: {
-      name: "Daumesnil",
-      name_fr: "Daumesnil",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 570,
+      maisondesCreteil: {
+        name: "Créteil-Pointe du Lac",
       },
-    },
-    michelBizot: {
-      name: "Michel Bizot",
-      name_fr: "Michel Bizot",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1560,
-        y: 570,
+      maisonAlfortStade: {
+        name: "Maisons-Alfort-Stade",
       },
-    },
-    porteDoree: {
-      name: "Porte Doree",
-      name_fr: "Porte Dorée",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1620,
-        y: 570,
+      maisonAlfortLesJuilliottes: {
+        name: "Maisons-Alfort-Les Juilliоttes",
       },
-    },
-    porteDeCharenton: {
-      name: "Porte de Charenton",
-      name_fr: "Porte de Charenton",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1680,
-        y: 570,
+      ecoleveterinaire: {
+        name: "École Vétérinaire de Maisons-Alfort",
       },
-    },
-    liberte: {
-      name: "Liberte",
-      name_fr: "Liberté",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1740,
-        y: 570,
+      charentonEcoles: {
+        name: "Charenton-Écoles",
       },
-    },
-    charentonEcoles: {
-      name: "Charenton - Ecoles",
-      name_fr: "Charenton – Écoles",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1800,
-        y: 570,
+      liberteLineEight: {
+        name: "Liberté",
       },
-    },
-    ecoleVeterinaireDeMaisonsAlfort: {
-      name: "Ecole Veterinaire de Maisons-Alfort",
-      name_fr: "École Vétérinaire de Maisons-Alfort",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1860,
-        y: 570,
+      charentontonBercy: {
+        name: "Charenton-Le Pont",
       },
-    },
-    maisonsAlfortStade: {
-      name: "Maisons-Alfort - Stade",
-      name_fr: "Maisons-Alfort – Stade",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1920,
-        y: 570,
+      porteDeCharenton: {
+        name: "Porte de Charenton",
       },
-    },
-    maisonsAlfortLesJuilliottes: {
-      name: "Maisons-Alfort - Les Juilliottes",
-      name_fr: "Maisons-Alfort – Les Juilliottes",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 1980,
-        y: 570,
+      maisonsDAlfortLineEight: {
+        name: "Maisons-Alfort",
       },
-    },
-    creteilLEchat: {
-      name: "Creteil - L'Echat",
-      name_fr: "Créteil – L'Échat",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 2040,
-        y: 570,
+      reuillyDiderotLineEight: {
+        name: "Reuilly-Diderot",
       },
-    },
-    creteilUniversite: {
-      name: "Creteil - Universite",
-      name_fr: "Créteil – Université",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 2100,
-        y: 570,
+      faидherbeCharigny: {
+        name: "Faidherbe-Chaligny",
       },
-    },
-    creteilPrefecture: {
-      name: "Creteil - Prefecture",
-      name_fr: "Créteil – Préfecture",
-      connector: {
-        color: "#e19bdf",
-        horizontal: true,
-        station: true,
-        x: 2160,
-        y: 570,
+      ledruRollin: {
+        name: "Ledru-Rollin",
       },
-    },
-    creteilPointeDuLac: {
-      name: "Creteil - Pointe du Lac",
-      name_fr: "Créteil – Pointe du Lac",
-      connector: {
-        color: "#e19bdf",
-        left: true,
-        station: true,
-        x: 2220,
-        y: 570,
+      bastilleLineEight: {
+        name: "Bastille",
       },
-    },
-
-    // M9 (Pont de Sèvres - Mairie de Montreuil)
-    pontDeSevres: {
-      name: "Pont de Sevres",
-      name_fr: "Pont de Sèvres",
-      connector: {
-        color: "#b6bd00",
-        right: true,
-        station: true,
-        x: 0,
-        y: 630,
-        labelPlacement: "bottom-right",
+      cheveret: {
+        name: "Chemin Vert",
       },
-    },
-    billancourt: {
-      name: "Billancourt",
-      name_fr: "Billancourt",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 630,
-        labelPlacement: "bottom-right",
+      stSebastienFroissart: {
+        name: "St-Sébastien-Froissart",
       },
-    },
-    marcelSembat: {
-      name: "Marcel Sembat",
-      name_fr: "Marcel Sembat",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 630,
-        labelPlacement: "bottom-right",
+      fillesCalvaire: {
+        name: "Filles du Calvaire",
       },
-    },
-    porteDeSaintCloud: {
-      name: "Porte de Saint-Cloud",
-      name_fr: "Porte de Saint-Cloud",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 630,
-        labelPlacement: "bottom-right",
+      republiqueLineEight: {
+        name: "République",
       },
-    },
-    exelmans: {
-      name: "Exelmans",
-      name_fr: "Exelmans",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 630,
-        labelPlacement: "bottom-right",
+      richelieuDrouot: {
+        name: "Richelieu-Drouot",
       },
-    },
-    michelAngeMolitor_m9: {
-      name: "Michel-Ange - Molitor",
-      name_fr: "Michel-Ange - Molitor",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 630,
-        labelPlacement: "bottom-right",
+      grandsBoulevardsLineEight: {
+        name: "Grands Boulevards",
       },
-    },
-    michelAngeAuteuil_m9: {
-      name: "Michel-Ange - Auteuil",
-      name_fr: "Michel-Ange - Auteuil",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 630,
-        labelPlacement: "bottom-right",
+      bonneNouvelle: {
+        name: "Bonne Nouvelle",
       },
-    },
-    jasmin: {
-      name: "Jasmin",
-      name_fr: "Jasmin",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 630,
-        labelPlacement: "bottom-right",
+      strasbourgStdenisLineEight: {
+        name: "Strasbourg-St-Denis",
       },
-    },
-    ranelagh: {
-      name: "Ranelagh",
-      name_fr: "Ranelagh",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 630,
-        labelPlacement: "bottom-right",
+      laMottePicketGrenelleLineEight: {
+        name: "La Motte-Picquet-Grenelle",
       },
-    },
-    laMuette: {
-      name: "La Muette",
-      name_fr: "La Muette",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 630,
-        labelPlacement: "bottom-right",
+      ecoleMilitaire: {
+        name: "École Militaire",
       },
-    },
-    rueDeLaPompe: {
-      name: "Rue de la Pompe",
-      name_fr: "Rue de la Pompe",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 630,
-        labelPlacement: "bottom-right",
+      laTourMaubourg: {
+        name: "La Tour-Maubourg",
       },
-    },
-    trocadero_m9: {
-      name: "Trocadero",
-      name_fr: "Trocadéro",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 630,
-        labelPlacement: "bottom-right",
+      invalides: {
+        name: "Invalides",
       },
-    },
-    iena: {
-      name: "Iena",
-      name_fr: "Iéna",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 630,
-        labelPlacement: "bottom-right",
+      concordeLineEight: {
+        name: "Concorde",
       },
-    },
-    almaMarceau: {
-      name: "Alma - Marceau",
-      name_fr: "Alma - Marceau",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 630,
-        labelPlacement: "bottom-right",
+      madeleine: {
+        name: "Madeleine",
       },
-    },
-    franklinDRoosevelt_m9: {
-      name: "Franklin D. Roosevelt",
-      name_fr: "Franklin D. Roosevelt",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 630,
-        labelPlacement: "bottom-right",
+      operaLineEight: {
+        name: "Opéra",
       },
-    },
-    saintPhilippeDuRoule: {
-      name: "Saint-Philippe du Roule",
-      name_fr: "Saint-Philippe du Roule",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 630,
-        labelPlacement: "bottom-right",
+      richelieuDrouotLineEight: {
+        name: "Richelieu-Drouot",
       },
-    },
-    miromesnil_m9: {
-      name: "Miromesnil",
-      name_fr: "Miromesnil",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 630,
-        labelPlacement: "bottom-right",
+      grandsBoulevardsLineEightLine: {
+        name: "Grands Boulevards",
       },
-    },
-    saintAugustin: {
-      name: "Saint-Augustin",
-      name_fr: "Saint-Augustin",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 630,
-        labelPlacement: "bottom-right",
+      bonneNouvelleLineEight: {
+        name: "Bonne Nouvelle",
       },
-    },
-    havreCaumartin_m9: {
-      name: "Havre - Caumartin",
-      name_fr: "Havre - Caumartin",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 630,
-        labelPlacement: "bottom-right",
+      strasbourgStDenisLineEight: {
+        name: "Strasbourg-St-Denis",
       },
-    },
-    chausseeDAntinLaFayette_m9: {
-      name: "Chaussee d'Antin - La Fayette",
-      name_fr: "Chaussée d'Antin - La Fayette",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 630,
-        labelPlacement: "bottom-right",
+      clichy: {
+        name: "Clichy",
       },
-    },
-    richelieuDrouot_m9: {
-      name: "Richelieu - Drouot",
-      name_fr: "Richelieu – Drouot",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 630,
-        labelPlacement: "bottom-right",
+      placeDeclichyLineEight: {
+        name: "Place de Clichy",
       },
-    },
-    grandsBoulevards_m9: {
-      name: "Grands Boulevards",
-      name_fr: "Grands Boulevards",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 630,
-        labelPlacement: "bottom-right",
+      liFourche: {
+        name: "La Fourche",
       },
-    },
-    bonneNouvelle_m9: {
-      name: "Bonne Nouvelle",
-      name_fr: "Bonne Nouvelle",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 630,
-        labelPlacement: "bottom-right",
+      guyMoquet: {
+        name: "Guy Môquet",
       },
-    },
-    strasbourgSaintDenis_m9: {
-      name: "Strasbourg Saint-Denis",
-      name_fr: "Strasbourg Saint-Denis",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 630,
-        labelPlacement: "bottom-right",
+      porteDeStOuen: {
+        name: "Porte de St-Ouen",
       },
-    },
-    republique_m9: {
-      name: "Republique",
-      name_fr: "République",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 630,
-        labelPlacement: "bottom-right",
+      mairieDeClichyLineEight: {
+        name: "Mairie de Clichy",
       },
-    },
-    oberkampf_m9: {
-      name: "Oberkampf",
-      name_fr: "Oberkampf",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 630,
-        labelPlacement: "bottom-right",
+      gabrielPeriAsnieres: {
+        name: "Gabriel Péri",
       },
-    },
-    saintAmbroise: {
-      name: "Saint-Ambroise",
-      name_fr: "Saint-Ambroise",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1560,
-        y: 630,
-        labelPlacement: "bottom-right",
+      balard: {
+        name: "Balard",
       },
     },
-    voltaire: {
-      name: "Voltaire",
-      name_fr: "Voltaire",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1620,
-        y: 630,
-        labelPlacement: "bottom-right",
+    lineNine: {
+      color: "#d5c900",
+      pontDeSevres: {
+        name: "Pont de Sèvres",
       },
-    },
-    charonne: {
-      name: "Charonne",
-      name_fr: "Charonne",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1680,
-        y: 630,
-        labelPlacement: "bottom-right",
+      billancourt: {
+        name: "Billancourt",
       },
-    },
-    rueDesBoulets: {
-      name: "Rue des Boulets",
-      name_fr: "Rue des Boulets",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1740,
-        y: 630,
-        labelPlacement: "bottom-right",
+      marcelSembatLineNine: {
+        name: "Marcel Sembat",
       },
-    },
-    nation_m9: {
-      name: "Nation",
-      name_fr: "Nation",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1800,
-        y: 630,
-        labelPlacement: "bottom-right",
+      porteDeStCloudLineNine: {
+        name: "Porte de St-Cloud",
       },
-    },
-    buzenval: {
-      name: "Buzenval",
-      name_fr: "Buzenval",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1860,
-        y: 630,
-        labelPlacement: "bottom-right",
+      exelmans: {
+        name: "Exelmans",
       },
-    },
-    maraichers: {
-      name: "Maraichers",
-      name_fr: "Maraîchers",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1920,
-        y: 630,
-        labelPlacement: "bottom-right",
+      michelAngeAuteuil: {
+        name: "Michel-Ange-Auteuil",
       },
-    },
-    porteDeMontreuil: {
-      name: "Porte de Montreuil",
-      name_fr: "Porte de Montreuil",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 1980,
-        y: 630,
-        labelPlacement: "bottom-right",
+      michelAngeMolitor: {
+        name: "Michel-Ange-Molitor",
       },
-    },
-    robespierre: {
-      name: "Robespierre",
-      name_fr: "Robespierre",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 2040,
-        y: 630,
-        labelPlacement: "bottom-right",
+      jasmin: {
+        name: "Jasmin",
       },
-    },
-    croixDeChavaux: {
-      name: "Croix de Chavaux",
-      name_fr: "Croix de Chavaux",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 2100,
-        y: 630,
-        labelPlacement: "bottom-right",
+      ranelagh: {
+        name: "Ranelagh",
       },
-    },
-    mairieDeMontreuil: {
-      name: "Mairie de Montreuil",
-      name_fr: "Mairie de Montreuil",
-      connector: {
-        color: "#b6bd00",
-        horizontal: true,
-        station: true,
-        x: 2160,
-        y: 630,
-        labelPlacement: "bottom-right",
+      lamuette: {
+        name: "La Muette",
       },
-    },
-
-    // M10 (Boulogne – Pont de Saint-Cloud - Gare d'Austerlitz)
-    boulognePontDeSaintCloud_m10: {
-      name: "Boulogne - Pont de Saint-Cloud",
-      name_fr: "Boulogne – Pont de Saint-Cloud",
-      connector: {
-        color: "#c9910d",
-        right: true,
-        station: true,
-        x: 0,
-        y: 690,
+      rueDeLaPompe: {
+        name: "Rue de la Pompe",
       },
-    },
-    // DIVIDER
-    boulogneJeanJaures: {
-      name: "Boulogne - Jean Jaures",
-      name_fr: "Boulogne – Jean Jaurès",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        bottom: true,
-        x: 60,
-        y: 690,
+      trocaderoLineNine: {
+        name: "Trocadéro",
       },
-    },
-    porteDAuteuil_m10: {
-      name: "Porte d'Auteuil",
-      name_fr: "Porte d'Auteuil",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 690,
+      iena: {
+        name: "Iéna",
       },
-    },
-    michelAngeAuteuil_m10: {
-      name: "Michel-Ange - Auteuil",
-      name_fr: "Michel-Ange - Auteuil",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 690,
+      almaMarceau: {
+        name: "Alma-Marceau",
       },
-    },
-    egliseDAuteuil: {
-      name: "Eglise d'Auteuil",
-      name_fr: "Église d'Auteuil",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 690,
+      franklinRooseveltLineNine: {
+        name: "Franklin D. Roosevelt",
       },
-    },
-    // CONNECTOR
-    mirabeau_m10: {
-      name: "Mirabeau",
-      name_fr: "Mirabeau",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        bottom: true,
-        x: 300,
-        y: 690,
+      stPhilippeDuRoule: {
+        name: "St-Philippe du Roule",
       },
-    },
-    javelAndreCitroen_m10: {
-      name: "Javel - Andre Citroen",
-      name_fr: "Javel – André Citroën",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 690,
+      miromesnil: {
+        name: "Miromesnil",
       },
-    },
-    charlesMichels_m10: {
-      name: "Charles Michels",
-      name_fr: "Charles Michels",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 690,
+      stAugustin: {
+        name: "St-Augustin",
       },
-    },
-    avenueEmileZola_m10: {
-      name: "Avenue Emile Zola",
-      name_fr: "Avenue Émile Zola",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 690,
+      havreCaumartinLineNine: {
+        name: "Havre-Caumartin",
       },
-    },
-    laMotttePicquetGrenelle_m10: {
-      name: "La Motte Picquet-Grenelle",
-      name_fr: "La Motte Picquet-Grenelle",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 690,
+      chausseeDantinLineNine: {
+        name: "Chaussée d'Antin-La Fayette",
       },
-    },
-    segur: {
-      name: "Segur",
-      name_fr: "Ségur",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 690,
+      richelieuDrouotLineNine: {
+        name: "Richelieu-Drouot",
       },
-    },
-    duroc_m10: {
-      name: "Duroc",
-      name_fr: "Duroc",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 690,
+      grandsBoulevardsLineNine: {
+        name: "Grands Boulevards",
       },
-    },
-    vaneau: {
-      name: "Vaneau",
-      name_fr: "Vaneau",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 690,
+      bonneNouvelleLineNine: {
+        name: "Bonne Nouvelle",
       },
-    },
-    sevresBabylone_m10: {
-      name: "Sevres - Babylone",
-      name_fr: "Sèvres – Babylone",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 690,
+      strasbourgStDenisLineNine: {
+        name: "Strasbourg-St-Denis",
       },
-    },
-    mabillon_m10: {
-      name: "Mabillon",
-      name_fr: "Mabillon",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 690,
+      republiqueLineNine: {
+        name: "République",
       },
-    },
-    odeon_m10: {
-      name: "Odeon",
-      name_fr: "Odéon",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 690,
+      voltaire: {
+        name: "Voltaire",
       },
-    },
-    clunyLaSorbonne: {
-      name: "Cluny - La Sorbonne",
-      name_fr: "Cluny – La Sorbonne",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 690,
+      charonne: {
+        name: "Charonne",
       },
-    },
-    maubertMutualite: {
-      name: "Maubert - Mutualite",
-      name_fr: "Maubert – Mutualité",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 690,
+      rueDesBoulesDMontreuil: {
+        name: "Rue des Boulets",
       },
-    },
-    cardinalLemoine: {
-      name: "Cardinal Lemoine",
-      name_fr: "Cardinal Lemoine",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 690,
+      nationLineNine: {
+        name: "Nation",
       },
-    },
-    jussieu_m10: {
-      name: "Jussieu",
-      name_fr: "Jussieu",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 690,
+      buzenvalLineNine: {
+        name: "Buzenval",
       },
-    },
-    gareDAusterlitz_m10: {
-      name: "Gare d'Austerlitz",
-      name_fr: "Gare d'Austerlitz",
-      connector: {
-        color: "#c9910d",
-        left: true,
-        station: true,
-        x: 1200,
-        y: 690,
+      marieDeMontreuilLineNine: {
+        name: "Mairie de Montreuil",
       },
     },
-
-    // M10 branch (via Michel-Ange - Molitor)
-    michelAngeMolitor_m10: {
-      name: "Michel-Ange - Molitor",
-      name_fr: "Michel-Ange - Molitor",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 750,
-        labelPlacement: "bottom-right",
+    lineTen: {
+      color: "#dc9600",
+      gareDAusterlitzLineTen: {
+        name: "Gare d'Austerlitz",
       },
-    },
-    chardonLagache: {
-      name: "Chardon Lagache",
-      name_fr: "Chardon Lagache",
-      connector: {
-        color: "#c9910d",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 750,
-        labelPlacement: "bottom-right",
+      maubertMutualite: {
+        name: "Maubert-Mutualité",
       },
-    },
-
-    // M11 (Mairie des Lilas - Châtelet)
-    mairieDesLilas: {
-      name: "Mairie des Lilas",
-      name_fr: "Mairie des Lilas",
-      connector: {
-        color: "#704b1c",
-        right: true,
-        station: true,
-        x: 0,
-        y: 790,
+      cardinalLemoine: {
+        name: "Cardinal Lemoine",
       },
-    },
-    porteDesLilas_m11: {
-      name: "Porte des Lilas",
-      name_fr: "Porte des Lilas",
-      connector: {
-        color: "#704b1c",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 790,
+      jussieu: {
+        name: "Jussieu",
       },
-    },
-    telegraphe: {
-      name: "Telegraphe",
-      name_fr: "Télégraphe",
-      connector: {
-        color: "#704b1c",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 790,
+      clunylaSorbonne: {
+        name: "Cluny-La Sorbonne",
       },
-    },
-    placeDesFetes_m11: {
-      name: "Place des Fetes",
-      name_fr: "Place des Fêtes",
-      connector: {
-        color: "#704b1c",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 790,
+      odeonLineTen: {
+        name: "Odéon",
       },
-    },
-    jourdain: {
-      name: "Jourdain",
-      name_fr: "Jourdain",
-      connector: {
-        color: "#704b1c",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 790,
+      stMichel: {
+        name: "St-Michel",
       },
-    },
-    pyrenees: {
-      name: "Pyrenees",
-      name_fr: "Pyrénées",
-      connector: {
-        color: "#704b1c",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 790,
+      sevresBabylone: {
+        name: "Sèvres-Babylone",
       },
-    },
-    belleville_m11: {
-      name: "Belleville",
-      name_fr: "Belleville",
-      connector: {
-        color: "#704b1c",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 790,
+      mabillon: {
+        name: "Mabillon",
       },
-    },
-    goncourt: {
-      name: "Goncourt",
-      name_fr: "Goncourt",
-      connector: {
-        color: "#704b1c",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 790,
+      vaneau: {
+        name: "Vaneau",
       },
-    },
-    republique_m11: {
-      name: "Republique",
-      name_fr: "République",
-      connector: {
-        color: "#704b1c",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 790,
+      durocLineTen: {
+        name: "Duroc",
       },
-    },
-    artsEtMetiers_m11: {
-      name: "Arts et Metiers",
-      name_fr: "Arts et Métiers",
-      connector: {
-        color: "#704b1c",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 790,
+      laMottePicketGreнelleLineTen: {
+        name: "La Motte-Picquet-Grenelle",
       },
-    },
-    rambuteau: {
-      name: "Rambuteau",
-      name_fr: "Rambuteau",
-      connector: {
-        color: "#704b1c",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 790,
+      segur: {
+        name: "Ségur",
       },
-    },
-    hotelDeVille_m11: {
-      name: "Hotel de Ville",
-      name_fr: "Hôtel de Ville",
-      connector: {
-        color: "#704b1c",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 790,
+      avenueEmileZola: {
+        name: "Avenue Émile Zola",
       },
-    },
-    chatelet_m11: {
-      name: "Chatelet",
-      name_fr: "Châtelet",
-      connector: {
-        color: "#704b1c",
-        left: true,
-        station: true,
-        x: 720,
-        y: 790,
+      charlesмichels: {
+        name: "Charles Michels",
       },
-    },
-
-    // M12 (Front Populaire - Mairie d'Issy)
-    frontPopulaire: {
-      name: "Front Populaire",
-      name_fr: "Front Populaire",
-      connector: {
-        color: "#007852",
-        right: true,
-        station: true,
-        x: 0,
-        y: 850,
-        labelPlacement: "bottom-right",
+      michelAngeMolitorLineTen: {
+        name: "Michel-Ange-Molitor",
       },
-    },
-    porteDeLaChapelle: {
-      name: "Porte de la Chapelle",
-      name_fr: "Porte de la Chapelle",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 850,
-        labelPlacement: "bottom-right",
+      michelAngeAutеuilLineTen: {
+        name: "Michel-Ange-Auteuil",
       },
-    },
-    marxDormoy: {
-      name: "Marx Dormoy",
-      name_fr: "Marx Dormoy",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 850,
-        labelPlacement: "bottom-right",
+      egliseAuteuil: {
+        name: "Église d'Auteuil",
       },
-    },
-    marcadetPoissonniers_m12: {
-      name: "Marcadet Poissonniers",
-      name_fr: "Marcadet Poissonniers",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 850,
-        labelPlacement: "bottom-right",
+      jasminLineTen: {
+        name: "Jasmin",
       },
-    },
-    julesJoffrin: {
-      name: "Jules Joffrin",
-      name_fr: "Jules Joffrin",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 850,
-        labelPlacement: "bottom-right",
+      michelAngeMolitorLineTeń: {
+        name: "Michel-Ange-Molitor",
       },
-    },
-    lamarckCaulaincourt: {
-      name: "Lamarck - Caulaincourt",
-      name_fr: "Lamarck – Caulaincourt",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 850,
-        labelPlacement: "bottom-right",
+      chardonLagache: {
+        name: "Chardon-Lagache",
       },
-    },
-    abbesses: {
-      name: "Abbesses",
-      name_fr: "Abbesses",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 850,
-        labelPlacement: "bottom-right",
+      mirabeau: {
+        name: "Mirabeau",
       },
-    },
-    pigalle_m12: {
-      name: "Pigalle",
-      name_fr: "Pigalle",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 850,
-        labelPlacement: "bottom-right",
+      javelAndrecCitroen: {
+        name: "Javel-André Citroën",
       },
-    },
-    saintGeorges: {
-      name: "Saint-Georges",
-      name_fr: "Saint-Georges",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 480,
-        y: 850,
-        labelPlacement: "bottom-right",
+      boulainvilliers: {
+        name: "Boulainvilliers",
       },
     },
-    notreDameDeLorette: {
-      name: "Notre-Dame-de-Lorette",
-      name_fr: "Notre-Dame-de-Lorette",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 850,
-        labelPlacement: "bottom-right",
+    lineEleven: {
+      color: "#8d5b2e",
+      chateletLineEleven: {
+        name: "Châtelet",
       },
-    },
-    triniteDEstienneDOrves: {
-      name: "Trinite - d'Estienne d'Orves",
-      name_fr: "Trinité – d'Estienne d'Orves",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 850,
-        labelPlacement: "bottom-right",
+      hotelДeVilleLineEleven: {
+        name: "Hôtel de Ville",
       },
-    },
-    saintLazare_m12: {
-      name: "Saint-Lazare",
-      name_fr: "Saint-Lazare",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 850,
-        labelPlacement: "bottom-right",
+      rambuteau: {
+        name: "Rambuteau",
       },
-    },
-    madeleine_m12: {
-      name: "Madeleine",
-      name_fr: "Madeleine",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 850,
-        labelPlacement: "bottom-right",
+      artsEtMetiersLineEleven: {
+        name: "Arts et Métiers",
       },
-    },
-    concorde_m12: {
-      name: "Concorde",
-      name_fr: "Concorde",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 850,
-        labelPlacement: "bottom-right",
+      republiquеLineEleven: {
+        name: "République",
       },
-    },
-    assembleeNationale: {
-      name: "Assemblee Nationale",
-      name_fr: "Assemblée Nationale",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 850,
-        labelPlacement: "bottom-right",
+      goncourt: {
+        name: "Goncourt",
       },
-    },
-    solferino: {
-      name: "Solferino",
-      name_fr: "Solférino",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 850,
-        labelPlacement: "bottom-right",
+      bellevilleLineEleven: {
+        name: "Belleville",
       },
-    },
-    rueDuBac: {
-      name: "Rue du Bac",
-      name_fr: "Rue du Bac",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 850,
-        labelPlacement: "bottom-right",
+      pyreneesLineEleven: {
+        name: "Pyrénées",
       },
-    },
-    sevresBabylone_m12: {
-      name: "Sevres - Babylone",
-      name_fr: "Sèvres – Babylone",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 850,
-        labelPlacement: "bottom-right",
+      jourdain: {
+        name: "Jourdain",
       },
-    },
-    rennes: {
-      name: "Rennes",
-      name_fr: "Rennes",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 850,
-        labelPlacement: "bottom-right",
+      placeDesFetesLineEleven: {
+        name: "Place des Fêtes",
       },
-    },
-    notreDameDesChamps: {
-      name: "Notre-Dame-des-Champs",
-      name_fr: "Notre-Dame-des-Champs",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 850,
-        labelPlacement: "bottom-right",
+      telegraphe: {
+        name: "Télégraphe",
       },
-    },
-    montparnasseBienvenue_m12: {
-      name: "Montparnasse Bienvenue",
-      name_fr: "Montparnasse Bienvenüe",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 850,
-        labelPlacement: "bottom-right",
+      porteDesLilasLineEleven: {
+        name: "Porte des Lilas",
       },
-    },
-    falguiere: {
-      name: "Falguiere",
-      name_fr: "Falguière",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 850,
-        labelPlacement: "bottom-right",
+      maisonDesLilas: {
+        name: "Mairie des Lilas",
       },
-    },
-    pasteur_m12: {
-      name: "Pasteur",
-      name_fr: "Pasteur",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 850,
-        labelPlacement: "bottom-right",
+      robespierre: {
+        name: "Robespierre",
       },
-    },
-    volontaires: {
-      name: "Volontaires",
-      name_fr: "Volontaires",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 850,
-        labelPlacement: "bottom-right",
+      rosnyBoisPerrier: {
+        name: "Rosny-Bois-Perrier",
       },
     },
-    vaugirard: {
-      name: "Vaugirard",
-      name_fr: "Vaugirard",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 850,
-        labelPlacement: "bottom-right",
+    lineTwelve: {
+      color: "#00814f",
+      porteDeLaChapelleLineTwelve: {
+        name: "Porte de la Chapelle",
       },
-    },
-    convention: {
-      name: "Convention",
-      name_fr: "Convention",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 1500,
-        y: 850,
-        labelPlacement: "bottom-right",
+      marxDormoy: {
+        name: "Marx Dormoy",
       },
-    },
-    porteDeVersailles: {
-      name: "Porte de Versailles",
-      name_fr: "Porte de Versailles",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 1560,
-        y: 850,
-        labelPlacement: "bottom-right",
+      marcelsSabin: {
+        name: "Marcadet-Poissonniers",
       },
-    },
-    corentinCelton: {
-      name: "Corentin Celton",
-      name_fr: "Corentin Celton",
-      connector: {
-        color: "#007852",
-        horizontal: true,
-        station: true,
-        x: 1620,
-        y: 850,
-        labelPlacement: "bottom-right",
+      julesJoffrin: {
+        name: "Jules Joffrin",
       },
-    },
-    mairieDIssy: {
-      name: "Mairie d'Issy",
-      name_fr: "Mairie d'Issy",
-      connector: {
-        color: "#007852",
-        left: true,
-        station: true,
-        x: 1680,
-        y: 850,
-        labelPlacement: "bottom-right",
+      lamarckCaulaincourt: {
+        name: "Lamarck-Caulaincourt",
       },
-    },
-
-    // M13 (Saint-Denis — Université - Châtillon — Montrouge)
-    saintDenisUniversite_m13: {
-      name: "Saint-Denis - Universite",
-      name_fr: "Saint-Denis — Université",
-      connector: {
-        color: "#86d0ed",
-        right: true,
-        station: true,
-        x: 0,
-        y: 910,
+      abesses: {
+        name: "Abbesses",
       },
-    },
-    basiliqueDeSaintDenis: {
-      name: "Basilique de Saint-Denis",
-      name_fr: "Basilique de Saint-Denis",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 910,
+      pigalleLineTwelve: {
+        name: "Pigalle",
       },
-    },
-    saintDenisPorteDeParis: {
-      name: "Saint-Denis Porte de Paris",
-      name_fr: "Saint-Denis Porte de Paris",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 910,
+      stGeorges: {
+        name: "St-Georges",
       },
-    },
-    carrefourPleyel: {
-      name: "Carrefour Pleyel",
-      name_fr: "Carrefour Pleyel",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 910,
+      notredameDeLorette: {
+        name: "Notre-Dame-de-Lorette",
       },
-    },
-    mairieDeSaintOuen: {
-      name: "Mairie de Saint-Ouen",
-      name_fr: "Mairie de Saint-Ouen",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 910,
+      trinitedEstienneDorves: {
+        name: "Trinité-d'Estienne d'Orves",
       },
-    },
-    garibaldi_m13: {
-      name: "Garibaldi",
-      name_fr: "Garibaldi",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 910,
+      stlazareLineTwelve: {
+        name: "St-Lazare",
       },
-    },
-    porteDeSaintOuen: {
-      name: "Porte de Saint-Ouen",
-      name_fr: "Porte de Saint-Ouen",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 910,
+      madeleineLineTwelve: {
+        name: "Madeleine",
       },
-    },
-    guyMoquet: {
-      name: "Guy Moquet",
-      name_fr: "Guy Môquet",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 910,
+      concordeLineTwelve: {
+        name: "Concorde",
       },
-    },
-    // DIVIDER
-    laFourche_m13: {
-      name: "La Fourche",
-      name_fr: "La Fourche",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        bottom: true,
-        x: 480,
-        y: 910,
+      assembleeNationale: {
+        name: "Assemblée Nationale",
       },
-    },
-    placeDeClichy_m13: {
-      name: "Place de Clichy",
-      name_fr: "Place de Clichy",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 540,
-        y: 910,
+      solferino: {
+        name: "Solferino",
       },
-    },
-    liege_m13: {
-      name: "Liege",
-      name_fr: "Liège",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 600,
-        y: 910,
+      rueDuBac: {
+        name: "Rue du Bac",
       },
-    },
-    saintLazare_m13: {
-      name: "Saint-Lazare",
-      name_fr: "Saint-Lazare",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 660,
-        y: 910,
+      sevresBabyloneLineTwelve: {
+        name: "Sèvres-Babylone",
       },
-    },
-    miromesnil_m13: {
-      name: "Miromesnil",
-      name_fr: "Miromesnil",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 720,
-        y: 910,
+      rennes: {
+        name: "Rennes",
       },
-    },
-    champsElyseesClemenceau_m13: {
-      name: "Champs-Elysees-Clemenceau",
-      name_fr: "Champs-Élysées-Clemenceau",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 780,
-        y: 910,
+      notredamedeschampes: {
+        name: "Notre-Dame-des-Champs",
       },
-    },
-    invalides_m13: {
-      name: "Invalides",
-      name_fr: "Invalides",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 840,
-        y: 910,
+      montparnasseBienvenueLineTwelve: {
+        name: "Montparnasse-Bienvenüe",
       },
-    },
-    varenne: {
-      name: "Varenne",
-      name_fr: "Varenne",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 900,
-        y: 910,
+      falguiere: {
+        name: "Falguière",
       },
-    },
-    saintFrancoisXavier: {
-      name: "Saint-Francois-Xavier",
-      name_fr: "Saint-François-Xavier",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 960,
-        y: 910,
+      pasteurLineTwelve: {
+        name: "Pasteur",
       },
-    },
-    duroc_m13: {
-      name: "Duroc",
-      name_fr: "Duroc",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 1020,
-        y: 910,
+      vaugirard: {
+        name: "Vaugirard",
       },
-    },
-    montparnasseBienvenue_m13: {
-      name: "Montparnasse Bienvenue",
-      name_fr: "Montparnasse Bienvenüe",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 1080,
-        y: 910,
+      conventionLineTwelve: {
+        name: "Convention",
       },
-    },
-    gaite: {
-      name: "Gaite",
-      name_fr: "Gaîté",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 1140,
-        y: 910,
+      porteDeVersailles: {
+        name: "Porte de Versailles",
       },
-    },
-    pernety: {
-      name: "Pernety",
-      name_fr: "Pernety",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 1200,
-        y: 910,
+      corentinCelton: {
+        name: "Corentin Celton",
       },
-    },
-    plaisance: {
-      name: "Plaisance",
-      name_fr: "Plaisance",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 1260,
-        y: 910,
+      mairieDIssy: {
+        name: "Mairie d'Issy",
       },
     },
-    porteDeVanves: {
-      name: "Porte de Vanves",
-      name_fr: "Porte de Vanves",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 1320,
-        y: 910,
+    lineThirteen: {
+      color: "#82c8e6",
+      stDenisUniversite: {
+        name: "St-Denis-Université",
       },
-    },
-    malakoffPlateauDeVanves: {
-      name: "Malakoff Plateau de Vanves",
-      name_fr: "Malakoff Plateau de Vanves",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 1380,
-        y: 910,
+      basiliqueDeStDenis: {
+        name: "Basilique de St-Denis",
       },
-    },
-    malakoffRueEtienneDolet: {
-      name: "Malakoff Rue Etienne Dolet",
-      name_fr: "Malakoff Rue Étienne Dolet",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 1440,
-        y: 910,
+      stDenisPorteDeParis: {
+        name: "St-Denis-Porte de Paris",
       },
-    },
-    chatillonMontrouge: {
-      name: "Chatillon - Montrouge",
-      name_fr: "Châtillon — Montrouge",
-      connector: {
-        color: "#86d0ed",
-        left: true,
-        station: true,
-        x: 1500,
-        y: 910,
+      carrefourPleyel: {
+        name: "Carrefour Pleyel",
       },
-    },
-
-    // M13 (Asnières Gennevilliers Les Courtilles - Châtillon — Montrouge) - branch
-    asnieresGennevilliersLesCourtilles: {
-      name: "Asnieres Gennevilliers Les Courtilles",
-      name_fr: "Asnières Gennevilliers Les Courtilles",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 970,
-        labelPlacement: "bottom-right",
+      laFourcheLineThirteen: {
+        name: "La Fourche",
       },
+      branches: [
+        {
+          branchedStation: "La Fourche",
+          color: "#82c8e6",
+          stations: {
+            porteDeclichy: {
+              name: "Porte de Clichy",
+            },
+            brochant: {
+              name: "Brochant",
+            },
+            laFourcheBranch: {
+              name: "La Fourche",
+            },
+            placeDeclichyLineThirteen: {
+              name: "Place de Clichy",
+            },
+            liegeLineThirteen: {
+              name: "Liège",
+            },
+            stLazareLineThirteen: {
+              name: "St-Lazare",
+            },
+            miromesnilLineThirteen: {
+              name: "Miromesnil",
+            },
+            champselyseesClemenceauLineThirteen: {
+              name: "Champs-Élysées-Clemenceau",
+            },
+            invalidesLineThirteen: {
+              name: "Invalides",
+            },
+            varenneLineThirteen: {
+              name: "Varenne",
+            },
+            stFrancoisXavier: {
+              name: "St-François-Xavier",
+            },
+            durocLineThirteen: {
+              name: "Duroc",
+            },
+            montparnasseBienvenueLineThirteen: {
+              name: "Montparnasse-Bienvenüe",
+            },
+            gaite: {
+              name: "Gaîté",
+            },
+            pernety: {
+              name: "Pernety",
+            },
+            plaisanceLineThirteen: {
+              name: "Plaisance",
+            },
+            porteDeVanvesLineThirteen: {
+              name: "Porte de Vanves",
+            },
+            malakoffPlateauDeVanves: {
+              name: "Malakoff-Plateau de Vanves",
+            },
+            malakoffRueetienneDolet: {
+              name: "Malakoff-Rue Étienne Dolet",
+            },
+            chatillonMontrouge: {
+              name: "Châtillon-Montrouge",
+            },
+          },
+        },
+        {
+          branchedStation: "La Fourche",
+          color: "#82c8e6",
+          stations: {
+            guyMotquetLineThirteen: {
+              name: "Guy Môquet",
+            },
+            porteDeSaintOuenLineThirteen: {
+              name: "Porte de St-Ouen",
+            },
+            gabrielPeriAsnièresGennevilliers: {
+              name: "Gabriel Péri",
+            },
+            lesCourtilles: {
+              name: "Les Courtilles",
+            },
+          },
+        },
+      ],
     },
-    lesAgnettes: {
-      name: "Les Agnettes",
-      name_fr: "Les Agnettes",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 970,
-        labelPlacement: "bottom-right",
+    lineFourteen: {
+      color: "#662483",
+      stDenisPleyel: {
+        name: "St-Denis-Pleyel",
       },
-    },
-    gabrielPeri: {
-      name: "Gabriel Peri",
-      name_fr: "Gabriel Péri",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 970,
-        labelPlacement: "bottom-right",
+      mairieDeSaintOuen: {
+        name: "Mairie de St-Ouen",
       },
-    },
-    mairieDeClichy: {
-      name: "Mairie de Clichy",
-      name_fr: "Mairie de Clichy",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 970,
-        labelPlacement: "bottom-right",
+      porteDeClignancourtLineFourteen: {
+        name: "Porte de Clichy",
       },
-    },
-    porteDeClichy: {
-      name: "Porte de Clichy",
-      name_fr: "Porte de Clichy",
-      connector: {
-        color: "#86d0ed",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 970,
-        labelPlacement: "bottom-right",
+      stLazareLineFourteen: {
+        name: "St-Lazare",
       },
-    },
-    brochant: {
-      name: "Brochant",
-      name_fr: "Brochant",
-      connector: {
-        color: "#86d0ed",
-        right: true,
-        station: true,
-        x: 120,
-        y: 970,
-        labelPlacement: "bottom-right",
+      madeleineLineFourteen: {
+        name: "Madeleine",
       },
-    },
-
-    // M14 (Saint-Lazare - Olympiades)
-    saintLazare_m14: {
-      name: "Saint-Lazare",
-      name_fr: "Saint-Lazare",
-      connector: {
-        color: "#62259d",
-        right: true,
-        station: true,
-        x: 0,
-        y: 1030,
+      pyramidesLineFourteen: {
+        name: "Pyramides",
       },
-    },
-    madeleine_m14: {
-      name: "Madeleine",
-      name_fr: "Madeleine",
-      connector: {
-        color: "#62259d",
-        horizontal: true,
-        station: true,
-        x: 60,
-        y: 1030,
+      chateletLineFourteen: {
+        name: "Châtelet",
       },
-    },
-    pyramides_m14: {
-      name: "Pyramides",
-      name_fr: "Pyramides",
-      connector: {
-        color: "#62259d",
-        horizontal: true,
-        station: true,
-        x: 120,
-        y: 1030,
+      gareDeLyonLineFourteen: {
+        name: "Gare de Lyon",
       },
-    },
-    chatelet_m14: {
-      name: "Chatelet",
-      name_fr: "Châtelet",
-      connector: {
-        color: "#62259d",
-        horizontal: true,
-        station: true,
-        x: 180,
-        y: 1030,
+      bercy: {
+        name: "Bercy",
       },
-    },
-    gareDeLyon_m14: {
-      name: "Gare de Lyon",
-      name_fr: "Gare de Lyon",
-      connector: {
-        color: "#62259d",
-        horizontal: true,
-        station: true,
-        x: 240,
-        y: 1030,
+      courStEmilion: {
+        name: "Cour St-Émilion",
       },
-    },
-    bercy_m14: {
-      name: "Bercy",
-      name_fr: "Bercy",
-      connector: {
-        color: "#62259d",
-        horizontal: true,
-        station: true,
-        x: 300,
-        y: 1030,
+      bibliothequeFrancoisMitterrand: {
+        name: "Bibliothèque François Mitterrand",
       },
-    },
-    courSaintEmilion: {
-      name: "Cour Saint-Emilion",
-      name_fr: "Cour Saint-Émilion",
-      connector: {
-        color: "#62259d",
-        horizontal: true,
-        station: true,
-        x: 360,
-        y: 1030,
+      olympiades: {
+        name: "Olympiades",
       },
-    },
-    bibliothequeFrancoisMitterrand: {
-      name: "Bibliotheque Francois Mitterrand",
-      name_fr: "Bibliothèque François Mitterrand",
-      connector: {
-        color: "#62259d",
-        horizontal: true,
-        station: true,
-        x: 420,
-        y: 1030,
+      maisonBlancheLineFourteen: {
+        name: "Maison Blanche",
       },
-    },
-    olympiades: {
-      name: "Olympiades",
-      name_fr: "Olympiades",
-      connector: {
-        color: "#62259d",
-        left: true,
-        station: true,
-        x: 480,
-        y: 1030,
+      aeroportDorly: {
+        name: "Aéroport d'Orly",
       },
     },
   },
-  extraConnectors: [
-    { color: "pink", top: true, right: true, x: 1740, y: 510 },
-    { color: "#c9910d", horizontal: true, x: 240, y: 750 },
-    { color: "#c9910d", left: true, top: true, x: 300, y: 750 },
-    { color: "#c9910d", top: true, right: true, x: 60, y: 750 },
-    { color: "#86d0ed", top: true, left: true, x: 480, y: 970 },
-  ],
 };

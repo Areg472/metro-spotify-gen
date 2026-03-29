@@ -143,6 +143,7 @@ export function processAutoStations(cityData) {
   }
 
   const isNewYork = cityData.name === "New York City";
+  const isFrench = cityData.name === "Lyon" || "Paris";
   const defaultConnectorSize = cityData.defaultConnectorSize || 100;
   const verticalConnectorSize = isNewYork ? 80 : defaultConnectorSize;
   const processedStations = {};
@@ -252,6 +253,15 @@ export function processAutoStations(cityData) {
       currentY = maxY + verticalConnectorSize;
     },
   );
+
+  if (isFrench) {
+    Object.values(processedStations).forEach((s) => {
+      if (s.connector) s.connector.y += 30;
+    });
+    extraConnectors.forEach((c) => {
+      c.y += 30;
+    });
+  }
 
   return {
     name: cityData.name,
