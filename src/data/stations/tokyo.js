@@ -18,7 +18,7 @@ export const tokyo = {
       aoyamaItchome: {
         name: "Aoyama-itchome",
       },
-      akasakaMitsuke: {
+      akasakaMitsukeOrange: {
         name: "Akasaka-mitsuke",
       },
       tameikeSanno: {
