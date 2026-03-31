@@ -472,7 +472,7 @@ export const tokyo = {
       aoyamaItchomeHanzomon: {
         name: "Aoyama-itchome",
       },
-      nagatacho: {
+      nagatachoOrange: {
         name: "Nagatacho",
       },
       hanzomon: {
