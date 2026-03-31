@@ -257,7 +257,39 @@ export function findHighlightPath(cityData, startStation, endStation) {
   if (!startKey || !endKey) return null;
 
   const path = bfsPath(adjacency, startKey, endKey);
-  if (!path) return null;
+  if (!path) {
+    // Fallback: highlight both entire lines when no route is found
+    const startLineId = stationMap.get(startKey).lineId;
+    const endLineId = stationMap.get(endKey).lineId;
+    const fallbackLineIds = new Set([startLineId, endLineId]);
+    const fallbackKeys = new Set();
+    const fallbackLegs = new Map();
+
+    for (const [key, node] of stationMap.entries()) {
+      if (fallbackLineIds.has(node.lineId)) {
+        fallbackKeys.add(key);
+        // Keep all original legs active for stations on these lines
+        const legs = new Set();
+        const c = node.connector;
+        if (c.horizontal || c.left) legs.add("left");
+        if (c.horizontal || c.right) legs.add("right");
+        if (c.vertical || c.top) legs.add("top");
+        if (c.vertical || c.bottom) legs.add("bottom");
+        if (c.diagonalNW || c.fullDiagonal) legs.add("diagonalNW");
+        if (c.diagonalSE || c.fullDiagonal) legs.add("diagonalSE");
+        if (c.diagonalNE || c.fullDiagonalInv) legs.add("diagonalNE");
+        if (c.diagonalSW || c.fullDiagonalInv) legs.add("diagonalSW");
+        fallbackLegs.set(key, legs);
+      }
+    }
+
+    return {
+      pathKeys: fallbackKeys,
+      pathLineIds: fallbackLineIds,
+      pathStationKeys: Array.from(fallbackKeys),
+      activeLegs: fallbackLegs,
+    };
+  }
 
   const pathKeys = new Set(path);
   const pathLineIds = new Set();
