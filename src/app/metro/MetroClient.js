@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { stations } from "@/data/stations";
 import { Connector } from "@/metroui/Connector";
 import { findHighlightPath } from "@/data/stations/pathfinding";
+import { generateEdinburghStations } from "@/data/stations/edinburghofthesevenseas";
 import dynamic from "next/dynamic";
 const CityMap = dynamic(() => import("@/components/CityMap"), { ssr: false });
 
@@ -421,29 +422,44 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
       {startStation && <p>Selected Start Station: {startStation.name}</p>}
       {endStation && <p>Selected End Station: {endStation.name}</p>}
 
-      <div className="flex space-x-4">
-        <button
-          onClick={handleRecommend}
-          disabled={
-            isLoading ||
-            !startStation ||
-            !endStation ||
-            startStation.name === endStation.name
-          }
-          className="h-16 w-32 bg-blue-600 cursor-pointer text-white rounded hover:bg-blue-700 disabled:bg-gray-500"
-        >
-          {isLoading ? "Generating..." : "Recommend Songs"}
-        </button>
-
-        {(startStation || endStation) && (
+      {selectedCity?.disableTracklist ? (
+        <div className="flex space-x-4">
           <button
-            onClick={handleReset}
-            className="h-16 w-32 bg-red-600 cursor-pointer text-white rounded hover:bg-red-700"
+            onClick={() => {
+              setSelectedCity(generateEdinburghStations());
+              setStartStation(null);
+              setEndStation(null);
+            }}
+            className="h-16 w-48 bg-purple-600 cursor-pointer text-white rounded hover:bg-purple-700"
           >
-            Reset Selection
+            Regenerate Stations
           </button>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="flex space-x-4">
+          <button
+            onClick={handleRecommend}
+            disabled={
+              isLoading ||
+              !startStation ||
+              !endStation ||
+              startStation.name === endStation.name
+            }
+            className="h-16 w-32 bg-blue-600 cursor-pointer text-white rounded hover:bg-blue-700 disabled:bg-gray-500"
+          >
+            {isLoading ? "Generating..." : "Recommend Songs"}
+          </button>
+
+          {(startStation || endStation) && (
+            <button
+              onClick={handleReset}
+              className="h-16 w-32 bg-red-600 cursor-pointer text-white rounded hover:bg-red-700"
+            >
+              Reset Selection
+            </button>
+          )}
+        </div>
+      )}
 
       {!selectedCity && <SkeletonMetroMapInline />}
 

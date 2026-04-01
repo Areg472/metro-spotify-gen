@@ -23,6 +23,7 @@ import { tehran } from "@/data/stations/tehran";
 import { chicago } from "@/data/stations/chicago";
 import { newyorkcity } from "@/data/stations/newyorkcity";
 import { beijing } from "@/data/stations/beijing";
+import { edinburghOfTheSevenSeas } from "@/data/stations/edinburghofthesevenseas";
 
 const rawStations = {
   yerevan: processAutoStations(yerevan),
@@ -49,6 +50,7 @@ const rawStations = {
   chicago: processAutoStations(chicago),
   newyorkcity: processAutoStations(newyorkcity),
   beijing: processAutoStations(beijing),
+  edinburghOfTheSevenSeas: processAutoStations(edinburghOfTheSevenSeas),
 };
 
 export const stations = Object.fromEntries(

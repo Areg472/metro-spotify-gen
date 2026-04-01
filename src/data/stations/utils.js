@@ -269,5 +269,6 @@ export function processAutoStations(cityData) {
     defaultConnectorSize: cityData.defaultConnectorSize,
     stations: processedStations,
     ...(extraConnectors.length > 0 ? { extraConnectors } : {}),
+    ...(cityData.disableTracklist ? { disableTracklist: true } : {}),
   };
 }

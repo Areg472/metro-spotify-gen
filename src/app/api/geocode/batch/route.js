@@ -5,6 +5,7 @@ const serverCache = {
   boston: [42.3601, -71.0589],
   chicago: [41.8781, -87.6298],
   delhi: [28.6139, 77.209],
+  edinburghOfTheSevenSeas: [-37.068, -12.3154],
   istanbul: [41.0082, 28.9784],
   london: [51.5074, -0.1278],
   losAngeles: [34.0522, -118.2437],
