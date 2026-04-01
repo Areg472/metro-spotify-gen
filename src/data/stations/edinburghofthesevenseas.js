@@ -68,7 +68,7 @@ export function generateEdinburghStations() {
   ); // 3-7, capped
 
   const step = 60;
-  const maxXSlots = 600 / step; // 10 → positions 0, 60, 120, …, 600
+  const maxXSlots = 300 / step; // 5 → positions 0, 60, 120, …, 300
   const maxYSlots = 180 / step; // 3  → positions 0, 60, 120, 180
   const lineColors = ["#4a90d9", "#e85d75"];
   const usedNames = new Set();
