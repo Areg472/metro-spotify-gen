@@ -68,8 +68,8 @@ export function generateEdinburghStations() {
   ); // 3-7, capped
 
   const step = 60;
-  const maxXSlots = 420 / step; // 7 → positions 0, 60, 120, …, 420
-  const maxYSlots = 180 / step; // 3 → positions 0, 60, 120, 180
+  const maxXSlots = 480 / step; // 8 → positions 0, 60, 120, …, 480
+  const maxYSlots = 60 / step; // 1 → positions 0, 60
   const lineColors = ["#4a90d9", "#e85d75"];
   const usedNames = new Set();
   const usedPositions = new Set();
@@ -80,8 +80,6 @@ export function generateEdinburghStations() {
     for (let i = 0; i < count; i++) {
       const name = randomLabel(usedNames);
       const key = toKey(name) + "_" + lineIdx + "_" + i;
-      const isFirst = i === 0;
-      const isLast = i === count - 1;
 
       let xSlot, ySlot, posKey;
       do {
@@ -99,14 +97,54 @@ export function generateEdinburghStations() {
           station: true,
           x: xSlot * step,
           y: ySlot * step,
-          ...(isFirst ? { right: true } : {}),
-          ...(isLast ? { left: true } : {}),
-          ...(!isFirst && !isLast ? { horizontal: true } : {}),
           ...(lineIdx % 2 === 1 ? { labelPlacement: "bottom-right" } : {}),
         },
       };
     }
   });
+
+  // Adjacency pass: detect stations that are exactly one step apart and
+  // set connector ends so they visually attach to each other.
+  const posMap = {};
+  const stationKeys = Object.keys(stations);
+  for (const key of stationKeys) {
+    const { x, y } = stations[key].connector;
+    posMap[`${x},${y}`] = key;
+  }
+
+  for (const key of stationKeys) {
+    const c = stations[key].connector;
+    const { x, y } = c;
+    const hasRight = !!posMap[`${x + step},${y}`];
+    const hasLeft = !!posMap[`${x - step},${y}`];
+    const hasBottom = !!posMap[`${x},${y + step}`];
+    const hasTop = !!posMap[`${x},${y - step}`];
+    const hasNW = !!posMap[`${x - step},${y - step}`];
+    const hasNE = !!posMap[`${x + step},${y - step}`];
+    const hasSW = !!posMap[`${x - step},${y + step}`];
+    const hasSE = !!posMap[`${x + step},${y + step}`];
+
+    if (hasLeft && hasRight) {
+      c.horizontal = true;
+    } else if (hasLeft) {
+      c.left = true;
+    } else if (hasRight) {
+      c.right = true;
+    }
+
+    if (hasTop && hasBottom) {
+      c.vertical = true;
+    } else if (hasTop) {
+      c.top = true;
+    } else if (hasBottom) {
+      c.bottom = true;
+    }
+
+    if (hasNW) c.diagonalNW = true;
+    if (hasNE) c.diagonalNE = true;
+    if (hasSW) c.diagonalSW = true;
+    if (hasSE) c.diagonalSE = true;
+  }
 
   return {
     name: "Edinburgh of the Seven Seas",
