@@ -60,12 +60,9 @@ function toKey(name) {
 }
 
 export function generateEdinburghStations() {
-  const maxTotal = 12;
-  const line1Count = Math.floor(Math.random() * 5) + 4; // 4-8
-  const line2Count = Math.min(
-    maxTotal - line1Count,
-    Math.floor(Math.random() * 5) + 3,
-  ); // 3-7, capped
+  const maxTotal = 10;
+  const line1Count = Math.floor(Math.random() * 4) + 4; // 4-7
+  const line2Count = maxTotal - line1Count; // remainder so total is always 10
 
   const step = 60;
   const maxXSlots = 480 / step; // 8 → positions 0, 60, 120, …, 480
