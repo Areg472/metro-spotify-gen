@@ -1,4 +1,6 @@
 import { yerevan } from "./yerevan";
+import { cairo } from "./cairo";
+import { capeTown } from "./capetown";
 import { tbilisi } from "./tbilisi";
 import { minsk } from "./minsk";
 import { london } from "./london";
@@ -49,6 +51,8 @@ const rawStations = {
   chicago: processAutoStations(chicago),
   newyorkcity: processAutoStations(newyorkcity),
   beijing: processAutoStations(beijing),
+  cairo: processAutoStations(cairo),
+  capeTown: processAutoStations(capeTown),
 };
 
 export const stations = Object.fromEntries(
