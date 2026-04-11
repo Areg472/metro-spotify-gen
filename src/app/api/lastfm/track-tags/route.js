@@ -33,12 +33,28 @@ export async function POST(request) {
           return { artist, title, tags: [] };
         }
         const data = await res.json();
-        const tags = (data.toptags?.tag || [])
+        let tags = (data.toptags?.tag || [])
           .slice(0, 5)
           .map((t) => t.name.toLowerCase());
-        console.log(
-          `[track-tags] "${title}" by ${artist} → tags: [${tags.join(", ")}]`,
-        );
+
+        if (tags.length === 0) {
+          const artistUrl = `https://ws.audioscrobbler.com/2.0/?method=artist.getTopTags&artist=${encodeURIComponent(artist)}&api_key=${apiKey}&format=json`;
+          const artistRes = await fetch(artistUrl);
+          if (artistRes.ok) {
+            const artistData = await artistRes.json();
+            tags = (artistData.toptags?.tag || [])
+              .slice(0, 5)
+              .map((t) => t.name.toLowerCase());
+            console.log(
+              `[track-tags] "${title}" by ${artist} → artist-fallback tags: [${tags.join(", ")}]`,
+            );
+          }
+        } else {
+          console.log(
+            `[track-tags] "${title}" by ${artist} → tags: [${tags.join(", ")}]`,
+          );
+        }
+
         return { artist, title, tags };
       } catch (err) {
         console.error(

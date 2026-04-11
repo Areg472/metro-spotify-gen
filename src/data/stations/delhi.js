@@ -219,7 +219,7 @@ export const delhi = {
     },
     blueLine: {
       color: "#00549f",
-      dwarkaSectorTwentyOne: {
+      dwarkaSectorTwentyOneBlue: {
         name: "Dwarka Sector 21",
       },
       dwarkaSectorEight: {
