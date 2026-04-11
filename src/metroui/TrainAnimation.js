@@ -19,7 +19,7 @@ export function TrainAnimation({ pathCoords, connectorSize, color }) {
 
   useEffect(() => {
     startTimeRef.current = null;
-    setProgress(0);
+    progressRef.current = 0;
 
     const animate = (timestamp) => {
       if (!startTimeRef.current) startTimeRef.current = timestamp;
