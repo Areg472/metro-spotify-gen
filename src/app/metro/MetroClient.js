@@ -107,9 +107,10 @@ export default function MetroClient({ initialCityId, initialCityData }) {
             const jsonMatch = cleanedContent.match(/\[[\s\S]*\]/);
             if (jsonMatch) {
               const parsed = JSON.parse(jsonMatch[0]);
-              content = parsed
-                .map((s, i) => `${i + 1}. ${s.title} - ${s.artist}`)
-                .join("\n");
+              content = parsed.map((s) => ({
+                title: s.title,
+                artist: s.artist,
+              }));
             }
           } catch (e) {
             console.error("Failed to parse AI JSON response", e);
@@ -466,6 +467,13 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                 margin: "64px auto",
               }}
             >
+              {highlightPath?.isSingleLine && highlightPath?.pathCoords && (
+                <TrainAnimation
+                  pathCoords={highlightPath.pathCoords}
+                  connectorSize={selectedCity.defaultConnectorSize}
+                  color={Array.from(highlightPath.pathLineIds)[0]}
+                />
+              )}
               {Object.entries(selectedCity.stations).map(([stationId, s]) => (
                 <Connector
                   key={stationId}
@@ -489,21 +497,34 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                   activeLegs={getActiveLegs(`extra-${i}`)}
                 />
               ))}
-              {highlightPath?.isSingleLine && highlightPath?.pathCoords && (
-                <TrainAnimation
-                  pathCoords={highlightPath.pathCoords}
-                  connectorSize={selectedCity.defaultConnectorSize}
-                  color={Array.from(highlightPath.pathLineIds)[0]}
-                />
-              )}
             </div>
           </div>
 
           <div className="mt-8 w-full border-t border-gray-700 pt-6">
             <div className="flex flex-col space-y-2">
               {messages.map((m) => (
-                <div key={m.id} className="whitespace-pre-wrap text-white">
-                  {m.content}
+                <div key={m.id} className="text-white">
+                  {Array.isArray(m.content) ? (
+                    <ol className="list-none space-y-2 pl-0">
+                      {m.content.map((track, i) => (
+                        <li key={i} className="flex items-center gap-3 py-1">
+                          <span className="flex-shrink-0 w-7 h-7 rounded-full text-white text-sm font-bold flex items-center justify-center">
+                            {i + 1}
+                          </span>
+                          <a
+                            href={`https://www.last.fm/music/${encodeURIComponent(track.artist)}/_/${encodeURIComponent(track.title)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline"
+                          >
+                            {track.title} — {track.artist}
+                          </a>
+                        </li>
+                      ))}
+                    </ol>
+                  ) : (
+                    <div className="whitespace-pre-wrap">{m.content}</div>
+                  )}
                 </div>
               ))}
               {isLoading && <SkeletonSongListInline count={4} />}

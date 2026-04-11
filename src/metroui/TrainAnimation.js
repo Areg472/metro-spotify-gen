@@ -55,6 +55,7 @@ export function TrainAnimation({ pathCoords, connectorSize, color }) {
   let posX = pathCoords[0].x;
   let posY = pathCoords[0].y;
 
+  let angle = 0;
   for (let i = 0; i < segLengths.length; i++) {
     if (accumulated + segLengths[i] >= targetDist) {
       const segProgress =
@@ -63,6 +64,9 @@ export function TrainAnimation({ pathCoords, connectorSize, color }) {
         pathCoords[i].x + (pathCoords[i + 1].x - pathCoords[i].x) * segProgress;
       posY =
         pathCoords[i].y + (pathCoords[i + 1].y - pathCoords[i].y) * segProgress;
+      const dx = pathCoords[i + 1].x - pathCoords[i].x;
+      const dy = pathCoords[i + 1].y - pathCoords[i].y;
+      angle = Math.atan2(dy, dx) * (180 / Math.PI);
       break;
     }
     accumulated += segLengths[i];
@@ -84,9 +88,11 @@ export function TrainAnimation({ pathCoords, connectorSize, color }) {
         borderRadius: "3px",
         background: color || "white",
         boxShadow: "none",
-        zIndex: 50,
+        zIndex: 5,
         pointerEvents: "none",
-        transition: "left 0.05s linear, top 0.05s linear",
+        transform: `rotate(${angle}deg)`,
+        transition:
+          "left 0.05s linear, top 0.05s linear, transform 0.05s linear",
       }}
     />
   );
