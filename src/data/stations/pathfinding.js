@@ -335,5 +335,37 @@ export function findHighlightPath(cityData, startStation, endStation) {
     activeLegs.set(currentKey, legs);
   }
 
-  return { pathKeys, pathLineIds, pathStationKeys: path, activeLegs };
+  // Determine if the entire path stays on a single line
+  const isSingleLine = pathLineIds.size === 1;
+
+  // Estimate trip duration: ~2.5 minutes per inter-station segment
+  // Transfers (same position, different line) don't count as a segment but add ~3 min
+  let segments = 0;
+  let transfers = 0;
+  for (let i = 0; i < path.length - 1; i++) {
+    const a = stationMap.get(path[i]);
+    const b = stationMap.get(path[i + 1]);
+    if (a.connector.x === b.connector.x && a.connector.y === b.connector.y) {
+      transfers++;
+    } else {
+      segments++;
+    }
+  }
+  const estimatedMinutes = segments * 2.5 + transfers * 3;
+
+  // Collect ordered coordinates for animation
+  const pathCoords = path.map((key) => {
+    const node = stationMap.get(key);
+    return { x: node.connector.x, y: node.connector.y, key };
+  });
+
+  return {
+    pathKeys,
+    pathLineIds,
+    pathStationKeys: path,
+    activeLegs,
+    isSingleLine,
+    estimatedMinutes,
+    pathCoords,
+  };
 }

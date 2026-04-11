@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { stations } from "@/data/stations";
 import { Connector } from "@/metroui/Connector";
 import { findHighlightPath } from "@/data/stations/pathfinding";
+import { TrainAnimation } from "@/metroui/TrainAnimation";
 import dynamic from "next/dynamic";
 const CityMap = dynamic(() => import("@/components/CityMap"), { ssr: false });
 
@@ -246,8 +247,8 @@ export default function MetroClient({ initialCityId, initialCityData }) {
 Time of day: ${timeOfDay} (use this to guide mood — morning: calm/chill, afternoon: neutral, evening: energetic/upbeat, night: mellow/ambient).${weatherInfo}
 
 INSTRUCTIONS:
-1. First, search the web for the exact travel time between these two metro stations (riding time only, exclude waiting).
-   CRITICAL: Use ONLY metro/subway travel time. DO NOT use bus, tram, walking, taxi, or any other transportation method. ONLY metro/subway.
+1. The estimated metro travel time for this trip is approximately ${highlightPath?.estimatedMinutes ? Math.round(highlightPath.estimatedMinutes) : "unknown"} minutes (${highlightPath?.pathStationKeys ? highlightPath.pathStationKeys.length - 1 : "?"} stations, ~2.5 min per station + 3 min per transfer).
+   Use this estimate as the target duration. If it seems unreasonable, you may adjust slightly based on your knowledge.
 2. CRITICAL: If the stations are NOT connected via metro (no direct metro route exists), respond with ONLY this JSON array:
    [{"title": "The stations aren't connected via metro", "artist": ""}]
    DO NOT list any further tracks. Stop immediately after returning this response.
@@ -488,6 +489,13 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                   activeLegs={getActiveLegs(`extra-${i}`)}
                 />
               ))}
+              {highlightPath?.isSingleLine && highlightPath?.pathCoords && (
+                <TrainAnimation
+                  pathCoords={highlightPath.pathCoords}
+                  connectorSize={selectedCity.defaultConnectorSize}
+                  color={Array.from(highlightPath.pathLineIds)[0]}
+                />
+              )}
             </div>
           </div>
 
