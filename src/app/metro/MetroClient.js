@@ -580,7 +580,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                           const url = URL.createObjectURL(blob);
                           const a = document.createElement("a");
                           a.href = url;
-                          a.download = "metro-playlist.m3u";
+                          a.download = `Metro Playlist [${selectedCity?.name || "Unknown"}].m3u`;
                           a.click();
                           URL.revokeObjectURL(url);
                         };
