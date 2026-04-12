@@ -83,6 +83,7 @@ export default function MetroClient({ initialCityId, initialCityData }) {
   const [weatherData, setWeatherData] = useState(null);
   const [confirmHasFiles, setConfirmHasFiles] = useState(false);
   const [showExportCheckbox, setShowExportCheckbox] = useState(false);
+  const [trainAnimationKey, setTrainAnimationKey] = useState(0);
 
   const sendMessage = async (prompt) => {
     setIsLoading(true);
@@ -163,6 +164,7 @@ export default function MetroClient({ initialCityId, initialCityData }) {
     }
 
     setIsLoading(true);
+    setTrainAnimationKey((k) => k + 1);
 
     const timeOfDay = getTimeOfDay();
     console.log(
@@ -471,6 +473,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
             >
               {highlightPath?.isSingleLine && highlightPath?.pathCoords && (
                 <TrainAnimation
+                  key={trainAnimationKey}
                   pathCoords={highlightPath.pathCoords}
                   connectorSize={selectedCity.defaultConnectorSize}
                   color={Array.from(highlightPath.pathLineIds)[0]}
