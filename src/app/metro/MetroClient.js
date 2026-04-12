@@ -539,33 +539,29 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
               ) && (
                 <div className="mt-4 flex flex-col gap-3">
                   <button
-                    onClick={async () => {
+                    onClick={() => {
                       if (!showExportCheckbox) {
                         setShowExportCheckbox(true);
                         return;
                       }
                       if (confirmHasFiles) {
-                        try {
-                          const dirHandle = await window.showDirectoryPicker({
-                            startIn: "music",
-                          });
-                          const musicFiles = [];
-                          for await (const entry of dirHandle.values()) {
-                            if (entry.kind === "file") {
-                              musicFiles.push(entry.name);
-                            }
-                          }
+                        const input = document.createElement("input");
+                        input.type = "file";
+                        input.multiple = true;
+                        input.accept = "audio/*";
+                        input.onchange = () => {
+                          const selectedFiles = Array.from(input.files);
+                          const musicFiles = selectedFiles.map((f) => f.name);
                           const tracks = messages
                             .filter((m) => Array.isArray(m.content))
                             .flatMap((m) => m.content);
-                          let m3u = "#EXTM3U\n";
+                          let m3u = `#EXTM3U\n#PLAYLIST:Metro Playlist [${selectedCity?.name || "Unknown"}]\n`;
                           let matchedCount = 0;
                           tracks.forEach((track) => {
                             const titleLower = track.title.toLowerCase();
-                            const matched = musicFiles.find((f) => {
-                              const fLower = f.toLowerCase();
-                              return fLower.includes(titleLower);
-                            });
+                            const matched = musicFiles.find((f) =>
+                              f.toLowerCase().includes(titleLower),
+                            );
                             if (matched) {
                               matchedCount++;
                               m3u += `#EXTINF:-1,${track.artist} - ${track.title}\n`;
@@ -587,11 +583,8 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                           a.download = "metro-playlist.m3u";
                           a.click();
                           URL.revokeObjectURL(url);
-                        } catch (err) {
-                          if (err.name !== "AbortError") {
-                            console.error("Export error:", err);
-                          }
-                        }
+                        };
+                        input.click();
                       }
                     }}
                     className="w-fit px-5 py-2 bg-blue-600 text-white rounded-lg font-bold cursor-pointer hover:bg-blue-700"
@@ -608,6 +601,7 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                       />
                       <span className="text-sm">
                         I confirm that I have the audio files for these songs
+                        and will upload them by clicking the button above
                       </span>
                     </label>
                   )}
