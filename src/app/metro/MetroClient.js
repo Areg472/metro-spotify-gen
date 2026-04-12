@@ -471,14 +471,16 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                 margin: "64px auto",
               }}
             >
-              {highlightPath?.isSingleLine && highlightPath?.pathCoords && (
-                <TrainAnimation
-                  key={trainAnimationKey}
-                  pathCoords={highlightPath.pathCoords}
-                  connectorSize={selectedCity.defaultConnectorSize}
-                  color={Array.from(highlightPath.pathLineIds)[0]}
-                />
-              )}
+              {trainAnimationKey > 0 &&
+                highlightPath?.isSingleLine &&
+                highlightPath?.pathCoords && (
+                  <TrainAnimation
+                    key={trainAnimationKey}
+                    pathCoords={highlightPath.pathCoords}
+                    connectorSize={selectedCity.defaultConnectorSize}
+                    color={Array.from(highlightPath.pathLineIds)[0]}
+                  />
+                )}
               {Object.entries(selectedCity.stations).map(([stationId, s]) => (
                 <Connector
                   key={stationId}
