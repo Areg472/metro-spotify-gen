@@ -539,29 +539,59 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
               ) && (
                 <div className="mt-4 flex flex-col gap-3">
                   <button
-                    onClick={() => {
+                    onClick={async () => {
                       if (!showExportCheckbox) {
                         setShowExportCheckbox(true);
                         return;
                       }
                       if (confirmHasFiles) {
-                        const tracks = messages
-                          .filter((m) => Array.isArray(m.content))
-                          .flatMap((m) => m.content);
-                        let m3u = "#EXTM3U\n";
-                        tracks.forEach((track) => {
-                          m3u += `#EXTINF:-1,${track.artist} - ${track.title}\n`;
-                          m3u += `${track.artist} - ${track.title}.mp3\n`;
-                        });
-                        const blob = new Blob([m3u], {
-                          type: "audio/x-mpegurl",
-                        });
-                        const url = URL.createObjectURL(blob);
-                        const a = document.createElement("a");
-                        a.href = url;
-                        a.download = "metro-playlist.m3u";
-                        a.click();
-                        URL.revokeObjectURL(url);
+                        try {
+                          const dirHandle = await window.showDirectoryPicker({
+                            startIn: "music",
+                          });
+                          const musicFiles = [];
+                          for await (const entry of dirHandle.values()) {
+                            if (entry.kind === "file") {
+                              musicFiles.push(entry.name);
+                            }
+                          }
+                          const tracks = messages
+                            .filter((m) => Array.isArray(m.content))
+                            .flatMap((m) => m.content);
+                          let m3u = "#EXTM3U\n";
+                          let matchedCount = 0;
+                          tracks.forEach((track) => {
+                            const titleLower = track.title.toLowerCase();
+                            const matched = musicFiles.find((f) => {
+                              const fLower = f.toLowerCase();
+                              return fLower.includes(titleLower);
+                            });
+                            if (matched) {
+                              matchedCount++;
+                              m3u += `#EXTINF:-1,${track.artist} - ${track.title}\n`;
+                              m3u += `${matched}\n`;
+                            }
+                          });
+                          if (matchedCount === 0) {
+                            alert(
+                              "No matching files found in the selected folder for any of the tracks.",
+                            );
+                            return;
+                          }
+                          const blob = new Blob([m3u], {
+                            type: "audio/x-mpegurl",
+                          });
+                          const url = URL.createObjectURL(blob);
+                          const a = document.createElement("a");
+                          a.href = url;
+                          a.download = "metro-playlist.m3u";
+                          a.click();
+                          URL.revokeObjectURL(url);
+                        } catch (err) {
+                          if (err.name !== "AbortError") {
+                            console.error("Export error:", err);
+                          }
+                        }
                       }
                     }}
                     className="w-fit px-5 py-2 bg-blue-600 text-white rounded-lg font-bold cursor-pointer hover:bg-blue-700"
