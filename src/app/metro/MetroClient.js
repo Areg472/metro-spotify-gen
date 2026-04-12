@@ -81,6 +81,8 @@ export default function MetroClient({ initialCityId, initialCityData }) {
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [weatherData, setWeatherData] = useState(null);
+  const [confirmHasFiles, setConfirmHasFiles] = useState(false);
+  const [showExportCheckbox, setShowExportCheckbox] = useState(false);
 
   const sendMessage = async (prompt) => {
     setIsLoading(true);
@@ -528,6 +530,59 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                 </div>
               ))}
               {isLoading && <SkeletonSongListInline count={4} />}
+              {messages.some(
+                (m) =>
+                  Array.isArray(m.content) &&
+                  m.content.length > 0 &&
+                  m.content[0].title !==
+                    "The stations aren't connected via metro",
+              ) && (
+                <div className="mt-4 flex flex-col gap-3">
+                  <button
+                    onClick={() => {
+                      if (!showExportCheckbox) {
+                        setShowExportCheckbox(true);
+                        return;
+                      }
+                      if (confirmHasFiles) {
+                        const tracks = messages
+                          .filter((m) => Array.isArray(m.content))
+                          .flatMap((m) => m.content);
+                        let m3u = "#EXTM3U\n";
+                        tracks.forEach((track) => {
+                          m3u += `#EXTINF:-1,${track.artist} - ${track.title}\n`;
+                          m3u += `${track.artist} - ${track.title}.mp3\n`;
+                        });
+                        const blob = new Blob([m3u], {
+                          type: "audio/x-mpegurl",
+                        });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement("a");
+                        a.href = url;
+                        a.download = "metro-playlist.m3u";
+                        a.click();
+                        URL.revokeObjectURL(url);
+                      }
+                    }}
+                    className="w-fit px-5 py-2 bg-blue-600 text-white rounded-lg font-bold cursor-pointer hover:bg-blue-700"
+                  >
+                    Export as M3U Playlist
+                  </button>
+                  {showExportCheckbox && (
+                    <label className="flex items-center gap-2 text-white cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={confirmHasFiles}
+                        onChange={(e) => setConfirmHasFiles(e.target.checked)}
+                        className="w-4 h-4 cursor-pointer"
+                      />
+                      <span className="text-sm">
+                        I confirm that I have the audio files for these songs
+                      </span>
+                    </label>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
