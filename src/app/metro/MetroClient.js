@@ -259,7 +259,10 @@ export default function MetroClient({ initialCityId, initialCityData }) {
       console.error("[handleRecommend] Error fetching track tags:", err);
     }
 
-    const trackList = recentTracks
+    // Shuffle tracks randomly before sending to AI for more variety
+    const shuffledTracks = [...recentTracks].sort(() => Math.random() - 0.5);
+
+    const trackList = shuffledTracks
       .map((item) => {
         const track = item.track;
         const artists = track.artists.map((a) => a.name).join(", ");
