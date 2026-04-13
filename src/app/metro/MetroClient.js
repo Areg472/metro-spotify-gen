@@ -84,10 +84,16 @@ export default function MetroClient({ initialCityId, initialCityData }) {
   const [confirmHasFiles, setConfirmHasFiles] = useState(false);
   const [showExportCheckbox, setShowExportCheckbox] = useState(false);
   const [trainAnimationKey, setTrainAnimationKey] = useState(0);
+  const [travelTimeMinutes, setTravelTimeMinutes] = useState(null);
+  const [visibleTrackCount, setVisibleTrackCount] = useState(0);
+  const [playlistRevealing, setPlaylistRevealing] = useState(false);
 
   const sendMessage = async (prompt) => {
     setIsLoading(true);
     setMessages([]);
+    setTravelTimeMinutes(null);
+    setVisibleTrackCount(0);
+    setPlaylistRevealing(false);
 
     try {
       const response = await fetch("/api/chat", {
@@ -100,24 +106,57 @@ export default function MetroClient({ initialCityId, initialCityData }) {
         console.log("AI Response:", data);
 
         let content = data.text || "No response from AI.";
-        if (content.trim().startsWith("[")) {
-          try {
-            let cleanedContent = content.trim();
-            cleanedContent = cleanedContent
-              .replace(/^```json?\s*/i, "")
-              .replace(/```\s*$/, "");
+        let parsedTracks = null;
+        let parsedTravelTime = null;
 
-            const jsonMatch = cleanedContent.match(/\[[\s\S]*\]/);
-            if (jsonMatch) {
-              const parsed = JSON.parse(jsonMatch[0]);
-              content = parsed.map((s) => ({
+        try {
+          let cleanedContent = content.trim();
+          cleanedContent = cleanedContent
+            .replace(/^```json?\s*/i, "")
+            .replace(/```\s*$/, "");
+
+          // Try parsing as object with travelTimeMinutes and tracks
+          const objMatch = cleanedContent.match(/\{[\s\S]*\}/);
+          if (objMatch) {
+            const parsed = JSON.parse(objMatch[0]);
+            if (parsed.tracks && Array.isArray(parsed.tracks)) {
+              parsedTravelTime = parsed.travelTimeMinutes || null;
+              parsedTracks = parsed.tracks.map((s) => ({
                 title: s.title,
                 artist: s.artist,
+                durationSeconds: s.durationSeconds || 0,
+              }));
+            } else if (Array.isArray(parsed)) {
+              // Fallback: plain array
+              parsedTracks = parsed.map((s) => ({
+                title: s.title,
+                artist: s.artist,
+                durationSeconds: s.durationSeconds || 0,
               }));
             }
-          } catch (e) {
-            console.error("Failed to parse AI JSON response", e);
-            console.error("Raw content:", content);
+          }
+
+          // Fallback: try plain array
+          if (!parsedTracks) {
+            const arrMatch = cleanedContent.match(/\[[\s\S]*\]/);
+            if (arrMatch) {
+              const parsed = JSON.parse(arrMatch[0]);
+              parsedTracks = parsed.map((s) => ({
+                title: s.title,
+                artist: s.artist,
+                durationSeconds: s.durationSeconds || 0,
+              }));
+            }
+          }
+        } catch (e) {
+          console.error("Failed to parse AI JSON response", e);
+          console.error("Raw content:", content);
+        }
+
+        if (parsedTracks) {
+          content = parsedTracks;
+          if (parsedTravelTime) {
+            setTravelTimeMinutes(parsedTravelTime);
           }
         }
 
@@ -254,8 +293,8 @@ Time of day: ${timeOfDay} (use this to guide mood — morning: calm/chill, after
 INSTRUCTIONS:
 1. The estimated metro travel time for this trip is approximately ${highlightPath?.estimatedMinutes ? Math.round(highlightPath.estimatedMinutes) : "unknown"} minutes (${highlightPath?.pathStationKeys ? highlightPath.pathStationKeys.length - 1 : "?"} stations, ~2.5 min per station + 3 min per transfer).
    Use this estimate as the target duration. If it seems unreasonable, you may adjust slightly based on your knowledge.
-2. CRITICAL: If the stations are NOT connected via metro (no direct metro route exists), respond with ONLY this JSON array:
-   [{"title": "The stations aren't connected via metro", "artist": ""}]
+2. CRITICAL: If the stations are NOT connected via metro (no direct metro route exists), respond with ONLY this JSON:
+   {"travelTimeMinutes": 0, "tracks": [{"title": "The stations aren't connected via metro", "artist": "", "durationSeconds": 0}]}
    DO NOT list any further tracks. Stop immediately after returning this response.
 3. If stations ARE connected, select tracks from my list below whose TOTAL duration is ≤ the trip duration.
 4. CRITICAL: For trips longer than 5 minutes, you MUST recommend at least 2 tracks. For trips longer than 10 minutes, you MUST recommend at least 3 tracks.
@@ -268,7 +307,7 @@ INSTRUCTIONS:
 My recent tracks (with mood/genre tags where available):
 ${trackList}
 
-Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
+Respond with a JSON object only: {"travelTimeMinutes": <number>, "tracks": [{"title": "...", "artist": "...", "durationSeconds": <number>}]}`;
 
     console.log(
       `[handleRecommend] Prompt ready (${prompt.length} chars), sending to AI...`,
@@ -371,6 +410,70 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
     if (!highlightPath) return null;
     return highlightPath.activeLegs.get(key);
   };
+
+  // When messages arrive with tracks, replay train animation and start playlist reveal
+  // Only do the animated reveal when both stations are on a single line
+  useEffect(() => {
+    const trackMessage = messages.find(
+      (m) =>
+        Array.isArray(m.content) &&
+        m.content.length > 0 &&
+        m.content[0].title !== "The stations aren't connected via metro",
+    );
+    if (!trackMessage) return;
+
+    // Skip animated reveal if the route spans multiple lines
+    if (!highlightPath?.isSingleLine) {
+      setVisibleTrackCount(trackMessage.content.length);
+      setPlaylistRevealing(false);
+      return;
+    }
+
+    const tracks = trackMessage.content;
+    setVisibleTrackCount(0);
+    setPlaylistRevealing(true);
+
+    // Replay train animation
+    setTrainAnimationKey((k) => k + 1);
+
+    // Match reveal duration to the train animation duration so they finish together
+    // TrainAnimation uses: Math.max(2000, pathCoords.length * 800)
+    const pathLength = highlightPath?.pathCoords?.length || 2;
+    const trainAnimDurationMs = Math.max(2000, pathLength * 800);
+
+    const totalTrackDuration = tracks.reduce(
+      (sum, t) => sum + (t.durationSeconds || 0),
+      0,
+    );
+    // Use the train animation duration as the reveal window
+    const revealDurationMs = trainAnimDurationMs;
+
+    let cumulativeDelay = 0;
+    const timeouts = [];
+
+    tracks.forEach((track, i) => {
+      // Proportional delay based on song duration relative to total
+      const proportion =
+        totalTrackDuration > 0
+          ? (track.durationSeconds || 0) / totalTrackDuration
+          : 1 / tracks.length;
+      const delay = i === 0 ? 600 : proportion * revealDurationMs;
+      cumulativeDelay += delay;
+
+      const t = setTimeout(() => {
+        setVisibleTrackCount(i + 1);
+      }, cumulativeDelay);
+      timeouts.push(t);
+    });
+
+    // Mark reveal complete
+    const finalTimeout = setTimeout(() => {
+      setPlaylistRevealing(false);
+    }, cumulativeDelay + 500);
+    timeouts.push(finalTimeout);
+
+    return () => timeouts.forEach(clearTimeout);
+  }, [messages, travelTimeMinutes, highlightPath]);
 
   const [mapOpen, setMapOpen] = useState(false);
   const mapContentRef = useRef(null);
@@ -513,21 +616,45 @@ Respond with a JSON array only: [{"title": "...", "artist": "..."}]`;
                 <div key={m.id} className="text-white">
                   {Array.isArray(m.content) ? (
                     <ol className="list-none space-y-2 pl-0">
-                      {m.content.map((track, i) => (
-                        <li key={i} className="flex items-center gap-3 py-1">
-                          <span className="flex-shrink-0 w-7 h-7 rounded-full text-white text-sm font-bold flex items-center justify-center">
-                            {i + 1}
-                          </span>
-                          <a
-                            href={`https://www.last.fm/music/${encodeURIComponent(track.artist)}/_/${encodeURIComponent(track.title)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline"
+                      {m.content.map((track, i) => {
+                        const isVisible =
+                          !playlistRevealing || i < visibleTrackCount;
+                        return (
+                          <li
+                            key={i}
+                            className="flex items-center gap-3 py-1"
+                            style={{
+                              opacity: isVisible ? 1 : 0,
+                              transform: isVisible
+                                ? "translateY(0)"
+                                : "translateY(12px)",
+                              transition:
+                                "opacity 0.5s ease, transform 0.5s ease",
+                            }}
                           >
-                            {track.title} — {track.artist}
-                          </a>
-                        </li>
-                      ))}
+                            <span className="flex-shrink-0 w-7 h-7 rounded-full text-white text-sm font-bold flex items-center justify-center">
+                              {i + 1}
+                            </span>
+                            <a
+                              href={`https://www.last.fm/music/${encodeURIComponent(track.artist)}/_/${encodeURIComponent(track.title)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline"
+                            >
+                              {track.title} — {track.artist}
+                            </a>
+                            {track.durationSeconds > 0 && (
+                              <span className="text-gray-500 text-xs ml-2">
+                                {Math.floor(track.durationSeconds / 60)}:
+                                {String(track.durationSeconds % 60).padStart(
+                                  2,
+                                  "0",
+                                )}
+                              </span>
+                            )}
+                          </li>
+                        );
+                      })}
                     </ol>
                   ) : (
                     <div className="whitespace-pre-wrap">{m.content}</div>

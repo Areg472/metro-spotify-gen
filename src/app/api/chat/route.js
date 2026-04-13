@@ -13,8 +13,8 @@ export async function POST(request) {
 CRITICAL RULES:
 - First use web search to find the EXACT metro travel time between the stations.
 - CRITICAL: Use ONLY metro/subway travel time. DO NOT use bus, tram, walking, taxi, or any other transportation method. ONLY metro/subway.
-- CRITICAL: If the stations are NOT connected via metro (no direct metro route exists), respond with ONLY this JSON array:
-  [{"title": "The stations aren't connected via metro", "artist": ""}]
+- CRITICAL: If the stations are NOT connected via metro (no direct metro route exists), respond with ONLY this JSON:
+  {"travelTimeMinutes": 0, "tracks": [{"title": "The stations aren't connected via metro", "artist": "", "durationSeconds": 0}]}
   DO NOT list any further tracks. Stop immediately after returning this response.
 - If stations ARE connected: Select tracks whose TOTAL COMBINED duration is ≤ trip duration. NEVER exceed the trip time.
 - CRITICAL: Select a REASONABLE number of tracks. For a 13-minute trip, recommend 3-5 tracks, NOT 40 tracks.
@@ -28,7 +28,8 @@ MOOD & GENRE RULES (if mood/genre/tag data is provided in the prompt):
 - If a dominant genre/mood is present in the track list, lean towards it for the playlist.
 - Use the tags provided per track to inform your selection. Tags may include genres (e.g. "rock", "jazz"), moods (e.g. "chill", "energetic"), or descriptors (e.g. "rainy day", "workout").
 
-Output ONLY a JSON array: [{"title": "...", "artist": "..."}]`,
+Output ONLY a JSON object with this exact format: {"travelTimeMinutes": <number>, "tracks": [{"title": "...", "artist": "...", "durationSeconds": <number>}]}
+The travelTimeMinutes should be the estimated metro travel time in minutes. The durationSeconds for each track should be the track's duration in seconds as provided in the prompt.`,
     prompt,
     tools: {
       google_search: vertex.tools.googleSearch({}),
