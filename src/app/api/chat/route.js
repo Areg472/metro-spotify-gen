@@ -1,4 +1,5 @@
-import { generateText, gateway } from "ai";
+import { generateText } from "ai";
+import { openai } from "@ai-sdk/openai";
 
 export async function POST(request) {
   const { prompt } = await request.json();
@@ -6,7 +7,7 @@ export async function POST(request) {
   console.log("[chat] Received prompt, sending to AI...");
 
   const result = await generateText({
-    model: "openai/gpt-5.4-mini",
+    model: "anthropic/claude-haiku-4.5",
     system: `You are a metro trip music assistant. 
 
 CRITICAL RULES:
@@ -27,11 +28,11 @@ MOOD & GENRE RULES (if mood/genre/tag data is provided in the prompt):
 - If a dominant genre/mood is present in the track list, lean towards it for the playlist.
 - Use the tags provided per track to inform your selection. Tags may include genres (e.g. "rock", "jazz"), moods (e.g. "chill", "energetic"), or descriptors (e.g. "rainy day", "workout").
 
-Output ONLY a JSON object with this exact format: {"travelTimeMinutes": <number>, "tracks": [{"title": "...", "artist": "...", "durationSeconds": <number>}]}
-The travelTimeMinutes should be the estimated metro travel time in minutes. The durationSeconds for each track should be the track's duration in seconds as provided in the prompt.`,
+Output ONLY a JSON object with this exact format: {"travelTimeMinutes": <number>, "tracks": [{"title": "...", "artist": "..."}]}
+The travelTimeMinutes should be the estimated metro travel time in minutes. Do NOT include durationSeconds in your output — durations are provided in the prompt for your reference only, so you can respect the time constraint. They will be added separately.`,
     prompt,
     tools: {
-      parallel_search: gateway.tools.parallelSearch(),
+      web_search: openai.tools.webSearch({}),
     },
   });
 

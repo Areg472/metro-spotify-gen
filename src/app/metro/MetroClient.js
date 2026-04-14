@@ -289,17 +289,42 @@ export default function MetroClient({ initialCityId, initialCityData }) {
     // Shuffle tracks randomly before sending to AI for more variety
     const shuffledTracks = [...recentTracks].sort(() => Math.random() - 0.5);
 
+    // Fetch real durations from Last.fm for all tracks to include in the prompt
+    let durationMap = {};
+    try {
+      const tracksForDurations = shuffledTracks.map((item) => ({
+        artist: item.track.artists[0]?.name || "",
+        title: item.track.name,
+      }));
+      const durResponse = await fetch("/api/lastfm/track-durations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tracks: tracksForDurations }),
+      });
+      if (durResponse.ok) {
+        const durData = await durResponse.json();
+        durData.forEach(({ artist, title, durationSeconds }) => {
+          if (durationSeconds > 0) {
+            durationMap[`${title}|||${artist}`] = durationSeconds;
+          }
+        });
+      }
+    } catch (err) {
+      console.error("[handleRecommend] Error fetching track durations:", err);
+    }
+
     const trackList = shuffledTracks
       .map((item) => {
         const track = item.track;
         const artists = track.artists.map((a) => a.name).join(", ");
-        const totalSeconds = Math.floor(track.duration_ms / 1000);
+        const key = `${track.name}|||${track.artists[0]?.name || ""}`;
+        const totalSeconds =
+          durationMap[key] || Math.floor(track.duration_ms / 1000);
         const minutes = Math.floor(totalSeconds / 60);
         const seconds = totalSeconds % 60;
-        const key = `${track.name}|||${track.artists[0]?.name || ""}`;
         const tags = tagMap[key] || [];
         const tagStr = tags.length > 0 ? ` [tags: ${tags.join(", ")}]` : "";
-        return `- ${track.name} by ${artists} (${minutes} minutes and ${seconds} seconds)${tagStr}`;
+        return `- ${track.name} by ${artists} (${minutes} minutes and ${seconds} seconds, ${totalSeconds} seconds total)${tagStr}`;
       })
       .join("\n");
 
@@ -337,7 +362,8 @@ INSTRUCTIONS:
 My recent tracks (with mood/genre tags where available):
 ${trackList}
 
-Respond with a JSON object only: {"travelTimeMinutes": <number>, "tracks": [{"title": "...", "artist": "...", "durationSeconds": <number>}]}`;
+Respond with a JSON object only: {"travelTimeMinutes": <number>, "tracks": [{"title": "...", "artist": "..."}]}
+Do NOT include durationSeconds in your output. The durations are provided for your reference to respect the time constraint, but they will be added separately.`;
 
     console.log(
       `[handleRecommend] Prompt ready (${prompt.length} chars), sending to AI...`,

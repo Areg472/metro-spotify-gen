@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.69",
     "@ai-sdk/gateway": "^3.0.23",
     "@ai-sdk/google-vertex": "^4.0.44",
     "@ai-sdk/openai": "^3.0.19",
