@@ -154,6 +154,33 @@ export default function MetroClient({ initialCityId, initialCityData }) {
         }
 
         if (parsedTracks) {
+          // Fetch real durations from Last.fm
+          try {
+            const durationsResponse = await fetch(
+              "/api/lastfm/track-durations",
+              {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  tracks: parsedTracks.map((t) => ({
+                    artist: t.artist,
+                    title: t.title,
+                  })),
+                }),
+              },
+            );
+            if (durationsResponse.ok) {
+              const durations = await durationsResponse.json();
+              parsedTracks = parsedTracks.map((track, i) => ({
+                ...track,
+                durationSeconds:
+                  durations[i]?.durationSeconds || track.durationSeconds,
+              }));
+            }
+          } catch (err) {
+            console.error("Failed to fetch track durations from Last.fm:", err);
+          }
+
           content = parsedTracks;
           if (parsedTravelTime) {
             setTravelTimeMinutes(parsedTravelTime);

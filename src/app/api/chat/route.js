@@ -1,5 +1,5 @@
 import { generateText } from "ai";
-import { vertex } from "@ai-sdk/google-vertex";
+import { openai } from "@ai-sdk/openai";
 
 export async function POST(request) {
   const { prompt } = await request.json();
@@ -7,7 +7,7 @@ export async function POST(request) {
   console.log("[chat] Received prompt, sending to AI...");
 
   const result = await generateText({
-    model: "google/gemini-3-flash",
+    model: "openai/gpt-5.4-mini",
     system: `You are a metro trip music assistant. 
 
 CRITICAL RULES:
@@ -32,7 +32,7 @@ Output ONLY a JSON object with this exact format: {"travelTimeMinutes": <number>
 The travelTimeMinutes should be the estimated metro travel time in minutes. The durationSeconds for each track should be the track's duration in seconds as provided in the prompt.`,
     prompt,
     tools: {
-      google_search: vertex.tools.googleSearch({}),
+      web_search: openai.tools.webSearch({}),
     },
   });
 
