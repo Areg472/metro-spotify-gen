@@ -1,5 +1,4 @@
-import { generateText } from "ai";
-import { openai } from "@ai-sdk/openai";
+import { generateText, gateway } from "ai";
 
 export async function POST(request) {
   const { prompt } = await request.json();
@@ -32,7 +31,7 @@ Output ONLY a JSON object with this exact format: {"travelTimeMinutes": <number>
 The travelTimeMinutes should be the estimated metro travel time in minutes. The durationSeconds for each track should be the track's duration in seconds as provided in the prompt.`,
     prompt,
     tools: {
-      web_search: openai.tools.webSearch({}),
+      parallel_search: gateway.tools.parallelSearch(),
     },
   });
 
