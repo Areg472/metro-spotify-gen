@@ -450,7 +450,8 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
   const handleGenerateImage = async () => {
     let mapImage = null;
     try {
-      if (highlightPath?.isSingleLine) {
+      const stationCount = highlightPath?.pathStationKeys?.length || 0;
+      if (highlightPath?.isSingleLine && stationCount < 11) {
         setIsCapturingMap(true);
         await new Promise((r) => setTimeout(r, 100)); // wait for re-render
         const domtoimage = await import("dom-to-image");
