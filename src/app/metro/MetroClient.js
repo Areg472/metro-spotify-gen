@@ -5,69 +5,11 @@ import { stations } from "@/data/stations";
 import { Connector } from "@/metroui/Connector";
 import { findHighlightPath } from "@/data/stations/pathfinding";
 import { TrainAnimation } from "@/metroui/TrainAnimation";
+import { SkeletonSongListInline, SkeletonMetroMapInline } from "./Skeletons";
+import { generateShareImage } from "./imageUtils";
+import { PlaylistExport } from "./PlaylistExport";
 import dynamic from "next/dynamic";
 const CityMap = dynamic(() => import("@/components/CityMap"), { ssr: false });
-
-function SkeletonSongListInline({ count = 5 }) {
-  return (
-    <div className="flex flex-col space-y-3 w-full">
-      {Array.from({ length: count }).map((_, i) => (
-        <div key={i} className="flex items-center space-x-3">
-          <div className="flex flex-col space-y-1.5 flex-1">
-            <div className="skeleton h-3.5" style={{ width: `250px` }} />
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function SkeletonMetroMapInline() {
-  return (
-    <div className="flex flex-col items-center p-10 bg-[#1a1a1a] rounded-xl shadow-2xl mt-4 w-full max-w-5xl">
-      <div className="skeleton h-7 w-48 mb-8" />
-      <div
-        className="relative w-full overflow-hidden"
-        style={{ height: "400px" }}
-      >
-        <div
-          className="skeleton absolute"
-          style={{ left: 40, top: "45%", width: "85%", height: 8 }}
-        />
-        <div
-          className="skeleton absolute"
-          style={{ left: "72%", top: "20%", width: 8, height: "55%" }}
-        />
-        {[80, 200, 320, 440, 560, 680].map((x, i) => (
-          <div
-            key={i}
-            className="skeleton rounded-full absolute"
-            style={{ left: x, top: "calc(45% - 12px)", width: 24, height: 24 }}
-          />
-        ))}
-        {[160, 260].map((y, i) => (
-          <div
-            key={`b-${i}`}
-            className="skeleton rounded-full absolute"
-            style={{ left: "calc(72% - 12px)", top: y, width: 24, height: 24 }}
-          />
-        ))}
-        {[80, 200, 320, 440, 560, 680].map((x, i) => (
-          <div
-            key={`l-${i}`}
-            className="skeleton absolute"
-            style={{
-              left: x - 10,
-              top: "calc(45% - 40px)",
-              width: 70,
-              height: 10,
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function MetroClient({ initialCityId, initialCityData }) {
   const router = useRouter();
@@ -88,6 +30,7 @@ export default function MetroClient({ initialCityId, initialCityData }) {
   const [travelTimeMinutes, setTravelTimeMinutes] = useState(null);
   const [visibleTrackCount, setVisibleTrackCount] = useState(0);
   const [playlistRevealing, setPlaylistRevealing] = useState(false);
+  const [isCapturingMap, setIsCapturingMap] = useState(false);
 
   const sendMessage = async (prompt) => {
     setIsLoading(true);
@@ -497,6 +440,53 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
     return highlightPath.activeLegs.get(key);
   };
 
+  const hasValidTracks = messages.some(
+    (m) =>
+      Array.isArray(m.content) &&
+      m.content.length > 0 &&
+      m.content[0].title !== "The stations aren't connected via metro",
+  );
+
+  const handleGenerateImage = async () => {
+    let mapImage = null;
+    try {
+      if (highlightPath?.isSingleLine) {
+        setIsCapturingMap(true);
+        await new Promise((r) => setTimeout(r, 100)); // wait for re-render
+        const domtoimage = await import("dom-to-image");
+        const node = document.getElementById("metro-map");
+        if (node) {
+          const scaleFactor = 3;
+          const dataUrl = await domtoimage.default.toPng(node, {
+            width: node.offsetWidth * scaleFactor,
+            height: node.offsetHeight * scaleFactor,
+            style: {
+              transform: `scale(${scaleFactor})`,
+              transformOrigin: "top left",
+            },
+          });
+          mapImage = new Image();
+          mapImage.src = dataUrl;
+          await new Promise((res) => (mapImage.onload = res));
+        }
+        setIsCapturingMap(false);
+      }
+    } catch (e) {
+      console.error("Failed to capture metro map", e);
+      setIsCapturingMap(false);
+    }
+
+    generateShareImage({
+      hasValidTracks,
+      selectedCity,
+      startStation,
+      endStation,
+      isSingleLine: highlightPath?.isSingleLine,
+      messages,
+      mapImage,
+    });
+  };
+
   // When messages arrive with tracks, replay train animation and start playlist reveal
   // Only do the animated reveal when both stations are on a single line
   useEffect(() => {
@@ -638,6 +628,18 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
             Reset Selection
           </button>
         )}
+
+        <button
+          onClick={handleGenerateImage}
+          disabled={!hasValidTracks}
+          className={`h-16 px-6 text-white rounded transition-colors ${
+            hasValidTracks
+              ? "bg-purple-600 hover:bg-purple-700 cursor-pointer"
+              : "bg-gray-700 text-gray-500 cursor-not-allowed"
+          }`}
+        >
+          Share Image
+        </button>
       </div>
 
       {!selectedCity && <SkeletonMetroMapInline />}
@@ -653,6 +655,7 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
             style={{ height: "400px" }}
           >
             <div
+              id="metro-map"
               style={{
                 minWidth: "1000px",
                 height: "100%",
@@ -670,29 +673,37 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
                     color={Array.from(highlightPath.pathLineIds)[0]}
                   />
                 )}
-              {Object.entries(selectedCity.stations).map(([stationId, s]) => (
-                <Connector
-                  key={stationId}
-                  size={selectedCity.defaultConnectorSize}
-                  {...s.connector}
-                  label={s.name}
-                  labelBg={null}
-                  onClick={() => handleStationClick(s)}
-                  isSelected={startStation?.name === s.name}
-                  isEndStation={endStation?.name === s.name}
-                  dimmed={getIsDimmed(stationId)}
-                  activeLegs={getActiveLegs(stationId)}
-                />
-              ))}
-              {selectedCity.extraConnectors?.map((c, i) => (
-                <Connector
-                  key={`extra-${i}`}
-                  size={selectedCity.defaultConnectorSize}
-                  {...c}
-                  dimmed={getIsDimmed(`extra-${i}`)}
-                  activeLegs={getActiveLegs(`extra-${i}`)}
-                />
-              ))}
+              {Object.entries(selectedCity.stations).map(([stationId, s]) => {
+                const dimmed = getIsDimmed(stationId);
+                if (isCapturingMap && dimmed) return null;
+                return (
+                  <Connector
+                    key={stationId}
+                    size={selectedCity.defaultConnectorSize}
+                    {...s.connector}
+                    label={s.name}
+                    labelBg={null}
+                    onClick={() => handleStationClick(s)}
+                    isSelected={startStation?.name === s.name}
+                    isEndStation={endStation?.name === s.name}
+                    dimmed={dimmed}
+                    activeLegs={getActiveLegs(stationId)}
+                  />
+                );
+              })}
+              {selectedCity.extraConnectors?.map((c, i) => {
+                const dimmed = getIsDimmed(`extra-${i}`);
+                if (isCapturingMap && dimmed) return null;
+                return (
+                  <Connector
+                    key={`extra-${i}`}
+                    size={selectedCity.defaultConnectorSize}
+                    {...c}
+                    dimmed={dimmed}
+                    activeLegs={getActiveLegs(`extra-${i}`)}
+                  />
+                );
+              })}
             </div>
           </div>
 
@@ -755,75 +766,14 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
                   m.content[0].title !==
                     "The stations aren't connected via metro",
               ) && (
-                <div className="mt-4 flex flex-col gap-3">
-                  <button
-                    onClick={() => {
-                      if (!showExportCheckbox) {
-                        setShowExportCheckbox(true);
-                        return;
-                      }
-                      if (confirmHasFiles) {
-                        const input = document.createElement("input");
-                        input.type = "file";
-                        input.multiple = true;
-                        input.accept = "audio/*";
-                        input.onchange = () => {
-                          const selectedFiles = Array.from(input.files);
-                          const musicFiles = selectedFiles.map((f) => f.name);
-                          const tracks = messages
-                            .filter((m) => Array.isArray(m.content))
-                            .flatMap((m) => m.content);
-                          let m3u = `#EXTM3U\n#PLAYLIST:Metro Playlist [${selectedCity?.name || "Unknown"}]\n`;
-                          let matchedCount = 0;
-                          tracks.forEach((track) => {
-                            const titleLower = track.title.toLowerCase();
-                            const matched = musicFiles.find((f) =>
-                              f.toLowerCase().includes(titleLower),
-                            );
-                            if (matched) {
-                              matchedCount++;
-                              m3u += `#EXTINF:-1,${track.artist} - ${track.title}\n`;
-                              m3u += `${matched}\n`;
-                            }
-                          });
-                          if (matchedCount === 0) {
-                            alert(
-                              "No matching files found in the selected folder for any of the tracks.",
-                            );
-                            return;
-                          }
-                          const blob = new Blob([m3u], {
-                            type: "audio/x-mpegurl",
-                          });
-                          const url = URL.createObjectURL(blob);
-                          const a = document.createElement("a");
-                          a.href = url;
-                          a.download = `Metro Playlist [${selectedCity?.name || "Unknown"}].m3u`;
-                          a.click();
-                          URL.revokeObjectURL(url);
-                        };
-                        input.click();
-                      }
-                    }}
-                    className="w-fit px-5 py-2 bg-blue-600 text-white rounded-lg font-bold cursor-pointer hover:bg-blue-700"
-                  >
-                    Export as M3U Playlist
-                  </button>
-                  {showExportCheckbox && (
-                    <label className="flex items-center gap-2 text-white cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={confirmHasFiles}
-                        onChange={(e) => setConfirmHasFiles(e.target.checked)}
-                        className="w-4 h-4 cursor-pointer"
-                      />
-                      <span className="text-sm">
-                        I confirm that I have the audio files for these songs
-                        and will upload them by clicking the button above
-                      </span>
-                    </label>
-                  )}
-                </div>
+                <PlaylistExport
+                  selectedCity={selectedCity}
+                  messages={messages}
+                  showExportCheckbox={showExportCheckbox}
+                  setShowExportCheckbox={setShowExportCheckbox}
+                  confirmHasFiles={confirmHasFiles}
+                  setConfirmHasFiles={setConfirmHasFiles}
+                />
               )}
             </div>
           </div>

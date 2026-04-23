@@ -16,6 +16,8 @@
     "@ai-sdk/react": "^3.0.52",
     "@vercel/analytics": "^1.6.1",
     "ai": "^6.0.50",
+    "dom-to-image": "^2.6.0",
+    "html-to-image": "^1.11.13",
     "leaflet": "^1.9.4",
     "next": "16.2.4",
     "react": "19.2.5",
