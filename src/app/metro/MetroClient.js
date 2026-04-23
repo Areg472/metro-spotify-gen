@@ -625,7 +625,12 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
         {(startStation || endStation) && (
           <button
             onClick={handleReset}
-            className="h-16 w-32 bg-red-600 cursor-pointer text-white rounded hover:bg-red-700"
+            disabled={isLoading}
+            className={`h-16 w-32 text-white rounded transition-colors ${
+              isLoading
+                ? "bg-gray-700 text-gray-500 cursor-not-allowed"
+                : "bg-red-600 hover:bg-red-700 cursor-pointer"
+            }`}
           >
             Reset Selection
           </button>
@@ -633,9 +638,9 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
 
         <button
           onClick={handleGenerateImage}
-          disabled={!hasValidTracks}
+          disabled={!hasValidTracks || isLoading}
           className={`h-16 px-6 text-white rounded transition-colors ${
-            hasValidTracks
+            hasValidTracks && !isLoading
               ? "bg-purple-600 hover:bg-purple-700 cursor-pointer"
               : "bg-gray-700 text-gray-500 cursor-not-allowed"
           }`}
