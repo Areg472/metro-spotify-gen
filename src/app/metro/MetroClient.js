@@ -482,6 +482,7 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
       startStation,
       endStation,
       isSingleLine: highlightPath?.isSingleLine,
+      stationCount: highlightPath?.pathStationKeys?.length || 0,
       messages,
       mapImage,
     });

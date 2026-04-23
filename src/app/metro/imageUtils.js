@@ -4,6 +4,7 @@ export const generateShareImage = ({
   startStation,
   endStation,
   isSingleLine,
+  stationCount,
   messages,
   mapImage,
 }) => {
@@ -25,8 +26,9 @@ export const generateShareImage = ({
 
   // Draw Map or Station text in center
   if (mapImage) {
-    const maxW = isSingleLine ? 1750 : 800;
-    const maxH = isSingleLine ? 450 : 200;
+    const showAsMultiLine = !isSingleLine || stationCount >= 11;
+    const maxW = showAsMultiLine ? 800 : 1750;
+    const maxH = showAsMultiLine ? 200 : 450;
     const scale = Math.min(maxW / mapImage.width, maxH / mapImage.height);
     const dw = mapImage.width * scale;
     const dh = mapImage.height * scale;
@@ -34,7 +36,7 @@ export const generateShareImage = ({
     const dy = 140 + (maxH - dh) / 2;
     ctx.drawImage(mapImage, dx, dy, dw, dh);
 
-    if (!isSingleLine) {
+    if (showAsMultiLine) {
       ctx.fillStyle = "#9ca3af";
       ctx.font = "bold 40px Calibri, sans-serif";
       ctx.fillText(`${startStation?.name} ➔ ${endStation?.name}`, 960, 400);
