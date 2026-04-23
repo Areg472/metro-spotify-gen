@@ -237,17 +237,23 @@ export default function MetroClient({ initialCityId, initialCityData }) {
     console.log(
       `[handleRecommend] Time of day: ${timeOfDay}, tracks: ${recentTracks.length}`,
     );
-    
+
     let combinedRecentTracks = [...recentTracks];
-    
+
     if (useTopCountryTracks && selectedCity?.country) {
       try {
-        console.log(`[handleRecommend] Fetching top tracks for country: ${selectedCity.country}`);
-        const response = await fetch(`/api/lastfm/geo-top-tracks?country=${encodeURIComponent(selectedCity.country)}`);
+        console.log(
+          `[handleRecommend] Fetching top tracks for country: ${selectedCity.country}`,
+        );
+        const response = await fetch(
+          `/api/lastfm/geo-top-tracks?country=${encodeURIComponent(selectedCity.country)}`,
+        );
         if (response.ok) {
           const geoTracks = await response.json();
           combinedRecentTracks = [...combinedRecentTracks, ...geoTracks];
-          console.log(`[handleRecommend] Fetched ${geoTracks.length} geo tracks.`);
+          console.log(
+            `[handleRecommend] Fetched ${geoTracks.length} geo tracks.`,
+          );
         } else {
           console.warn("[handleRecommend] Failed to fetch geo top tracks.");
         }
@@ -306,7 +312,9 @@ export default function MetroClient({ initialCityId, initialCityData }) {
     }
 
     // Shuffle tracks randomly before sending to AI for more variety
-    const shuffledTracks = [...combinedRecentTracks].sort(() => Math.random() - 0.5);
+    const shuffledTracks = [...combinedRecentTracks].sort(
+      () => Math.random() - 0.5,
+    );
 
     // Fetch real durations from Last.fm for all tracks to include in the prompt
     let durationMap = {};
@@ -719,7 +727,7 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
                               rel="noopener noreferrer"
                               className="underline"
                             >
-                              {track.title} — {track.artist}
+                              {track.title} - {track.artist}
                             </a>
                             {track.durationSeconds > 0 && (
                               <span className="text-gray-500 text-xs ml-2">
