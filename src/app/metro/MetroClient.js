@@ -84,6 +84,7 @@ export default function MetroClient({ initialCityId, initialCityData }) {
   const [confirmHasFiles, setConfirmHasFiles] = useState(false);
   const [showExportCheckbox, setShowExportCheckbox] = useState(false);
   const [trainAnimationKey, setTrainAnimationKey] = useState(0);
+  const [useTopCountryTracks, setUseTopCountryTracks] = useState(false);
   const [travelTimeMinutes, setTravelTimeMinutes] = useState(null);
   const [visibleTrackCount, setVisibleTrackCount] = useState(0);
   const [playlistRevealing, setPlaylistRevealing] = useState(false);
@@ -236,11 +237,29 @@ export default function MetroClient({ initialCityId, initialCityData }) {
     console.log(
       `[handleRecommend] Time of day: ${timeOfDay}, tracks: ${recentTracks.length}`,
     );
+    
+    let combinedRecentTracks = [...recentTracks];
+    
+    if (useTopCountryTracks && selectedCity?.country) {
+      try {
+        console.log(`[handleRecommend] Fetching top tracks for country: ${selectedCity.country}`);
+        const response = await fetch(`/api/lastfm/geo-top-tracks?country=${encodeURIComponent(selectedCity.country)}`);
+        if (response.ok) {
+          const geoTracks = await response.json();
+          combinedRecentTracks = [...combinedRecentTracks, ...geoTracks];
+          console.log(`[handleRecommend] Fetched ${geoTracks.length} geo tracks.`);
+        } else {
+          console.warn("[handleRecommend] Failed to fetch geo top tracks.");
+        }
+      } catch (err) {
+        console.error("[handleRecommend] Error fetching geo top tracks:", err);
+      }
+    }
 
     // Fetch mood/genre tags for all tracks
     let tagMap = {};
     try {
-      const tracksForTags = recentTracks.map((item) => ({
+      const tracksForTags = combinedRecentTracks.map((item) => ({
         artist: item.track.artists[0]?.name || "",
         title: item.track.name,
       }));
@@ -287,7 +306,7 @@ export default function MetroClient({ initialCityId, initialCityData }) {
     }
 
     // Shuffle tracks randomly before sending to AI for more variety
-    const shuffledTracks = [...recentTracks].sort(() => Math.random() - 0.5);
+    const shuffledTracks = [...combinedRecentTracks].sort(() => Math.random() - 0.5);
 
     // Fetch real durations from Last.fm for all tracks to include in the prompt
     let durationMap = {};
@@ -377,6 +396,9 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
       try {
         const selectedContent = JSON.parse(selectedContentStr);
         setRecentTracks(selectedContent.tracks || []);
+        if (selectedContent.selectTopCountryTracks) {
+          setUseTopCountryTracks(true);
+        }
       } catch (error) {
         console.error("Error parsing selected content:", error);
       }

@@ -17,9 +17,9 @@
     "@vercel/analytics": "^1.6.1",
     "ai": "^6.0.50",
     "leaflet": "^1.9.4",
-    "next": "16.1.5",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "next": "16.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "react-leaflet": "^5.0.0",
     "zod": "^4.3.6"
   },
@@ -27,7 +27,7 @@
     "@tailwindcss/postcss": "^4",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "16.1.5",
+    "eslint-config-next": "16.2.4",
     "prettier": "3.8.1",
     "tailwindcss": "^4"
   }

@@ -8,6 +8,7 @@ export default function ContentSelectClient() {
   const [recentTracks, setRecentTracks] = useState([]);
   const [albums, setAlbums] = useState([]);
   const [selectAllTracks, setSelectAllTracks] = useState(false);
+  const [selectTopCountryTracks, setSelectTopCountryTracks] = useState(false);
   const [selectedAlbums, setSelectedAlbums] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [lastfmUsername, setLastfmUsername] = useState(null);
@@ -111,6 +112,7 @@ export default function ContentSelectClient() {
       const dataToSend = {
         tracks: combinedTracks,
         content: selectedAlbumsData,
+        selectTopCountryTracks: selectTopCountryTracks,
       };
 
       sessionStorage.setItem("selectedContent", JSON.stringify(dataToSend));
@@ -151,6 +153,15 @@ export default function ContentSelectClient() {
               className="w-4 h-4 cursor-pointer"
             />
             <span>Select all 50 recent tracks</span>
+          </label>
+          <label className="flex items-center text-white gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer mt-2">
+            <input
+              type="checkbox"
+              checked={selectTopCountryTracks}
+              onChange={(e) => setSelectTopCountryTracks(e.target.checked)}
+              className="w-4 h-4 cursor-pointer"
+            />
+            <span>Select all Top 50 tracks in the selected country</span>
           </label>
         </div>
 
