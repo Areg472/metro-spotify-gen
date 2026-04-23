@@ -24,11 +24,13 @@ export const generateShareImage = ({
   ctx.textAlign = "center";
   ctx.fillText(`${selectedCity?.name} Metro Journey`, 960, 100);
 
+  // Treat long single-line routes (11+ stations) as multi-line
+  const effectiveSingleLine = isSingleLine && stationCount < 11;
+
   // Draw Map or Station text in center
   if (mapImage) {
-    const showAsMultiLine = !isSingleLine || stationCount >= 11;
-    const maxW = showAsMultiLine ? 800 : 1750;
-    const maxH = showAsMultiLine ? 200 : 450;
+    const maxW = effectiveSingleLine ? 1750 : 800;
+    const maxH = effectiveSingleLine ? 450 : 200;
     const scale = Math.min(maxW / mapImage.width, maxH / mapImage.height);
     const dw = mapImage.width * scale;
     const dh = mapImage.height * scale;
@@ -36,7 +38,7 @@ export const generateShareImage = ({
     const dy = 140 + (maxH - dh) / 2;
     ctx.drawImage(mapImage, dx, dy, dw, dh);
 
-    if (showAsMultiLine) {
+    if (!effectiveSingleLine) {
       ctx.fillStyle = "#9ca3af";
       ctx.font = "bold 40px Calibri, sans-serif";
       ctx.fillText(`${startStation?.name} ➔ ${endStation?.name}`, 960, 400);
