@@ -1,18 +1,21 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 //bla
 //bla 2
 export default function ContentSelectClient() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [recentTracks, setRecentTracks] = useState([]);
   const [albums, setAlbums] = useState([]);
   const [selectAllTracks, setSelectAllTracks] = useState(false);
   const [selectTopCountryTracks, setSelectTopCountryTracks] = useState(false);
+  const [hideTopCountry, setHideTopCountry] = useState(false);
   const [selectedAlbums, setSelectedAlbums] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [lastfmUsername, setLastfmUsername] = useState(null);
+  const [userStep, setUserStep] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -25,7 +28,29 @@ export default function ContentSelectClient() {
         return null;
       };
 
-      const username = getCookie("lastfm_username");
+      const step = searchParams.get("user");
+      setUserStep(step);
+
+      let username = getCookie("lastfm_username");
+      if (step === "2") {
+        username = getCookie("lastfm_username2");
+        if (!username) {
+            router.push("/content-select");
+            return;
+        }
+        const data1Str = sessionStorage.getItem("selectedContent1");
+        if (data1Str) {
+            try {
+                const data1 = JSON.parse(data1Str);
+                if (data1.selectTopCountryTracks) {
+                    setHideTopCountry(true);
+                }
+            } catch (e) {
+                console.error("Error parsing selectedContent1:", e);
+            }
+        }
+      }
+
       setLastfmUsername(username);
 
       try {
@@ -69,7 +94,7 @@ export default function ContentSelectClient() {
       }
     }
     fetchData();
-  }, [router]);
+  }, [router, searchParams]);
 
   const handleAlbumToggle = (albumId) => {
     setSelectedAlbums((prev) =>
@@ -116,9 +141,34 @@ export default function ContentSelectClient() {
         selectTopCountryTracks: selectTopCountryTracks,
       };
 
-      sessionStorage.setItem("selectedContent", JSON.stringify(dataToSend));
-
-      router.push("/metro");
+      if (userStep === "1") {
+        sessionStorage.setItem("selectedContent1", JSON.stringify(dataToSend));
+        setSelectAllTracks(false);
+        setSelectTopCountryTracks(false);
+        setSelectedAlbums([]);
+        router.push("/content-select?user=2");
+        return;
+      } else if (userStep === "2") {
+        const data1Str = sessionStorage.getItem("selectedContent1");
+        let dataToSendFinal = dataToSend;
+        if (data1Str) {
+            try {
+                const data1 = JSON.parse(data1Str);
+                dataToSendFinal = {
+                    tracks: [...data1.tracks, ...dataToSend.tracks],
+                    content: [...data1.content, ...dataToSend.content],
+                    selectTopCountryTracks: data1.selectTopCountryTracks || dataToSend.selectTopCountryTracks,
+                };
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        sessionStorage.setItem("selectedContent", JSON.stringify(dataToSendFinal));
+        router.push("/metro");
+      } else {
+        sessionStorage.setItem("selectedContent", JSON.stringify(dataToSend));
+        router.push("/metro");
+      }
     } catch (error) {
       console.error("Error fetching content tracks:", error);
       setIsLoading(false);
@@ -133,9 +183,13 @@ export default function ContentSelectClient() {
     );
   }
 
+  let headingText = "Select Your Content";
+  if (userStep === "1") headingText = "Select Your Content 1/2";
+  if (userStep === "2") headingText = "Select Your Content 2/2";
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center gap-5 font-sans p-8">
-      <h1 className="text-3xl">Select Your Content</h1>
+      <h1 className="text-3xl">{headingText}</h1>
       <p>Choose your recent tracks and albums to use for recommendations</p>
       {lastfmUsername && (
         <p className="text-sm text-gray-400">
@@ -155,15 +209,17 @@ export default function ContentSelectClient() {
             />
             <span>Select all 50 recent tracks</span>
           </label>
-          <label className="flex items-center text-white gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer mt-2">
-            <input
-              type="checkbox"
-              checked={selectTopCountryTracks}
-              onChange={(e) => setSelectTopCountryTracks(e.target.checked)}
-              className="w-4 h-4 cursor-pointer"
-            />
-            <span>Select all Top 50 tracks in the selected country</span>
-          </label>
+          {!hideTopCountry && (
+            <label className="flex items-center text-white gap-3 p-2 hover:bg-[#2a2a2a] rounded cursor-pointer mt-2">
+              <input
+                type="checkbox"
+                checked={selectTopCountryTracks}
+                onChange={(e) => setSelectTopCountryTracks(e.target.checked)}
+                className="w-4 h-4 cursor-pointer"
+              />
+              <span>Select all Top 50 tracks in the selected country</span>
+            </label>
+          )}
         </div>
 
         <div className="bg-[#1a1a1a] p-6 rounded-xl">
