@@ -44,7 +44,13 @@ export function TrainAnimation({ pathCoords, connectorSize, color }) {
   for (let i = 0; i < pathCoords.length - 1; i++) {
     const dx = pathCoords[i + 1].x - pathCoords[i].x;
     const dy = pathCoords[i + 1].y - pathCoords[i].y;
-    const len = Math.sqrt(dx * dx + dy * dy);
+    let len = Math.sqrt(dx * dx + dy * dy);
+
+    // If it's a transfer (0px physical distance), give it artificial length for a pause
+    if (len === 0) {
+      len = connectorSize * 1.5;
+    }
+
     segLengths.push(len);
     totalLength += len;
   }
@@ -56,7 +62,13 @@ export function TrainAnimation({ pathCoords, connectorSize, color }) {
   let posY = pathCoords[0].y;
 
   let angle = 0;
+  let currentColor = pathCoords[0]?.lineId || color || "white";
+  let isTransferring = false;
+  let textLabel = null;
+
   for (let i = 0; i < segLengths.length; i++) {
+    const isTrans = pathCoords[i].x === pathCoords[i+1].x && pathCoords[i].y === pathCoords[i+1].y || pathCoords[i].lineId !== pathCoords[i+1].lineId;
+
     if (accumulated + segLengths[i] >= targetDist) {
       const segProgress =
         segLengths[i] > 0 ? (targetDist - accumulated) / segLengths[i] : 0;
@@ -64,10 +76,30 @@ export function TrainAnimation({ pathCoords, connectorSize, color }) {
         pathCoords[i].x + (pathCoords[i + 1].x - pathCoords[i].x) * segProgress;
       posY =
         pathCoords[i].y + (pathCoords[i + 1].y - pathCoords[i].y) * segProgress;
-      const dx = pathCoords[i + 1].x - pathCoords[i].x;
-      const dy = pathCoords[i + 1].y - pathCoords[i].y;
-      angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+      currentColor = pathCoords[i+1]?.lineId || color || "white";
+
+      if (isTrans) {
+        isTransferring = true;
+        textLabel = "Transferring...";
+        // Blink between previous line color and next line color during transfer
+        if (Math.floor(segProgress * 10) % 2 === 0) {
+             currentColor = pathCoords[i].lineId || color || "white";
+        } else {
+             currentColor = pathCoords[i+1].lineId || color || "white";
+        }
+      } else {
+        const dx = pathCoords[i + 1].x - pathCoords[i].x;
+        const dy = pathCoords[i + 1].y - pathCoords[i].y;
+        angle = Math.atan2(dy, dx) * (180 / Math.PI);
+      }
       break;
+    } else {
+      if (!isTrans) {
+        const dx = pathCoords[i + 1].x - pathCoords[i].x;
+        const dy = pathCoords[i + 1].y - pathCoords[i].y;
+        angle = Math.atan2(dy, dx) * (180 / Math.PI);
+      }
     }
     accumulated += segLengths[i];
   }
@@ -76,24 +108,47 @@ export function TrainAnimation({ pathCoords, connectorSize, color }) {
   const center = connectorSize / 2;
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        left: `${posX + center}px`,
-        top: `${posY + center}px`,
-        width: 24,
-        height: 12,
-        marginLeft: -12,
-        marginTop: -6,
-        borderRadius: "3px",
-        background: color || "white",
-        boxShadow: "none",
-        zIndex: 5,
-        pointerEvents: "none",
-        transform: `rotate(${angle}deg)`,
-        transition:
-          "left 0.05s linear, top 0.05s linear, transform 0.05s linear",
-      }}
-    />
+    <>
+      <div
+        style={{
+          position: "absolute",
+          left: `${posX + center}px`,
+          top: `${posY + center}px`,
+          width: 24,
+          height: 12,
+          marginLeft: -12,
+          marginTop: -6,
+          borderRadius: "3px",
+          background: currentColor,
+          boxShadow: isTransferring ? "0 0 10px rgba(255,255,255,0.8)" : "none",
+          zIndex: 5,
+          pointerEvents: "none",
+          transform: `rotate(${angle}deg)`,
+          transition:
+            "left 0.05s linear, top 0.05s linear, transform 0.05s linear, background 0.1s linear",
+        }}
+      />
+      {isTransferring && (
+        <div
+          style={{
+            position: "absolute",
+            left: `${posX + center}px`,
+            top: `${posY + center - 25}px`,
+            transform: "translateX(-50%)",
+            color: "white",
+            background: "rgba(0,0,0,0.7)",
+            padding: "2px 6px",
+            borderRadius: "4px",
+            fontSize: "12px",
+            fontWeight: "bold",
+            whiteSpace: "nowrap",
+            zIndex: 6,
+            pointerEvents: "none",
+          }}
+        >
+          {textLabel}
+        </div>
+      )}
+    </>
   );
 }

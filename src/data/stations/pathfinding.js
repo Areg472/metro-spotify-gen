@@ -168,6 +168,26 @@ export function buildGraph(cityData) {
     }
   }
 
+  // 5. Connect transfers (nodes sharing the same name but not necessarily exact same position)
+  const byName = new Map();
+  for (const node of allNodes) {
+    if (!node.name) continue;
+    if (!byName.has(node.name)) byName.set(node.name, []);
+    byName.get(node.name).push(node);
+  }
+  for (const group of byName.values()) {
+    if (group.length > 1) {
+      for (let i = 0; i < group.length; i++) {
+        for (let j = i + 1; j < group.length; j++) {
+           if (group[i].key !== group[j].key) {
+             adjacency.get(group[i].key).add(group[j].key);
+             adjacency.get(group[j].key).add(group[i].key);
+           }
+        }
+      }
+    }
+  }
+
   return { adjacency, stationMap: nodeMap };
 }
 
@@ -339,13 +359,13 @@ export function findHighlightPath(cityData, startStation, endStation) {
   const isSingleLine = pathLineIds.size === 1;
 
   // Estimate trip duration: ~2.5 minutes per inter-station segment
-  // Transfers (same position, different line) don't count as a segment but add ~3 min
+  // Transfers (same name or same position, different line) don't count as a segment but add ~3 min
   let segments = 0;
   let transfers = 0;
   for (let i = 0; i < path.length - 1; i++) {
     const a = stationMap.get(path[i]);
     const b = stationMap.get(path[i + 1]);
-    if (a.connector.x === b.connector.x && a.connector.y === b.connector.y) {
+    if (a.lineId !== b.lineId || (a.connector.x === b.connector.x && a.connector.y === b.connector.y)) {
       transfers++;
     } else {
       segments++;
@@ -356,7 +376,7 @@ export function findHighlightPath(cityData, startStation, endStation) {
   // Collect ordered coordinates for animation
   const pathCoords = path.map((key) => {
     const node = stationMap.get(key);
-    return { x: node.connector.x, y: node.connector.y, key };
+    return { x: node.connector.x, y: node.connector.y, key, lineId: node.lineId || node.connector.color };
   });
 
   return {

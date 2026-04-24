@@ -490,7 +490,6 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
   };
 
   // When messages arrive with tracks, replay train animation and start playlist reveal
-  // Only do the animated reveal when both stations are on a single line
   useEffect(() => {
     const trackMessage = messages.find(
       (m) =>
@@ -499,13 +498,6 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
         m.content[0].title !== "The stations aren't connected via metro",
     );
     if (!trackMessage) return;
-
-    // Skip animated reveal if the route spans multiple lines
-    if (!highlightPath?.isSingleLine) {
-      setVisibleTrackCount(trackMessage.content.length);
-      setPlaylistRevealing(false);
-      return;
-    }
 
     const tracks = trackMessage.content;
     setVisibleTrackCount(0);
@@ -671,7 +663,6 @@ Do NOT include durationSeconds in your output. The durations are provided for yo
               }}
             >
               {trainAnimationKey > 0 &&
-                highlightPath?.isSingleLine &&
                 highlightPath?.pathCoords && (
                   <TrainAnimation
                     key={trainAnimationKey}
