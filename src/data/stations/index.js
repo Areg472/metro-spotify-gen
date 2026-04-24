@@ -59,8 +59,8 @@ const rawStations = {
   capeTown: processAutoStations(capeTown),
   budapest: processAutoStations(budapest),
   helsinki: processAutoStations(helsinki),
-  sydney: processAutoStations([sydney]),
-  athens: processAutoStations([athens]),
+  sydney: processAutoStations(sydney),
+  athens: processAutoStations(athens),
 };
 
 export const stations = Object.fromEntries(
