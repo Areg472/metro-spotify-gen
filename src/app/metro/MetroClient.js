@@ -312,12 +312,20 @@ export default function MetroClient({ initialCityId, initialCityData }) {
       `[handleRecommend] Building prompt for trip: ${selectedCity?.name} — "${startStation.name}" → "${endStation.name}"`,
     );
 
+    let estimatedMinutesInstruction = `Use your search capabilities and knowledge base to determine the realistic travel time between these stations. Use that as the target duration.`;
+
+    if (selectedCity?.name === "My artificial village in Minecraft") {
+      const stationCount = highlightPath?.pathStationKeys ? highlightPath.pathStationKeys.length - 1 : 0;
+      const mcMinutes = stationCount * 1.5;
+      estimatedMinutesInstruction = `The estimated metro travel time for this trip is approximately ${Math.ceil(mcMinutes)} minutes (${stationCount} stations, exactly 1.5 min per station).
+   CRITICAL: DO NOT use external knowledge for durations. ALWAYS assume exactly 1.5 minutes between each station in this Minecraft village. Use this estimate as the absolute target duration.`;
+    }
+
     const prompt = `Metro trip: ${selectedCity?.name || "Yerevan"}, from "${startStation.name}" to "${endStation.name}".
 Time of day: ${timeOfDay} (use this to guide mood — morning: calm/chill, afternoon: neutral, evening: energetic/upbeat, night: mellow/ambient).${weatherInfo}
 
 INSTRUCTIONS:
-1. The estimated metro travel time for this trip is approximately ${highlightPath?.estimatedMinutes ? Math.round(highlightPath.estimatedMinutes) : "unknown"} minutes (${highlightPath?.pathStationKeys ? highlightPath.pathStationKeys.length - 1 : "?"} stations, ~2.5 min per station + 3 min per transfer).
-   Use this estimate as the target duration. If it seems unreasonable, you may adjust slightly based on your knowledge.
+1. ${estimatedMinutesInstruction}
 2. CRITICAL: If the stations are NOT connected via metro (no direct metro route exists), respond with ONLY this JSON:
    {"travelTimeMinutes": 0, "tracks": [{"title": "The stations aren't connected via metro", "artist": "", "durationSeconds": 0}]}
    DO NOT list any further tracks. Stop immediately after returning this response.
