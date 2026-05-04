@@ -29,6 +29,7 @@ import { budapest } from "@/data/stations/budapest";
 import { helsinki } from "@/data/stations/helsinki";
 import { sydney } from "@/data/stations/sydney";
 import { athens } from "@/data/stations/athens";
+import { minecraft } from "./minecraft";
 
 const rawStations = {
   yerevan: processAutoStations(yerevan),
@@ -61,6 +62,7 @@ const rawStations = {
   helsinki: processAutoStations(helsinki),
   sydney: processAutoStations(sydney),
   athens: processAutoStations(athens),
+  minecraft: processAutoStations(minecraft),
 };
 
 export const stations = Object.fromEntries(

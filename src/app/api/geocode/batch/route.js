@@ -23,6 +23,7 @@ const serverCache = {
   toronto: [43.6532, -79.3832],
   washington: [38.9072, -77.0369],
   yerevan: [40.1872, 44.5152],
+  minecraft: [13.569684, -8.028054],
 };
 
 async function geocodeOne(name, country) {
