@@ -39,6 +39,17 @@ export const minecraft = {
       mountainStationB: {
         name: "Mountain Station",
       },
+      branches: [
+        {
+          branchedStation: "The Hotel Station",
+          color: "#33A8D2",
+          stations: {
+            lowlandsStation: {
+              name: "Lowlands Station",
+            },
+          },
+        },
+      ],
     },
     lineThree: {
       color: "#5F2DD4",
